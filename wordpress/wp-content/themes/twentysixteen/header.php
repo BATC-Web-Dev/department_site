@@ -50,10 +50,16 @@
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
 							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
 								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'primary',
-										'menu_class'     => 'primary-menu',
-									 ) );
+									#wp_nav_menu( array(
+										#'theme_location' => 'primary',
+										#'menu_class'     => 'primary-menu',
+									 #) );
+								if ( is_user_logged_in() ) {
+									wp_nav_menu( array( 'menu' => 'LoggedInMenu' ) );
+								} else {
+									wp_nav_menu( array( 'menu' => 'LoggedOutMenu' ) );
+								}
+
 								?>
 							</nav><!-- .main-navigation -->
 						<?php endif; ?>
