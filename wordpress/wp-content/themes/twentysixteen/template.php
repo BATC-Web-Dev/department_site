@@ -20,39 +20,39 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
         <h1>Classes</h1>
-        <table class="class-table" style="text-align: center">
-            <tr class="header">
-                <td>Course ID</td>
-                <td>Course Name</td>
-                <td>Hours</td>
-                <td>Finished</td>
-            </tr>
-		<?php
-        global $wpdb;
-        $currentUser = get_current_user_id();
-        print $currentUser;
-        $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser'");
-        print $result;
+        <form name="classForm">
+            <table class="class-table" style="text-align: center">
+                <tr class="header">
+                    <td>Course ID</td>
+                    <td>Course Name</td>
+                    <td>Hours</td>
+                    <td>Finished</td>
+                </tr>
+            <?php
+            global $wpdb;
+            $currentUser = get_current_user_id();
+            $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser'");
 
-        foreach($result as $row)
-        {
-            echo "<tr>";
-            echo "<td>".$row->course_id."</td>";
-            echo "<td>".$row->course_name."</td>";
-            echo "<td>".$row->hours."</td>";
-            echo "<td><input type='checkbox'></td>";
-            echo "</tr>";
-        }
-
-		?>
-            <tr>
-                <td></td>
-                <td>Completed Hours</td>
-                <!-- Find a way to add the selected cells to produce a sum -->
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+            foreach($result as $row)
+            {
+                $checkboxVal = intval($row->hours);
+                echo "<tr>";
+                echo "<td>".$row->course_id."</td>";
+                echo "<td>".$row->course_name."</td>";
+                echo "<td id='hours'>".$row->hours."</td>";
+                echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox' onchange='checkTotal()'></td>";
+                echo "</tr>";
+            }
+            ?>
+                <tr>
+                    <td></td>
+                    <td>Completed Hours</td>
+                    <!-- Find a way to add the selected cells to produce a sum -->
+                    <td><input type="text" name="total" value="0" readonly></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
 	</main><!-- .site-main -->
 	<?php get_sidebar( 'content-bottom' ); ?>
 
@@ -62,7 +62,17 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
 
-<!--echo "<pre>"; print_r($result); echo "</pre>";
-echo "ID"."  "."Name"."<br><br>" ;
-echo $row->course_id."  ".$row->course_name."  ".$row->hours;
-echo "<input type='checkbox'>.$row->finished"."<br><br>";-->
+<script>
+    function checkTotal() {
+        document.classForm.total.value = '';
+        var sum = 0;
+        for(i=0; i<document.classForm.checkbox.length; i++) {
+            if (document.classForm.checkbox[i].checked) {
+                sum = sum + parseInt(document.classForm.checkbox[i].value);
+            }
+        }
+        document.classForm.total.value = sum;
+    }
+
+
+</script>
