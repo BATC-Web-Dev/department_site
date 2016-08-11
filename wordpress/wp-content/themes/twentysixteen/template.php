@@ -29,7 +29,10 @@ get_header(); ?>
             </tr>
 		<?php
         global $wpdb;
-        $result = $wpdb->get_results("SELECT * FROM class");
+        $currentUser = get_current_user_id();
+        print $currentUser;
+        $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser'");
+        print $result;
 
         foreach($result as $row)
         {
