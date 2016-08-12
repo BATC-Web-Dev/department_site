@@ -21,7 +21,7 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
         <h1>Classes</h1>
         <form name="classForm">
-            <table class="class-table" style="text-align: center">
+            <table class="class-table">
                 <tr class="header">
                     <td>Course ID</td>
                     <td>Course Name</td>
@@ -36,18 +36,24 @@ get_header(); ?>
             foreach($result as $row)
             {
                 $checkboxVal = intval($row->hours);
+                $checkboxQuery = intval($row->finished);
+                $checkboxState = '';
+                if ($checkboxQuery == 0){
+                    $checkboxState = '';
+                } else {
+                    $checkboxState = 'checked';
+                }
                 echo "<tr>";
                 echo "<td>".$row->course_id."</td>";
                 echo "<td>".$row->course_name."</td>";
                 echo "<td id='hours'>".$row->hours."</td>";
-                echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox' onchange='checkTotal()'></td>";
+                echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox' onchange='checkTotal()' $checkboxState></td>";
                 echo "</tr>";
             }
             ?>
                 <tr>
                     <td></td>
                     <td>Completed Hours</td>
-                    <!-- Find a way to add the selected cells to produce a sum -->
                     <td><input type="text" name="total" value="0" readonly></td>
                     <td></td>
                 </tr>
