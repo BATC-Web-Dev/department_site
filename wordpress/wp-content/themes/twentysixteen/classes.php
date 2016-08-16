@@ -16,6 +16,35 @@ Template Name: Class
  */
 
 get_header(); ?>
+<?php
+$checkArray = $_POST['checkbox'];
+
+if (isset($_POST['submit'])) {
+    for ($i = count($checkArray); $i > 0; $i--) {
+        if ($checkArray[$i] > 0) {
+            $checkArray[$i] = 1;
+        }
+        if (($checkArray[$i] == 1) && ($checkArray[$i - 1] == 0)) {
+            unset($checkArray[$i - 1]);
+        }
+    }
+    $_POST['checkbox'] = array_values($checkArray);
+    for ($i=0; $i < count($_POST['checkbox']); $i++) {
+        print_r($value);
+        $wpdb->update(
+            'classes',
+            array(
+                'finished' => $_POST['checkbox'][$i],
+            ),
+            array( 'class_id' => $_POST['class_id'][$i] ),
+            array(
+                '%d'
+            ),
+            array( '%d' )
+        );
+    }
+}
+?>
 <body onload="checkTotal()">
 <script>
     function checkTotal() {
@@ -30,11 +59,10 @@ get_header(); ?>
         document.classForm.total.value = sum;
     }
 </script>
-
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
         <h1>Classes</h1>
-        <form name="classForm" method="post"action="">
+        <form name="classForm" method="post" action="<?php echo get_permalink(); ?>">
             <table class="class-table">
                 <tr class="header">
                     <td>Course ID</td>
@@ -58,9 +86,10 @@ get_header(); ?>
                 }
                 echo "<tr>";
                 echo "<td>".$row->course_id."</td>";
+                echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
                 echo "<td>".$row->course_name."</td>";
                 echo "<td id='hours'>".$row->hours."</td>";
-                echo "<input type='hidden' value='0' name='checkbox[]'></input>";
+                echo "<input type='hidden' value='0' name='checkbox[]'>";
                 echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox[]' onchange='checkTotal()' $checkboxState></td>";
                 echo "</tr>";
             }
@@ -73,22 +102,7 @@ get_header(); ?>
                 </tr>
             </table>
         </form>
-        <?php
-        $checkArray = $_POST['checkbox'];
-        if (isset($_POST['submit'])) {
-            print_r(count($checkArray));
-            for($i = count($checkArray); $i > 0; $i--){
-                if ($checkArray[$i] > 0){
-                    $checkArray[$i] = 1;
-                }
-                if (($checkArray[$i] == 1) && ($checkArray[$i-1] == 0)){
-                    unset($checkArray[$i-1]);
-                }
-            }
-            $_POST['checkbox'] = array_values($checkArray);
-            print_r($_POST['checkbox']);
-        }
-        ?>
+
 	</main><!-- .site-main -->
 	<?php get_sidebar( 'content-bottom' ); ?>
 
