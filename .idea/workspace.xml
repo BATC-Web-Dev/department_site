@@ -4,7 +4,6 @@
     <list default="true" id="738b2d9a-09fd-46da-95db-7d241d4cc1ee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-config.php" afterPath="$PROJECT_DIR$/wordpress/wp-config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php" />
     </list>
     <ignored path="department_site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +35,8 @@
       <file leaf-file-name="classes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="648">
+              <caret line="114" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
               <folding>
                 <element signature="e#6#32#0#PHP" expanded="true" />
                 <marker date="1471387734000" expanded="true" signature="2167:2261" ph="SELECT * FRO... class" />
@@ -95,8 +94,8 @@
       <file leaf-file-name="wp-config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+            <state relative-caret-position="150">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -350,24 +349,24 @@
       <workItem from="1470954070998" duration="9198000" />
       <workItem from="1471031505800" duration="36308000" />
       <workItem from="1471290311757" duration="16248000" />
-      <workItem from="1471376616570" duration="3421000" />
+      <workItem from="1471376616570" duration="4164000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87132000" />
+    <option name="totallyTimeSpent" value="87875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17381974" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17381974" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20024876" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49626866" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -762,8 +761,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="150">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -784,8 +783,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="648">
+          <caret line="114" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
           <folding>
             <element signature="e#6#32#0#PHP" expanded="true" />
             <marker date="1471387734000" expanded="true" signature="2167:2261" ph="SELECT * FRO... class" />
