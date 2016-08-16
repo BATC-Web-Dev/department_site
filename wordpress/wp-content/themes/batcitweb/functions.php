@@ -104,6 +104,9 @@ add_action( 'widgets_init', 'batcitweb_widgets_init' );
 function batcitweb_scripts() {
 	wp_enqueue_style( 'batcitweb-style', get_stylesheet_uri() );
 
+    // Add Google Fonts: Quattrocento Sans and Merriweather
+    wp_enqueue_style( 'batcitweb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:400,700|Quattrocento+Sans:400,700');
+    
 	wp_enqueue_script( 'batcitweb-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'batcitweb-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

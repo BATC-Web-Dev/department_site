@@ -33,6 +33,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Accessibility
 # Alignments
 # Clearings
+# Header
 # Widgets
 # Content
 	## Posts and pages
@@ -265,11 +266,16 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: #000;
+	font-family: 'Merriweather', serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+}
+
+.site-content{
+    font-size: 1.125em;
+    line-height: 1.6em;
 }
 
 h1,
@@ -278,8 +284,19 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
+	font-family: 'Quattrocento Sans', sans-serif;
+    clear: both;
+    line-height: 1.3em;
+    margin-top:  2.5rem;
+    margin-bottom: 1rem;
 }
+
+h1 { font-size: 2.4em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.8em; }
+h5 { font-size: 1.6em; }
+h6 { font-size: 1.4em; }
 
 p {
 	margin-bottom: 1.5em;
@@ -731,6 +748,60 @@ a:active {
 }
 
 /*--------------------------------------------------------------
+# header
+--------------------------------------------------------------*/
+.site-header {
+    background-color: #000;
+}
+
+.site-branding {
+    text-align: center;
+}
+
+.site-title {
+    margin: 1.7em 1em 0;
+    font-family: 'Quattrocentro Sans', sans-serif;
+    font-size: 2.4em;
+    font-weight: bold;
+    line-height: 1.3em;
+    color: #fff;
+    text-transform: uppercase;
+    word-break: break-word;
+}
+
+@media screen and (max-width: 30em) {
+    .site-title {
+        font-size: 2em;
+    }
+}
+
+.site-title a {
+    text-decoration: none;
+    color:inherit;
+}
+
+.site-title a:hover,
+.site-title a:focus {
+    text-decoration: underline;
+}
+
+
+.site-title::after {
+    display: block;
+    content: "";
+    margin: .7em auto 0;
+    width: 3em;
+    border-bottom: solid 1px #fff;
+    opacity: .5;
+}
+
+.site-description {
+    margin: 2em 2em 3em;
+    font-size: 110%;
+    color: #fff;
+}
+
+/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 .widget {
@@ -745,6 +816,35 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Global
+--------------------------------------------------------------*/
+.site-main {
+    margin: 1.4em;
+    font-size: .8em;
+    line-height: 1.6em;
+}
+
+@media screen and (min-width: 30em) {
+    .site-main {
+        margin: 1.8em;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .site-main {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 57em) {
+    .site-main {
+        max-width: 45em;
+        margin: 1.8em auto;
+    }
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
