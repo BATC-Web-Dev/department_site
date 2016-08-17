@@ -54,7 +54,9 @@
 										#'theme_location' => 'primary',
 										#'menu_class'     => 'primary-menu',
 									 #) );
-								if ( is_user_logged_in() ) {
+								if ( is_user_logged_in() && current_user_can('administrator')) {
+									wp_nav_menu(array('menu' => 'AdminLoggedInMenu'));
+								} elseif ( is_user_logged_in()) {
 									wp_nav_menu( array( 'menu' => 'LoggedInMenu' ) );
 								} else {
 									wp_nav_menu( array( 'menu' => 'LoggedOutMenu' ) );
