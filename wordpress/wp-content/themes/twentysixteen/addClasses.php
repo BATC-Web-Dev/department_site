@@ -80,10 +80,11 @@ function test_input($data) {
             <input type="submit" name="submit" value="Add Class">
         </form>
 	</main><!-- .site-main -->
+    <h1>Current Courses in Database</h1>
     <?php
     $result = $wpdb->get_results("SELECT * FROM class");
     foreach($result as $row){
-        echo "<p>$row->course_id : $row->course_name : $row->hours</p><br>";
+        echo "<p>$row->ID : $row->course_id : $row->course_name : $row->hours</p><br>";
     }
     ?>
 	<?php get_sidebar( 'content-bottom' ); ?>
