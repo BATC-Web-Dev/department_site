@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="738b2d9a-09fd-46da-95db-7d241d4cc1ee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/addClasses.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/addClasses.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/functions.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/functions.php" />
     </list>
     <ignored path="department_site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,30 +36,53 @@
       <file leaf-file-name="classes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="150">
+              <caret line="63" column="85" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="85" />
               <folding>
                 <element signature="e#6#32#0#PHP" expanded="true" />
-                <marker date="1471387734000" expanded="true" signature="2167:2261" ph="SELECT * FRO... class" />
-                <marker date="1471387734000" expanded="true" signature="2167:2275" ph="SELECT * FRO... class" />
-                <marker date="1471387734000" expanded="true" signature="2675:2805" ph="..." />
-                <marker date="1471387734000" expanded="true" signature="3221:3333" ph="..." />
+                <marker date="1471466075000" expanded="true" signature="2143:2237" ph="SELECT * FRO... class" />
+                <marker date="1471466075000" expanded="true" signature="2143:2251" ph="SELECT * FRO... class" />
+                <marker date="1471466075000" expanded="true" signature="2651:2781" ph="..." />
+                <marker date="1471466075000" expanded="true" signature="3197:3309" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addClasses.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addClasses.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/addClasses.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+            <state relative-caret-position="388">
+              <caret line="88" column="6" selection-start-line="82" selection-start-column="4" selection-end-line="88" selection-end-column="6" />
               <folding>
                 <element signature="e#6#37#0#PHP" expanded="true" />
                 <marker date="1471445373000" expanded="true" signature="1579:2765" ph="..." />
-                <marker date="1471445373000" expanded="true" signature="1627:2486" ph="..." />
-                <marker date="1471445373000" expanded="true" signature="1866:2477" ph="..." />
                 <marker date="1471445373000" expanded="true" signature="2592:2611" ph="SELECT * FRO... classes" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-new.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-admin/user-new.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1620">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1456372166000" expanded="true" signature="5580:5665" ph="SELECT activ... $" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testAddingClass.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/testAddingClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+              <folding>
+                <element signature="e#6#44#0#PHP" expanded="true" />
+                <marker date="1471490645000" expanded="true" signature="492:511" ph="SELECT * FRO... classes" />
               </folding>
             </state>
           </provider>
@@ -66,9 +91,11 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5970">
-              <caret line="422" column="0" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="209">
+              <caret line="428" column="21" selection-start-line="428" selection-start-column="21" selection-end-line="428" selection-end-column="21" />
+              <folding>
+                <marker date="1471490446000" expanded="true" signature="14781:14800" ph="SELECT * FRO... class" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,16 +128,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/functions.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-load.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/plugins/theme-my-login/theme-my-login.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-includes/nav-menu-template.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/template.php" />
         <option value="$PROJECT_DIR$/wordpress/.htaccess" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-config.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/header.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/addClasses.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/functions.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/testAddingClass.php" />
       </list>
     </option>
   </component>
@@ -125,10 +153,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1920" />
-    <option name="y" value="-180" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -155,7 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,6 +271,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -360,24 +386,25 @@
       <workItem from="1470954070998" duration="9198000" />
       <workItem from="1471031505800" duration="36308000" />
       <workItem from="1471290311757" duration="16248000" />
-      <workItem from="1471376616570" duration="12100000" />
+      <workItem from="1471376616570" duration="12187000" />
+      <workItem from="1471464847131" duration="7392000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95811000" />
+    <option name="totallyTimeSpent" value="103290000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="-180" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12939297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2267525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21138212" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.210199" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -411,20 +438,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-admin/user/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -728,14 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5970">
-          <caret line="422" column="0" selection-start-line="422" selection-start-column="0" selection-end-line="422" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -747,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,7 +767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -777,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="285">
           <caret line="57" column="69" selection-start-line="57" selection-start-column="69" selection-end-line="57" selection-end-column="69" />
           <folding>
             <element signature="e#6#226#0#PHP" expanded="true" />
@@ -786,30 +789,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-admin/user-new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1620">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1456372166000" expanded="true" signature="5580:5665" ph="SELECT activ... $" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="150">
+          <caret line="63" column="85" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="85" />
           <folding>
             <element signature="e#6#32#0#PHP" expanded="true" />
-            <marker date="1471387734000" expanded="true" signature="2167:2261" ph="SELECT * FRO... class" />
-            <marker date="1471387734000" expanded="true" signature="2167:2275" ph="SELECT * FRO... class" />
-            <marker date="1471387734000" expanded="true" signature="2675:2805" ph="..." />
-            <marker date="1471387734000" expanded="true" signature="3221:3333" ph="..." />
+            <marker date="1471466075000" expanded="true" signature="2143:2237" ph="SELECT * FRO... class" />
+            <marker date="1471466075000" expanded="true" signature="2143:2251" ph="SELECT * FRO... class" />
+            <marker date="1471466075000" expanded="true" signature="2651:2781" ph="..." />
+            <marker date="1471466075000" expanded="true" signature="3197:3309" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/addClasses.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="57" column="28" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+        <state relative-caret-position="388">
+          <caret line="88" column="6" selection-start-line="82" selection-start-column="4" selection-end-line="88" selection-end-column="6" />
           <folding>
             <element signature="e#6#37#0#PHP" expanded="true" />
             <marker date="1471445373000" expanded="true" signature="1579:2765" ph="..." />
-            <marker date="1471445373000" expanded="true" signature="1627:2486" ph="..." />
-            <marker date="1471445373000" expanded="true" signature="1866:2477" ph="..." />
             <marker date="1471445373000" expanded="true" signature="2592:2611" ph="SELECT * FRO... classes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="428" column="21" selection-start-line="428" selection-start-column="21" selection-end-line="428" selection-end-column="21" />
+          <folding>
+            <marker date="1471490446000" expanded="true" signature="14781:14800" ph="SELECT * FRO... class" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/testAddingClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+          <folding>
+            <element signature="e#6#44#0#PHP" expanded="true" />
+            <marker date="1471490645000" expanded="true" signature="492:511" ph="SELECT * FRO... classes" />
           </folding>
         </state>
       </provider>

@@ -421,3 +421,27 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 
+
+function addClassesToNewUser($user_id) {
+//Write function to loop through all the available classes and set the new user id and finished
+    global $wpdb;
+    $result = $wpdb->get_results("SELECT * FROM class");
+    print_r($result);
+    foreach ($result as $row){
+        $wpdb->insert(
+            'classes',
+            array(
+                'user_id' => $user_id,
+                'class_id' => $row->ID,
+                'finished' => 0,
+            ),
+            array(
+                '%d',
+                '%d',
+                "%d",
+            )
+        );
+    }
+}
+add_action('user_register', 'addClassesToNewUser', 10, 1);
+

@@ -20,7 +20,7 @@ get_header(); ?>
 $checkArray = $_POST['checkbox'];
 
 if (isset($_POST['submit'])) {
-    for ($i = count($checkArray); $i > 0; $i--) {
+    for ($i = count($checkArray); $i >= 0; $i--) {
         if ($checkArray[$i] > 0) {
             $checkArray[$i] = 1;
         }
@@ -30,7 +30,6 @@ if (isset($_POST['submit'])) {
     }
     $_POST['checkbox'] = array_values($checkArray);
     for ($i=0; $i < count($_POST['checkbox']); $i++) {
-        print_r($value);
         $wpdb->update(
             'classes',
             array(
