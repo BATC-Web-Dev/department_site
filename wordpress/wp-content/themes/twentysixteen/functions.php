@@ -426,7 +426,6 @@ function addClassesToNewUser($user_id) {
 //Write function to loop through all the available classes and set the new user id and finished
     global $wpdb;
     $result = $wpdb->get_results("SELECT * FROM class");
-    print_r($result);
     foreach ($result as $row){
         $wpdb->insert(
             'classes',
@@ -444,4 +443,11 @@ function addClassesToNewUser($user_id) {
     }
 }
 add_action('user_register', 'addClassesToNewUser', 10, 1);
+
+#function deleteUserFromClassesTable($user_id) {
+    #global $wpdb;
+    #$wpdb->delete( 'classes', array( 'user_id' => $user_id ) );
+# }
+
+#add_action( 'delete_user', 'deleteUserFromClassesTable', 10, 1);
 

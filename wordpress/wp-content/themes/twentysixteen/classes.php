@@ -17,6 +17,7 @@ Template Name: Class
 
 get_header(); ?>
 <?php
+global $wpdb;
 $checkArray = $_POST['checkbox'];
 
 if (isset($_POST['submit'])) {
@@ -43,6 +44,7 @@ if (isset($_POST['submit'])) {
         );
     }
 }
+//TODO: add error checking for database call
 ?>
 <body onload="checkTotal()">
 <script>
@@ -73,6 +75,7 @@ if (isset($_POST['submit'])) {
             global $wpdb;
             $currentUser = get_current_user_id();
             $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser'");
+            //TODO: add error checking for database call
             foreach($result as $row)
             {
                 $checkboxVal = intval($row->hours);

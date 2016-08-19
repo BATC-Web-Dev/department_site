@@ -17,6 +17,7 @@ Template Name: AddClasses
 
 get_header(); ?>
 <?php
+global $wpdb;
 // define variables and set to empty values
 $courseIDErr = $courseNameErr = $hoursErr  = "";
 $courseId = $courseName = $hours = "";
@@ -52,8 +53,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             '%d'
         )
     );
+    $lastId = $wpdb->insert_id;
+    $users = $wpdb->get_results("SELECT ID FROM $wpdb->users");
+    print_r($users);
+    foreach ($users as $user) {
+        $wpdb->insert(
+            'classes',
+            array(
+                'user_id' => $user->ID,
+                'class_id' => $lastId,
+                'finished' => 0,
+            ),
+            array(
+                '%d',
+                '%d',
+                "%d",
+            )
+        );
+    }
+    $wpdb->last_error;
     echo "<p>Class Added To Table</p>";
 }
+//TODO: add error checking for database call
 
 function test_input($data) {
     $data = trim($data);
