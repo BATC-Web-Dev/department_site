@@ -444,10 +444,15 @@ function addClassesToNewUser($user_id) {
 }
 add_action('user_register', 'addClassesToNewUser', 10, 1);
 
-#function deleteUserFromClassesTable($user_id) {
-    #global $wpdb;
-    #$wpdb->delete( 'classes', array( 'user_id' => $user_id ) );
-# }
+function my_init() {
+    if (!is_admin()) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', false, '1.3.2', true);
+        wp_enqueue_script('jquery');
 
-#add_action( 'delete_user', 'deleteUserFromClassesTable', 10, 1);
+        // load a JS file from my theme: js/theme.js
+        wp_enqueue_script('my_script', get_bloginfo('template_url') . '/js/theme.js', array('jquery'), '1.0', true);
+    }
+}
+add_action('init', 'my_init');
 

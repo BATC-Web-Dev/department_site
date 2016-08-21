@@ -4,6 +4,19 @@ If you would like to edit this file, copy it to your current theme's directory a
 Theme My Login will always look in your theme's directory first, before using this default template.
 */
 ?>
+<script>
+    jQuery(document).ready(function( $ ) {
+        var text_max = 140;
+        $('#textarea_feedback').html(text_max + ' characters remaining');
+
+        $('#description').keyup(function() {
+            var text_length = $('#description').val().length;
+            var text_remaining = text_max - text_length;
+
+            $('#textarea_feedback').html(text_remaining + ' characters remaining');
+        });
+    });
+</script>
 <div class="tml tml-profile" id="theme-my-login<?php $template->the_instance(); ?>">
 	<?php $template->the_action_template_message( 'profile' ); ?>
 	<?php $template->the_errors(); ?>
@@ -130,9 +143,10 @@ Theme My Login will always look in your theme's directory first, before using th
 
 		<table class="tml-form-table">
 		<tr class="tml-user-description-wrap">
-			<th><label for="description"><?php _e( 'Biographical Info', 'theme-my-login' ); ?></label></th>
-			<td><textarea name="description" id="description" rows="5" cols="30"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
-			<span class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'theme-my-login' ); ?></span></td>
+			<th><label for="description"><?php _e( 'Bio max 140 Characters', 'theme-my-login' ); ?></label></th>
+			<td><textarea name="description" id="description" rows="5" cols="30" maxlength="140"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
+				<div id="textarea_feedback"></div>
+			<span class="description"><?php _e( 'Share a bio that could fit in a Tweet.', 'theme-my-login' ); ?></span></td>
 		</tr>
 
 		<?php
