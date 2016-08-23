@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
 //TODO: add error checking for database call
 ?>
 <body onload="checkTotal()">
-<script>
+<script type="text/javascript">
     function checkTotal() {
         var object = document.getElementsByTagName('input');
         document.classForm.total.value = '';
@@ -59,49 +59,75 @@ if (isset($_POST['submit'])) {
         }
         document.classForm.total.value = sum;
     }
+    //Change the color of the tr based on the class type
+    jQuery(document).ready(function( $ ) {
+        //Core
+        $(".classType1").css("color", "red");
+        //Front-End
+        $(".classType2").css("color", "blue");
+        //Backend
+        $(".classType3").css("color", "green");
+        //Table Stripe
+        $( "tr:odd" ).css( "background-color", "#eee" );
+
+
+    });
 </script>
+
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
         <h1>Classes</h1>
+            <ul><!-- Change the class color key here-->
+                <li style="color: red">Core</li>
+                <li style="color: blue">Front-End</li>
+                <li style="color: green">Back-End</li>
+            </ul>
         <form name="classForm" method="post" action="<?php echo get_permalink(); ?>">
-            <table class="class-table">
-                <tr class="header">
-                    <td>Course ID</td>
-                    <td>Course Name</td>
-                    <td>Hours</td>
-                    <td>Finished</td>
-                </tr>
-            <?php
-            global $wpdb;
-            $currentUser = get_current_user_id();
-            $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser'");
-            //TODO: add error checking for database call
-            foreach($result as $row)
-            {
-                $checkboxVal = intval($row->hours);
-                $checkboxQuery = intval($row->finished);
-                $checkboxState = '';
-                if ($checkboxQuery == 0){
+            <table id="classTable">
+                <thead>
+                    <tr class="header">
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Hours</th>
+                        <th>Finished</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                global $wpdb;
+                $currentUser = get_current_user_id();
+                $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser'");
+                //TODO: add error checking for database call
+                foreach($result as $row)
+                {
+                    $checkboxVal = intval($row->hours);
+                    $checkboxQuery = intval($row->finished);
                     $checkboxState = '';
-                } else {
-                    $checkboxState = 'checked';
+                    if ($checkboxQuery == 0){
+                        $checkboxState = '';
+                    } else {
+                        $checkboxState = 'checked';
+                    }
+                    echo "<tr class='classType$row->class_type'>";
+                    echo "<input type='hidden' name='class_type[]' value='$row->class_type'>";
+                    echo "<td>".$row->course_id."</td>";
+                    echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
+                    echo "<td>".$row->course_name."</td>";
+                    echo "<td id='hours'>".$row->hours."</td>";
+                    echo "<input type='hidden' value='0' name='checkbox[]'>";
+                    echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox[]' onchange='checkTotal()' $checkboxState></td>";
+                    echo "</tr>";
                 }
-                echo "<tr>";
-                echo "<td>".$row->course_id."</td>";
-                echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
-                echo "<td>".$row->course_name."</td>";
-                echo "<td id='hours'>".$row->hours."</td>";
-                echo "<input type='hidden' value='0' name='checkbox[]'>";
-                echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox[]' onchange='checkTotal()' $checkboxState></td>";
-                echo "</tr>";
-            }
-            ?>
-                <tr>
-                    <td></td>
-                    <td>Completed Hours</td>
-                    <td><input type="text" name="total" value="0" readonly></td>
-                    <td><input type="submit" name="submit" value="Save Finished"></td>
-                </tr>
+                ?>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>Completed Hours</td>
+                            <td><input type="text" name="total" value="0" readonly></td>
+                            <td><input type="submit" name="submit" value="Save Finished"></td>
+                        </tr>
+                    </tfoot>
+                </tbody>
             </table>
         </form>
 

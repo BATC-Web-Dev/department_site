@@ -16,6 +16,18 @@ Template Name: AddClasses
  */
 
 get_header(); ?>
+<script>
+    //Change the color of the tr based on the class type
+    jQuery(document).ready(function( $ ) {
+        //Core
+        $(".classType1").css("color", "red");
+        //Front-End
+        $(".classType2").css("color", "blue");
+        //Backend
+        $(".classType3").css("color", "green");
+
+    });
+</script>
 <?php
 global $wpdb;
 // define variables and set to empty values
@@ -27,35 +39,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $courseIDErr = "Course ID is required";
     } else {
         $courseId = test_input($_POST["courseId"]);
-        print_r($courseId);
     }
     if (empty($_POST["courseName"])) {
         $courseNameErr = "Course Name is required";
     } else {
         $courseName = test_input($_POST["courseName"]);
-        print_r($courseName);
     }
     if (empty($_POST["hours"])) {
         $hoursErr = "Hours are required";
     } else {
         $hours = test_input($_POST["hours"]);
     }
+    if ($_POST["classType"] == 0){
+        $_POST["classType"] = 1;
+    } else {
+        $classType = test_input($_POST["classType"]);
+    }
+
+    $classType = test_input($_POST["classType"]);
     $wpdb->insert(
         'class',
         array(
             'course_id' => $courseId,
             'course_name' => $courseName,
-            'hours' => $hours
+            'hours' => $hours,
+            'class_type' => $classType
         ),
         array(
             '%s',
             '%s',
+            '%d',
             '%d'
         )
     );
     $lastId = $wpdb->insert_id;
     $users = $wpdb->get_results("SELECT ID FROM $wpdb->users");
-    print_r($users);
     foreach ($users as $user) {
         $wpdb->insert(
             'classes',
@@ -91,21 +109,33 @@ function test_input($data) {
         <form method="post" action="<?php echo get_permalink(); ?>">
             Class ID: <input type="text" name="courseId" value="<?php echo $courseId;?>">
             <span class="error">* <?php echo $courseIDErr;?></span>
-            <br><br>
-            Class Name: <input type="text" name="courseName" value="<?php echo $courseId;?>">
+            <br>
+            Class Name: <input type="text" name="courseName" value="<?php echo $courseName;?>">
             <span class="error">* <?php echo $courseNameErr;?></span>
-            <br><br>
+            <br>
             Hours: <input type="text" name="hours" value="<?php echo $Hours;?>">
             <span class="error"><?php echo $HoursErr;?></span>
+            <br>
+            Class Type:
+            <select name="classType">
+                <option value="1">Core</option>
+                <option value="2">Front-End</option>
+                <option value="3">Back-end</option>
+            </select>
             <br><br>
             <input type="submit" name="submit" value="Add Class">
         </form>
 	</main><!-- .site-main -->
     <h1>Current Courses in Database</h1>
+        <ul><!-- Change the class color key here-->
+            <li style="color: red">Core</li>
+            <li style="color: blue">Front-End</li>
+            <li style="color: green">Back-End</li>
+        </ul>
     <?php
     $result = $wpdb->get_results("SELECT * FROM class");
     foreach($result as $row){
-        echo "<p>$row->ID : $row->course_id : $row->course_name : $row->hours</p><br>";
+        echo "<p class='classType$row->class_type'>$row->ID : $row->course_id : $row->course_name : $row->hours : $row->class_type</p><br>";
     }
     ?>
 	<?php get_sidebar( 'content-bottom' ); ?>
