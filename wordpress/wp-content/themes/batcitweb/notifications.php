@@ -13,7 +13,7 @@ Template Name: notifications
 
 get_header(); ?>
 <?php
-if ( is_user_logged_in() && !current_user_can('administrator')) {
+if ( is_user_logged_in() && current_user_can('administrator')) {
 ?>
 
 <div id="primary" class="content-area">

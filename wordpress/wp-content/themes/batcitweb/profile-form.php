@@ -267,13 +267,26 @@ if ( in_array( 'subscriber', (array) $user->roles ) ) {
 			</table>
 
 <!-- start of bio field -->
+<script>
+    jQuery(document).ready(function( $ ) {
+        var approve_text_max = 140;
+        $('#approve_textarea_feedback').html((approve_text_max - $('#approve_description').val().length) + ' characters remaining');
+
+        $('#approve_description').keyup(function() {
+            var approve_text_length = $('#approve_description').val().length;
+			var approve_text_remaining = approve_text_max - approve_text_length;
+
+            $('#approve_textarea_feedback').html(approve_text_remaining + ' characters remaining');
+        });
+    });
+</script>
 			<?php
 			$display_old_val = "";
 			if ($profileuser->approve_description) {
 				$old_description = $profileuser->description;
 				$description_value = $profileuser->approve_description;
-				$description_label = "Biographical Info - <span class='approval'>pending approval</span>";
-				$display_old_val = "Your old bio will remain until this one is approved.<br>";
+				$description_label = "Bio max 140 characters - <span class='approval'>pending approval</span>";
+				$display_old_val = "<br>Your old bio will remain until this one is approved.";
 			}
 			else {
 				$description_value = $profileuser->description;
@@ -282,9 +295,9 @@ if ( in_array( 'subscriber', (array) $user->roles ) ) {
 				?>
 			<table class="tml-form-table">
 			<tr class="tml-user-description-wrap">
-				<th><label for="approve_description"><?php _e( $description_label, 'theme-my-login' ); ?></label></th>
-				<td><textarea name="approve_description" id="approve_description" rows="5" cols="30"><?php echo esc_html( $profileuser->approve_description ); ?></textarea><br />
-				<span class="approval"><?php _e( $display_old_val . 'Biographical info may be shown publicly.', 'theme-my-login' ); ?></span></td>
+				<th><label for="approve_description"><?php _e( $description_label, 'theme-my-login' ); ?></label></th><td><textarea name="approve_description" id="approve_description" rows="5" cols="30" maxlength="140">
+				<?php echo esc_html( $description_value ); ?></textarea><br /><div id="approve_textarea_feedback">info</div>
+				<span><?php _e("Share a bio that could fit in a Tweet."); ?></span><span class="approval"><?php _e( "$display_old_val", 'theme-my-login' ); ?></span></td>
 				<th><label for "old_bio"><?php _e("Old Biographical Information"); ?></label></th>
 				<td><div class="old_bio" name="old_bio"><?php _e( "$old_description" ); ?></div></td>
 			</tr>
@@ -494,15 +507,30 @@ else if ( in_array( 'administrator', (array) $user->roles ) ) {
 
 			
 			</table>
+<!-- start of bio field -->
+<script>
+    jQuery(document).ready(function( $ ) {
+        var text_max = 140;
+        $('#textarea_feedback').html((text_max - $('#description').val().length) + ' characters remaining');
 
+        $('#description').keyup(function() {
+            var text_length = $('#description').val().length;
+            var text_remaining = text_max - text_length;
+
+            $('#textarea_feedback').html(text_remaining + ' characters remaining');
+        });
+    });
+</script>
 			<h3><?php _e( 'About Yourself', 'theme-my-login' ); ?></h3>
 
 			<table class="tml-form-table">
 			<tr class="tml-user-description-wrap">
 				<th><label for="description"><?php _e( 'Biographical Info', 'theme-my-login' ); ?></label></th>
-				<td><textarea name="description" id="description" rows="5" cols="30"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
-				<span class="description"><?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'theme-my-login' ); ?></span></td>
+				<td><textarea name="description" id="description" rows="3" cols="30" maxlength="140"><?php echo esc_html( $profileuser->description ); ?></textarea><br />
+				<div id="textarea_feedback"></div><span class="description">
+				<?php _e( 'Share a little biographical information to fill out your profile. This may be shown publicly.', 'theme-my-login' ); ?></span></td>
 			</tr>
+<!-- end of bio field -->
 
 			<?php
 			$show_password_fields = apply_filters( 'show_password_fields', true, $profileuser );
