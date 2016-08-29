@@ -207,3 +207,4 @@ Theme My Login will always look in your theme's directory first, before using th
 		</p>
 	</form>
 </div>
+

@@ -32,7 +32,7 @@ get_header(); ?>
 global $wpdb;
 // define variables and set to empty values
 $courseIDErr = $courseNameErr = $hoursErr  = "";
-$courseId = $courseName = $hours = "";
+$courseId = $courseName = $courseDesc = $hours = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["courseId"])) {
@@ -55,6 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $classType = test_input($_POST["classType"]);
     }
+    if ($_POST['courseDesc']){
+        $courseDesc = test_input($_POST['courseDesc']);
+    }
 
     $classType = test_input($_POST["classType"]);
     $wpdb->insert(
@@ -62,10 +65,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         array(
             'course_id' => $courseId,
             'course_name' => $courseName,
+            'course_desc' => $courseDesc,
             'hours' => $hours,
             'class_type' => $classType
         ),
         array(
+            '%s',
             '%s',
             '%s',
             '%d',
@@ -106,12 +111,14 @@ function test_input($data) {
 		<h1>Add Classes</h1>
 		<!-- Add a form to handle adding, editing, and removing classes from the database-->
         <p><span class="error">* required field.</span></p>
-        <form method="post" action="<?php echo get_permalink(); ?>">
+        <form id="classForm" method="post" action="<?php echo get_permalink(); ?>">
             Class ID: <input type="text" name="courseId" value="<?php echo $courseId;?>">
             <span class="error">* <?php echo $courseIDErr;?></span>
             <br>
             Class Name: <input type="text" name="courseName" value="<?php echo $courseName;?>">
             <span class="error">* <?php echo $courseNameErr;?></span>
+            <br>
+            Class Description: <textarea form="classForm" name="courseDesc" value="<?php echo $courseDesc;?>"></textarea>
             <br>
             Hours: <input type="text" name="hours" value="<?php echo $Hours;?>">
             <span class="error"><?php echo $HoursErr;?></span>

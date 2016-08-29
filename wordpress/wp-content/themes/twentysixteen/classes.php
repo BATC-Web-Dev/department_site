@@ -69,8 +69,24 @@ if (isset($_POST['submit'])) {
         $(".classType3").css("color", "green");
         //Table Stripe
         $( "tr:odd" ).css( "background-color", "#eee" );
+        $("tr").css("border", "2px solid #AEAEAE");
+    });
 
-
+    $(function() {
+        $("td[colspan=4]").css('pointer-events', 'none');
+        $("td[colspan=4]").find("p").hide();
+        $("tr").click(function(event) {
+            event.stopPropagation();
+            var $target = $(event.target);
+            if($($target).is('input[type=checkbox]')) {
+                return;
+            }
+            else if ( $target.closest("td").attr("colspan") > 1 ) {
+                $target.slideUp();
+            } else {
+                $target.closest("tr").next().find("p").slideToggle();
+            }
+        });
     });
 </script>
 
@@ -110,24 +126,25 @@ if (isset($_POST['submit'])) {
                     }
                     echo "<tr class='classType$row->class_type'>";
                     echo "<input type='hidden' name='class_type[]' value='$row->class_type'>";
-                    echo "<td>".$row->course_id."</td>";
+                    echo "<td><p>".$row->course_id."</p></td>";
                     echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
-                    echo "<td>".$row->course_name."</td>";
-                    echo "<td id='hours'>".$row->hours."</td>";
+                    echo "<td><p>".$row->course_name."</p></td>";
+                    echo "<td id='hours'><p>".$row->hours."</p></td>";
                     echo "<input type='hidden' value='0' name='checkbox[]'>";
                     echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox[]' onchange='checkTotal()' $checkboxState></td>";
                     echo "</tr>";
+                    echo "<tr class='descRow'><td colspan=\"4\" style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
                 }
                 ?>
-                    <tfoot>
-                        <tr>
-                            <td></td>
-                            <td>Completed Hours</td>
-                            <td><input type="text" name="total" value="0" readonly></td>
-                            <td><input type="submit" name="submit" value="Save Finished"></td>
-                        </tr>
-                    </tfoot>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td>Completed Hours</td>
+                        <td><input type="text" name="total" value="0" readonly></td>
+                        <td><input type="submit" name="submit" value="Save Finished"></td>
+                    </tr>
+                </tfoot>
             </table>
         </form>
 
