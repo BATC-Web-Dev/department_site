@@ -7,6 +7,47 @@
  * @package BATCWebDev
  */
 
+ 
+ 
+ /**
+*  Subscriber profile page functions
+*
+*/
+add_action( 'personal_options_update', 'save_custom_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_custom_profile_fields' );
+function save_custom_profile_fields( $user_id ) {
+    update_user_meta( $user_id, 'approve_first_name', $_POST['approve_first_name'], get_user_meta( $user_id, 'approve_first_name', true ) );
+    update_user_meta( $user_id, 'approve_last_name', $_POST['approve_last_name'], get_user_meta( $user_id, 'approve_last_name', true ) );
+    update_user_meta( $user_id, 'approve_nickname', $_POST['approve_nickname'	], get_user_meta( $user_id, 'approve_nickname', true ) );
+    update_user_meta( $user_id, 'approve_display_name', $_POST['approve_display_name'], get_user_meta( $user_id, 'approve_display_name', true ) );
+    update_user_meta( $user_id, 'approve_user_email', $_POST['approve_user_email'], get_user_meta( $user_id, 'approve_user_email', true ) );
+    update_user_meta( $user_id, 'approve_user url', $_POST['approve_user url'], get_user_meta( $user_id, 'approve_user url', true ) );
+    update_user_meta( $user_id, 'approve_user url_2', $_POST['approve_user url_2'], get_user_meta( $user_id, 'approve_user url_2', true ) );
+    update_user_meta( $user_id, 'approve_user url_3', $_POST['approve_user url_3'], get_user_meta( $user_id, 'approve_user url_3', true ) );
+    update_user_meta( $user_id, 'approve_description', $_POST['approve_description'], get_user_meta( $user_id, 'approve_description', true ) );
+	// update_user_meta( $user_id, '', $_POST[''], get_user_meta( $user_id, '', true ) );
+}
+
+
+function modify_contact_methods($profile_fields) {
+
+	// Add new fields
+	$profile_fields['approve_first_name'] = 'Approve First Name';
+	$profile_fields['approve_last_name'] = 'Approve Last Name';
+	$profile_fields['approve_nickname'] = 'Approve Nickname';
+	$profile_fields['approve_display_name'] = 'Approve Display Name';
+	$profile_fields['approve_user_email'] = 'Approve Email Address';
+	$profile_fields['approve_user url'] = 'Approve Primary Website Address';
+	$profile_fields['approve_user_url_2'] = 'Approve Second Website Address';
+	$profile_fields['approve_user_url_3'] = 'Approve Third Website Address';
+	$profile_fields['approve_description'] = 'Approve Biographical Information';
+	
+
+	// return $profile_fields;
+}
+add_filter('user_contactmethods', 'modify_contact_methods');
+ 
+ 
 if ( ! function_exists( 'batcwebdev_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
