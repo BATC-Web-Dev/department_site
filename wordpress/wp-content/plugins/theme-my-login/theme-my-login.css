@@ -1,3 +1,13 @@
+.approval {
+	color: #c22;
+}
+
+.old_bio {
+	border: 1px solid #aaa;
+	padding: 5px;
+	min-height: 2.5em;
+}
+
 .tml {
 	max-width: 320px;
 }
