@@ -8,11 +8,18 @@
  */
 
  
+ /*  hide worpress dashboard for subscribers  */
+ add_action("user_register", "set_user_admin_bar_false", 10, 1);
+ function set_user_admin_bar_false( $user_id ) {
+	$user = get_userdata( $user_id );
+	if ( in_array( 'subscriber', (array) $user->roles ) )  {
+		update_user_meta( $user_id, 'show_admin_bar_front', 'false' );
+		update_user_meta( $user_id, 'show_admin_bar_admin', 'false' );
+	}
+ }
  
- /**
-*  Subscriber profile page functions
-*
-*/
+ 
+ /* Subscriber profile page function  */
 add_action( 'personal_options_update', 'save_custom_profile_fields' );
 add_action( 'edit_user_profile_update', 'save_custom_profile_fields' );
 function save_custom_profile_fields( $user_id ) {
@@ -28,7 +35,7 @@ function save_custom_profile_fields( $user_id ) {
 	// update_user_meta( $user_id, '', $_POST[''], get_user_meta( $user_id, '', true ) );
 }
 
-
+ /* Subscriber profile page function  */
 function modify_contact_methods($profile_fields) {
 
 	// Add new fields

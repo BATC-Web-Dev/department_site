@@ -20,20 +20,8 @@ if ( is_user_logged_in() && current_user_can('administrator')) {
 	<main id="main" class="site-main" role="main">
 		<h1>Notifications</h1>
 		<?php
-		
-        global $wpdb;
-        $result = $wpdb->get_results("SELECT * FROM notices");
-
-        foreach($result as $row)
-        {
-            echo "$row->user wants to change his/her $row->field from $row->old_val to $row->new_val" ;
-			
-			echo "<form method='post' action=''>";
-			echo "<input type='submit' name='accept$j' value='accept'>";
-			echo "<input type='submit' name='decline$j' value='decline'><br>";
-			echo "<a class='linkbutton' href='members.php?view=" . $requester . "'><button class='button'>View Profile</button></a>";
-        }
-        $result = $wpdb->get_results("SELECT * FROM notices");
+	global $wpdb;
+    $result = $wpdb->get_results("SELECT * FROM wp_usermeta WHERE meta_key = ''");
 	$rows = $result->num_rows;
 
 	if ($rows == 0)
