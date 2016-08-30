@@ -21,7 +21,6 @@ get_header(); ?>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue in augue at rhoncus. Duis eu aliquet odio, ac pretium massa. Mauris a sem pretium, aliquet tortor a, elementum magna. Integer iaculis justo semper turpis consequat pretium. Integer dignissim fringilla scelerisque. Donec vestibulum nibh vitae sem efficitur ultrices. Donec hendrerit elit sit amet purus elementum, eu gravida mi ultrices. Integer vitae lobortis neque. Pellentesque placerat malesuada mauris, in gravida enim auctor eget.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue in augue at rhoncus. Duis eu aliquet odio, ac pretium massa. Mauris a sem pretium, aliquet tortor a, elementum magna. Integer iaculis justo semper turpis consequat pretium. Integer dignissim fringilla scelerisque. Donec vestibulum nibh vitae sem efficitur ultrices. Donec hendrerit elit sit amet purus elementum, eu gravida mi ultrices. Integer vitae lobortis neque. Pellentesque placerat malesuada mauris, in gravida enim auctor eget.</p>
             </div>
-
         </section>
     </div>
 </div>

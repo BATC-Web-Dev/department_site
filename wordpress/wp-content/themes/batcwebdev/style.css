@@ -910,3 +910,13 @@ object {
 	max-width: 980px;
 	width: 100%;
 }
+
+.col-md-4 h3 {
+	text-align: center;
+}
+
+form {
+	margin: 0 auto;
+}
+
+

@@ -88,10 +88,11 @@ if (isset($_POST['submit'])) {
         });
     });
 </script>
-
-<div id="primary" class="container">
+<div id="primary">
 	<main id="main" class="site-main" role="main">
-        <h1>Classes</h1>
+        <div class="row">
+            <div class="col-md-12 lead">Classes<hr></div>
+        </div>
             <ul class="color-key"><!-- Change the class color key here-->
                 Class Type Color Codes:
                 <li style="color: red">Core,</li>
@@ -99,7 +100,7 @@ if (isset($_POST['submit'])) {
                 <li style="color: green">Back-End</li>
             </ul>
         <form name="classForm" method="post" action="<?php echo get_permalink(); ?>">
-            <table id="classTable" class="table">
+            <table id="classTable" class="table table-responsive">
                 <thead>
                     <tr class="header">
                         <th>Course ID</th>
@@ -149,8 +150,6 @@ if (isset($_POST['submit'])) {
         </form>
 
 	</main><!-- .site-main -->
-	<?php get_sidebar( 'content-bottom' ); ?>
-
 </div><!-- .content-area -->
 </body>
 
