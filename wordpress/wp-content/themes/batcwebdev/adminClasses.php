@@ -43,30 +43,32 @@ if (isset($_POST['delete'])) {
         $(".modal-title").text("Edit Modal");
 
         $( "#add-class-btn" ).click(function() {
+            var modal = $('#class-modal');
             $(".modal-title").text("Add Class");
-            $('#class-modal').modal('show');
+            $(".modal-footer .btn").text("Add Class");
+            $(modal.find('#courseId').val(''));
+            $(modal.find('#courseName').val(''));
+            $(modal.find('#hours').val(''));
+            $(modal.find("#comment").val(''));
+            $(modal.find("#sel1").val(1));
+            $(modal).modal('show');
         });
 
-        $( "#edit-class-btn" ).click(function() {
+        $( ".btn-default" ).click(function() {
             var modal = $('#class-modal');
             $(".modal-title").text("Edit Class");
             $(".modal-footer .btn").text("Edit Class");
             $(modal).modal('show');
             var tr = $(this).closest('tr');
             var courseID = tr.find('td:eq(1)').text();
-            console.log(courseID);
             $(modal.find('#courseId').val(courseID));
             var courseName = tr.find('td:eq(2)').text();
-            console.log(courseName);
             $(modal.find('#courseName').val(courseName));
             var hours = tr.find('td:eq(3)').text();
-            console.log(hours);
             $(modal.find('#hours').val(hours));
             var description = tr.next('tr').text();
-            console.log(description);
             $(modal.find("#comment").val(description));
             var classType = tr.find(".class_type").val();
-            console.log(classType);
             $(modal.find("#sel1").val(classType));
 
         });

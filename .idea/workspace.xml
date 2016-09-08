@@ -2,115 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="738b2d9a-09fd-46da-95db-7d241d4cc1ee" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/404.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/archive.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap-theme.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/bootstrap.min.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/css/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/images/04304134.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/images/05144139.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/images/07237019.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/images/07237055.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/images/07237108.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/inc/custom-header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/inc/customizer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/inc/extras.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/inc/jetpack.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/inc/template-tags.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/js/customizer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/js/jquery-3.1.0.slim.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/js/navigation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/js/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/js/skip-link-focus-fix.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/languages/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/languages/test-underscores-based-theme.pot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/layouts/content-sidebar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/layouts/sidebar-content.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/search.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/sidebar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/single.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/template-parts/content-none.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/template-parts/content-page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/template-parts/content-search.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batc-web-mobile-development/template-parts/content.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/404.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/addClasses.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/archive.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/bbpress/content-single-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/classes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/contacts.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/inc/custom-header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/inc/customizer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/inc/extras.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/inc/jetpack.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/inc/template-tags.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/js/customizer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/js/navigation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/js/skip-link-focus-fix.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/languages/batcitweb.pot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/languages/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/layouts/content-sidebar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/layouts/sidebar-content.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/notifications.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/profile-form.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/register-form.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/removeClasses.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/rtl.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/search.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/searchform.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/sidebar-content-bottom.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/sidebar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/single.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/template-parts/content-none.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/template-parts/content-page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/template-parts/content-search.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcitweb/template-parts/content.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/addClasses.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/addClasses.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/bbpress.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/bbpress.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/classes.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/classes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/header.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/page.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/removeClasses.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/removeClasses.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" />
     </list>
     <ignored path="department_site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -193,26 +86,26 @@
       <file leaf-file-name="adminClasses.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
+            <state relative-caret-position="380">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
-                <marker date="1473307712000" expanded="true" signature="3599:3618" ph="SELECT * FRO... classes" />
-                <marker date="1473307712000" expanded="true" signature="3936:4047" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="4747:4759" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="4902:4931" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="5052:8164" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="5095:8145" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="5186:8121" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="5237:5437" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="5486:7905" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="5672:7874" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="5729:6105" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="6162:6552" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="6609:6882" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="6939:7304" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="7361:7838" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="7528:7799" ph="..." />
-                <marker date="1473307712000" expanded="true" signature="7956:8094" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="3740:3759" ph="SELECT * FRO... classes" />
+                <marker date="1473309308000" expanded="true" signature="4077:4188" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="4888:4900" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5043:5072" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5193:8305" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5236:8286" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5327:8262" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5378:5578" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5627:8046" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5813:8015" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="5870:6246" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="6303:6693" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="6750:7023" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="7080:7445" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="7502:7979" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="7669:7940" ph="..." />
+                <marker date="1473309308000" expanded="true" signature="8097:8235" ph="..." />
               </folding>
             </state>
           </provider>
@@ -537,12 +430,12 @@
       <workItem from="1473196383662" duration="656000" />
       <workItem from="1473197456368" duration="4446000" />
       <workItem from="1473278471978" duration="4717000" />
-      <workItem from="1473288894941" duration="4252000" />
+      <workItem from="1473288894941" duration="5186000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189993000" />
+    <option name="totallyTimeSpent" value="190927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -975,26 +868,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
+        <state relative-caret-position="380">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <marker date="1473307712000" expanded="true" signature="3599:3618" ph="SELECT * FRO... classes" />
-            <marker date="1473307712000" expanded="true" signature="3936:4047" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="4747:4759" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="4902:4931" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="5052:8164" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="5095:8145" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="5186:8121" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="5237:5437" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="5486:7905" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="5672:7874" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="5729:6105" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="6162:6552" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="6609:6882" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="6939:7304" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="7361:7838" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="7528:7799" ph="..." />
-            <marker date="1473307712000" expanded="true" signature="7956:8094" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="3740:3759" ph="SELECT * FRO... classes" />
+            <marker date="1473309308000" expanded="true" signature="4077:4188" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="4888:4900" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5043:5072" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5193:8305" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5236:8286" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5327:8262" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5378:5578" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5627:8046" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5813:8015" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="5870:6246" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="6303:6693" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="6750:7023" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="7080:7445" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="7502:7979" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="7669:7940" ph="..." />
+            <marker date="1473309308000" expanded="true" signature="8097:8235" ph="..." />
           </folding>
         </state>
       </provider>
