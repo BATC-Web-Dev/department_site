@@ -915,8 +915,24 @@ object {
 	text-align: center;
 }
 
+.col-md-4 ul {
+	text-align: center;
+	margin: auto;
+}
+
 form {
 	margin: 0 auto;
 }
 
+.welcome-head {
+	margin-top: 0px;
+}
 
+.avatar {
+	display:block;
+	margin:auto;
+}
+
+.modal-body {
+	margin:15px;
+}

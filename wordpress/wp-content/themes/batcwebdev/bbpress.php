@@ -16,8 +16,12 @@ Template Name: bbPress
  */
 
 get_header(); ?>
+<div class="container-fluid">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<div class="row">
+				<div class="col-md-12 lead">Forum<hr></div>
+			</div>
 
 			<?php
 			while ( have_posts() ) : the_post();
@@ -33,6 +37,7 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
-
+	</div>
+</div>
 <?php
 get_footer();

@@ -20,11 +20,11 @@ get_header(); ?>
     //Change the color of the tr based on the class type
     jQuery(document).ready(function( $ ) {
         //Core
-        $(".classType1").css("color", "red");
+        $(".classType1").css("color", "black");
         //Front-End
         $(".classType2").css("color", "blue");
         //Backend
-        $(".classType3").css("color", "green");
+        $(".classType3").css("color", "orange");
 
     });
 </script>
@@ -106,54 +106,58 @@ function test_input($data) {
     return $data;
 }
 ?>
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
-		<h1>Add Classes</h1>
-		<!-- Add a form to handle adding, editing, and removing classes from the database-->
-        <p><span class="error">* required field.</span></p>
-        <form class="form-horizontal" id="classForm" method="post" action="<?php echo get_permalink(); ?>">
-            <div class="form-group">
-                <label for="courseId">Class ID: </label>
-                <span class="error">* <?php echo $courseIDErr;?></span>
-                <input type="text" name="courseId" value="<?php echo $courseId;?>" class="form-control" id="courseId" placeholder="Enter Class ID">
+<div class="container">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+            <div class="row">
+                <div class="col-md-12 lead">Add Classes<hr></div>
             </div>
-            <div class="form-group">
-                <label for="courseName">Class Name: </label>
-                <span class="error">* <?php echo $courseNameErr;?></span>
-                <input type="text" name="courseName" value="<?php echo $courseName;?>" class="form-control" id="courseName" placeholder="Enter Class Name">
-            </div>
-            <div class="form-group">
-                <label for="comment">Class Description:</label>
-                <textarea class="classForm" rows="5" id="comment" name="courseDesc" value="<?php echo $courseDesc;?>"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="courseName">Hours: </label>
-                <span class="error">* <?php echo $hoursErr?></span>
-                <input type="text" name="hours" value="<?php echo $Hours;?>" class="form-control" id="hours" placeholder="Enter Class Hours">
-            </div>
-            <div class="form-group">
-                <label for="sel1">Class Type:</label>
-                <select class="form-control" id="sel1" name="classType">
-                    <option value="1">Core</option>
-                    <option value="2">Front-End</option>
-                    <option value="3">Back-end</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-default" name="submit">Add Class</button>
-        </form>
-	</main><!-- .site-main -->
-    <h1>Current Courses in Database</h1>
-    <ul class="color-key"><!-- Change the class color key here-->
-        Class Type Color Codes:
-        <li style="color: red">Core,</li>
-        <li style="color: blue">Front-End,</li>
-        <li style="color: green">Back-End</li>
-    </ul>
-    <?php
-    $result = $wpdb->get_results("SELECT * FROM class ORDER BY ID DESC");
-    foreach($result as $row){
-        echo "<p class='classType$row->class_type'>$row->ID : $row->course_id : $row->course_name : $row->hours : $row->class_type</p><br>";
-    }
-    ?>
-</div><!-- .content-area -->
+            <!-- Add a form to handle adding, editing, and removing classes from the database-->
+            <p><span class="error">* required field.</span></p>
+            <form class="form-horizontal" id="classForm" method="post" action="<?php echo get_permalink(); ?>">
+                <div class="form-group">
+                    <label for="courseId">Class ID: </label>
+                    <span class="error">* <?php echo $courseIDErr;?></span>
+                    <input type="text" name="courseId" value="<?php echo $courseId;?>" class="form-control" id="courseId" placeholder="Enter Class ID">
+                </div>
+                <div class="form-group">
+                    <label for="courseName">Class Name: </label>
+                    <span class="error">* <?php echo $courseNameErr;?></span>
+                    <input type="text" name="courseName" value="<?php echo $courseName;?>" class="form-control" id="courseName" placeholder="Enter Class Name">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Class Description:</label>
+                    <textarea class="classForm" rows="5" id="comment" name="courseDesc" value="<?php echo $courseDesc;?>"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="courseName">Hours: </label>
+                    <span class="error">* <?php echo $hoursErr?></span>
+                    <input type="text" name="hours" value="<?php echo $Hours;?>" class="form-control" id="hours" placeholder="Enter Class Hours">
+                </div>
+                <div class="form-group">
+                    <label for="sel1">Class Type:</label>
+                    <select class="form-control" id="sel1" name="classType">
+                        <option value="1">Core</option>
+                        <option value="2">Front-End</option>
+                        <option value="3">Back-end</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default" name="submit">Add Class</button>
+            </form>
+        </main><!-- .site-main -->
+        <h1>Current Courses in Database</h1>
+        <ul class="color-key"><!-- Change the class color key here-->
+            Class Type Color Codes:
+            <li style="color: black">Core,</li>
+            <li style="color: blue">Front-End,</li>
+            <li style="color: orange">Back-End</li>
+        </ul>
+        <?php
+        $result = $wpdb->get_results("SELECT * FROM class ORDER BY ID DESC");
+        foreach($result as $row){
+            echo "<p class='classType$row->class_type'>$row->ID : $row->course_id : $row->course_name : $row->hours : $row->class_type</p><br>";
+        }
+        ?>
+    </div><!-- .content-area -->
+</div>
 <?php get_footer(); ?>

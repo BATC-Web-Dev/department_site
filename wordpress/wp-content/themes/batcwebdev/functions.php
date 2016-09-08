@@ -157,7 +157,7 @@ function batcwebdev_scripts() {
 
     if( !is_admin()){
         wp_deregister_script( 'jquery' );
-        wp_register_script('jquery', get_template_directory_uri().'/js/jquery.min.js', false,'3.1.0',true);
+        wp_register_script('jquery', get_template_directory_uri().'/js/jquery.min.js', falxse,'3.1.0',true);
         wp_enqueue_script('jquery');
     }
     wp_enqueue_script( 'bootstrap-min-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.7', true );

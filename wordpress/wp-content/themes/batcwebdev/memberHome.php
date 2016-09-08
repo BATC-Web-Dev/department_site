@@ -29,15 +29,15 @@ get_header(); ?>
 				$current_user = wp_get_current_user();
 
 				if ( ($current_user instanceof WP_User) ) {
-					echo "<div class='col-sm-4 col-md-2'>". get_avatar( $current_user->user_email, 150 ). "</div>";
-					echo "<div class='col-sm-4 col-md-4'>";
-					echo "<h3>Welcome:  $current_user->display_name</h3>";
+					echo "<div class='avatar col-md-4'>". get_avatar( $current_user->user_email, 150 ). "</div>";
+					echo "<div class='col-md-4'>";
+					echo "<h3 class='welcome-head'>Welcome:  $current_user->display_name</h3>";
 					echo "<ul class='list-group'>
 							<li class='list-group-item'>www.one.com</li>
 							<li class='list-group-item'>www.two.com</li>
 							<li class='list-group-item'>www.three.com</li>
 							</ul></div>";
-					echo "<div class='col-sm-4 col-md-6'>";
+					echo "<div class='col-md-4'>";
 					echo "<p>Bio: $current_user->description</p>";
 				}
 			endif;
