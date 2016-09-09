@@ -19,11 +19,11 @@ get_header(); ?>
 <?php
 global $wpdb;
 //TODO: add error checking for database call
-if (isset($_POST['delete'])) {
+if (isset($_POST['submit'])) {
     $id = $_POST['submit'];
     $wpdb->delete( 'class', array( 'ID' => $id ) );
     $wpdb->delete( 'classes', array( 'class_id' => $id ) );
-    echo "<p>Class Removed From Table</p>";
+    echo "<script>alert('Class Removed From Table')</script>";
 
 }
 ?>
@@ -119,7 +119,7 @@ if (isset($_POST['delete'])) {
                         echo "<td><p>".$row->course_name."</p></td>";
                         echo "<td id='hours'><p>".$row->hours."</p></td>";
                         echo "<input type='hidden' value='0' name='checkbox[]'>";
-                        echo "<td><button type='button' class='btn btn-danger' name='delete' id='delete'>Delete</button></td>";
+                        echo "<td><button type='submit' class='btn btn-danger' name='submit' id='delete' value='$row->ID'>Delete</button></td>";
                         echo "</tr>";
                         echo "<tr class='descRow'><td colspan='5' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
                     }
@@ -172,8 +172,8 @@ if (isset($_POST['delete'])) {
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-default" name="submit" id="edit">Edit Class</button>
-                            <button type="submit" class="btn btn-default" name="submit" id="add">Add Class</button>
+                            <button type="submit" class="btn btn-default" id="edit">Edit Class</button>
+                            <button type="submit" class="btn btn-default" id="add">Add Class</button>
                         </div>
                     </div>
                 </div>
@@ -210,6 +210,22 @@ if (isset($_POST['delete'])) {
             $.post("?page_id=86",data,function(data){
                 alert(data); //post check to show that the mysql string is the same as submit
                 $('#class-modal').modal('toggle');
+                location.reload();
+            });
+            return false; // return false to stop the page submitting. You could have the form action set to the same PHP page so if people dont have JS on they can still use the form
+        });
+
+        $(document).on('click','#delete', function() {
+            var tr = $(this).closest('tr');
+            var id = tr.find(".ID").val();
+            console.log(id);
+            var data = [];
+            console.log(id);
+            data.push({name: 'ID', value: id});
+            console.log(JSON.stringify(data));
+            alert(data); // check to show that all form data is being submitted
+            $.post("?page_id=88",data,function(data){
+                alert(data); //post check to show that the mysql string is the same as submit
                 location.reload();
             });
             return false; // return false to stop the page submitting. You could have the form action set to the same PHP page so if people dont have JS on they can still use the form
