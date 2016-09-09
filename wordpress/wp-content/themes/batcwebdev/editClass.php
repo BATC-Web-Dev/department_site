@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'class_type' => $classType
         ),
         array(
-            'ID'
+            'ID' => $_POST["ID"]
         ),
         array(
             '%s',

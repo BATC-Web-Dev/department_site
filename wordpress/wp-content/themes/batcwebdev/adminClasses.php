@@ -72,8 +72,7 @@ if (isset($_POST['delete'])) {
             var classType = tr.find(".class_type").val();
             $(modal.find("#sel1").val(classType));
             var id = tr.find(".ID").val();
-            $(modal.find("#ID").val(id));
-            console.log(id);
+            $(modal.find("#id").val(id));
             $(modal).modal('show');
         });
     });
@@ -141,11 +140,9 @@ if (isset($_POST['delete'])) {
                         </div>
                         <div class="modal-body">
                             <p><span class="error">* required field.</span></p>
-                            <form class="form-horizontal" id="classForm" method="post" action="?page_id=76">
+                            <form class="form-horizontal" id="classForm" method="post" action="">
                                 <div class="form-group">
-                                    <input type="text" value="<?php echo $ID; ?>" id="ID" readonly>
-                                </div>
-                                <div class="form-group">
+                                    <input type="hidden" id="id" value="">
                                     <label for="courseId">Class ID: </label>
                                     <span class="error">* <?php echo $courseIDErr;?></span>
                                     <input type="text" name="courseId" value="<?php echo $courseId;?>" class="form-control" id="courseId" placeholder="Enter Class ID">
@@ -204,8 +201,13 @@ if (isset($_POST['delete'])) {
         });
 
         $('#edit').on('click', function(msg) {
-            alert($('#classForm').serialize()); // check to show that all form data is being submitted
-            $.post("?page_id=76",$('#classForm').serialize(),function(data){
+            var data = $('#classForm').serializeArray();
+            var id = $('#id').val();
+            console.log(id);
+            data.push({name: 'ID', value: id});
+            console.log(JSON.stringify(data));
+            alert(data); // check to show that all form data is being submitted
+            $.post("?page_id=86",data,function(data){
                 alert(data); //post check to show that the mysql string is the same as submit
                 $('#class-modal').modal('toggle');
                 location.reload();
