@@ -45,7 +45,8 @@ if (isset($_POST['delete'])) {
         $( "#add-class-btn" ).click(function() {
             var modal = $('#class-modal');
             $(".modal-title").text("Add Class");
-            $(".modal-footer .btn").text("Add Class");
+            $(".modal-footer #add").show();
+            $(".modal-footer #edit").hide();
             $(modal.find('#courseId').val(''));
             $(modal.find('#courseName').val(''));
             $(modal.find('#hours').val(''));
@@ -54,11 +55,11 @@ if (isset($_POST['delete'])) {
             $(modal).modal('show');
         });
 
-        $( ".btn-default" ).click(function() {
+        $( ".edit" ).click(function() {
             var modal = $('#class-modal');
             $(".modal-title").text("Edit Class");
-            $(".modal-footer .btn").text("Edit Class");
-            $(modal).modal('show');
+            $(".modal-footer #edit").show();
+            $(".modal-footer #add").hide();
             var tr = $(this).closest('tr');
             var courseID = tr.find('td:eq(1)').text();
             $(modal.find('#courseId').val(courseID));
@@ -70,9 +71,11 @@ if (isset($_POST['delete'])) {
             $(modal.find("#comment").val(description));
             var classType = tr.find(".class_type").val();
             $(modal.find("#sel1").val(classType));
-
+            var id = tr.find(".ID").val();
+            $(modal.find("#ID").val(id));
+            console.log(id);
+            $(modal).modal('show');
         });
-
     });
 </script>
 <div class="container">
@@ -82,8 +85,8 @@ if (isset($_POST['delete'])) {
                 <div class="col-md-12 lead">Classes<hr></div>
             </div>
             <div class="row">
-                <button type="button" class="btn btn-info" data-toggle="modal" id="add-class-btn">Add Class</button>
-                <ul class="color-key"><!-- Change the class color key here-->
+                <button type="button" class="btn btn-info col-sm-2" data-toggle="modal" id="add-class-btn">Add Class</button>
+                <ul class="color-key col-sm-10"><!-- Change the class color key here-->
                     Class Type Color Codes:
                     <li style="color: black">Core,</li>
                     <li style="color: blue">Front-End,</li>
@@ -108,8 +111,9 @@ if (isset($_POST['delete'])) {
                     //TODO: add error checking for database call
                     foreach($result as $row) {
                         echo "<tr class='classType$row->class_type'>";
+                        echo "<input type='hidden' value='$row->ID' class='ID'>";
                         echo "<input type='hidden' class='class_type' value='$row->class_type'>";
-                        echo "<td><button type='button' class='btn btn-default' id='edit-class-btn'>Edit</button>";
+                        echo "<td><button type='button' class='btn btn-default edit' id='edit-class-btn'>Edit</button>";
                         echo "<input type='hidden' name='class_type[]' value='$row->class_type'>";
                         echo "<td><p>".$row->course_id."</p></td>";
                         echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
@@ -129,16 +133,18 @@ if (isset($_POST['delete'])) {
             <!-- Modal -->
             <div id="class-modal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Add Class</h4>
+                            <h4 class="modal-title"></h4>
                         </div>
                         <div class="modal-body">
                             <p><span class="error">* required field.</span></p>
-                            <form class="form-horizontal" id="classForm" method="post" action="test.php">
+                            <form class="form-horizontal" id="classForm" method="post" action="?page_id=76">
+                                <div class="form-group">
+                                    <input type="text" value="<?php echo $ID; ?>" id="ID" readonly>
+                                </div>
                                 <div class="form-group">
                                     <label for="courseId">Class ID: </label>
                                     <span class="error">* <?php echo $courseIDErr;?></span>
@@ -169,15 +175,46 @@ if (isset($_POST['delete'])) {
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-default" name="submit">Add Class</button>
+                            <button type="submit" class="btn btn-default" name="submit" id="edit">Edit Class</button>
+                            <button type="submit" class="btn btn-default" name="submit" id="add">Add Class</button>
                         </div>
                     </div>
-
                 </div>
-            </div>
+            </div><!--Modal-->
         </main><!-- .site-main -->
     </div><!-- .content-area -->
 </div><!--container-->
 </body>
+<script>
+    /*jQuery(function () {
+        $('#submit').on('click', function (e) {
+            e.preventDefault();
+            console.log($('#classForm').serialize());
+        });
+    });*/
+    $(document).ready(function() {
+        $('#add').on('click', function(msg) {
+            alert($('#classForm').serialize()); // check to show that all form data is being submitted
+            $.post("?page_id=76",$('#classForm').serialize(),function(data){
+                alert(data); //post check to show that the mysql string is the same as submit
+                $('#class-modal').modal('toggle');
+                location.reload();
+            });
+            return false; // return false to stop the page submitting. You could have the form action set to the same PHP page so if people dont have JS on they can still use the form
+        });
+
+        $('#edit').on('click', function(msg) {
+            alert($('#classForm').serialize()); // check to show that all form data is being submitted
+            $.post("?page_id=76",$('#classForm').serialize(),function(data){
+                alert(data); //post check to show that the mysql string is the same as submit
+                $('#class-modal').modal('toggle');
+                location.reload();
+            });
+            return false; // return false to stop the page submitting. You could have the form action set to the same PHP page so if people dont have JS on they can still use the form
+        });
+    });
+
+
+</script>
 <?php get_footer(); ?>
 
