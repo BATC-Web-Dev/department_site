@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
 ?>
 <body>
 <script type="text/javascript">
+
     //Change the color of the tr based on the class type
     jQuery(document).ready(function( $ ) {
         //Core
@@ -39,8 +40,6 @@ if (isset($_POST['submit'])) {
         $(".classType3").css("color", "orange");
         //Stripe
         $( "tr:odd" ).css( "background-color", "#eee" );
-
-        $(".modal-title").text("Edit Modal");
 
         $( "#add-class-btn" ).click(function() {
             var modal = $('#class-modal');
@@ -119,7 +118,7 @@ if (isset($_POST['submit'])) {
                         echo "<td><p>".$row->course_name."</p></td>";
                         echo "<td id='hours'><p>".$row->hours."</p></td>";
                         echo "<input type='hidden' value='0' name='checkbox[]'>";
-                        echo "<td><button type='submit' class='btn btn-danger' name='submit' id='delete' value='$row->ID'>Delete</button></td>";
+                        echo "<td><button type='submit' class='btn btn-danger' name='submit' id='delete' data-record-title='$row->course_name' data-record-id='$row->ID' data-toggle='modal' data-target='#confirm-delete'>Delete</button></td>";
                         echo "</tr>";
                         echo "<tr class='descRow'><td colspan='5' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
                     }
@@ -129,7 +128,7 @@ if (isset($_POST['submit'])) {
                     </tfoot>
                 </table>
 
-            <!-- Modal -->
+            <!--Form Modal -->
             <div id="class-modal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -144,22 +143,22 @@ if (isset($_POST['submit'])) {
                                 <div class="form-group">
                                     <input type="hidden" id="id" value="">
                                     <label for="courseId">Class ID: </label>
-                                    <span class="error">* <?php echo $courseIDErr;?></span>
-                                    <input type="text" name="courseId" value="<?php echo $courseId;?>" class="form-control" id="courseId" placeholder="Enter Class ID">
+                                    <span class="error">*</span>
+                                    <input type="text" name="courseId" value="" class="form-control" id="courseId" placeholder="Enter Class ID">
                                 </div>
                                 <div class="form-group">
                                     <label for="courseName">Class Name: </label>
-                                    <span class="error">* <?php echo $courseNameErr;?></span>
-                                    <input type="text" name="courseName" value="<?php echo $courseName;?>" class="form-control" id="courseName" placeholder="Enter Class Name">
+                                    <span class="error">*</span>
+                                    <input type="text" name="courseName" value="" class="form-control" id="courseName" placeholder="Enter Class Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="comment">Class Description:</label>
-                                    <textarea class="classForm" rows="5" id="comment" name="courseDesc" value="<?php echo $courseDesc;?>"></textarea>
+                                    <textarea class="classForm" rows="5" id="comment" name="courseDesc"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="courseName">Hours: </label>
-                                    <span class="error">* <?php echo $hoursErr?></span>
-                                    <input type="text" name="hours" value="<?php echo $Hours;?>" class="form-control" id="hours" placeholder="Enter Class Hours">
+                                    <span class="error">*</span>
+                                    <input type="text" name="hours" value="" class="form-control" id="hours" placeholder="Enter Class Hours">
                                 </div>
                                 <div class="form-group">
                                     <label for="sel1">Class Type:</label>
@@ -178,61 +177,69 @@ if (isset($_POST['submit'])) {
                     </div>
                 </div>
             </div><!--Modal-->
+
+            <!-- Delete Confirm Modal-->
+            <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>You are about to delete <b><i class="title"></i></b> record, this procedure is irreversible.</p>
+                            <p>Do you want to proceed?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-danger btn-ok">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main><!-- .site-main -->
     </div><!-- .content-area -->
 </div><!--container-->
 </body>
 <script>
-    /*jQuery(function () {
-        $('#submit').on('click', function (e) {
-            e.preventDefault();
-            console.log($('#classForm').serialize());
-        });
-    });*/
     $(document).ready(function() {
-        $('#add').on('click', function(msg) {
-            alert($('#classForm').serialize()); // check to show that all form data is being submitted
+        $('#add').on('click', function() {
             $.post("?page_id=76",$('#classForm').serialize(),function(data){
-                alert(data); //post check to show that the mysql string is the same as submit
                 $('#class-modal').modal('toggle');
                 location.reload();
             });
-            return false; // return false to stop the page submitting. You could have the form action set to the same PHP page so if people dont have JS on they can still use the form
+            return false;
         });
 
-        $('#edit').on('click', function(msg) {
+        $('#edit').on('click', function() {
             var data = $('#classForm').serializeArray();
             var id = $('#id').val();
-            console.log(id);
             data.push({name: 'ID', value: id});
-            console.log(JSON.stringify(data));
-            alert(data); // check to show that all form data is being submitted
             $.post("?page_id=86",data,function(data){
-                alert(data); //post check to show that the mysql string is the same as submit
                 $('#class-modal').modal('toggle');
                 location.reload();
             });
-            return false; // return false to stop the page submitting. You could have the form action set to the same PHP page so if people dont have JS on they can still use the form
+            return false;
         });
 
-        $(document).on('click','#delete', function() {
-            var tr = $(this).closest('tr');
-            var id = tr.find(".ID").val();
-            console.log(id);
+        $('#confirm-delete').on('click', '.btn-ok', function(e) {
+            var id = $(this).data('recordId');
             var data = [];
-            console.log(id);
             data.push({name: 'ID', value: id});
-            console.log(JSON.stringify(data));
-            alert(data); // check to show that all form data is being submitted
-            $.post("?page_id=88",data,function(data){
-                alert(data); //post check to show that the mysql string is the same as submit
+            // $.ajax({url: '/api/record/' + id, type: 'DELETE'})
+            $.post("?page_id=88",data,function(data) {
                 location.reload();
             });
-            return false; // return false to stop the page submitting. You could have the form action set to the same PHP page so if people dont have JS on they can still use the form
+        });
+
+        $('#confirm-delete').on('show.bs.modal', function(e) {
+            $(".modal-title").text("Delete Class");
+            var data = $(e.relatedTarget).data();
+            $('.title', this).text(data.recordTitle);
+            $('.btn-ok', this).data('recordId', data.recordId);
+            console.log($('.btn-ok', this).data('recordId', data.recordId));
         });
     });
-
-
 </script>
 <?php get_footer(); ?>
 
