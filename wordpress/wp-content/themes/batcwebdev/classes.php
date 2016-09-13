@@ -114,7 +114,7 @@ if (isset($_POST['submit'])) {
                         <?php
                         global $wpdb;
                         $currentUser = get_current_user_id();
-                        $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser'");
+                        $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser' ORDER BY position ASC");
                         //TODO: add error checking for database call
                         foreach($result as $row)
                         {
