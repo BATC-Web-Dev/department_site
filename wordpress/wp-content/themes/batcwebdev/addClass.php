@@ -10,6 +10,7 @@ global $wpdb;
 $courseIDErr = $courseNameErr = $hoursErr  = "";
 $courseId = $courseName = $courseDesc = $hours = "";
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["courseId"])) {
         $courseIDErr = "Course ID is required";
@@ -35,6 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $courseDesc = test_input($_POST['courseDesc']);
     }
 
+    $resultObj = ($wpdb->get_results('SELECT MAX(position) as max_id FROM class'));
+    $lastAddedPosition = $resultObj->max_id;
     $classType = test_input($_POST["classType"]);
     $wpdb->insert(
         'class',
@@ -43,14 +46,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'course_name' => $courseName,
             'course_desc' => $courseDesc,
             'hours' => $hours,
-            'class_type' => $classType
+            'class_type' => $classType,
+            'position' => 0
         ),
         array(
             '%s',
             '%s',
             '%s',
             '%d',
-            '%d'
+            '%d',
+            '%d',
         )
     );
     $lastId = $wpdb->insert_id;

@@ -342,12 +342,14 @@ big {
 --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
+
 }
 
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
+
 }
 
 body {
@@ -929,10 +931,26 @@ form {
 }
 
 .avatar {
-	display:block;
-	margin:auto;
+	display: block;
+	margin: auto;
+}
+
+.modal-header {
+	background-color: #99D3DE;
 }
 
 .modal-body {
-	margin:15px;
+	margin: 15px;
+}
+
+.modal-footer {
+	background-color: #99D3DE;
+}
+
+thead {
+	background-color: #99D3DE;
+}
+
+tfoot {
+	background-color: #99D3DE;
 }

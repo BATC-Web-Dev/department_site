@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
             //Backend
             $(".classType3").css("color", "orange");
             //Stripe
-            $( "tr:odd" ).css( "background-color", "#eee" );
+            $( "tbody tr:even" ).css( "background-color", "#C9C9C9" );
         });
 
         $(function() {

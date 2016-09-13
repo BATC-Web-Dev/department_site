@@ -39,7 +39,13 @@ if (isset($_POST['submit'])) {
         //Backend
         $(".classType3").css("color", "orange");
         //Stripe
-        $( "tr:odd" ).css( "background-color", "#eee" );
+        $( "tr:odd" ).css( "background-color", "#C9C9C9" );
+        //Hide save table sort button
+        $("#save-sort-class-btn").hide();
+        $("#classTable .index").hide();
+        $("#classTable .position-header").hide();
+        $("#classTable .edit-header").show();
+        $("#classTable .remove-header").show();
 
         $( "#add-class-btn" ).click(function() {
             var modal = $('#class-modal');
@@ -74,6 +80,55 @@ if (isset($_POST['submit'])) {
             $(modal.find("#id").val(id));
             $(modal).modal('show');
         });
+
+        //Click sort table, Drop description row, remove button, present save button, move tables, store order in array, click save, save array, hide save button , show sort button
+        $( "#sort-class-btn" ).click(function() {
+            $("#save-sort-class-btn").show();
+            $("#sort-class-btn").hide();
+            $("#classTable .descRow").hide();
+            $("#classTable .index").show();
+            $("#classTable .position-header").show();
+            $("#classTable .edit-header").hide();
+            $("#classTable .remove-header").hide();
+            $("#classTable .edit-td").hide();
+            $("#classTable .delete-td").hide();
+
+            var fixHelperModified = function(e, tr) {
+                    var $originals = tr.children();
+                    var $helper = tr.clone();
+                    $helper.children().each(function(index) {
+                        $(this).width($originals.eq(index).width())
+                    });
+                    return $helper;
+                },
+                updateIndex = function(e, ui) {
+                    $('td.index', ui.item.parent()).each(function (i) {
+                        $(this).html(i + 1);
+                    });
+                };
+
+            $("#tableBody").sortable({
+                items: "tr",
+                helper: fixHelperModified,
+                stop: updateIndex
+            }).disableSelection();
+
+            $("#save-sort-class-btn").click(function() {
+                var data = [];
+                $( ".ID" ).each(function( index ) {
+                    data.push($(this).val());
+                    //console.log(data);
+                });
+                //console.log(JSON.stringify(data));
+                //var stringData = JSON.stringify(data);
+                //console.log(data);
+                //data = (JSON.stringify(data));
+
+                $.post("?page_id=91",{'position': data},function(data) {
+                    location.reload();
+                });
+            });
+        });
     });
 </script>
 <div class="container">
@@ -84,6 +139,8 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="row">
                 <button type="button" class="btn btn-info col-sm-2" data-toggle="modal" id="add-class-btn">Add Class</button>
+                <button type="button" class="btn btn-default col-sm-2" id="sort-class-btn">Sort Table</button>
+                <button type="button" class="btn btn-info col-sm-2" id="save-sort-class-btn">Save Table Order</button>
                 <ul class="color-key col-sm-10"><!-- Change the class color key here-->
                     Class Type Color Codes:
                     <li style="color: black">Core,</li>
@@ -94,33 +151,37 @@ if (isset($_POST['submit'])) {
                 <table id="classTable" class="table">
                     <thead>
                     <tr class="header">
-                        <th>Edit</th>
+                        <th class="position-header">Position</th>
+                        <th class="edit-header">Edit</th>
                         <th>Course ID</th>
                         <th>Course Name</th>
                         <th>Hours</th>
-                        <th>Remove</th>
+                        <th class="remove-header">Remove</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tableBody">
                     <?php
                     global $wpdb;
+                    $count = 1;
                     $currentUser = get_current_user_id();
-                    $result = $wpdb->get_results("SELECT * FROM class");
+                    $result = $wpdb->get_results("SELECT * FROM class ORDER BY position ASC");
                     //TODO: add error checking for database call
                     foreach($result as $row) {
-                        echo "<tr class='classType$row->class_type'>";
-                        echo "<input type='hidden' value='$row->ID' class='ID'>";
-                        echo "<input type='hidden' class='class_type' value='$row->class_type'>";
-                        echo "<td><button type='button' class='btn btn-default edit' id='edit-class-btn'>Edit</button>";
-                        echo "<input type='hidden' name='class_type[]' value='$row->class_type'>";
-                        echo "<td><p>".$row->course_id."</p></td>";
-                        echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
-                        echo "<td><p>".$row->course_name."</p></td>";
-                        echo "<td id='hours'><p>".$row->hours."</p></td>";
-                        echo "<input type='hidden' value='0' name='checkbox[]'>";
-                        echo "<td><button type='submit' class='btn btn-danger' name='submit' id='delete' data-record-title='$row->course_name' data-record-id='$row->ID' data-toggle='modal' data-target='#confirm-delete'>Delete</button></td>";
-                        echo "</tr>";
-                        echo "<tr class='descRow'><td colspan='5' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
+                            echo "<tr id='position_$count' class='classType$row->class_type'>";
+                            echo "<td class='index'></td>";
+                            echo "<input type='hidden' value='$row->ID' class='ID'>";
+                            echo "<input type='hidden' class='class_type' value='$row->class_type'>";
+                            echo "<td class='edit-td'><button type='button' class='btn btn-default edit' id='edit-class-btn'>Edit</button></td>";
+                            echo "<input type='hidden' name='class_type[]' value='$row->class_type'>";
+                            echo "<td><p>".$row->course_id."</p></td>";
+                            echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
+                            echo "<td><p>".$row->course_name."</p></td>";
+                            echo "<td id='hours'><p>".$row->hours."</p></td>";
+                            echo "<input type='hidden' value='0' name='checkbox[]'>";
+                            echo "<td class='delete-td'><button type='submit' class='btn btn-danger' name='submit' id='delete' data-record-title='$row->course_name' data-record-id='$row->ID' data-toggle='modal' data-target='#confirm-delete'>Delete</button></td>";
+                            echo "</tr>";
+                            echo "<tr class='descRow'><td colspan='5' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
+                        $count = $count + 1;
                     }
                     ?>
                     </tbody>
