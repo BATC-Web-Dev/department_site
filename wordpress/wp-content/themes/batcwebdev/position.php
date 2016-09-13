@@ -5,7 +5,7 @@ Template Name: position
 ?>
 <?php
 global $wpdb;
-$i = 1git status;
+$i = 1;
 foreach ($_POST['position'] as $value) {
     $wpdb->update(
         'class',
