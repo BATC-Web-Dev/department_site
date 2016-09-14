@@ -117,13 +117,7 @@ if (isset($_POST['submit'])) {
                 var data = [];
                 $( ".ID" ).each(function( index ) {
                     data.push($(this).val());
-                    //console.log(data);
                 });
-                //console.log(JSON.stringify(data));
-                //var stringData = JSON.stringify(data);
-                //console.log(data);
-                //data = (JSON.stringify(data));
-
                 $.post("?page_id=91",{'position': data},function(data) {
                     location.reload();
                 });
@@ -180,7 +174,7 @@ if (isset($_POST['submit'])) {
                             echo "<input type='hidden' value='0' name='checkbox[]'>";
                             echo "<td class='delete-td'><button type='submit' class='btn btn-danger' name='submit' id='delete' data-record-title='$row->course_name' data-record-id='$row->ID' data-toggle='modal' data-target='#confirm-delete'>Delete</button></td>";
                             echo "</tr>";
-                            echo "<tr class='descRow'><td colspan='5' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
+                            echo "<tr class='descRow'><td colspan='5''><div><p>".$row->course_desc."</p></div></td></tr>";
                         $count = $count + 1;
                     }
                     ?>

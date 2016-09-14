@@ -35,8 +35,15 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="<?php echo home_url(); ?>">
+                        <a class="navbar-brand visible-md visible-lg" href="<?php echo home_url(); ?>">
+
                             <?php bloginfo('name'); ?>
+                        </a>
+                        <a class="navbar-brand visible-sm href="#">
+                        BATC Web and Mobile
+                        </a>
+                        <a class="navbar-brand visible-xs href="#">
+                            BATC
                         </a>
                         </div>
                     <?php
