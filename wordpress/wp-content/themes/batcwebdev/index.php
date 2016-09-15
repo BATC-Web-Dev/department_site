@@ -23,19 +23,19 @@ get_header(); ?>
                 <li data-target="#featured" data-slide-to="4"></li>
             </ol>
             <div class="item active">
-                <img src="<?php bloginfo('template_url'); ?>/images/04304134.jpg" alt="">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/04304134.jpg" alt="">
             </div>
             <div class="item">
-                <img src="<?php bloginfo('template_url'); ?>/images/05144139.jpg" alt="">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/05144139.jpg" alt="">
             </div>
             <div class="item">
-                <img src="<?php bloginfo('template_url'); ?>/images/07237019.jpg" alt="">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/07237019.jpg" alt="">
             </div>
             <div class="item">
-                <img src="<?php bloginfo('template_url'); ?>/images/07237055.jpg" alt="">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/07237055.jpg" alt="">
             </div>
             <div class="item">
-                <img src="<?php bloginfo('template_url'); ?>/images/07237108.jpg" alt="">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/07237108.jpg" alt="">
             </div>
         </div><!--carousel inner-->
 

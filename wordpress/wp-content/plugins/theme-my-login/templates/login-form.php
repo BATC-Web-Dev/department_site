@@ -7,7 +7,8 @@ Theme My Login will always look in your theme's directory first, before using th
 <div class="tml tml-login" id="theme-my-login<?php $template->the_instance(); ?>">
 	<?php $template->the_action_template_message( 'login' ); ?>
 	<?php $template->the_errors(); ?>
-	<form name="loginform" id="loginform<?php $template->the_instance(); ?>" action="<?php $template->the_action_url( 'login', 'login_post' ); ?>" method="post">
+	<form name="form loginform" id="loginform<?php $template->the_instance(); ?>" action="<?php $template->the_action_url( 'login', 'login_post' ); ?>" method="post">
+		<div class="form-group">
 		<p class="tml-user-login-wrap">
 			<label for="user_login<?php $template->the_instance(); ?>"><?php
 				if ( 'username' == $theme_my_login->get_option( 'login_type' ) ) {
@@ -18,22 +19,25 @@ Theme My Login will always look in your theme's directory first, before using th
 					_e( 'Username or E-mail', 'theme-my-login' );
 				}
 			?></label>
-			<input type="text" name="log" id="user_login<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value( 'log' ); ?>" size="20" />
+			<input type="text" name="log" id="user_login<?php $template->the_instance(); ?>" class="form-control input" value="<?php $template->the_posted_value( 'log' ); ?>" size="20" />
 		</p>
-
+		</div>
+		<div class="form-group">
 		<p class="tml-user-pass-wrap">
 			<label for="user_pass<?php $template->the_instance(); ?>"><?php _e( 'Password', 'theme-my-login' ); ?></label>
-			<input type="password" name="pwd" id="user_pass<?php $template->the_instance(); ?>" class="input" value="" size="20" autocomplete="off" />
+			<input type="password" name="pwd" id="user_pass<?php $template->the_instance(); ?>" class="form-control input" value="" size="20" autocomplete="off" />
 		</p>
-
+		</div>
 		<?php do_action( 'login_form' ); ?>
-
-		<div class="tml-rememberme-submit-wrap">
-			<p class="tml-rememberme-wrap">
-				<input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever" />
-				<label for="rememberme<?php $template->the_instance(); ?>"><?php esc_attr_e( 'Remember Me', 'theme-my-login' ); ?></label>
-			</p>
-
+		<div class="form-group">
+			<div class="tml-rememberme-submit-wrap">
+				<p class="tml-rememberme-wrap">
+					<input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever" class="form-control"/>
+					<label for="rememberme<?php $template->the_instance(); ?>"><?php esc_attr_e( 'Remember Me', 'theme-my-login' ); ?></label>
+				</p>
+			</div>
+		</div>
+		<div class="form-group">
 			<p class="tml-submit-wrap">
 				<input type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php esc_attr_e( 'Log In', 'theme-my-login' ); ?>" />
 				<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'login' ); ?>" />

@@ -135,7 +135,7 @@ if (isset($_POST['submit'])) {
                             echo "<input type='hidden' value='0' name='checkbox[]'>";
                             echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox[]' onchange='checkTotal()' $checkboxState></td>";
                             echo "</tr>";
-                            echo "<tr class='descRow'><td colspan=\"4\" style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
+                            echo "<tr class='descRow'><td colspan='4' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
                         }
                         ?>
                         </tbody>

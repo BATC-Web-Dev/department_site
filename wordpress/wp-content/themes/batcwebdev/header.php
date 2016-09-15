@@ -20,12 +20,10 @@
 
 <?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'batcwebdev' ); ?></a>
         <header id="masthead" class="site-header" role="banner">
-            <nav class="navbar navbar-inverse" role="navigation">
+            <nav class="navbar navbar-inverse" role="navigation" style="border-radius:0px;">
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
@@ -35,17 +33,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand visible-md visible-lg" href="<?php echo home_url(); ?>">
-
-                            <?php bloginfo('name'); ?>
+                        <a class="navbar-brand href="#">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
                         </a>
-                        <a class="navbar-brand visible-sm href="#">
-                        BATC Web and Mobile
-                        </a>
-                        <a class="navbar-brand visible-xs href="#">
-                            BATC
-                        </a>
-                        </div>
+                    </div>
                     <?php
                     if ( is_user_logged_in() && current_user_can('administrator')) {
                         wp_nav_menu(array(

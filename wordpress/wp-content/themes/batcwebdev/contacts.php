@@ -13,6 +13,38 @@ Template Name: contacts
 
 get_header(); ?>
 <script>
+    jQuery(document).ready(function( $ ) {
+    $('#contactForm').validate({
+        rules: {
+            contact_phone: {
+                required: true,
+                phoneUS: true
+            }
+            contact_email: {
+                required: true,
+                validate_email: true
+            }
+        }
+    });
+
+    /jQuery.validator.addMethod('phoneUS', function(phone_number, element) {
+    phone_number = phone_number.replace(/\s+/g, '');
+    return this.optional(element) || phone_number.length > 9 &&
+        phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+    }, 'Please enter a valid phone number.');
+
+    });
+    jQuery.validator.addMethod("validate_email",function(value, element) {
+        if(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test( value ))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    },"Please enter a valid Email.");
+
 //Finds y value of given object
 function findPos(obj) {
     var curtop = 0;
@@ -26,36 +58,9 @@ function findPos(obj) {
 </script>
 
 <!-- start of BATC contact info -->
-<div id="primary" class="content-area">
+<div id="primary" class="container">
 	<main id="main" class="site-main" role="main">
 		<h2>BATC Contact info</h2>
-        <table class="contact-table" style="text-align: center">
-            <tr class="header">
-				<td></td>
-                <td>Facebook</td>
-                <td>Email</td>
-                <td>Phone</td>
-                <td>Location</td>
-            </tr>
-		<?php
-		
-        global $wpdb;
-        $result = $wpdb->get_results("SELECT * FROM contact_info");
-
-        foreach($result as $row)
-        {
-            echo "<tr>";
-            echo "<td>".$row->campus ."</td>";
-            echo "<td>".$row->facebook."</td>";
-            echo "<td>".$row->email."</td>";
-            echo "<td>".$row->phone."</td>";
-            echo "<td>".$row->location."</td>";
-            echo "</tr>";
-        }
-		?>
-        </table>
-<!-- end of BATC contact info -->
-
 
 <!-- start form handling -->
 		<?php
@@ -87,7 +92,7 @@ if (isset ($_POST['contact_submit'])) {
 
 // if required fields
 if ($contact_name && ($contact_phone || $contact_email) ) {
-    $to = "pitcher834@gmail.com"; 
+    $to = "joshua.aaron.brown@gmail.com"; 
     $subject = "Contact Form Submission";
     $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
     $headers = "From: $contact_email";
@@ -113,56 +118,66 @@ else {
 	echo "</div>"; // .contact_form_error
   } // end of if isset
 ?>
-
-
-<!-- start of contact form -->
-<div id="contact_us">
-		<h2>Contact Us</h2>
-			<!-- contact form goes here? -->
-			<form method="post" action="">
-				I am a:<br>
-				<select name="contact_is_a">
-					<option value=""> - select one - </option>
-					<option value='prospective student'>Prospective Student</option>
-					<option value='current student'>Current Student</option>
-					<option value='employer'>Employer</option>
-					<option value='other'>Other</option>
-				</select><br>
-				Name:<br>
-				<input type="text" name="contact_name" value="<?php echo $contact_name; ?>"><br>
-				Phone:<br>
-				<input type="tel" name="contact_phone" value="<?php $contact_phone; ?>"><br>
-				Email:<br>
-				<input type="email" name="contact_email" value="<?php echo $contact_email; ?>"><br>
-				Comment:<br>
-				<textarea name="contact_comment"><?php echo $contact_comment; ?></textarea><br><br>
-				<input type="submit" value="Submit" name="contact_submit">
-				<input type="submit" value="Reset">
-			</form>
-</div> <!-- #contact_us -->
-<!-- end of contact form -->			
+    <img src="<?php bloginfo('template_url'); ?>/assets/images/GoogleScreenGrab.png" alt="">
+<button type="button" class="btn btn-info col-sm-2" data-toggle="modal" id="add-class-btn" data-target="#contact-modal">Contact Us</button>
+	<!--Form Modal -->
+    <form class="form-horizontal" id="contactForm" method="post" action="">
+        <div id="contact-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Contact Us</h4>
+                    </div>
+                    <div class="modal-body">
+                            <div class="form-group">
+                                <label for="sel1">I am a:</label>
+                                <select class="form-control" id="sel1" name="contact_is_a">
+                                    <option value=""> - select one - </option>
+                                    <option value='prospective student'>Prospective Student</option>
+                                    <option value='current student'>Current Student</option>
+                                    <option value='employer'>Employer</option>
+                                    <option value='other'>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_name">Name: </label>
+                                <input type="text" name="contact_name" value="" class="form-control" id="contact_name" placeholder="Enter Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_phone">Phone: </label>
+                                <input type="tel" name="contact_phone" value="" class="form-control" id="contact_phone" placeholder="(xxx)xxx-xxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_email">Email: </label>
+                                <input type="email" name="contact_email" value="" class="form-control" id="contact_email" placeholder="Enter Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_comment">Comment:</label>
+                                <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment"></textarea>
+                            </div>
+    
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Submit" name="contact_submit">
+                        <input type="submit" value="Reset">
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+    </form>
 <?php
 } // end of else
 ?>
 <!-- end of form handling -->
+<section>
+    <div class="container">
 
-<!-- start of google maps -->
-	<h2>
-		<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2976.35541350576!2d-111.8528185845627!3d41.755994379232014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8754875042360493%3A0x963754131e8c4ce1!2sBridgerland+Applied+Technology+College!5e0!3m2!1sen!2sus!4v1470891615172" target="BATCMap">Main Campus</a> -
-		<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.108327289421!2d-111.85675363006234!3d41.75792752479762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x46a978a3c2839d66!2sBridgerland+Applied+Technology+College+West+Campus!5e0!3m2!1sen!2sus!4v1470892622603" target="BATCMap">West Campus</a>
-	</h2>
-	
-	
-	<div id="map" style="position: relative;padding-bottom: 75%;height: 0;overflow: hidden;">
-	<iframe style="position: absolute;top: 0;left: 0;width: 100% !important;height: 100% !important;" name="BATCMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.108327289421!2d-111.85675363006234!3d41.75792752479762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x46a978a3c2839d66!2sBridgerland+Applied+Technology+College+West+Campus!5e0!3m2!1sen!2sus!4v1470892622603" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-	</div><!-- #map -->
-<!-- end of google maps -->
+    </div>
+</section>
+
 
 	</main><!-- .site-main -->
-	<?php// get_sidebar( 'content-bottom' ); ?>
-
 </div><!-- .content-area -->
-
-
-<?php// get_sidebar(); ?>
 <?php get_footer(); ?>

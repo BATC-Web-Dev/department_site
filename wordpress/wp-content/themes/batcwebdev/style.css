@@ -954,7 +954,3 @@ thead {
 tfoot {
 	background-color: #99D3DE;
 }
-
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-	width: 100%;
-}
