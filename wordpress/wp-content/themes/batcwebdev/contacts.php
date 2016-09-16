@@ -161,7 +161,7 @@ else {
                     </div>
                     <div class="modal-footer">
                         <input type="submit" value="Submit" name="contact_submit">
-                        <input type="submit" value="Reset">
+                        <input type="reset" value="Reset">
                     </div>
                 </div>
             </div>

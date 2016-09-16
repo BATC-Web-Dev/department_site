@@ -954,3 +954,32 @@ thead {
 tfoot {
 	background-color: #99D3DE;
 }
+
+#optin {
+	background: #595959;
+	padding: 20px 0;
+	color: white;
+	font-size: 1.2em;
+}
+
+a.btn {
+	color: white;
+}
+
+#field-info .img {
+	padding-top: 25px;
+}
+
+#course-features{
+	background: #595959;
+	color: white;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.navbar {
+	margin-bottom:0px !important;
+}
+.carousel-caption {
+	margin-top:0px !important ;
+}

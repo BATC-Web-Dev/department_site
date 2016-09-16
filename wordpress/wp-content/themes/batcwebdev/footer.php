@@ -16,11 +16,33 @@
 </div><!-- .container -->
 <div class="container">
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'batcwebdev' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'batcwebdev' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'batcwebdev' ), 'batcwebdev', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="container">
+			<div class="site-info">
+				<div class="col-sm-3">
+				<a class="pull-left" href="#">
+				<img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
+				</a>
+				</div>
+				<div class="col-sm-6">
+					<nav>
+						<ul class="list-unstyled list-inline">
+							<li>
+								<a href="">Home</a>
+							</li>
+							<li>
+								<a href="">Contact</a>
+							</li>
+							<li>
+								<a href="">Resources</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-sm-3">
+					<p class="pull-right">© BATC | Web & Mobile Development</p>
+				</div>
+			</div><!-- .site-info -->
+			</div>
 	</footer><!-- #colophon -->
 </div><!-- #container -->
 </div><!-- #page -->
