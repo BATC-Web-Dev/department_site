@@ -132,7 +132,7 @@ if (isset($_POST['submit'])) {
                 <div class="col-md-12 lead">Classes<hr></div>
             </div>
             <div class="row">
-                <button type="button" class="btn btn-info col-sm-2" data-toggle="modal" id="add-class-btn">Add Class</button>
+                <button type="button" class="btn btn-info col-sm-2 pull-right" data-toggle="modal" id="add-class-btn">Add Class</button>
                 <button type="button" class="btn btn-default col-sm-2" id="sort-class-btn">Sort Table</button>
                 <button type="button" class="btn btn-info col-sm-2" id="save-sort-class-btn">Save Table Order</button>
                 <ul class="color-key col-sm-10"><!-- Change the class color key here-->

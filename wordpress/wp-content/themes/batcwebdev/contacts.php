@@ -14,36 +14,18 @@ Template Name: contacts
 get_header(); ?>
 <script>
     jQuery(document).ready(function( $ ) {
-    $('#contactForm').validate({
-        rules: {
-            contact_phone: {
-                required: true,
-                phoneUS: true
+        $('#contactForm').validate({
+            rules: {
+                contact_phone: {
+                    required: true,
+                    phoneUS: true
+                }
+                contact_email: {
+                    required: true,
+                    validate_email: true
+                }
             }
-            contact_email: {
-                required: true,
-                validate_email: true
-            }
-        }
-    });
-
-    /jQuery.validator.addMethod('phoneUS', function(phone_number, element) {
-    phone_number = phone_number.replace(/\s+/g, '');
-    return this.optional(element) || phone_number.length > 9 &&
-        phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
-    }, 'Please enter a valid phone number.');
-
-    });
-    jQuery.validator.addMethod("validate_email",function(value, element) {
-        if(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test( value ))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    },"Please enter a valid Email.");
+        });
 
 //Finds y value of given object
 function findPos(obj) {
@@ -56,12 +38,6 @@ function findPos(obj) {
     }
 }
 </script>
-
-<!-- start of BATC contact info -->
-<div id="primary" class="container">
-	<main id="main" class="site-main" role="main">
-		<h2>BATC Contact info</h2>
-
 <!-- start form handling -->
 		<?php
 // define variables and set to empty values
@@ -118,8 +94,16 @@ else {
 	echo "</div>"; // .contact_form_error
   } // end of if isset
 ?>
-    <img src="<?php bloginfo('template_url'); ?>/assets/images/GoogleScreenGrab.png" alt="">
-<button type="button" class="btn btn-info col-sm-2" data-toggle="modal" id="add-class-btn" data-target="#contact-modal">Contact Us</button>
+<!-- start of BATC contact info -->
+<div id="primary" class="container">
+    <main id="main" class="site-main" role="main">
+        <div class="row">
+            <div class="col-md-12 lead">Contact Us<hr></div>
+        </div>
+        <section class="top-image">
+            <button type="button" class="btn btn-info col-sm-2" data-toggle="modal" id="add-class-btn" data-target="#contact-modal">Contact Us</button>
+            <img class="img" src="<?php bloginfo('template_url'); ?>/assets/images/GoogleScreenGrab.png" alt="">
+        </section>
 	<!--Form Modal -->
     <form class="form-horizontal" id="contactForm" method="post" action="">
         <div id="contact-modal" class="modal fade" role="dialog">

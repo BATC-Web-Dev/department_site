@@ -17,7 +17,7 @@ Template Name: memberHome
  */
 
 get_header(); ?>
-	<div class="container-fluid">
+<div class="member-home container-fluid">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="row">
@@ -29,28 +29,31 @@ get_header(); ?>
 				$current_user = wp_get_current_user();
 
 				if ( ($current_user instanceof WP_User) ) {
-					echo "<div class='avatar col-md-4'>". get_avatar( $current_user->user_email, 150 ). "</div>";
-					echo "<div class='col-md-4'>";
+					echo "<div class='avatar col-sm-4'>"
+						. get_avatar( $current_user->user_email, 150 ).
+						"<a href='#'>Update Profile</a>
+						</div>";
+					echo "<div class='col-sm-4'>";
 					echo "<h3 class='welcome-head'>Welcome:  $current_user->display_name</h3>";
-					echo "<ul class='list-group'>
-							<li class='list-group-item'>www.one.com</li>
-							<li class='list-group-item'>www.two.com</li>
-							<li class='list-group-item'>www.three.com</li>
-							</ul></div>";
-					echo "<div class='col-md-4'>";
-					echo "<p>Bio: $current_user->description</p>";
+					echo "<div class='list-group'>
+							<a class='list-group-item'>www.one.com</a>
+							<a class='list-group-item'>www.two.com</a>
+							<a class='list-group-item'>www.three.com</a>
+							</div>
+							</div>";
+					echo "<div class='col-sm-4'>";
+					echo "<h3>Bio:</h3>";
+					echo "<p>$current_user->description</p></div>";
 				}
 			endif;
 
 
 			?>
-					</div>
-
 			</div>
 			<div class="row">
-				<div class="col-md-4"><!--First Column-->
+				<div class="col-sm-4"><!--First Column-->
 					<h3>Recent Posts</h3>
-					<ul class="list-group">
+					<div class="list-group">
 						<?php
 						$args = array( 'numberposts' => '5' );
 						$recent_posts = wp_get_recent_posts( $args );
@@ -59,29 +62,29 @@ get_header(); ?>
 						}
 						wp_reset_query();
 						?>
-					</ul>
+					</div>
 				</div>
 
-				<div class="col-md-4"><!--Second Column-->
+				<div class="col-sm-4"><!--Second Column-->
 					<h3>Recent Forum Replies</h3>
-					<ul class="list-group">
-						<li class="list-group-item">Great Reply</li>
-						<li class="list-group-item">Great Reply</li>
-						<li class="list-group-item">Great Reply</li>
-						<li class="list-group-item">Great Reply</li>
-						<li class="list-group-item">Great Reply</li>
-					</ul>
+					<div class="list-group">
+						<a class="list-group-item">Great Reply</a>
+						<a class="list-group-item">Great Reply</a>
+						<a class="list-group-item">Great Reply</a>
+						<a class="list-group-item">Great Reply</a>
+						<a class="list-group-item">Great Reply</a>
+					</div>
 				</div>
 
-				<div class="col-md-4"><!--Third Column-->
+				<div class="col-sm-4"><!--Third Column-->
 					<h3>Recent Forum Topics</h3>
-					<ul class="list-group">
-						<li class="list-group-item">New Topic</li>
-						<li class="list-group-item">New Topic</li>
-						<li class="list-group-item">New Topic</li>
-						<li class="list-group-item">New Topic</li>
-						<li class="list-group-item">New Topic</li>
-					</ul>
+					<div class="list-group">
+						<a class="list-group-item">New Topic</a>
+						<a class="list-group-item">New Topic</a>
+						<a class="list-group-item">New Topic</a>
+						<a class="list-group-item">New Topic</a>
+						<a class="list-group-item">New Topic</a>
+					</div>
 				</div>
 			</div>
 			<?php
@@ -96,7 +99,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	</div>
+</div>
 
 <?php
 get_footer();

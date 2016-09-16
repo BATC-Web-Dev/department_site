@@ -926,10 +926,6 @@ form {
 	margin: 0 auto;
 }
 
-.welcome-head {
-	margin-top: 0px;
-}
-
 .avatar {
 	display: block;
 	margin: auto;
@@ -982,4 +978,17 @@ a.btn {
 }
 .carousel-caption {
 	margin-top:0px !important ;
+}
+
+section.top-image {
+	margin-top:0px !important;
+}
+
+.member-home {
+	background-color: #595959;
+	color: white;
+}
+
+.member-home a:visited {
+	color: #99D3DE;
 }
