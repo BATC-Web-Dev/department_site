@@ -25,26 +25,45 @@ get_header(); ?>
 			<?php
 			if ( is_user_logged_in() ):
 				$current_user = wp_get_current_user();
-				if ( ($current_user instanceof WP_User) ) {
-					echo "<div class='avatar col-sm-4'>"
-						. get_avatar( $current_user->user_email, 200 ).
-						"<div class='center'><a href='#'>Update Profile</a></div>
-						<div class='center'><a href='#'>Other Profiles</a></div>
+				if (isset ($_POST['view-profile'])) {
+					$member_id = $_POST['view-profile'];
+					$profile_viewing = get_user_by('ID', $member_id);
+					$welcome_message = "$profile_viewing->display_name's profile";
+					$avatar_header = "$profile_viewing->display_name's Avatar";
+					$bio_header = "$profile_viewing->display_name's Bio";
+					$profile_button = "<a href='?page_id=66'><big>Your Profile</big></a><br>";
+				}
+				else {
+					$profile_viewing = $current_user;
+					$welcome_message = "Welcome $current_user->display_name";
+					$avatar_header = "Your Avatar";
+					$bio_header = "Your Bio";
+					$profile_button = "<a data-toggle='modal' data-target='#approve-profile-modal'><big>Edit Profile</big></a><br>";
+				}
+					
+				if ( ($profile_viewing instanceof WP_User) ) {
+					echo "<div class='avatar col-sm-4'><div class='center'><h3>$avatar_header</h3>"
+						. get_avatar( $profile_viewing->user_email, 200 );
+					
+						echo $profile_button;
+						echo "<a data-toggle='modal' data-target='#other-members-modal'><big>Other Members</big></a></div>
 						</div>";
 					echo "<div class='col-sm-4'>";
-					echo "<h3 class='welcome-head'>Welcome:  $current_user->display_name</h3>";
+					
+					
+					echo "<h3 class='welcome-head'>$welcome_message</h3>";
 					echo "<div class='list-group'>
-							<a class='list-group-item'>Email: $current_user->user_email</a>
-							<a class='list-group-item'>Primary Website: $current_user->user_url</a>
-							<a class='list-group-item'>Second Website: $current_user->user_url_2</a>
-							<a class='list-group-item'>Third Website: $current_user->user_url_3</a>
-							<a class='list-group-item'>Employment: $current_user->user_job</a>
-							<a class='list-group-item'>Specialization: $current_user->user_spec</a>
+							<a class='list-group-item'>Email: $profile_viewing->user_email</a>
+							<a class='list-group-item'>Primary Website: $profile_viewing->user_url</a>
+							<a class='list-group-item'>Second Website: $profile_viewing->user_url_2</a>
+							<a class='list-group-item'>Third Website: $profile_viewing->user_url_3</a>
+							<a class='list-group-item'>Employment: $profile_viewing->user_job</a>
+							<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
 						</div>
 						</div>";
 					echo "<div class='col-sm-4'>";
-					echo "<h3>Bio:</h3>";
-					echo "<p>$current_user->description</p></div>";
+					echo "<h3>$bio_header:</h3>";
+					echo "<p>$profile_viewing->description</p></div>";
 				}
 			endif;
 			?>
@@ -106,7 +125,205 @@ get_header(); ?>
 				endif;
 			endwhile; // End of the loop.
 			?>
+			
+			
 
+	<!-- start of edit profile form modal -->
+    <form class="form-horizontal" id="contactForm" method="post" action="">
+        <div id="approve-profile-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update Profile</h4>
+                    </div>
+                    <div class="modal-body">
+                    <!-- start of description field -->
+<script>
+    jQuery(document).ready(function( $ ) {
+        var approve_text_max = 140;
+        $('#approve_textarea_feedback').html((approve_text_max - $('#new_description').val().length) + ' characters remaining. ');
+
+        $('#new_description').keyup(function() {
+            var approve_text_length = $('#new_description').val().length;
+			var approve_text_remaining = approve_text_max - approve_text_length;
+
+            $('#approve_textarea_feedback').html(approve_text_remaining + ' characters remaining. ');
+        });
+    });
+</script>
+			<?php
+			$description_value = $update_user->new_description;
+			$description_label = "Biographical Info";
+			?>
+			<div class="form-group">
+				<label for="new_description"><?php echo( $description_label ); ?></label>
+				<textarea class="form-control" name="new_description" id="new_description" rows="3" cols="10" maxlength="140" + 
+				><?php echo esc_html( $description_value ); ?></textarea>
+				<span><?php _e("Share a bio that could fit in a Tweet. "); ?></span><span id="approve_textarea_feedback">info</span>
+			</div> <!-- end of form group -->		
+	<!-- end of description field -->
+
+	<!-- start of primary website field -->
+	<?php
+	$url_field = $update_user->new_url;
+	$url_label = "Primary Website";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_url"><?php _e( $url_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_url" id="new_user_url" value="<?php echo esc_attr( $url_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of primary website field -->
+	
+	<!-- start of second website field -->
+	<?php
+	$url_2_field = $update_user->new_url_2;
+	$url_2_label = "Second Website";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_url_2"><?php _e( $url_2_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_url_2" id="new_user_url_2" value="<?php echo esc_attr( $url_2_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of second website field -->
+	
+	<!-- start of third website field -->
+	<?php
+	$url_3_field = $update_user->new_url_3;
+	$url_3_label = "Third Website";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_url_3"><?php _e( $url_3_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_url_3" id="new_user_url_3" value="<?php echo esc_attr( $url_3_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of third website field -->
+	
+	<!-- start of job field -->
+	<?php
+	$job_field = $update_user->new_job;
+	$job_label = "Employment";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_job"><?php _e( $job_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_job" id="new_user_job" value="<?php echo esc_attr( $job_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of job field -->
+	
+	<!-- start of specialization field -->
+	<?php
+	$spec_field = $update_user->new_spec;
+	$spec_label = "Specialization";
+	?>
+	<div class="form-group">
+		<label for="new_user_spec"><?php _e( $spec_label ); ?></label>
+			<select class="form-control" name="new_user_spec" id="new_user_spec">
+				<option value=''>-select-one-</option>
+				<option value='Undecided'>Undecided</option>
+				<option value='Front-End'>Front End</option>
+				<option value='Back-End'>Back End</option>
+			</select>
+	</div> <!-- end of form group -->
+    
+                    </div> <!-- end of modal-body -->
+                    <div class="modal-footer">
+                        <input type="submit" value="Submit for Approval" name="approve-profile-submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+    </form>
+<!-- end of edit profile form modal -->
+			
+<!-- start of profile form handling -->
+<?php
+global $wpdb;
+$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+$update_user = $results[0];
+if (isset ($_POST['approve-profile-submit'])) {
+	global $wpdb;
+	$new_description = stripslashes($_POST["new_description"]);
+    $new_user_url = ($_POST["new_user_url"]);
+    $new_user_url_2 = ($_POST["new_user_url_2"]);
+    $new_user_url_3 = ($_POST["new_user_url_3"]);
+    $new_user_job = stripslashes($_POST["new_user_job"]);
+    $new_user_spec = stripslashes($_POST["new_user_spec"]);
+		
+	// update the request
+	if ($update_user->student_id) {
+		$updated = $wpdb->update( 
+		'notifications', 
+		array( 
+			'new_description' => $new_description,
+			'new_url' => $new_user_url, 
+			'new_url_2' => $new_user_url_2, 
+			'new_url_3' => $new_user_url_3, 
+			'new_job' => $new_user_job,
+			'new_spec' => $new_user_spec,
+		),
+		array(
+			'student_id' => $current_user->ID,
+		) 
+	);
+	}
+	// create a new request
+	else {
+	$updated = $wpdb->insert( 
+		'notifications', 
+		array(
+			'student_id' => $current_user->ID, 
+			'new_description' => $new_description, 
+			'new_url' => $new_user_url, 
+			'new_url_2' => $new_user_url_2, 
+			'new_url_3' => $new_user_url_3, 
+			'new_job' => $new_user_job,
+			'new_spec' => $new_user_spec,
+		),
+		array( 
+			'%d',  
+			'%s', 
+			'%s', 
+			'%s', 
+			'%s', 
+			'%s',
+			'%s',
+		) 
+	);
+	}
+}
+?>
+<!-- end of profile form handling -->
+
+	<!--Form Modal -->
+	<form class="form-horizontal" id="viewProfileForm" method="post" action="">
+        <div id="other-members-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Other Members</h4>
+                    </div>
+                    <div class="modal-body">
+                            <ul class="list-group">
+                                <?php
+								$members = get_users( 'orderby=display_name' );
+								foreach ( $members as $member ) {
+									echo "<li class='list-group-item'><button type='submit' class='text_button' name='view-profile' value='" 
+										. $member->ID . "'><div class='alignleft'>".get_avatar($member->user_email, 25)."</div>".$member->display_name . "</button></li>";
+																			
+								}
+								?>
+							</ul>
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+    </form>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div>
