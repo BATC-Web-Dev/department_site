@@ -345,12 +345,14 @@ big {
 --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
+
 }
 
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
+
 }
 
 body {
@@ -927,15 +929,69 @@ form {
 	margin: 0 auto;
 }
 
-.welcome-head {
-	margin-top: 0px;
+.avatar {
+	display: block;
+	margin: auto;
 }
 
-.avatar {
-	display:block;
-	margin:auto;
+.modal-header {
+	background-color: #99D3DE;
 }
 
 .modal-body {
-	margin:15px;
+	margin: 15px;
+}
+
+.modal-footer {
+	background-color: #99D3DE;
+}
+
+thead {
+	background-color: #99D3DE;
+}
+
+tfoot {
+	background-color: #99D3DE;
+}
+
+#optin {
+	background: #595959;
+	padding: 20px 0;
+	color: white;
+	font-size: 1.2em;
+}
+
+a.btn {
+	color: white;
+}
+
+#field-info .img {
+	padding-top: 25px;
+}
+
+#course-features{
+	background: #595959;
+	color: white;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.navbar {
+	margin-bottom:0px !important;
+}
+.carousel-caption {
+	margin-top:0px !important ;
+}
+
+section.top-image {
+	margin-top:0px !important;
+}
+
+.member-home {
+	background-color: #595959;
+	color: white;
+}
+
+.member-home a:visited {
+	color: #99D3DE;
 }

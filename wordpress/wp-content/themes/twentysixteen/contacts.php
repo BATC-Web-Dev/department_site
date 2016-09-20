@@ -26,6 +26,7 @@ get_header(); ?>
                 <td>Phone</td>
                 <td>Location</td>
             </tr>
+            <!--Hard Code Contact info to page-->
 		<?php
 		
         global $wpdb;
