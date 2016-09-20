@@ -756,6 +756,19 @@ function bbp_is_single_user_replies() {
 	return (bool) apply_filters( 'bbp_is_single_user_replies', $retval );
 }
 
+function jp_is_announcement_posts() {
+	global $wp_query;
+
+	// Assume false
+	$retval = false;
+
+	// Check query
+	if ( !empty( wp_get_recent_posts( array( 'numberposts' => '5' ) ) ) && ( true === wp_get_recent_posts( array( 'numberposts' => '5' ) ) ) )
+		$retval = true;
+
+	return (bool) apply_filters( 'jp_is_announcement_posts', $retval );
+}
+
 /**
  * Check if current page is a view page
  *
