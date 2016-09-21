@@ -1011,3 +1011,24 @@ section.top-image {
 .member-home a:visited {
 	color: #99D3DE;
 }
+
+#resources img {
+	height: 200px;
+	width: 200px;
+	display: block;
+	margin: auto;
+}
+
+#res_hosting {
+	background-color: #595959;
+	color: white;
+}
+
+#res_slack {
+	background-color: #595959;
+	color: white;
+}
+
+.site-footer {
+	background-color: #595959;
+}
