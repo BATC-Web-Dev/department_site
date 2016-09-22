@@ -1008,6 +1008,10 @@ section.top-image {
 	color: white;
 }
 
+#contact {
+	padding-top: 15px;
+}
+
 .member-home a:visited {
 	color: #99D3DE;
 }
@@ -1032,3 +1036,14 @@ section.top-image {
 .site-footer {
 	background-color: #595959;
 }
+
+footer {
+	color: white;
+	text-align: center;
+}
+
+footer a:visited {
+	color: #99D3DE;
+}
+
+

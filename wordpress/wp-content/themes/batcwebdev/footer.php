@@ -14,7 +14,6 @@
 </div><!-- #content -->
 </div><!-- #page -->
 </div><!-- .container -->
-<div class="container">
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<nav class="navbar navbar-inverse" role="navigation" style="border-radius:0px;">
 			<div class="container-fluid">
@@ -38,15 +37,12 @@
 						</ul>
 					</nav>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3" id="footer-tail">
 					<p class="pull-right">© BATC | Web & Mobile Development</p>
 				</div>
 			</div><!-- .site-info -->
 		</nav>
 	</footer><!-- #colophon -->
-</div><!-- #container -->
-</div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 </body>

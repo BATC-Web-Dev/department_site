@@ -109,27 +109,27 @@ get_header(); ?>
         </div>
         <div class="row">
             <div class="col-sm-2">
-                <i class="fa fa-desktop fa-4x"></i>
+                <i class="fa fa-desktop fa-2x"></i>
                 <h4>Start when you turn 16</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-university fa-4x"></i>
+                <i class="fa fa-university fa-2x"></i>
                 <h4>Start earning your certificate in HS</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-dashboard fa-4x"></i>
+                <i class="fa fa-dashboard fa-2x"></i>
                 <h4>Learn at your own pace</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-graduation-cap fa-4x"></i>
+                <i class="fa fa-graduation-cap fa-2x"></i>
                 <h4>Earn credits toward your degree at USU</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-money fa-4x"></i>
+                <i class="fa fa-money fa-2x"></i>
                 <h4>Scholarships and grants available</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-calendar fa-4x"></i>
+                <i class="fa fa-calendar fa-2x"></i>
                 <h4>Average completion is just a year</h4>
             </div>
         </div>
@@ -146,7 +146,7 @@ get_header(); ?>
             <div class="col-sm-4">
                 <strong>
                     <p>
-                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" id="add-class-btn" data-target="#contact-modal">Contact Us</button>
+                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" data-toggle="modal" id="contact  -btn" data-target="#contact-modal">Contact Us</a>
                     </p>
                 </strong>
             </div>

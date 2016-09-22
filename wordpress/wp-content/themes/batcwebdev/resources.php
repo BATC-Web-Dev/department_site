@@ -8,11 +8,12 @@ get_header(); ?>
 	<section id="res_IDE">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 hidden-xs">
+				<div class="col-md-4 hidden-sm hidden-xs">
 					<img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/IDE.jpeg" alt="">
 				</div>
-				<div class="col-md-8">
+				<div class="col-md-8" id="">
 					<h3>Build</h3>
+					<img class="img center-block img-circle hidden-md hidden-lg" src="<?php bloginfo('template_url'); ?>/assets/images/IDE.jpeg" alt="">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et tincidunt metus, ut eleifend
 						sapien. Nullam scelerisque vehicula quam, sed fermentum magna luctus vitae. In sit amet diam in
 						eros aliquam placerat nec non augue. Pellentesque sit amet lorem vel ex mattis rhoncus. Maecenas
@@ -39,7 +40,7 @@ get_header(); ?>
 						pulvinar bibendum dui eget fringilla. Sed suscipit placerat interdum.
 					</p>
 				</div>
-				<div class="col-md-4 hidden-xs">
+				<div class="col-md-4 hidden-sm hidden-xs">
 					<img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/slack.jpeg" alt="">
 				</div>
 			</div>
@@ -48,7 +49,7 @@ get_header(); ?>
 	<section id="res_git">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-4 hidden-xs">
+				<div class="col-md-4 hidden-sm hidden-xs">
 					<img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/github.png" alt="">
 				</div>
 				<div class="col-md-8">
@@ -79,7 +80,7 @@ get_header(); ?>
 						pulvinar bibendum dui eget fringilla. Sed suscipit placerat interdum.
 					</p>
 				</div>
-				<div class="col-md-4 hidden-xs">
+				<div class="col-md-4 hidden-sm hidden-xs">
 					<img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/siteGround.png" alt="">
 				</div>
 			</div>

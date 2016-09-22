@@ -257,10 +257,11 @@ if (isset($_POST['submit'])) {
 </div><!--container-->
 </body>
 <script>
-    $(document).ready(function() {
+    jQuery(document).ready(function($) {
         $('#add').on('click', function() {
             $.post("?page_id=76",$('#classForm').serialize(),function(data){
                 $('#class-modal').modal('toggle');
+
                 location.reload();
             });
             return false;
