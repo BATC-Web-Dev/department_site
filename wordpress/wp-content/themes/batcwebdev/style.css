@@ -1008,6 +1008,83 @@ section.top-image {
 	color: white;
 }
 
+#contact {
+	padding-top: 15px;
+}
+
 .member-home a:visited {
 	color: #99D3DE;
 }
+
+#resources img {
+	height: 200px;
+	width: 200px;
+	display: block;
+	margin: auto;
+}
+
+#res_hosting {
+	background-color: #595959;
+	color: white;
+}
+
+#res_slack {
+	background-color: #595959;
+	color: white;
+}
+#res_head {
+	background-color: #595959;
+	color: white;
+}
+
+.site-footer {
+	background-color: #595959;
+}
+
+footer {
+	color: white;
+	text-align: center;
+}
+
+footer a:visited {
+	color: #99D3DE;
+}
+
+#contact_top {
+	padding-top: 3px;
+	color: white;
+	background-color: #595959;
+}
+
+#contact_top img {
+	height: 160px;
+	width: 240px;
+}
+
+#contact_top p {
+	vertical-align: center;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 15px;
+}
+
+#contact_form {
+	border: solid #595959;
+}
+
+.row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.row form {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+#map {
+	padding-top: 10px;
+	float: right;
+}
+
+

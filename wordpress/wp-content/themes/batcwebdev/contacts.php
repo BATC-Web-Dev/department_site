@@ -15,17 +15,18 @@ get_header(); ?>
 <script>
     jQuery(document).ready(function( $ ) {
         $('#contactForm').validate({
-            rules: {
-                contact_phone: {
+            rules {
+                contact_phone {
                     required: true,
                     phoneUS: true
                 }
-                contact_email: {
+                contact_email {
                     required: true,
                     validate_email: true
                 }
             }
         });
+    });
 
 //Finds y value of given object
 function findPos(obj) {
@@ -95,62 +96,75 @@ else {
   } // end of if isset
 ?>
 <!-- start of BATC contact info -->
-<div id="primary" class="container">
     <main id="main" class="site-main" role="main">
-        <div class="row">
-            <div class="col-md-12 lead">Contact Us<hr></div>
-        </div>
-        <section class="top-image">
-            <button type="button" class="btn btn-info col-sm-2" data-toggle="modal" id="add-class-btn" data-target="#contact-modal">Contact Us</button>
-            <img class="img" src="<?php bloginfo('template_url'); ?>/assets/images/GoogleScreenGrab.png" alt="">
-        </section>
-	<!--Form Modal -->
-    <form class="form-horizontal" id="contactForm" method="post" action="">
-        <div id="contact-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Contact Us</h4>
+        <section id="contact_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 hidden-xs hidden-sm">
+                        <img class="img center-block pull-left" src="<?php bloginfo('template_url'); ?>/assets/images/westCampus.jpg" alt="">
                     </div>
-                    <div class="modal-body">
-                            <div class="form-group">
-                                <label for="sel1">I am a:</label>
-                                <select class="form-control" id="sel1" name="contact_is_a">
-                                    <option value=""> - select one - </option>
-                                    <option value='prospective student'>Prospective Student</option>
-                                    <option value='current student'>Current Student</option>
-                                    <option value='employer'>Employer</option>
-                                    <option value='other'>Other</option>
-                                </select>
+                    <div class="col-md-8 col-sm-6 col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>
+                                    Address:<br>
+                                    1410 North 1000 West<br>
+                                    Logan, UT 84321<br>
+                                </p>
                             </div>
-                            <div class="form-group">
-                                <label for="contact_name">Name: </label>
-                                <input type="text" name="contact_name" value="" class="form-control" id="contact_name" placeholder="Enter Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contact_phone">Phone: </label>
-                                <input type="tel" name="contact_phone" value="" class="form-control" id="contact_phone" placeholder="(xxx)xxx-xxxx" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contact_email">Email: </label>
-                                <input type="email" name="contact_email" value="" class="form-control" id="contact_email" placeholder="Enter Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contact_comment">Comment:</label>
-                                <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment"></textarea>
-                            </div>
-    
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" value="Submit" name="contact_submit">
-                        <input type="reset" value="Reset">
+                        </div>
+                        <div class="col-xs-12">
+                            <p>
+                                Phone:<br>
+                                Main: <a href="tel:435)-753-4708">(435)-753-4708</a><br>
+                                Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><br>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div><!--Modal-->
-    </form>
+        </section>
+        <section id="contact_form">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form-horizontal" id="contactForm" method="post" action="">
+                        <div class="form-group">
+                            <label for="sel1">I am a:</label>
+                            <select class="form-control" id="sel1" name="contact_is_a">
+                                <option value=""> - select one - </option>
+                                <option value='prospective student'>Prospective Student</option>
+                                <option value='current student'>Current Student</option>
+                                <option value='employer'>Employer</option>
+                                <option value='other'>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_name">Name: </label>
+                            <input type="text" name="contact_name" value="" class="form-control" id="contact_name" placeholder="Enter Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_phone">Phone: </label>
+                            <input type="tel" name="contact_phone" value="" class="form-control" id="contact_phone" placeholder="(xxx)xxx-xxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_email">Email: </label>
+                            <input type="email" name="contact_email" value="" class="form-control" id="contact_email" placeholder="Enter Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_comment">Comment:</label>
+                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment"></textarea>
+                        </div>
+                        <div>
+                            <button class="btn pull-right" type="submit" value="Submit" name="contact_submit">Contact Us</button>
+                            <button class="btn pull-left" type="reset" value="Reset">Reset Form</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="hidden-xs hidden-sm col-md-6 pull-right" id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5952.578404199443!2d-111.85850495194497!3d41.75742211651987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87548761cbd58949%3A0x46a978a3c2839d66!2sBridgerland+Applied+Technology+College+West+Campus!5e0!3m2!1sen!2sus!4v1474922534989" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
 <?php
 } // end of else
 ?>
@@ -163,5 +177,4 @@ else {
 
 
 	</main><!-- .site-main -->
-</div><!-- .content-area -->
 <?php get_footer(); ?>

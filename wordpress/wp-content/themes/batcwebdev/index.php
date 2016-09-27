@@ -63,7 +63,6 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
 <section id="field-info">
     <div class="container">
         <div class="lead">
@@ -102,7 +101,6 @@ get_header(); ?>
             </div>
     </div>
 </section>
-
 <section id="course-features">
     <div class="container">
         <div class="section-header">
@@ -111,33 +109,96 @@ get_header(); ?>
         </div>
         <div class="row">
             <div class="col-sm-2">
-                <i class="fa fa-desktop fa-4x"></i>
-                <h4>Start when you turn 16</h4>
+                <i class="fa fa-desktop fa-2x"></i>
+                <h4>Develop with professional Tools</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-university fa-4x"></i>
+                <i class="fa fa-university fa-2x"></i>
                 <h4>Start earning your certificate in HS</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-dashboard fa-4x"></i>
+                <i class="fa fa-dashboard fa-2x"></i>
                 <h4>Learn at your own pace</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-graduation-cap fa-4x"></i>
+                <i class="fa fa-graduation-cap fa-2x"></i>
                 <h4>Earn credits toward your degree at USU</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-money fa-4x"></i>
+                <i class="fa fa-money fa-2x"></i>
                 <h4>Scholarships and grants available</h4>
             </div>
             <div class="col-sm-2">
-                <i class="fa fa-calendar fa-4x"></i>
+                <i class="fa fa-calendar fa-2x"></i>
                 <h4>Average completion is just a year</h4>
             </div>
         </div>
     </div>
-
 </section>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <p class="lead">
+                    <strong>Questions? Contact us for further information</strong>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <strong>
+                    <p>
+                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" data-toggle="modal" id="contact  -btn" data-target="#contact-modal">Contact Us</a>
+                    </p>
+                </strong>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--Form Modal -->
+    <form class="form-horizontal" id="contactForm" method="post" action="">
+        <div id="contact-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Contact Us</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="sel1">I am a:</label>
+                            <select class="form-control" id="sel1" name="contact_is_a">
+                                <option value=""> - select one - </option>
+                                <option value='prospective student'>Prospective Student</option>
+                                <option value='current student'>Current Student</option>
+                                <option value='employer'>Employer</option>
+                                <option value='other'>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_name">Name: </label>
+                            <input type="text" name="contact_name" value="" class="form-control" id="contact_name" placeholder="Enter Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_phone">Phone: </label>
+                            <input type="tel" name="contact_phone" value="" class="form-control" id="contact_phone" placeholder="(xxx)xxx-xxxx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_email">Email: </label>
+                            <input type="email" name="contact_email" value="" class="form-control" id="contact_email" placeholder="Enter Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_comment">Comment:</label>
+                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment"></textarea>
+                        </div>
 
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" type="submit" value="Submit" name="contact_submit">Submit</button>
+                        <button class="btn" type="reset" value="Reset">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+    </form>
 <?php
 get_footer();

@@ -14,10 +14,9 @@
 </div><!-- #content -->
 </div><!-- #page -->
 </div><!-- .container -->
-<div class="container">
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="container">
-			<div class="site-info">
+		<nav class="navbar navbar-inverse" role="navigation" style="border-radius:0px;">
+			<div class="container-fluid">
 				<div class="col-sm-3">
 				<a class="pull-left" href="#">
 				<img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
@@ -38,15 +37,12 @@
 						</ul>
 					</nav>
 				</div>
-				<div class="col-sm-3">
+				<div class="col-sm-3" id="footer-tail">
 					<p class="pull-right">© BATC | Web & Mobile Development</p>
 				</div>
 			</div><!-- .site-info -->
-			</div>
+		</nav>
 	</footer><!-- #colophon -->
-</div><!-- #container -->
-</div><!-- #page -->
-
 <?php wp_footer(); ?>
 
 </body>
