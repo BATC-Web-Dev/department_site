@@ -8,74 +8,29 @@ Template Name: notifications
  * @subpackage batcitweb
  */
 ?>
+<?php
+if ( is_user_logged_in() ) {
+	$current_user = wp_get_current_user();
+			?>
 <?php get_header(); ?>
+
+<script>
+ jQuery(document).ready(function( $ ) {
+	$(".toggler").click(function(e){
+        e.preventDefault();
+        $('.cat'+$(this).attr('toggle_id')).toggle();
+    });
+	
+	$(".check-all").change(function () {
+		$("input:checkbox").prop('checked', $(this).prop("checked"));
+	});
+	
+ });
+</script>
 
 <!-- start of notifications -->
 <?php
-	function decide_profile_action_taken($prime_key, $table, $ID, $meta_key, $value, $notification_field) {
-		global $wpdb;
-		if (isset($_POST["approve$prime_key"]) )
-			{
-				// if wp_usermeta table
-				if ($table == 'wp_usermeta') {
-					update_user_meta( 
-						$ID, 
-						$meta_key, 
-						$value 
-					);
-				} // end if
-				
-				else {
-					$updated = $wpdb->update( 
-						$table, 
-						array( 
-							$meta_key => $value, 
-						),
-						array(
-							'ID' => $ID,
-						) 
-					);
-					
-				} // end else
-				
-					$updated = $wpdb->update( 
-							'notifications', 
-							array( 
-								$notification_field => '', 
-							),
-							array(
-								'student_id' => $ID,
-							) 
-					);
-					if ($updated == false) {
-						echo "<script>alert('There was a problem updating notifications database.');</script>";
-					}
-					header("Refresh:0");
-			}
 
-		if (isset($_POST["deny$prime_key"]) )
-			{
-				//remove notification
-				$updated = $wpdb->update( 
-						'notifications', 
-						array( 
-							$notification_field => '', 
-						),
-						array(
-							'student_id' => $ID,
-						) 
-					);
-				if ($updated == false) {
-					echo "<script>alert('There was a problem updating notifications database.');</script>";
-				}
-				header("Refresh:0");
-			}
-
-			echo "<form method='post' action=''>";
-			echo "<input type='submit' name='approve$prime_key' value='approve'>";
-			echo "<input type='submit' name='deny$prime_key' value='deny'><br>";
-			echo "</form>";
-	}
 	global $wpdb;
 $notifications = $wpdb->get_results("
 				SELECT 
@@ -89,126 +44,583 @@ $notifications = $wpdb->get_results("
 					notifications.student_id = wp_users.ID
 				");
 
-echo "<ul>";
+?>
+<div class='container'>
+	<table id="approve-deny-table-list" class="table">
+	<thead>
+		<tr class="header">
+			<th>Pending Notifications</th>
+
+		</tr>
+	</thead>
+	<tbody>
+<?php
 foreach ($notifications as $row) {
 	
-	$results = $wpdb->get_results("
-				SELECT 
-					notifications.notify_id,
-					notifications.new_description,
-					notifications.new_email,
-					notifications.new_url,
-					notifications.new_url_2,
-					notifications.new_url_3,
-					notifications.new_job,
-					notifications.new_spec,
-					wp_users.display_name, 
-					wp_users.user_email,
-					wp_users.user_url,
-					wp_users.ID
-				FROM 
-					notifications 
-				INNER JOIN 
-					wp_users 
-				ON 
-					notifications.student_id = wp_users.ID
-				WHERE
-					notify_id=$row->notify_id
-				");
-	$result = $results[0];
-				
-	$meta_description = $wpdb->get_results("SELECT meta_value FROM wp_usermeta WHERE user_id=$result->ID AND meta_key='description'");
-	$meta_user_url_2 = $wpdb->get_results("SELECT meta_value FROM wp_usermeta WHERE user_id=$result->ID AND meta_key='user_url_2'");
-	$meta_user_url_3 = $wpdb->get_results("SELECT meta_value FROM wp_usermeta WHERE user_id=$result->ID AND meta_key='user_url_3'");
-	$meta_user_job = $wpdb->get_results("SELECT meta_value FROM wp_usermeta WHERE user_id=$result->ID AND meta_key='user_job'");
-	$meta_user_spec = $wpdb->get_results("SELECT meta_value FROM wp_usermeta WHERE user_id=$result->ID AND meta_key='user_spec'");
+	$results = $wpdb->get_results("SELECT * FROM notifications WHERE notify_id=$row->notify_id");
 	
-	
-	 $num_pending = 0;
-	if ($result->new_description != $meta_description[0]->meta_value && $result->new_description != '') {$num_pending++;}
-	if ($result->new_email != $result->user_email && $result->new_email != '') {$num_pending++;}
-	if ($result->new_url != $result->user_url && $result->new_url != '') {$num_pending++;}
-	if ($result->new_url_2 != $meta_user_url_2[0]->meta_value && $result->new_url_2 != '') {$num_pending++;}
-	if ($result->new_url_3 != $meta_user_url_3[0]->meta_value && $result->new_url_3 != '') {$num_pending++;}
-	if ($result->new_job != $meta_user_job[0]->meta_value && $result->new_job != '') {$num_pending++;}
-	if ($result->new_spec != $meta_user_spec[0]->meta_value && $result->new_spec != '') {$num_pending++;}
-	
-	// delete row from table if empty
-	if($num_pending == 0) {
-		$updated = $wpdb->delete( 
-			'notifications',
-			array(
-				'student_id' => $result->ID,
-			) 
-		);
+	$new_data->email = ($results[0]->new_email == '' ? null : $results[0]->new_email);
+	$new_data->url = ($results[0]->new_url == '' ? null : $results[0]->new_url);
+	$new_data->url_2 = ($results[0]->new_url_2 == '' ? null : $results[0]->new_url_2);
+	$new_data->url_3 = ($results[0]->new_url_3 == '' ? null : $results[0]->new_url_3);
+	$new_data->description = ($results[0]->new_description == '' ? null : $results[0]->new_description);
+	$new_data->job = ($results[0]->new_job == '' ? null : $results[0]->new_job);
+	$new_data->spec = ($results[0]->new_spec == '' ? null : $results[0]->new_spec);
+
+	$ID = $results[0]->student_id;
+	$old_meta = $wpdb->get_results("SELECT meta_key, meta_value 
+									FROM wp_usermeta 
+									WHERE user_id=$ID 
+									AND (meta_key='description'
+									OR meta_key='user_url_2'
+									OR meta_key='user_url_3'
+									OR meta_key='user_job'
+									OR meta_key='user_spec')
+									");
+									
+	foreach ($old_meta as $meta) {
+		if ($meta->meta_key == 'description') $old_data->description = $meta->meta_value;
+		if ($meta->meta_key == 'user_url_2') $old_data->url_2 = $meta->meta_value;
+		if ($meta->meta_key == 'user_url_3') $old_data->url_3 = $meta->meta_value;
+		if ($meta->meta_key == 'user_job') $old_data->job = $meta->meta_value;
+		if ($meta->meta_key == 'user_spec') $old_data->spec = $meta->meta_value;
 	}
+		
+	$old_user_data = $wpdb->get_results("SELECT display_name, user_email, user_url, ID FROM wp_users WHERE ID=$ID");
+		
+	$old_data->display_name = $old_user_data[0]->display_name;
+	$old_data->email = $old_user_data[0]->user_email;
+	$old_data->url = $old_user_data[0]->user_url;
+	$old_data->ID = $old_user_data[0]->ID;
+
+
+	// counts pending changes for current student
+	$num_pending = 0;
+	foreach($new_data as $data) {
+		if ($data != null) $num_pending++;
+	}
+	
+	// add 's' if plural
+	$plural = ($num_pending == 1 ? '' : 's');
+	
+	
+	if (isset($_POST['approve' . $row->notify_id])) {
+		
+		if (isset($_POST['description'])) {
+			update_user_meta( 
+						$old_data->ID, 
+						'description', 
+						$new_data->description
+			);
+		}
+
+		if (isset($_POST['url'])) {
+			$updated = $wpdb->update( 
+						wp_users, 
+						array( 
+							user_url => $new_data->url, 
+						),
+						array(
+							'ID' => $old_data->ID,
+						)
+			);
+		}
+
+		if (isset($_POST['url_2'])) {
+			update_user_meta( 
+						$old_data->ID, 
+						'user_url_2', 
+						$new_data->url_2
+			);
+		}
+
+		if (isset($_POST['url_3'])) {
+			update_user_meta( 
+						$old_data->ID, 
+						'user_url_3', 
+						$new_data->url_3
+			);
+		}
+
+		if (isset($_POST['job'])) {
+			update_user_meta( 
+						$old_data->ID, 
+						'user_job', 
+						$new_data->job
+			);
+		}
+
+		if (isset($_POST['spec'])) {
+			update_user_meta( 
+						$old_data->ID, 
+						'user_spec', 
+						$new_data->spec
+			);
+		}
+
+		$updated = $wpdb->delete('notifications', array('student_id' => $old_data->ID) );
+		header("Refresh:0");
+	}
+	
 	//display row if not empty
-	else {
-		if ($num_pending == 1) $plural = '';
-		else $plural = 's';
-		
-		echo "<li><a id='notification$row->notify_id'>$row->display_name has $num_pending update$plural pending approval.</a></li>";
-		
-		
-		/***** start: pull out of loop and put in modal *****/
-
-				
-		echo "<h3>$result->display_name wants to change his/her:</h3>";
-		echo "<ul>";
-	
-		if ($result->new_description != $meta_description[0]->meta_value && $result->new_description != '') {
-			echo "<li>Bio from '" . $meta_description[0]->meta_value . "' to '$result->new_description'<br>";
-				decide_profile_action_taken("bio$result->notify_id", "wp_usermeta", $result->ID, "description", $result->new_description, "new_description");
-			echo "</li>";
-		}
-	
-		if ($result->new_email != $result->user_email && $result->new_email != '') {
-			echo "<li>Email from '$result->user_email' to '$result->new_email'<br>";
-				//email needs handled differently because it has to be unique
-				//decide_profile_action_taken("email$result->notify_id", $result->ID);
-			echo "</li>";
-		}
-	
-		if ($result->new_url != $result->user_url && $result->new_url != '') {
-			echo "<li>Primary Website from '$result->user_url' to '$result->new_url'<br>";
-				decide_profile_action_taken("url_$result->notify_id", "wp_users", $result->ID, "user_url", $result->new_url, "new_url");
-			echo "</li>";
-		}
-	
-		if ($result->new_url_2 != $meta_user_url_2[0]->meta_value && $result->new_url_2 != '') {
-			echo "<li>Second Website from '" . $meta_user_url_2[0]->meta_value . "' to '$result->new_url_2'<br>";
-				decide_profile_action_taken("url2_$result->notify_id", "wp_usermeta", $result->ID, "user_url_2", $result->new_url_2, "new_url_2");
-			echo "</li>";
-		}
-	
-		if ($result->new_url_3 != $meta_user_url_3[0]->meta_value && $result->new_url_3 != '') {
-			echo "<li>Third Website from '" . $meta_user_url_3[0]->meta_value . "' to '$result->new_url_3'<br>";
-				decide_profile_action_taken("url3_$result->notify_id", "wp_usermeta", $result->ID, "user_url_3", $result->new_url_3, "new_url_3");
-			echo "</li>";
-		}
-	
-		if ($result->new_job != $meta_user_job[0]->meta_value && $result->new_job != '') {
-			echo "<li>Employment from '" . $meta_user_job[0]->meta_value . "' to '$result->new_job'<br>";
-				decide_profile_action_taken("job$result->notify_id", "wp_usermeta", $result->ID, "user_job", $result->new_job, "new_job");
-			echo "</li>";
-		}
-	
-		if ($result->new_spec != $meta_user_spec[0]->meta_value && $result->new_spec != '') {
-			echo "<li>Specialization from '" . $meta_user_spec[0]->meta_value . "' to '$result->new_spec'<br>";
-				decide_profile_action_taken("spec$result->notify_id", "wp_usermeta", $result->ID, "user_spec", $result->new_spec, "new_spec");
-			echo "</li>";
-		}
-	
-		echo "</ul>";
-	
-		/***** end of: pull out of loop and put in modal *****/
-	}
+	if ($num_pending != 0) {
+	?>	<tr class='body'>
+	<?php echo "<td><a class='toggler' toggle_id='$row->notify_id' class='table'>$row->display_name has $num_pending update$plural pending approval.</a>"; ?>
+	<div class='container'>
+	<table id="approve-deny-table-single">
+	<form method='post' action=''>
+    <thead>
+		<tr class='header cat<?php echo "$row->notify_id";?>' style='display:none'>
+            <th>Field</th>
+            <th>From</th>
+            <th>To</th>
+			<th>Selected</th>
+		</tr>
+    </thead>
+	<tbody>
+	<?php if ($new_data->description) { ?>
+			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
+				<td>
+				Bio
+				</td>
+				<td>
+				<?php echo "$old_data->description"; ?>
+				</td>
+				<td>
+				<?php echo "$new_data->description"; ?>
+				</td>
+				<td>
+				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='description' value='description'>select
+				</td>
+			</tr>
+	<?php } // end if ?>
+	<?php if ($new_data->url) { ?>
+			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
+				<td>
+				Primary Website
+				</td>
+				<td>
+				<?php echo "$old_data->url"; ?>
+				</td>
+				<td>
+				<?php echo "$new_data->url"; ?>
+				</td>
+				<td>
+				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url' value='url'>select
+				</td>
+			</tr>
+	<?php } // end if ?>
+	<?php if ($new_data->url_2) { ?>
+			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
+				<td>
+				Second Website
+				</td>
+				<td>
+				<?php echo "$old_data->url_2"; ?>
+				</td>
+				<td>
+				<?php echo "$new_data->url_2"; ?>
+				</td>
+				<td>
+				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url_2' value='url_2'>select
+				</td>
+			</tr>
+	<?php } // end if ?>
+	<?php if ($new_data->url_3) { ?>
+			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
+				<td>
+				Third Website
+				</td>
+				<td>
+				<?php echo "$old_data->url_3"; ?>
+				</td>
+				<td>
+				<?php echo "$new_data->url_3"; ?>
+				</td>
+				<td>
+				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url_3' value='url_3'>select
+				</td>
+			</tr>
+	<?php } // end if ?>
+	<?php if ($new_data->job) { ?>
+			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
+				<td>
+				Employment
+				</td>
+				<td>
+				<?php echo "$old_data->job"; ?>
+				</td>
+				<td>
+				<?php echo "$new_data->job"; ?>
+				</td>
+				<td>
+				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='job' value='job'>select
+				</td>
+			</tr>
+	<?php } // end if ?>
+	<?php if ($new_data->spec) { ?>
+			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
+				<td>
+				Specialization
+				</td>
+				<td>
+				<?php echo "$old_data->spec"; ?>
+				</td>
+				<td>
+				<?php echo "$new_data->spec"; ?>
+				</td>
+				<td>
+				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='spec' value='spec'>select
+				</td>
+			</tr>
+	<?php } // end if ?>
+        </tbody>
+		<tfoot>
+			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
+				<td></td>
+				<td></td>
+				<td><input type='submit' class='btn-sm' name='<?php echo "approve$row->notify_id";?>' value='<?php echo "approve selected";?>'></td>
+				<td><input type='checkbox' class='check-all' value='check-all'>select all</td>
+			</tr>
+		</tfoot>
+		</form>
+		</table><!-- approve-deny-table-single -->
+		<div> <!-- .container -->
+		</td></tr>
+		<?php
+	} // end of if(num_pending != 0)
 } // end of foreach
-echo "</ul>";
-?>
-
-<?php
 
 ?>
+</tbody>
+
+</table> <!-- approve-deny-table-list -->
+</div><!-- .container -->
+
+<!-- Bio Data -->
+<button class='col-sm-12 toggler' toggle_id='-bio-data'>Show/Hide Bio.</button>
+<div class='row header cat-bio-data' style='display:none'>
+			<?php
+				if (isset ($_POST['view-profile']) && $current_user->ID != $_POST['view-profile']) {
+					$member_id = $_POST['view-profile'];
+					$profile_viewing = get_user_by('ID', $member_id);
+					$welcome_message = "$profile_viewing->display_name's profile";
+					$avatar_header = "$profile_viewing->display_name's Avatar";
+					$bio_header = "$profile_viewing->display_name's Bio";
+					$profile_button = "<a href='?page_id=66'><big>Your Profile</big></a><br>";
+				}
+				else {
+					$profile_viewing = $current_user;
+					$welcome_message = "Welcome $current_user->display_name";
+					$avatar_header = "Your Avatar";
+					$bio_header = "Your Bio";
+					$profile_button = "<a data-toggle='modal' data-target='#approve-profile-modal'><big>Edit Profile</big></a><br>";
+				}
+					
+				if ( ($profile_viewing instanceof WP_User) ) {
+					echo "<div class='avatar col-sm-4'><div class='center'><h3>$avatar_header</h3>"
+						. get_avatar( $profile_viewing->user_email, 200 );
+					
+						echo $profile_button;
+						echo "<a data-toggle='modal' data-target='#other-members-modal'><big>Other Members</big></a></div>
+						</div>";
+					echo "<div class='col-sm-4'>";
+					
+					
+					echo "<h3 class='welcome-head'>$welcome_message</h3>";
+					echo "<div class='list-group'>
+							<a class='list-group-item'>Email: $profile_viewing->user_email</a>
+							<a class='list-group-item' href='$profile_viewing->user_url'>Primary Website: $profile_viewing->user_url</a>
+							<a class='list-group-item' href='$profile_viewing->user_url_2'>Second Website: $profile_viewing->user_url_2</a>
+							<a class='list-group-item' href='$profile_viewing->user_url_3'>Third Website: $profile_viewing->user_url_3</a>
+							<a class='list-group-item'>Employment: $profile_viewing->user_job</a>
+							<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
+						</div>
+						</div>";
+					echo "<div class='col-sm-4'>";
+					echo "<h3>$bio_header:</h3>";
+					echo "<p>$profile_viewing->description</p></div>";
+				}
+			?>
+			</div>
+
+<!-- Forum Data -->
+			<div class="row">
+				<div class="col-sm-4"><!--First Column-->
+					<h3>Recent Posts</h3>
+					<div class="list-group">
+						<?php
+						$args = array( 'numberposts' => '5' );
+						$recent_posts = wp_get_recent_posts( $args );
+						foreach( $recent_posts as $recent ){
+							echo '<li class="list-group-item"><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+						}
+						wp_reset_query();
+						?>
+					</div>
+				</div>
+
+				<div class="col-sm-4"><!--Second Column-->
+					<h3>Recent Forum Replies</h3>
+					<div class="list-group">
+					<?php
+						global $wpdb;
+						$query="SELECT post_parent FROM wp_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
+						$results=$wpdb->get_results($query);
+						//print_r($reply_parent);
+						foreach ($results as $result) {
+							$query="SELECT post_title, post_name FROM wp_posts WHERE ID=$result->post_parent LIMIT 1";
+							$reply_parents = $wpdb->get_results($query);
+							//print_r($reply_parents);
+							foreach($reply_parents as $reply_parent) {
+								echo "<a class='list-group-item' href='?topic=$reply_parent->post_name'>$reply_parent->post_title</a>";
+							}
+						}
+						?>
+					</div>
+				</div>
+
+				<div class="col-sm-4"><!--Third Column-->
+					<h3>Recent Forum Topics</h3>
+					<div class="list-group">
+						<?php
+						global $wpdb;
+						$query="SELECT * FROM wp_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
+						$results=$wpdb->get_results($query);
+						foreach ($results as $result) {
+							echo "<a class='list-group-item' href='?topic=$result->post_name'>$result->post_title</a>";
+						}
+						?>
+					</div>
+				</div>
+			</div>
+			<?php
+			while ( have_posts() ) : the_post();
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+			endwhile; // End of the loop.
+			?>
+<!--Form Modal -->
+	<form class="form-horizontal" id="viewProfileForm" method="post" action="">
+        <div id="other-members-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Other Members</h4>
+                    </div>
+                    <div class="modal-body">
+                            <ul class="list-group">
+                                <?php
+								$members = get_users( 'orderby=display_name' );
+								foreach ( $members as $member ) {
+									if ($member->ID != $current_user->ID) {
+										echo "<li class='list-group-item'><button type='submit' class='text_button' name='view-profile' value='" 
+											. $member->ID . "'><div class='alignleft'>".get_avatar($member->user_email, 25)."</div>".$member->display_name . "</button></li>";
+										}								
+								}
+								?>
+							</ul>
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+    </form>
+	
+	<?php
+	// update admin profile
+	if (isset($_POST['profile-submit'])) {
+		$new_description = stripslashes($_POST["new_description"]);
+		$new_url = ($_POST["new_user_url"]);
+		$new_url_2 = ($_POST["new_user_url_2"]);
+		$new_url_3 = ($_POST["new_user_url_3"]);
+		$new_job = stripslashes($_POST["new_user_job"]);
+		$new_spec = stripslashes($_POST["new_user_spec"]);
+
+		if ($new_description != '') {
+			update_user_meta( 
+						$current_user->ID, 
+						'description', 
+						$new_description
+			);
+		}
+
+		if ($new_url != '') {
+			$updated = $wpdb->update( 
+						wp_users, 
+						array( 
+							user_url => $new_url, 
+						),
+						array(
+							'ID' => $current_user->ID,
+						)
+			);
+		}
+
+		if ($new_url_2 != '') {
+			update_user_meta( 
+						$current_user->ID, 
+						'user_url_2', 
+						$new_url_2
+			);
+		}
+
+		if ($new_url_3 != '') {
+			update_user_meta( 
+						$current_user->ID, 
+						'user_url_3', 
+						$new_url_3
+			);
+		}
+
+		if ($new_job != '') {
+			update_user_meta( 
+						$current_user->ID, 
+						'user_job', 
+						$new_job
+			);
+		}
+
+		if ($new_spec) {
+			update_user_meta( 
+						$current_user->ID, 
+						'user_spec', 
+						$new_spec
+			);
+		}
+	}
+		?>
+		<!-- start of edit profile form modal -->
+	<?php
+	global $wpdb;
+	$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+	$update_user = $results[0];
+	?>
+    <form class="form-horizontal" id="contactForm" method="post" action="">
+        <div id="approve-profile-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update Profile</h4>
+                    </div>
+                    <div class="modal-body">
+                    <!-- start of description field -->
+<script>
+    jQuery(document).ready(function( $ ) {
+        var approve_text_max = 140;
+        $('#approve_textarea_feedback').html((approve_text_max - $('#new_description').val().length) + ' characters remaining. ');
+
+        $('#new_description').keyup(function() {
+            var approve_text_length = $('#new_description').val().length;
+			var approve_text_remaining = approve_text_max - approve_text_length;
+
+            $('#approve_textarea_feedback').html(approve_text_remaining + ' characters remaining. ');
+        });
+    });
+</script>
+			<?php
+			$description_value = $update_user->new_description;
+			$description_label = "Biographical Info";
+			?>
+			<div class="form-group">
+				<label for="new_description"><?php echo( $description_label ); ?></label>
+				<textarea class="form-control" name="new_description" id="new_description" rows="3" cols="10" maxlength="140" + 
+				><?php echo esc_html( $description_value ); ?></textarea>
+				<span><?php _e("Share a bio that could fit in a Tweet. "); ?></span><span id="approve_textarea_feedback">info</span>
+			</div> <!-- end of form group -->		
+	<!-- end of description field -->
+
+	<!-- start of primary website field -->
+	<?php
+	$url_field = $update_user->new_url;
+	$url_label = "Primary Website";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_url"><?php _e( $url_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_url" id="new_user_url" value="<?php echo esc_attr( $url_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of primary website field -->
+	
+	<!-- start of second website field -->
+	<?php
+	$url_2_field = $update_user->new_url_2;
+	$url_2_label = "Second Website";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_url_2"><?php _e( $url_2_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_url_2" id="new_user_url_2" value="<?php echo esc_attr( $url_2_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of second website field -->
+	
+	<!-- start of third website field -->
+	<?php
+	$url_3_field = $update_user->new_url_3;
+	$url_3_label = "Third Website";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_url_3"><?php _e( $url_3_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_url_3" id="new_user_url_3" value="<?php echo esc_attr( $url_3_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of third website field -->
+	
+	<!-- start of job field -->
+	<?php
+	$job_field = $update_user->new_job;
+	$job_label = "Employment";
+	?>
+	
+	<div class="form-group">
+		<label for="new_user_job"><?php _e( $job_label ); ?></label>
+		<input class="form-control" type="text" name="new_user_job" id="new_user_job" value="<?php echo esc_attr( $job_field ); ?>" class="regular-text" />
+	</div> <!-- end of form group -->
+	<!-- end of job field -->
+	
+	<!-- start of specialization field -->
+	<?php
+	$spec_field = $update_user->new_spec;
+	$spec_label = "Specialization";
+	?>
+	<div class="form-group">
+		<label for="new_user_spec"><?php _e( $spec_label ); ?></label>
+			<select class="form-control" name="new_user_spec" id="new_user_spec">
+				<option value=''>-select-one-</option>
+				<option value='Undecided' 
+					<?php if ($update_user->new_spec == 'Undecided') { echo "selected='selected'"; }?> >
+					Undecided</option>
+				<option value='Front-End' 
+					<?php if ($update_user->new_spec == 'Front-End') { echo "selected='selected'"; }?> >
+					Front End</option>
+				<option value='Back-End' 
+					<?php if ($update_user->new_spec == 'Back-End') { echo "selected='selected'"; }?> >
+					Back End</option>
+			</select>
+	</div> <!-- end of form group -->
+    
+                    </div> <!-- end of modal-body -->
+                    <div class="modal-footer">
+                        <button type="submit" name="profile-submit">Update Profile</button>
+                        <button type="submit" name="approve-profile-reset">reset</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+    </form>
+<!-- end of edit profile form modal -->
+	
+	
+		</main><!-- #main -->
+	</div><!-- #primary -->
+</div>
 
 <?php get_footer(); ?>
+<?php
+} // end of if logged in
+?>

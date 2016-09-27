@@ -953,8 +953,8 @@ form {
 	margin: 15px;
 }
 
-#viewProfileForm .modal-body,
-#approve-profile-modal .modal-body {
+#viewProfileForm,
+#approve-profile-modal {
 	color: #404040;
 }
 

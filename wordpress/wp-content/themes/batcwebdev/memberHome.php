@@ -25,7 +25,7 @@ get_header(); ?>
 			<?php
 			if ( is_user_logged_in() ):
 				$current_user = wp_get_current_user();
-				if (isset ($_POST['view-profile'])) {
+				if (isset ($_POST['view-profile']) && $current_user->ID != $_POST['view-profile']) {
 					$member_id = $_POST['view-profile'];
 					$profile_viewing = get_user_by('ID', $member_id);
 					$welcome_message = "$profile_viewing->display_name's profile";
@@ -54,9 +54,9 @@ get_header(); ?>
 					echo "<h3 class='welcome-head'>$welcome_message</h3>";
 					echo "<div class='list-group'>
 							<a class='list-group-item'>Email: $profile_viewing->user_email</a>
-							<a class='list-group-item'>Primary Website: $profile_viewing->user_url</a>
-							<a class='list-group-item'>Second Website: $profile_viewing->user_url_2</a>
-							<a class='list-group-item'>Third Website: $profile_viewing->user_url_3</a>
+							<a class='list-group-item' href='$profile_viewing->user_url'>Primary Website: $profile_viewing->user_url</a>
+							<a class='list-group-item' href='$profile_viewing->user_url_2'>Second Website: $profile_viewing->user_url_2</a>
+							<a class='list-group-item' href='$profile_viewing->user_url_3'>Third Website: $profile_viewing->user_url_3</a>
 							<a class='list-group-item'>Employment: $profile_viewing->user_job</a>
 							<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
 						</div>
@@ -127,8 +127,107 @@ get_header(); ?>
 			?>
 			
 			
+<!-- start of profile form handling -->
+<?php
+global $wpdb;
+$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+$update_user = $results[0];
+if (isset ($_POST['approve-profile-submit'])) {
+			
+	$new_description = stripslashes($_POST["new_description"]);
+    $new_user_url = ($_POST["new_user_url"]);
+    $new_user_url_2 = ($_POST["new_user_url_2"]);
+    $new_user_url_3 = ($_POST["new_user_url_3"]);
+    $new_user_job = stripslashes($_POST["new_user_job"]);
+    $new_user_spec = stripslashes($_POST["new_user_spec"]);
+
+
+// update the request
+	// create row if doesn't exist
+	if (!$update_user->student_id) {
+		$updated = $wpdb->insert('notifications', array('student_id' => $current_user->ID), array('%d') );
+	}
+		//new_description
+		if ($new_description != $_POST['old_description']) {
+			$updated = $wpdb->update('notifications', array('new_description' => $new_description), array('student_id' => $current_user->ID) );
+		}
+			
+		//new_url
+		if ($new_user_url != $_POST['old_user_url']) {
+			$updated = $wpdb->update('notifications', array('new_url' => $new_user_url), array('student_id' => $current_user->ID) );
+		}
+		//new_url_2
+		if ($new_user_url_2 != $_POST['old_user_url_2']) {
+			$updated = $wpdb->update('notifications', array('new_url_2' => $new_user_url_2), array('student_id' => $current_user->ID) );
+		}
+		
+		//new_url_3
+		if ($new_user_url_3 != $_POST['old_user_url_3']) {
+			$updated = $wpdb->update('notifications', array('new_url_3' => $new_user_url_3), array('student_id' => $current_user->ID) );
+		}
+		
+		//new_job
+		if ($new_user_job != $_POST['old_user_job']) {
+			$updated = $wpdb->update('notifications', array('new_job' => $new_user_job), array('student_id' => $current_user->ID) );
+		}
+		
+		//new_spec
+		if ($new_user_spec != $_POST['old_user_spec']) {
+			$updated = $wpdb->update('notifications', array('new_spec' => $new_user_spec), array('student_id' => $current_user->ID) );
+		}
+	
+	// delete row from table if all fields are blank
+	if ($new_description == '' 
+			&& $new_user_url != ''
+			&& $new_user_url_2 != ''
+			&& $new_user_url_3 != ''
+			&& $new_user_job != ''
+			&& $new_user_spec != '')
+	{
+		$updated = $wpdb->delete('notifications', array('student_id' => $current_user->ID) );	
+	}
+		
+} // end of if isset submit
+
+if (isset ($_POST['approve-profile-reset'])) {
+	$updated = $wpdb->delete('notifications', array('student_id' => $current_user->ID) );
+	
+}
+?>
+<!-- end of profile form handling -->
+			
 
 	<!-- start of edit profile form modal -->
+	<?php
+	global $wpdb;
+	$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+	$update_user = $results[0];
+	
+	$old_meta = $wpdb->get_results("SELECT meta_key, meta_value 
+									FROM wp_usermeta 
+									WHERE user_id=$current_user->ID 
+									AND (meta_key='description'
+									OR meta_key='user_url_2'
+									OR meta_key='user_url_3'
+									OR meta_key='user_job'
+									OR meta_key='user_spec')
+									");
+	$old_user_data = $wpdb->get_results("SELECT display_name, user_email, user_url, ID FROM wp_users WHERE ID=$current_user->ID");
+		
+	foreach ($old_meta as $meta) {
+		if ($meta->meta_key == 'description') $old_data->description = $meta->meta_value;
+		if ($meta->meta_key == 'user_url_2') $old_data->user_url_2 = $meta->meta_value;
+		if ($meta->meta_key == 'user_url_3') $old_data->user_url_3 = $meta->meta_value;
+		if ($meta->meta_key == 'user_job') $old_data->user_job = $meta->meta_value;
+		if ($meta->meta_key == 'user_spec') $old_data->user_spec = $meta->meta_value;
+	}
+	$old_data->display_name = $old_user_data[0]->display_name;
+	$old_data->user_email = $old_user_data[0]->user_email;
+	$old_data->user_url = $old_user_data[0]->user_url;
+	$old_data->ID = $old_user_data[0]->ID;
+
+	
+	?>
     <form class="form-horizontal" id="contactForm" method="post" action="">
         <div id="approve-profile-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -155,7 +254,7 @@ get_header(); ?>
 </script>
 			<?php
 			$description_value = $update_user->new_description;
-			$description_label = "Biographical Info";
+			$description_label = "Biographical Info - <a>delete</a>";
 			?>
 			<div class="form-group">
 				<label for="new_description"><?php echo( $description_label ); ?></label>
@@ -222,81 +321,34 @@ get_header(); ?>
 		<label for="new_user_spec"><?php _e( $spec_label ); ?></label>
 			<select class="form-control" name="new_user_spec" id="new_user_spec">
 				<option value=''>-select-one-</option>
-				<option value='Undecided'>Undecided</option>
-				<option value='Front-End'>Front End</option>
-				<option value='Back-End'>Back End</option>
+				<option value='Undecided' 
+					<?php if ($update_user->new_spec == 'Undecided') { echo "selected='selected'"; }?> >
+					Undecided</option>
+				<option value='Front-End' 
+					<?php if ($update_user->new_spec == 'Front-End') { echo "selected='selected'"; }?> >
+					Front End</option>
+				<option value='Back-End' 
+					<?php if ($update_user->new_spec == 'Back-End') { echo "selected='selected'"; }?> >
+					Back End</option>
 			</select>
+			<input type='hidden' name='old_description' value='<?php echo $old_data->description; ?>'>
+			<input type='hidden' name='old_user_url' value='<?php echo $old_data->user_url; ?>'>
+			<input type='hidden' name='old_user_url_2' value='<?php echo $old_data->user_url_2; ?>'>
+			<input type='hidden' name='old_user_url_3' value='<?php echo $old_data->user_url_3; ?>'>
+			<input type='hidden' name='old_user_job' value='<?php echo $old_data->user_job; ?>'>
+			<input type='hidden' name='old_user_spec' value='<?php echo $old_data->user_spec; ?>'>
 	</div> <!-- end of form group -->
     
                     </div> <!-- end of modal-body -->
                     <div class="modal-footer">
-                        <input type="submit" value="Submit for Approval" name="approve-profile-submit">
-                        <input type="reset" value="Reset">
+                        <button type="submit" name="approve-profile-submit">Submit for Approval</button>
+                        <button type="submit" name="approve-profile-reset">reset</button>
                     </div>
                 </div>
             </div>
         </div><!--Modal-->
     </form>
 <!-- end of edit profile form modal -->
-			
-<!-- start of profile form handling -->
-<?php
-global $wpdb;
-$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
-$update_user = $results[0];
-if (isset ($_POST['approve-profile-submit'])) {
-	global $wpdb;
-	$new_description = stripslashes($_POST["new_description"]);
-    $new_user_url = ($_POST["new_user_url"]);
-    $new_user_url_2 = ($_POST["new_user_url_2"]);
-    $new_user_url_3 = ($_POST["new_user_url_3"]);
-    $new_user_job = stripslashes($_POST["new_user_job"]);
-    $new_user_spec = stripslashes($_POST["new_user_spec"]);
-		
-	// update the request
-	if ($update_user->student_id) {
-		$updated = $wpdb->update( 
-		'notifications', 
-		array( 
-			'new_description' => $new_description,
-			'new_url' => $new_user_url, 
-			'new_url_2' => $new_user_url_2, 
-			'new_url_3' => $new_user_url_3, 
-			'new_job' => $new_user_job,
-			'new_spec' => $new_user_spec,
-		),
-		array(
-			'student_id' => $current_user->ID,
-		) 
-	);
-	}
-	// create a new request
-	else {
-	$updated = $wpdb->insert( 
-		'notifications', 
-		array(
-			'student_id' => $current_user->ID, 
-			'new_description' => $new_description, 
-			'new_url' => $new_user_url, 
-			'new_url_2' => $new_user_url_2, 
-			'new_url_3' => $new_user_url_3, 
-			'new_job' => $new_user_job,
-			'new_spec' => $new_user_spec,
-		),
-		array( 
-			'%d',  
-			'%s', 
-			'%s', 
-			'%s', 
-			'%s', 
-			'%s',
-			'%s',
-		) 
-	);
-	}
-}
-?>
-<!-- end of profile form handling -->
 
 	<!--Form Modal -->
 	<form class="form-horizontal" id="viewProfileForm" method="post" action="">
@@ -313,9 +365,10 @@ if (isset ($_POST['approve-profile-submit'])) {
                                 <?php
 								$members = get_users( 'orderby=display_name' );
 								foreach ( $members as $member ) {
-									echo "<li class='list-group-item'><button type='submit' class='text_button' name='view-profile' value='" 
-										. $member->ID . "'><div class='alignleft'>".get_avatar($member->user_email, 25)."</div>".$member->display_name . "</button></li>";
-																			
+									if ($member->ID != $current_user->ID) {
+										echo "<li class='list-group-item'><button type='submit' class='text_button' name='view-profile' value='" 
+											. $member->ID . "'><div class='alignleft'>".get_avatar($member->user_email, 25)."</div>".$member->display_name . "</button></li>";
+										}								
 								}
 								?>
 							</ul>
