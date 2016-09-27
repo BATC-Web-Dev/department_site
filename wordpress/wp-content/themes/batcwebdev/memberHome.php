@@ -342,7 +342,7 @@ if (isset ($_POST['approve-profile-reset'])) {
                     </div> <!-- end of modal-body -->
                     <div class="modal-footer">
                         <button type="submit" name="approve-profile-submit">Submit for Approval</button>
-                        <button type="submit" name="approve-profile-reset">reset</button>
+                        <button type="reset" name="approve-profile-reset">reset</button>
                     </div>
                 </div>
             </div>

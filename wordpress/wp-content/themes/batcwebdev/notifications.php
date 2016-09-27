@@ -22,7 +22,7 @@ if ( is_user_logged_in() ) {
     });
 	
 	$(".check-all").change(function () {
-		$("input:checkbox").prop('checked', $(this).prop("checked"));
+		$(this).closest("table").find("input:checkbox").prop('checked', $(this).prop("checked"));
 	});
 	
  });
@@ -35,7 +35,8 @@ if ( is_user_logged_in() ) {
 $notifications = $wpdb->get_results("
 				SELECT 
 					notifications.notify_id,
-					wp_users.display_name
+					wp_users.display_name,
+					wp_users.user_email
 				FROM 
 					notifications 
 				INNER JOIN 
@@ -165,8 +166,7 @@ foreach ($notifications as $row) {
 	//display row if not empty
 	if ($num_pending != 0) {
 	?>	<tr class='body'>
-	<?php echo "<td><a class='toggler' toggle_id='$row->notify_id' class='table'>$row->display_name has $num_pending update$plural pending approval.</a>"; ?>
-	<div class='container'>
+	<?php echo "<td><a class='toggler' toggle_id='$row->notify_id' class='table'><span class='alignleft'>".get_avatar($row->user_email, 20)."</span>$row->display_name has $num_pending update$plural pending approval.</a>"; ?>
 	<table id="approve-deny-table-single">
 	<form method='post' action=''>
     <thead>
@@ -285,7 +285,6 @@ foreach ($notifications as $row) {
 		</tfoot>
 		</form>
 		</table><!-- approve-deny-table-single -->
-		<div> <!-- .container -->
 		</td></tr>
 		<?php
 	} // end of if(num_pending != 0)
@@ -295,7 +294,6 @@ foreach ($notifications as $row) {
 </tbody>
 
 </table> <!-- approve-deny-table-list -->
-</div><!-- .container -->
 
 <!-- Bio Data -->
 <button class='col-sm-12 toggler' toggle_id='-bio-data'>Show/Hide Bio.</button>
@@ -403,7 +401,7 @@ foreach ($notifications as $row) {
 			endwhile; // End of the loop.
 			?>
 <!--Form Modal -->
-	<form class="form-horizontal" id="viewProfileForm" method="post" action="">
+	<form class="form-horizontal" id="viewProfileForm" method="post" action="?page_id=66">
         <div id="other-members-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -607,7 +605,7 @@ foreach ($notifications as $row) {
                     </div> <!-- end of modal-body -->
                     <div class="modal-footer">
                         <button type="submit" name="profile-submit">Update Profile</button>
-                        <button type="submit" name="approve-profile-reset">reset</button>
+                        <button type="reset">reset</button>
                     </div>
                 </div>
             </div>
