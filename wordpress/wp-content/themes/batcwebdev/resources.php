@@ -4,7 +4,26 @@ Template Name: resources
 */
 
 get_header(); ?>
-<div class="container" id="resources">
+    <section id="res_head">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>Professional Tools</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et tincidunt metus, ut eleifend
+                        sapien. Nullam scelerisque vehicula quam, sed fermentum magna luctus vitae. In sit amet diam in
+                        eros aliquam placerat nec non augue. Pellentesque sit amet lorem vel ex mattis rhoncus. Maecenas
+                        nec ornare libero. Vestibulum accumsan sapien neque, eget aliquam arcu sollicitudin sed. Praesent
+                        blandit diam et quam fermentum, nec dapibus purus consectetur. Vestibulum tincidunt arcu euismod
+                        ultrices tempor. Maecenas nibh nulla, laoreet eu leo sit amet, suscipit tempus libero. Morbi
+                        pulvinar bibendum dui eget fringilla. Sed suscipit placerat interdum.
+                    </p>
+                </div>
+                <div class="col-md-4 hidden-sm hidden-xs">
+                    <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/slide3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 	<section id="res_IDE">
 		<div class="container">
 			<div class="row">

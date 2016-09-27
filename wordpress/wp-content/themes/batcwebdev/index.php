@@ -110,7 +110,7 @@ get_header(); ?>
         <div class="row">
             <div class="col-sm-2">
                 <i class="fa fa-desktop fa-2x"></i>
-                <h4>Start when you turn 16</h4>
+                <h4>Develop with professional Tools</h4>
             </div>
             <div class="col-sm-2">
                 <i class="fa fa-university fa-2x"></i>
@@ -193,8 +193,8 @@ get_header(); ?>
 
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" value="Submit" name="contact_submit">
-                        <input type="reset" value="Reset">
+                        <button class="btn" type="submit" value="Submit" name="contact_submit">Submit</button>
+                        <button class="btn" type="reset" value="Reset">Reset</button>
                     </div>
                 </div>
             </div>

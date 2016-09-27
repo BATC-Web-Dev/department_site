@@ -2,552 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="738b2d9a-09fd-46da-95db-7d241d4cc1ee" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/badgeos.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/css/admin.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/css/badgeos-front.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/css/badgeos-single.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/css/badgeos-widgets.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/images/arrows.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/images/badge-builder-teaser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/images/badgeos_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/images/badgeos_screen_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/images/credly-credit-issuer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/images/spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/images/ui_handle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/achievement-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/activity-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/admin-settings.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/ajax-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/class.BadgeOS_Editor_Shortcodes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/class.BadgeOS_Plugin_Updater.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/class.BadgeOS_Shortcode.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/class.Credly_Badge_Builder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/example-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/helpers/cmb_Meta_Box_Sanitize.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/helpers/cmb_Meta_Box_Show_Filters.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/helpers/cmb_Meta_Box_ajax.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/helpers/cmb_Meta_Box_types.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ico-delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/init.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/js/cmb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/js/cmb.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/js/jquery.timePicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/load.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/cmb/style.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/content-filters.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/credly-badge-builder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/credly.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/logging-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/meta-boxes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/load.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/mustache/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/mustache/Mustache.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/mustache/MustacheLoader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/box-factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/box.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/box.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/box.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/box.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/column-factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/column-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/column-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/column.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/dropdown-factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/dropdown-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/dropdown-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/dropdown.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field-delete.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field-generic.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field-order.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field-title-attachment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field-title-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field-title-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field-title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/field.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/images/minus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/images/plus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/images/sort.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/mustache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/mustache.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/box.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/column-create.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/column-delete-all.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/column-delete.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/column-title.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/connection-types-form.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/connection-types.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/tab-create-post.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/tab-list.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/tab-search.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/templates/table-row.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/tools-page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-admin/tools.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/api.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/autoload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/connection-type-factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/connection-type.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/determinate-connection-type.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/directed-connection-type.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/direction-strategy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/exception.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/indeterminate-connection-type.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/indeterminate-directed-connection-type.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/init.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/item-any.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/item-attachment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/item-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/item-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/item.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/list-renderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/list.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/query-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/query-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/query.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/reciprocal-connection-type.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/shortcodes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/side-attachment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/side-post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/side-user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/side.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/storage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/url-query.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/util.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/p2p-core/widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/AdminPage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/BoxesPage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/Cron.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/Forms.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/Hooks.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/Options.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/PostMetabox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/Table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/Util.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/Widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/load-composer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/p2p/scb/load.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/points-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/post-types.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/rules-engine.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes/badgeos_achievement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes/badgeos_achievements_list.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes/badgeos_nomination.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes/badgeos_nominations.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes/badgeos_submission.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes/badgeos_submissions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/shortcodes/credly_assertion_page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/steps-ui.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/submission-actions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/triggers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/user.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/widgets.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/widgets/credly-credit-issuer-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/includes/widgets/earned-user-achievements-widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/admin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/badgeos-achievements.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/badgeos-shortcode-embed.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/badgeos-shortcode-embed.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/ckeditor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/credly-badge-builder.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/credly.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/select2/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/select2/select2-spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/select2/select2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/select2/select2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/select2/select2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/select2/select2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/select2/select2x2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/js/steps-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/languages/badgeos-es_ES.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/languages/badgeos-es_ES.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/languages/badgeos-fr_FR.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/languages/badgeos-fr_FR.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/languages/badgeos.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/languages/badgeos.pot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/badgeos/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/hello.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/asset/css/admin_settings.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/asset/css/admin_wizard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/asset/css/meta_box.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/asset/css/ts_task_list.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/asset/image/menu_icon_16x16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/asset/image/screen_icon_32x32.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class-list.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/TaskScheduler_Bootstrap.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/TaskScheduler_InclusionScriptHeader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/TaskScheduler_MinifiedVersionHeader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/meta_box/TaskScheduler_MetaBox_Action.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/meta_box/TaskScheduler_MetaBox_Advanced.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/meta_box/TaskScheduler_MetaBox_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/meta_box/TaskScheduler_MetaBox_Main.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/meta_box/TaskScheduler_MetaBox_Occurrence.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/meta_box/TaskScheduler_MetaBox_Submit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/edit_module/TaskScheduler_AdminPage_EditModule.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/edit_module/TaskScheduler_AdminPage_EditModule_Setup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/edit_module/TaskScheduler_AdminPage_EditModule_Start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/edit_module/TaskScheduler_AdminPage_EditModule_Tab_Action.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/edit_module/TaskScheduler_AdminPage_EditModule_Tab_Occurrence.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/edit_module/TaskScheduler_AdminPage_EditModule_Tab_UpdateModuleOptions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/edit_module/TaskScheduler_AdminPage_EditModule_Validation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/root/TaskScheduler_AdminPage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/root/TaskScheduler_AdminPage_Form.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/root/TaskScheduler_AdminPage_Setup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/root/TaskScheduler_AdminPage_Start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/setting/TaskScheduler_AdminPage_Setting.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/setting/TaskScheduler_AdminPage_Setting_Form_Heartbeat.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/setting/TaskScheduler_AdminPage_Setting_Form_Reset.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/setting/TaskScheduler_AdminPage_Setting_Form_Task.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/setting/TaskScheduler_AdminPage_Setting_Start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/system/TaskScheduler_AdminPage_System.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/system/TaskScheduler_AdminPage_System_Form.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/system/TaskScheduler_AdminPage_System_Start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/wizard/TaskScheduler_AdminPage_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/wizard/TaskScheduler_AdminPage_Wizard_Setup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/wizard/TaskScheduler_AdminPage_Wizard_Start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/wizard/TaskScheduler_AdminPage_Wizard_Tab_CreateTask.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/wizard/TaskScheduler_AdminPage_Wizard_Tab_SelectAction.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/wizard/TaskScheduler_AdminPage_Wizard_Tab_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/page/wizard/TaskScheduler_AdminPage_Wizard_Validation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/table/TaskScheduler_ListTable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/table/TaskScheduler_ListTable_Action.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/table/TaskScheduler_ListTable_Column.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/admin/table/TaskScheduler_ListTable_Views.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/TaskScheduler_Event.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/TaskScheduler_Event_Exit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/TaskScheduler_Event_Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/TaskScheduler_Event_Routine.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/TaskScheduler_Event_Thread.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/server-heartbeat/TaskScheduler_Event_ServerHeartbeat_Checker.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/server-heartbeat/TaskScheduler_Event_ServerHeartbeat_Loader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/server-heartbeat/TaskScheduler_Event_ServerHeartbeat_Option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/server-heartbeat/TaskScheduler_Event_ServerHeartbeat_Resumer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/event/server-heartbeat/TaskScheduler_ServerHeartbeat.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/TaskScheduler_Module_Factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/TaskScheduler_Wizard_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/TaskScheduler_Action_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/TaskScheduler_Wizard_Action_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/TaskScheduler_Wizard_Action_Default.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/_hung_routine_handler/TaskScheduler_Action_HungRoutineHandler_Thread.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/_routine_log_deleter/TaskScheduler_Action_RoutineLogDeleter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/_routine_log_deleter/TaskScheduler_Action_RoutineLogDeleter_Thread.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/debug/TaskScheduler_Action_Debug.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/email/TaskScheduler_Action_Email.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/email/TaskScheduler_Action_Email_Thread.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/email/admin/TaskScheduler_Action_Email_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/post_deleter/TaskScheduler_Action_PostDeleter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/post_deleter/TaskScheduler_Action_PostDeleter_Thread.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/post_deleter/admin/TaskScheduler_Action_PostDeleter_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/post_deleter/admin/TaskScheduler_Action_PostDeleter_Wizard_2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/post_deleter/admin/TaskScheduler_Action_PostDeleter_Wizard_3.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/transient_cleaner/TaskScheduler_Action_TransientCleaner.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/transient_cleaner/admin/TaskScheduler_Action_TransientCleaner_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/web_checker/TaskScheduler_Action_WebCheck.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/action/web_checker/admin/TaskScheduler_Action_WebCheck_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/TaskScheduler_Occurrence_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/TaskScheduler_Wizard_Occurrence_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/TaskScheduler_Wizard_Occurrence_Default.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/constant/TaskScheduler_Occurrence_Constant.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/daily/TaskScheduler_Occurrence_Daily.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/daily/admin/TaskScheduler_Occurrence_Daily_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/exit_code/TaskScheduler_Occurrence_ExitCode.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/exit_code/admin/TaskScheduler_Occurrence_ExitCode_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/fixed_interval/TaskScheduler_Occurrence_FixedInterval.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/fixed_interval/admin/TaskScheduler_Occurrence_FixedInterval_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/specific_time/TaskScheduler_Occurrence_SpecificTime.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/specific_time/admin/TaskScheduler_Occurrence_SpecificTime_Wizard.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/module/occurrence/volatile/TaskScheduler_Occurrence_Volatile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/log/TaskScheduler_Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/routine/TaskScheduler_Routine.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/routine/TaskScheduler_Routine_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/routine/TaskScheduler_Routine_Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/routine/TaskScheduler_Routine_Meta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/routine/TaskScheduler_Routine_Option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/routine/TaskScheduler_Routine_Taxonomy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/object/routine/TaskScheduler_Routine_Thread.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/option/TaskScheduler_Option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/post_type/log/TaskScheduler_PostType_Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/post_type/log/TaskScheduler_PostType_Log_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/post_type/routine/TaskScheduler_PostType_Routine.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/post_type/task/TaskScheduler_PostType_Task.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/post_type/task/TaskScheduler_PostType_Task_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/post_type/thread/TaskScheduler_PostType_Thread.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_AutoLoad.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_Debug.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_PluginUtility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_Requirements.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_Utility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_WPUtility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_WPUtility_Option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/TaskScheduler_WPUtility_Post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/clone/TaskScheduler_ClonePost.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/clone/TaskScheduler_CloneTask.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/log/TaskScheduler_LogUtility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/log/TaskScheduler_LogUtility_Add.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/log/TaskScheduler_LogUtility_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/log/TaskScheduler_LogUtility_Get.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/routine/TaskScheduler_RoutineUtility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/routine/TaskScheduler_RoutineUtility_Add.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/routine/TaskScheduler_RoutineUtility_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/routine/TaskScheduler_RoutineUtility_Edit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/routine/TaskScheduler_RoutineUtility_Get.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/task/TaskScheduler_TaskUtility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/task/TaskScheduler_TaskUtility_Add.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/task/TaskScheduler_TaskUtility_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/task/TaskScheduler_TaskUtility_Edit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/task/TaskScheduler_TaskUtility_Get.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/thread/TaskScheduler_ThreadUtility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/thread/TaskScheduler_ThreadUtility_Add.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/thread/TaskScheduler_ThreadUtility_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/thread/TaskScheduler_ThreadUtility_Edit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/thread/TaskScheduler_ThreadUtility_Get.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/class/utility/walker/TaskScheduler_Walker_Log.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/admin-page-framework-include-class-list.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/admin-page-framework.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Form_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Form_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Form_Model_Export.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Form_Model_Imort.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Form_Model_Validation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Form_Model_Validation_Opiton.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Form_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Menu_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Menu_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Menu_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Page_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Page_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Page_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Page_View_MetaBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/AdminPageFramework_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/controller/AdminPageFramework_HelpPane_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/controller/AdminPageFramework_Link_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/controller/AdminPageFramework_Resource_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/model/AdminPageFramework_CustomSubmitFields.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/model/AdminPageFramework_ExportOptions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/model/AdminPageFramework_FormElement/AdminPageFramework_FormElement_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/model/AdminPageFramework_FormEmail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/model/AdminPageFramework_ImportOptions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/model/AdminPageFramework_Property_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework/view/AdminPageFramework_PageLoadInfo_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/AdminPageFramework_Factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/AdminPageFramework_Factory_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/AdminPageFramework_Factory_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/AdminPageFramework_Factory_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/AdminPageFramework_Factory_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/controller/AdminPageFramework_HelpPane_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/controller/AdminPageFramework_Link_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/controller/AdminPageFramework_Resource_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/model/AdminPageFramework_CSS.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/model/AdminPageFramework_FormElement/AdminPageFramework_FormElement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/model/AdminPageFramework_FormElement/AdminPageFramework_FormElement_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/model/AdminPageFramework_FormElement/AdminPageFramework_FormElement_Meta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/model/AdminPageFramework_Message.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/model/AdminPageFramework_Property_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Debug.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_ErrorReporting.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_RegisterClasses.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility_Array.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility_Deprecated.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility_File.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility_Path.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility_String.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility_SystemInformation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_Utility/AdminPageFramework_Utility_URL.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_File.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_HTML.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_Hook.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_Option.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_Post.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_SiteInformation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_SystemInformation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/utility/AdminPageFramework_WPUtility/AdminPageFramework_WPUtility_URL.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_checkbox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_color.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_default.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_export.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_file.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_hidden.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_image.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_import.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_media.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_number.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_posttype.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_radio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_section_title.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_select.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_size.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_submit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_system.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_taxonomy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_text.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_FieldType_textarea.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldType/AdminPageFramework_WalkerTaxonomyChecklist.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FieldTypeRegistration.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormField/AdminPageFramework_FormField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormField/AdminPageFramework_FormField_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormField/AdminPageFramework_FormField_FieldDefinition.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormOutput/AdminPageFramework_FormOutput.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormTable/AdminPageFramework_FormTable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormTable/AdminPageFramework_FormTable_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormTable/AdminPageFramework_FormTable_Caption.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_FormTable/AdminPageFramework_FormTable_Row.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Input/AdminPageFramework_Input_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Input/AdminPageFramework_Input_checkbox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Input/AdminPageFramework_Input_radio.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Input/AdminPageFramework_Input_select.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_PageLoadInfo_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_AttributeUpdator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_Base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_CheckboxSelector.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_CollapsibleSection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_MediaUploader.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_OptionStorage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_RegisterCallback.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_RepeatableField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_RepeatableSection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_Sortable.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_Tab.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_Utility.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_Script/AdminPageFramework_Script_Widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Factory/view/AdminPageFramework_TabNavigationBar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/AdminPageFramework_MetaBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/AdminPageFramework_MetaBox_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/AdminPageFramework_MetaBox_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/AdminPageFramework_MetaBox_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/AdminPageFramework_MetaBox_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/controller/AdminPageFramework_HelpPane_MetaBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/controller/AdminPageFramework_Resource_MetaBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox/model/AdminPageFramework_Property_MetaBox.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/AdminPageFramework_MetaBox_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/AdminPageFramework_MetaBox_Page_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/AdminPageFramework_MetaBox_Page_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/AdminPageFramework_MetaBox_Page_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/AdminPageFramework_MetaBox_Page_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/controller/AdminPageFramework_HelpPane_MetaBox_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/controller/AdminPageFramework_Resource_MetaBox_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_MetaBox_Page/model/AdminPageFramework_Property_MetaBox_Page.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_NetworkAdmin/AdminPageFramework_NetworkAdmin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_NetworkAdmin/controller/AdminPageFramework_Link_NetworkAdmin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_NetworkAdmin/model/AdminPageFramework_Property_NetworkAdmin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_NetworkAdmin/view/AdminPageFramework_PageLoadInfo_NetworkAdminPage.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/AdminPageFramework_PostType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/AdminPageFramework_PostType_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/AdminPageFramework_PostType_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/AdminPageFramework_PostType_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/AdminPageFramework_PostType_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/controller/AdminPageFramework_Link_PostType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/controller/AdminPageFramework_Resource_PostType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/model/AdminPageFramework_Property_PostType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_PostType/view/AdminPageFramework_PageLoadInfo_PostType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/AdminPageFramework_TaxonomyField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/AdminPageFramework_TaxonomyField_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/AdminPageFramework_TaxonomyField_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/AdminPageFramework_TaxonomyField_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/AdminPageFramework_TaxonomyField_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/controller/AdminPageFramework_HelpPane_TaxonomyField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/controller/AdminPageFramework_Resource_TaxonomyField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_TaxonomyField/model/AdminPageFramework_Property_TaxonomyField.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/AdminPageFramework_UserMeta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/AdminPageFramework_UserMeta_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/AdminPageFramework_UserMeta_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/AdminPageFramework_UserMeta_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/AdminPageFramework_UserMeta_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/controller/AdminPageFramework_HelpPane_UserMeta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/controller/AdminPageFramework_Resource_UserMeta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_UserMeta/model/AdminPageFramework_Property_UserMeta.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/AdminPageFramework_Widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/AdminPageFramework_Widget_Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/AdminPageFramework_Widget_Factory.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/AdminPageFramework_Widget_Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/AdminPageFramework_Widget_Router.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/AdminPageFramework_Widget_View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/controller/AdminPageFramework_HelpPane_Widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/controller/AdminPageFramework_Resource_Widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/factory/AdminPageFramework_Widget/model/AdminPageFramework_Property_Widget.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_AdminNotice.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_PluginBootstrap.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_Requirement.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_TableOfContents.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_WPReadmeParser/AdminPageFramework_WPReadmeParser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_WPReadmeParser/library/AdminPageFramework_Parsedown/AdminPageFramework_Parsedown.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_WPReadmeParser/library/AdminPageFramework_Parsedown/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/apf/utility/AdminPageFramework_Zip.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/TaskScheduler_AutoCompleteCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/asset/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/asset/jquery.tokeninput.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/asset/token-input-admin_page_framework.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/asset/token-input-facebook.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/asset/token-input-mac.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/asset/token-input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/autocomplete-custom-field-type/asset/tokeninput.options-hander.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/TaskScheduler_DateCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/TaskScheduler_DateRangeCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/TaskScheduler_DateTimeCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/TaskScheduler_DateTimeRangeCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/TaskScheduler_TimeCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/TaskScheduler_TimeRangeCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/animated-overlay.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/jquery-ui-1.10.3.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/css/jquery-ui-timepicker-addon.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/js/apf_date_range.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/js/datetimepicker-option-handler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/js/jquery-ui-sliderAccess.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/js/jquery-ui-timepicker-addon.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/license/AUTHORS.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/license/LICENSE-MIT" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/date-time-custom-field-types/license/MIT-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/multiple-text-input-filed-type/TaskScheduler_MultipleTextInputFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/include/library/custom-field-types/revealer-custom-field-type/TaskScheduler_RevealerCustomFieldType.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/task-scheduler.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/task-scheduler/uninstall.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/plugins/theme-my-login/templates/login-form.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/plugins/theme-my-login/templates/login-form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/footer.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/resources.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/resources.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
@@ -582,9 +38,21 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2130">
-              <caret line="153" column="10" selection-start-line="153" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
+            <state relative-caret-position="1590">
+              <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contacts.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="102" column="40" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+              <folding>
+                <element signature="e#6792#6808#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -592,98 +60,18 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15660">
-              <caret line="1044" column="7" selection-start-line="1044" selection-start-column="7" selection-end-line="1044" selection-end-column="7" />
+            <state relative-caret-position="316">
+              <caret line="1064" column="26" selection-start-line="1064" selection-start-column="26" selection-end-line="1064" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
+      <file leaf-file-name="resources.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/resources.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="198" column="6" selection-start-line="198" selection-start-column="6" selection-end-line="198" selection-end-column="6" />
-              <folding>
-                <marker date="1474576048000" expanded="true" signature="8466:8485" ph="SELECT * FRO... class" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminClasses.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="260" column="42" selection-start-line="260" selection-start-column="42" selection-end-line="260" selection-end-column="42" />
-              <folding>
-                <marker date="1474576244000" expanded="true" signature="6315:6334" ph="SELECT * FRO... classes" />
-                <marker date="1474576244000" expanded="true" signature="6315:6356" ph="SELECT * FRO... class" />
-                <marker date="1474576244000" expanded="true" signature="6869:6994" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wp-login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1474413010000" expanded="true" signature="30441:30448" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login-form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/plugins/theme-my-login/templates/login-form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/template-parts/content.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1472335346000" expanded="true" signature="815:821" ph="→" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/single.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="30">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -732,16 +120,16 @@
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/recources.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/classes.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/submitContact.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/resources.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/footer.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/plugins/theme-my-login/templates/login-form.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/header.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/resources.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" />
       </list>
     </option>
   </component>
@@ -871,54 +259,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="batcwebdev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="department_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="department_site" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="department_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="department_site" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wordpress" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="wp-content" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme-my-login" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -1076,18 +416,20 @@
       <workItem from="1473969393832" duration="9856000" />
       <workItem from="1474406680926" duration="5649000" />
       <workItem from="1474487909342" duration="5757000" />
-      <workItem from="1474575155705" duration="603000" />
+      <workItem from="1474575155705" duration="2076000" />
+      <workItem from="1474827140514" duration="1170000" />
+      <workItem from="1474921031934" duration="8795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282027000" />
+    <option name="totallyTimeSpent" value="293465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1702432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17453505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1274,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/deleteClass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/removeClasses.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1352,14 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="95" column="2" selection-start-line="14" selection-start-column="0" selection-end-line="95" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/plugins/theme-my-login/admin/js/theme-my-login-admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1402,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/resources.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1421,9 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1474413010000" expanded="true" signature="30441:30448" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1439,9 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1472335346000" expanded="true" signature="815:821" ph="→" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1453,27 +767,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2130">
-          <caret line="153" column="10" selection-start-line="153" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/plugins/theme-my-login/theme-my-login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,36 +778,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15660">
-          <caret line="1044" column="7" selection-start-line="1044" selection-start-column="7" selection-end-line="1044" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="198" column="6" selection-start-line="198" selection-start-column="6" selection-end-line="198" selection-end-column="6" />
+        <state relative-caret-position="298">
+          <caret line="199" column="153" selection-start-line="199" selection-start-column="153" selection-end-line="199" selection-end-column="153" />
           <folding>
-            <marker date="1474576048000" expanded="true" signature="8466:8485" ph="SELECT * FRO... class" />
+            <marker date="1474576292000" expanded="true" signature="8164:8183" ph="SELECT * FRO... class" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="260" column="42" selection-start-line="260" selection-start-column="42" selection-end-line="260" selection-end-column="42" />
+        <state relative-caret-position="15">
+          <caret line="244" column="71" selection-start-line="244" selection-start-column="71" selection-end-line="244" selection-end-column="71" />
           <folding>
             <marker date="1474576244000" expanded="true" signature="6315:6334" ph="SELECT * FRO... classes" />
             <marker date="1474576244000" expanded="true" signature="6315:6356" ph="SELECT * FRO... class" />
             <marker date="1474576244000" expanded="true" signature="6869:6994" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/deleteClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="49" column="90" selection-start-line="49" selection-start-column="90" selection-end-line="49" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="1064" column="26" selection-start-line="1064" selection-start-column="26" selection-end-line="1064" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/resources.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="102" column="40" selection-start-line="102" selection-start-column="40" selection-end-line="102" selection-end-column="40" />
+          <folding>
+            <element signature="e#6792#6808#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
