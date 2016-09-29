@@ -1037,6 +1037,12 @@ section.top-image {
 	color: white;
 }
 
+.res_small_img img{
+	height: 50px;
+	width: 50px;
+
+}
+
 .site-footer {
 	background-color: #595959;
 }
@@ -1050,26 +1056,9 @@ footer a:visited {
 	color: #99D3DE;
 }
 
-#contact_top {
-	padding-top: 3px;
-	color: white;
-	background-color: #595959;
-}
-
-#contact_top img {
-	height: 160px;
-	width: 240px;
-}
-
-#contact_top p {
-	vertical-align: center;
-	margin-top: 15px;
-	text-align: center;
-	font-size: 15px;
-}
-
 #contact_form {
-	border: solid #595959;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .row {
@@ -1090,4 +1079,39 @@ footer a:visited {
 #approve-deny-table-single {
 	margin-bottom: 0px;
 }
+
+div .jumbotron {
+	margin-bottom: 0px;
+}
+
+.jumbotron {
+	background: url(assets/images/contact.jpg);
+	background-size: cover;
+	color: white;
+}
+
+.jumbotron a:visited {
+	color: white;
+}
+
+.jumbotron h2 span{
+	color: white;
+	font: bold 30px/45px Helvetica, Sans-Serif;
+}
+
+.jumbotron span {
+	color: white;
+	font: bold 20px/45px Helvetica, Sans-Serif;
+	letter-spacing: -1px;
+	background: rgb(0, 0, 0); /* fallback color */
+	background: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+}
+
+.jumbotron span.spacer {
+	padding:0 5px;
+}
+
+
+
 

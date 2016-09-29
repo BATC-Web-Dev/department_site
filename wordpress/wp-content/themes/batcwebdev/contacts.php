@@ -97,34 +97,43 @@ else {
 ?>
 <!-- start of BATC contact info -->
     <main id="main" class="site-main" role="main">
-        <section id="contact_top">
+        <section id=jumbo>
+            <div class="jumbotron">
+
+                    <h2><span>Make Contact</span><</h2>
+                    <p><span>
+                        <i class="glyphicon glyphicon-envelope"> Address:</i><span class='spacer'></span><br>
+                        <span class='spacer'></span>1410 North 1000 West<span class='spacer'></span><br>
+                        <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
+                    </span></p>
+                    <p><span>
+                        <i class="glyphicon glyphicon-phone">Phone:</i><span class='spacer'></span><br>
+                        <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
+                        <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
+                     </span></p>
+
+            </div>
+        </section>
+        <section id="optin">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 hidden-xs hidden-sm">
-                        <img class="img center-block pull-left" src="<?php bloginfo('template_url'); ?>/assets/images/westCampus.jpg" alt="">
+                    <div class="col-sm-8">
+                        <p class="lead">
+                            <strong>Ready to find out more about our program?</strong>
+                        </p>
                     </div>
-                    <div class="col-md-8 col-sm-6 col-xs-6">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <p>
-                                    Address:<br>
-                                    1410 North 1000 West<br>
-                                    Logan, UT 84321<br>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
+                    <div class="col-sm-4">
+                        <strong>
                             <p>
-                                Phone:<br>
-                                Main: <a href="tel:435)-753-4708">(435)-753-4708</a><br>
-                                Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><br>
+                                <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block">I'm Ready</a>
                             </p>
-                        </div>
+                        </strong>
                     </div>
                 </div>
             </div>
         </section>
         <section id="contact_form">
+            <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <form class="form-horizontal" id="contactForm" method="post" action="">
@@ -160,21 +169,15 @@ else {
                         </div>
                     </form>
                 </div>
-                <div class="hidden-xs hidden-sm col-md-6 pull-right" id="map">
+                <div class="col-md-6 pull-right" id="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5952.578404199443!2d-111.85850495194497!3d41.75742211651987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87548761cbd58949%3A0x46a978a3c2839d66!2sBridgerland+Applied+Technology+College+West+Campus!5e0!3m2!1sen!2sus!4v1474922534989" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
+        </div>
 <?php
 } // end of else
 ?>
 <!-- end of form handling -->
-<section>
-    <div class="container">
-
-    </div>
-</section>
-
-
 	</main><!-- .site-main -->
 <?php get_footer(); ?>

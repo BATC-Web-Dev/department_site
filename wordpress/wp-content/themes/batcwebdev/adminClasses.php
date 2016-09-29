@@ -146,10 +146,10 @@ if (isset($_POST['submit'])) {
                     <thead>
                     <tr class="header">
                         <th class="position-header">Position</th>
-                        <th class="edit-header">Edit</th>
                         <th>Course ID</th>
                         <th>Course Name</th>
                         <th>Hours</th>
+                        <th class="edit-header">Edit</th>
                         <th class="remove-header">Remove</th>
                     </tr>
                     </thead>
@@ -165,13 +165,13 @@ if (isset($_POST['submit'])) {
                             echo "<td class='index'></td>";
                             echo "<input type='hidden' value='$row->ID' class='ID'>";
                             echo "<input type='hidden' class='class_type' value='$row->class_type'>";
-                            echo "<td class='edit-td'><button type='button' class='btn btn-default edit' id='edit-class-btn'>Edit</button></td>";
                             echo "<input type='hidden' name='class_type[]' value='$row->class_type'>";
                             echo "<td><p>".$row->course_id."</p></td>";
                             echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
                             echo "<td><p>".$row->course_name."</p></td>";
                             echo "<td id='hours'><p>".$row->hours."</p></td>";
                             echo "<input type='hidden' value='0' name='checkbox[]'>";
+                            echo "<td class='edit-td'><button type='button' class='btn btn-default edit' id='edit-class-btn'>Edit</button></td>";
                             echo "<td class='delete-td'><button type='submit' class='btn btn-danger' name='submit' id='delete' data-record-title='$row->course_name' data-record-id='$row->ID' data-toggle='modal' data-target='#confirm-delete'>Delete</button></td>";
                             echo "</tr>";
                             echo "<tr class='descRow'><td colspan='5''><div><p>".$row->course_desc."</p></div></td></tr>";
@@ -208,7 +208,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="comment">Class Description:</label>
-                                    <textarea class="classForm" rows="5" id="comment" name="courseDesc"></textarea>
+                                    <textarea class="classForm" rows="5" id="comment" name="courseDesc" placeholder="Description:"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="courseName">Hours: </label>

@@ -22,6 +22,9 @@ get_header(); ?>
 				<div class="col-md-12 lead">Member Home<hr></div>
 			</div>
 			<div class="row">
+				<div class="col-md-6">
+
+
 			<?php
 			if ( is_user_logged_in() ):
 				$current_user = wp_get_current_user();
@@ -35,41 +38,43 @@ get_header(); ?>
 				}
 				else {
 					$profile_viewing = $current_user;
-					$welcome_message = "Welcome $current_user->display_name";
+					$welcome_message = $current_user->display_name;
 					$avatar_header = "Your Avatar";
 					$bio_header = "Your Bio";
 					$profile_button = "<a data-toggle='modal' data-target='#approve-profile-modal'><big>Edit Profile</big></a><br>";
 				}
 					
 				if ( ($profile_viewing instanceof WP_User) ) {
-					echo "<div class='avatar col-sm-4'><div class='center'><h3>$avatar_header</h3>"
+					echo "<div class='avatar col-sm-6 col-md-4'><div class='center'>"
 						. get_avatar( $profile_viewing->user_email, 200 );
 					
 						echo $profile_button;
-						echo "<a data-toggle='modal' data-target='#other-members-modal'><big>Other Members</big></a></div>
-						</div>";
-					echo "<div class='col-sm-4'>";
-					
-					
-					echo "<h3 class='welcome-head'>$welcome_message</h3>";
-					echo "<div class='list-group'>
-							<a class='list-group-item'>Email: $profile_viewing->user_email</a>
-							<a class='list-group-item' href='$profile_viewing->user_url'>Primary Website: $profile_viewing->user_url</a>
-							<a class='list-group-item' href='$profile_viewing->user_url_2'>Second Website: $profile_viewing->user_url_2</a>
-							<a class='list-group-item' href='$profile_viewing->user_url_3'>Third Website: $profile_viewing->user_url_3</a>
-							<a class='list-group-item'>Employment: $profile_viewing->user_job</a>
-							<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
+						echo "<a data-toggle='modal' data-target='#other-members-modal'><big>Other Members</big></a>
+							<p><small>
+							Specialization:<br> $profile_viewing->user_spec<br>
+							Employment:<br> $profile_viewing->user_job
+							</small>
+							</p>
+							
+							
+							</div>
+							</div>";
+					echo "<div class='col-sm-6 col-md-8'>";
+
+					echo "<h3>$welcome_message</h3>
+							<p>$profile_viewing->description</p>
+							<div class='list-group'>
+							<a class='list-group-item'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></a>
+							<a class='list-group-item' href='$profile_viewing->user_url'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>
+							<a class='list-group-item' href='$profile_viewing->user_url_2'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_2</i></a>
+							<a class='list-group-item' href='$profile_viewing->user_url_3'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_3</i></a>
 						</div>
 						</div>";
-					echo "<div class='col-sm-4'>";
-					echo "<h3>$bio_header:</h3>";
-					echo "<p>$profile_viewing->description</p></div>";
 				}
 			endif;
 			?>
-			</div>
-			<div class="row">
-				<div class="col-sm-4"><!--First Column-->
+				</div>
+				<div class="col-md-6"><!--First Column-->
 					<h3>Recent Posts</h3>
 					<div class="list-group">
 						<?php
@@ -82,8 +87,10 @@ get_header(); ?>
 						?>
 					</div>
 				</div>
-
-				<div class="col-sm-4"><!--Second Column-->
+			</div>
+		</div>
+			<div class="row">
+				<div class="col-md-6"><!--Second Column-->
 					<h3>Recent Forum Replies</h3>
 					<div class="list-group">
 					<?php
@@ -103,7 +110,7 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<div class="col-sm-4"><!--Third Column-->
+				<div class="col-md-6"><!--Third Column-->
 					<h3>Recent Forum Topics</h3>
 					<div class="list-group">
 						<?php

@@ -30,9 +30,8 @@ get_header(); ?>
 				<div class="col-md-4 hidden-sm hidden-xs">
 					<img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/IDE.jpeg" alt="">
 				</div>
-				<div class="col-md-8" id="">
+				<div class="col-md-8">
 					<h3>Build</h3>
-					<img class="img center-block img-circle hidden-md hidden-lg" src="<?php bloginfo('template_url'); ?>/assets/images/IDE.jpeg" alt="">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et tincidunt metus, ut eleifend
 						sapien. Nullam scelerisque vehicula quam, sed fermentum magna luctus vitae. In sit amet diam in
 						eros aliquam placerat nec non augue. Pellentesque sit amet lorem vel ex mattis rhoncus. Maecenas
