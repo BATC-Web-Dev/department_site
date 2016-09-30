@@ -56,7 +56,7 @@ get_header(); ?>
             <div class="col-sm-4">
                 <strong>
                 <p>
-                    <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block">I'm Ready</a>
+                    <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" target="_blank">I'm Ready</a>
                 </p>
                 </strong>
             </div>
@@ -146,7 +146,7 @@ get_header(); ?>
             <div class="col-sm-4">
                 <strong>
                     <p>
-                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" data-toggle="modal" id="contact  -btn" data-target="#contact-modal">Contact Us</a>
+                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" data-toggle="modal" id="contact-btn" data-target="#contact-modal">Contact Us</a>
                     </p>
                 </strong>
             </div>
@@ -188,13 +188,13 @@ get_header(); ?>
                         </div>
                         <div class="form-group">
                             <label for="contact_comment">Comment:</label>
-                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment"></textarea>
+                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment" required></textarea>
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button class="btn" type="submit" value="Submit" name="contact_submit">Submit</button>
                         <button class="btn" type="reset" value="Reset">Reset</button>
+                        <button class="btn" type="submit" value="Submit" name="contact_submit">Submit</button>
                     </div>
                 </div>
             </div>
