@@ -21,9 +21,10 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-md-12 lead">Member Home<hr></div>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
 
+			<div class="row">
+
+				<div class="col-md-6 col-sm-12 well" id="member_profile">
 
 			<?php
 			if ( is_user_logged_in() ):
@@ -41,22 +42,19 @@ get_header(); ?>
 					$welcome_message = $current_user->display_name;
 					$avatar_header = "Your Avatar";
 					$bio_header = "Your Bio";
-					$profile_button = "<a data-toggle='modal' data-target='#approve-profile-modal'><big>Edit Profile</big></a><br>";
+					$profile_button = "<a data-toggle='modal' data-target='#approve-profile-modal'>Edit Profile</a><br>";
 				}
 					
 				if ( ($profile_viewing instanceof WP_User) ) {
-					echo "<div class='avatar col-sm-6 col-md-4'><div class='center'>"
+					echo "<div class='avatar col-sm-6 col-md-4' id='bio_avatar'><div class='center'>"
 						. get_avatar( $profile_viewing->user_email, 200 );
 					
 						echo $profile_button;
-						echo "<a data-toggle='modal' data-target='#other-members-modal'><big>Other Members</big></a>
-							<p><small>
-							Specialization:<br> $profile_viewing->user_spec<br>
-							Employment:<br> $profile_viewing->user_job
-							</small>
+						echo "<a data-toggle='modal' data-target='#other-members-modal'>Other Members</a>
+							<p>
+							$profile_viewing->user_spec<br>
+							$profile_viewing->user_job
 							</p>
-							
-							
 							</div>
 							</div>";
 					echo "<div class='col-sm-6 col-md-8'>";
@@ -74,7 +72,8 @@ get_header(); ?>
 			endif;
 			?>
 				</div>
-				<div class="col-md-6"><!--First Column-->
+
+				<div class="col-md-6 col-sm-12"><!--First Column-->
 					<h3>Recent Posts</h3>
 					<div class="list-group">
 						<?php
@@ -87,6 +86,7 @@ get_header(); ?>
 						?>
 					</div>
 				</div>
+
 			</div>
 		</div>
 			<div class="row">
@@ -109,7 +109,6 @@ get_header(); ?>
 						?>
 					</div>
 				</div>
-
 				<div class="col-md-6"><!--Third Column-->
 					<h3>Recent Forum Topics</h3>
 					<div class="list-group">
@@ -132,8 +131,6 @@ get_header(); ?>
 				endif;
 			endwhile; // End of the loop.
 			?>
-			
-			
 <!-- start of profile form handling -->
 <?php
 global $wpdb;

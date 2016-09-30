@@ -100,7 +100,7 @@ else {
         <section id=jumbo>
             <div class="jumbotron">
 
-                    <h2><span>Make Contact</span><</h2>
+                    <h2><span>Make Contact</span></h2>
                     <p><span>
                         <i class="glyphicon glyphicon-envelope"> Address:</i><span class='spacer'></span><br>
                         <span class='spacer'></span>1410 North 1000 West<span class='spacer'></span><br>
@@ -169,7 +169,7 @@ else {
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 pull-right" id="map">
+                <div class="col-md-6" id="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5952.578404199443!2d-111.85850495194497!3d41.75742211651987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87548761cbd58949%3A0x46a978a3c2839d66!2sBridgerland+Applied+Technology+College+West+Campus!5e0!3m2!1sen!2sus!4v1474922534989" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>

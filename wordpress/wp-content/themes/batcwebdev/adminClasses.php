@@ -85,6 +85,7 @@ if (isset($_POST['submit'])) {
         $( "#sort-class-btn" ).click(function() {
             $("#save-sort-class-btn").show();
             $("#sort-class-btn").hide();
+            $("#add-class-btn").hide();
             $("#classTable .descRow").hide();
             $("#classTable .index").show();
             $("#classTable .position-header").show();
@@ -142,7 +143,7 @@ if (isset($_POST['submit'])) {
                     <li style="color: orange">Back-End</li>
                 </ul>
             </div>
-                <table id="classTable" class="table">
+                <table id="classTable" class="table responsive">
                     <thead>
                     <tr class="header">
                         <th class="position-header">Position</th>

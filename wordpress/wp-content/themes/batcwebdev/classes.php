@@ -69,22 +69,22 @@ if (isset($_POST['submit'])) {
             $(".classType3").css("color", "orange");
             //Stripe
             $( "tbody tr:even" ).css( "background-color", "#C9C9C9" );
-        });
 
-        $(function() {
-            $("td[colspan=4]").css('pointer-events', 'none');
-            $("td[colspan=4]").find("p").hide();
-            $("tr").click(function(event) {
-                event.stopPropagation();
-                var $target = $(event.target);
-                if($($target).is('input[type=checkbox]')) {
-                    return;
-                }
-                else if ( $target.closest("td").attr("colspan") > 1 ) {
-                    $target.slideUp();
-                } else {
-                    $target.closest("tr").next().find("p").slideToggle();
-                }
+            $(function() {
+                $("td[colspan=4]").css('pointer-events', 'none');
+                $("td[colspan=4]").find("p").hide();
+                $("tr").click(function(event) {
+                    event.stopPropagation();
+                    var $target = $(event.target);
+                    if($($target).is('input[type=checkbox]')) {
+                        return;
+                    }
+                    else if ( $target.closest("td").attr("colspan") > 1 ) {
+                        $target.slideUp();
+                    } else {
+                        $target.closest("tr").next().find("p").slideToggle();
+                    }
+                });
             });
         });
     </script>

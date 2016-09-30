@@ -267,6 +267,52 @@ function add_login_logout_link($items, $args) {
     ob_end_clean();
     $items .= '<li>'. $loginoutlink .'</li>';     return $items; }
 
+function my_custom_login() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/login/custom-login-styles.css" />';
+}
+add_action('login_head', 'my_custom_login');
+
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'BATC Web and Mobile Developement';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+function login_error_override()
+{
+    return 'Incorrect login details.';
+}
+add_filter('login_errors', 'login_error_override');
+
+function admin_login_redirect( $redirect_to, $request, $user )
+{
+    global $user;
+    if( isset( $user->roles ) && is_array( $user->roles ) ) {
+        if( in_array( "administrator", $user->roles ) ) {
+            return 'http://localhost:8888/wordpress/?page_id=62';
+        } else {
+            return 'http://localhost:8888/wordpress/?page_id=62';
+        }
+    }
+    else
+    {
+        return $redirect_to;
+    }
+}
+add_filter("login_redirect", "admin_login_redirect", 10, 3);
+
+function login_checked_remember_me() {
+    add_filter( 'login_footer', 'rememberme_checked' );
+}
+add_action( 'init', 'login_checked_remember_me' );
+
+function rememberme_checked() {
+    echo "<script>document.getElementById('rememberme').checked = true;</script>";
+}
 
 
 
