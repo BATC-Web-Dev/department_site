@@ -14,13 +14,18 @@ Template Name: contacts
 get_header(); ?>
 <script>
     jQuery(document).ready(function( $ ) {
+        $.validator.addMethod("phoneUS", function (phone_number, element) {
+            phone_number = phone_number.replace(/\s+/g, "");
+            return this.optional(element) || phone_number.length > 9 &&
+                phone_number.match(/\(?[\d\s]{3}\)[\d\s]{3}-[\d\s]{4}$/);
+        }, "Invalid phone number");
         $('#contactForm').validate({
-            rules {
-                contact_phone {
+            rules: {
+                contact_phone: {
                     required: true,
                     phoneUS: true
                 }
-                contact_email {
+                contact_email: {
                     required: true,
                     validate_email: true
                 }
@@ -40,7 +45,7 @@ function findPos(obj) {
 }
 </script>
 <!-- start form handling -->
-		<?php
+<?php
 // define variables and set to empty values
 if (isset ($_POST["reset"])) {
 	$contact_name = "";
@@ -76,27 +81,30 @@ if ($contact_name && ($contact_phone || $contact_email) ) {
 
     wp_mail($to,$subject,$txt,$headers);	  
 //  } // end of if has contact info
-?>
-	<span class="thank_you_contact_form">Thank you for submitting your contact information.</span>
-<?php
+    $result='<div class="alert alert-success">Thank You! We will be in touch</div>';
+
 } // end of if required fields
 else {
-  if (isset ($_POST['contact_submit'])) {
-	echo '<div class="contact_form_error">';
-    if (!$contact_name || (!$contact_phone && !$contact_email) ) {
-      echo "<h3>Form did not submit:</h3>";
-    }
-    if (!$contact_name) {
-	    echo "Please enter a name.<br>";
-    }
-    if (!$contact_phone && !$contact_email) {
-	  echo "Please enter a phone number or email.<br>";
-    }
-	echo "</div>"; // .contact_form_error
-  } // end of if isset
+    if (isset ($_POST['contact_submit'])) {
+        echo '<div class="contact_form_error">';
+        if (!$contact_name || (!$contact_phone && !$contact_email)) {
+            $result='<div class="alert alert-success">Sorry, Form did not submit</div>';
+        }
+        if (!$contact_name) {
+            echo "Please enter a name.<br>";
+        }
+        if (!$contact_phone && !$contact_email) {
+            echo "Please enter a phone number or email.<br>";
+        }
+        echo "</div>"; // .contact_form_error
+    } // end of if isset
+}
 ?>
 <!-- start of BATC contact info -->
     <main id="main" class="site-main" role="main">
+            <div class="col-sm-12">
+                <?php echo $result; ?>
+            </div>
         <section id=jumbo>
             <div class="jumbotron">
 
@@ -107,7 +115,7 @@ else {
                         <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
                     </span></p>
                     <p><span>
-                        <i class="glyphicon glyphicon-phone">Phone:</i><span class='spacer'></span><br>
+                        <i class="glyphicon glyphicon-phone"> Phone:</i><span class='spacer'></span><br>
                         <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
                         <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
                      </span></p>
@@ -125,7 +133,7 @@ else {
                     <div class="col-sm-4">
                         <strong>
                             <p>
-                                <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block">I'm Ready</a>
+                                <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" target="_blank">I'm Ready</a>
                             </p>
                         </strong>
                     </div>
@@ -135,7 +143,7 @@ else {
         <section id="contact_form">
             <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12">
                     <form class="form-horizontal" id="contactForm" method="post" action="">
                         <div class="form-group">
                             <label for="sel1">I am a:</label>
@@ -161,7 +169,7 @@ else {
                         </div>
                         <div class="form-group">
                             <label for="contact_comment">Comment:</label>
-                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment"></textarea>
+                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment" required></textarea>
                         </div>
                         <div>
                             <button class="btn pull-right" type="submit" value="Submit" name="contact_submit">Contact Us</button>
@@ -169,15 +177,12 @@ else {
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6" id="map">
+                <div class="col-md-6 col-sm-12" id="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5952.578404199443!2d-111.85850495194497!3d41.75742211651987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87548761cbd58949%3A0x46a978a3c2839d66!2sBridgerland+Applied+Technology+College+West+Campus!5e0!3m2!1sen!2sus!4v1474922534989" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
-        </div>
-<?php
-} // end of else
-?>
+
 <!-- end of form handling -->
-	</main><!-- .site-main -->
+</main><!-- .site-main -->
 <?php get_footer(); ?>

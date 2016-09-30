@@ -13,7 +13,67 @@
  */
 
 get_header(); ?>
+    <!-- start form handling -->
+<?php
+// define variables and set to empty values
+if (isset ($_POST["reset"])) {
+    $contact_name = "";
+    $contact_phone = "";
+    $contact_email = "";
+    $contact_comment = "";
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+} // end of test_input function
+
+if (isset ($_POST['contact_submit'])) {
+
+    $contact_is_a = ($_POST["contact_is_a"]);
+    $contact_name = test_input($_POST["contact_name"]);
+    $contact_phone = test_input($_POST["contact_phone"]);
+    $contact_email = test_input($_POST["contact_email"]);
+    $contact_comment = test_input($_POST["contact_comment"]);
+    $contact_comment = wordwrap($contact_comment, 50);
+//echo "name: '$contact_name', phone: '$contact_phone', email: '$contact_email'";
+} // end of if isset
+
+// if required fields
+if ($contact_name && ($contact_phone || $contact_email) ) {
+    $to = "joshua.aaron.brown@gmail.com";
+    $subject = "Contact Form Submission";
+    $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
+    $headers = "From: $contact_email";
+
+    wp_mail($to,$subject,$txt,$headers);
+//  } // end of if has contact info
+    $result='<div class="alert alert-success">Thank You! We will be in touch</div>';
+
+} // end of if required fields
+else {
+    if (isset ($_POST['contact_submit'])) {
+        echo '<div class="contact_form_error">';
+        if (!$contact_name || (!$contact_phone && !$contact_email)) {
+            $result='<div class="alert alert-success">Sorry, Form did not submit</div>';
+        }
+        if (!$contact_name) {
+            echo "Please enter a name.<br>";
+        }
+        if (!$contact_phone && !$contact_email) {
+            echo "Please enter a phone number or email.<br>";
+        }
+        echo "</div>"; // .contact_form_error
+    } // end of if isset
+}
+?>
+
 <section>
+    <div class="col-sm-12" id="index-contact-alert">
+        <?php echo $result; ?>
+    </div>
     <div class="carousel slide hidden-xs" data-ride="carousel" id="featured">
         <div class="carousel-inner">
             <ol class="carousel-indicators">
@@ -56,7 +116,7 @@ get_header(); ?>
             <div class="col-sm-4">
                 <strong>
                 <p>
-                    <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block">I'm Ready</a>
+                    <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" target="_blank">I'm Ready</a>
                 </p>
                 </strong>
             </div>
@@ -146,7 +206,7 @@ get_header(); ?>
             <div class="col-sm-4">
                 <strong>
                     <p>
-                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" data-toggle="modal" id="contact  -btn" data-target="#contact-modal">Contact Us</a>
+                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" data-toggle="modal" id="contact-btn" data-target="#contact-modal">Contact Us</a>
                     </p>
                 </strong>
             </div>
@@ -188,13 +248,13 @@ get_header(); ?>
                         </div>
                         <div class="form-group">
                             <label for="contact_comment">Comment:</label>
-                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment"></textarea>
+                            <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment" required></textarea>
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button class="btn" type="submit" value="Submit" name="contact_submit">Submit</button>
                         <button class="btn" type="reset" value="Reset">Reset</button>
+                        <button class="btn" type="submit" value="Submit" name="contact_submit">Submit</button>
                     </div>
                 </div>
             </div>

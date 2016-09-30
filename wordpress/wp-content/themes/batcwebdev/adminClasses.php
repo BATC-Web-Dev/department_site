@@ -81,7 +81,6 @@ if (isset($_POST['submit'])) {
             $(modal).modal('show');
         });
 
-        //Click sort table, Drop description row, remove button, present save button, move tables, store order in array, click save, save array, hide save button , show sort button
         $( "#sort-class-btn" ).click(function() {
             $("#save-sort-class-btn").show();
             $("#sort-class-btn").hide();

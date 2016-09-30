@@ -1116,6 +1116,9 @@ div .jumbotron {
 	color: #595959;
 }
 
+#index-contact-alert {
+	min-height: 0px;
+}
 
 
 
