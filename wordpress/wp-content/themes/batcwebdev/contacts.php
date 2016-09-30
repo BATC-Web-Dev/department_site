@@ -115,7 +115,7 @@ else {
                         <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
                     </span></p>
                     <p><span>
-                        <i class="glyphicon glyphicon-phone">Phone:</i><span class='spacer'></span><br>
+                        <i class="glyphicon glyphicon-phone"> Phone:</i><span class='spacer'></span><br>
                         <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
                         <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
                      </span></p>

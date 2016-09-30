@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="738b2d9a-09fd-46da-95db-7d241d4cc1ee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
     </list>
     <ignored path="department_site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="134" selection-start-line="58" selection-start-column="134" selection-end-line="58" selection-end-column="134" />
+            <state relative-caret-position="225">
+              <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
               <folding>
                 <element signature="e#6#415#0#PHP" expanded="true" />
               </folding>
@@ -43,24 +47,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="135" column="146" selection-start-line="135" selection-start-column="146" selection-end-line="135" selection-end-column="146" />
+            <state relative-caret-position="302">
+              <caret line="1119" column="20" selection-start-line="1119" selection-start-column="20" selection-end-line="1119" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
+      <file leaf-file-name="contacts.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
-              <folding>
-                <marker date="1475211438000" expanded="true" signature="9128:9147" ph="SELECT * FRO... class" />
-              </folding>
+            <state relative-caret-position="248">
+              <caret line="106" column="18" selection-start-line="104" selection-start-column="12" selection-end-line="106" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,12 +116,12 @@
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/classes.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/login/custom-login-styles.css" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-login.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php" />
       </list>
     </option>
   </component>
@@ -412,12 +414,12 @@
       <workItem from="1475009191575" duration="2437000" />
       <workItem from="1475094404080" duration="6036000" />
       <workItem from="1475179140760" duration="7122000" />
-      <workItem from="1475211180774" duration="421000" />
+      <workItem from="1475211180774" duration="2695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312522000" />
+    <option name="totallyTimeSpent" value="314796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -485,7 +487,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/js/navigation.js" />
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/js/bootstrap.min.js" />
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/js/customizer.js" />
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/js/jquery.min.js" />
@@ -748,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="942" column="0" selection-start-line="942" selection-start-column="0" selection-end-line="945" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -789,9 +782,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4905">
+          <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+          <folding>
+            <marker date="1475211438000" expanded="true" signature="9128:9147" ph="SELECT * FRO... class" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="274" column="16" selection-start-line="274" selection-start-column="16" selection-end-line="274" selection-end-column="16" />
+          <folding>
+            <marker date="1475266321000" expanded="true" signature="6185:6204" ph="SELECT * FRO... classes" />
+            <marker date="1475266321000" expanded="true" signature="6185:6226" ph="SELECT * FRO... class" />
+            <marker date="1475266321000" expanded="true" signature="6685:6718" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
+        <state relative-caret-position="-3457">
           <caret line="75" column="46" selection-start-line="75" selection-start-column="46" selection-end-line="75" selection-end-column="46" />
           <folding>
             <marker date="1475191691000" expanded="true" signature="1862:1947" ph="..." />
@@ -809,42 +824,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/adminClasses.php">
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/comments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="145" column="64" selection-start-line="145" selection-start-column="64" selection-end-line="145" selection-end-column="64" />
-          <folding>
-            <marker date="1475192563000" expanded="true" signature="6366:6385" ph="SELECT * FRO... classes" />
-            <marker date="1475192563000" expanded="true" signature="6366:6407" ph="SELECT * FRO... class" />
-            <marker date="1475192563000" expanded="true" signature="6866:6899" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="134" selection-start-line="58" selection-start-column="134" selection-end-line="58" selection-end-column="134" />
-          <folding>
-            <element signature="e#6#415#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-165">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="135" column="146" selection-start-line="135" selection-start-column="146" selection-end-line="135" selection-end-column="146" />
+        <state relative-caret-position="248">
+          <caret line="106" column="18" selection-start-line="104" selection-start-column="12" selection-end-line="106" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="333" selection-end-column="0" />
+        <state relative-caret-position="302">
+          <caret line="1119" column="20" selection-start-line="1119" selection-start-column="20" selection-end-line="1119" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="75" column="10" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="10" />
           <folding>
-            <marker date="1475211438000" expanded="true" signature="9128:9147" ph="SELECT * FRO... class" />
+            <element signature="e#6#415#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
