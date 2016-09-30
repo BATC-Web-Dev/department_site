@@ -18,7 +18,24 @@
 	}
  }
  
+  /*  replace forum profile links with member home links  */
+add_filter( 'bbp_get_author_link', 'remove_author_links', 10, 2);
+add_filter( 'bbp_get_reply_author_link', 'remove_author_links', 10, 2);
+add_filter( 'bbp_get_topic_author_link', 'remove_author_links', 10, 2);
+function remove_author_links($author_link, $args) {
+	$ini = strpos($author_link, 'user=') + 5;
+	$linked_id = substr($author_link, $ini, 1);
+	$linked_user = get_user_by('ID', $linked_id);
+	$avatar = get_avatar( $linked_user->user_email, 20 );
+	$name = $linked_user->display_name;
+	if ($args[post_id] != 0){
+		$replacement = "<form method='POST' action='?page_id=66'><button type='submit' class='text_button' name='view-profile' value='$linked_id'>$avatar$name</button></form>";
+		$author_link = $replacement;
+	}
+	return $author_link;
+ }
  
+
  /* add custom user meta data */
 function modify_contact_methods($profile_fields) {
 
