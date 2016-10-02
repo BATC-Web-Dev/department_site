@@ -13,6 +13,7 @@ if ( is_user_logged_in() ) {
 	$current_user = wp_get_current_user();
 			?>
 <?php get_header(); ?>
+	
 
 <script>
  jQuery(document).ready(function( $ ) {

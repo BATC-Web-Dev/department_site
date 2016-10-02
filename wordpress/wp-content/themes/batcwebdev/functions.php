@@ -8,6 +8,96 @@
  */
 
  
+ /*
+ *  creates a new instance of class TaskScheduler_AdminNotificationActionModule
+ *
+ *  needed to schedule admin notification emails
+ */
+function loadTaskSchedulerAdminNotificationActionModule() {
+    
+    // Register a custom action module.
+    include( dirname( __FILE__ ) . '/module/TaskScheduler_AdminNotificationActionModule.php' );
+    new TaskScheduler_AdminNotificationActionModule;
+    
+}
+add_action( 'task_scheduler_action_after_loading_plugin', 'loadTaskSchedulerAdminNotificationActionModule' );
+ 
+ /*
+ *  creates a class for task scheduler to send emails to admin for pending notifications
+ */
+ class TaskScheduler_AdminNotificationActionModule extends TaskScheduler_Action_Base {
+        
+    /**
+     * The user constructor.
+     * 
+     * This method is automatically called at the end of the class constructor.
+     */
+    public function construct() {
+        
+        // Debug 
+        // TaskScheduler_Debug::log(  get_object_vars( $this ) );
+        
+    }
+
+    /**
+     * Returns the readable label of this action.
+     * 
+     * This will be called when displaying the action in an pull-down select option, task listing table, or notification email message.
+     */
+    public function getLabel( $sLabel ) {         
+        return __( 'admin notification email', 'task-scheduler-sample-action-module' );
+    }
+    
+    /**
+     * Returns the description of the module.
+     */
+    public function getDescription( $sDescription ) {
+        return __( 'This will send an email to the admin at the desired time if there are pending notifications.', 'task-scheduler-sample-action-module' );
+    }    
+    
+    /**
+     * Defines the behaviour of the task action.
+     *  
+     */
+    public function doAction( $isExitCode, $oRoutine ) {
+		global $wpdb;
+		$notifications = $wpdb->get_results("
+				SELECT 
+					notifications.notify_id,
+					wp_users.display_name,
+					wp_users.user_email
+				FROM 
+					notifications 
+				INNER JOIN 
+					wp_users 
+				ON 
+					notifications.student_id = wp_users.ID
+				");
+				
+		if ($notifications[0]->notify_id) {
+			$num_notifications = count($notifications);
+			$to = "pitcher834@gmail.com"; 
+			$subject = "Pending Notifications - BATCWebDev";
+			$name_list = "\n";
+			foreach($notifications as $person) {
+				$name_list .= $person->display_name;
+				$name_list .= "\n";
+			}
+			$are_num_people = ($num_notifications == 1 ? "is 1 person" : "are $num_notifications people");
+			$txt = "There $are_num_people awaiting approval at BATCWebDev. $name_list";
+		
+			wp_mail($to,$subject,$txt);
+		}
+	
+		TaskScheduler_Debug::log( $oRoutine->getMeta() );
+		return 1;
+    
+	}
+            
+}
+
+
+
  /*  hide worpress dashboard for subscribers  */
  add_action("user_register", "set_user_admin_bar_false", 10, 1);
  function set_user_admin_bar_false( $user_id ) {
