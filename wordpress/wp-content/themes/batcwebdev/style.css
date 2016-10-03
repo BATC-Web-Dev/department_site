@@ -337,6 +337,12 @@ big {
 	font-size: 125%;
 }
 
+span.alert {
+	color: red;
+	background-color: #404040;
+	margin: 0px;
+	padding: 2px;
+}
 .center {
 	text-align: center;
 }

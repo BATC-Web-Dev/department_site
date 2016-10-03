@@ -212,7 +212,11 @@ if (isset ($_POST['approve-profile-submit'])) {
 		}
 			
 		//new_url
-		if ($new_user_url != $_POST['old_user_url']) {
+		if ($new_user_url_2 == "null") {
+			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp_users', array(user_url => $new_url,), array('ID' => $current_user->ID,));
+		}
+		elseif ($new_user_url != $_POST['old_user_url']) {
 			$updated = $wpdb->update('notifications', array('new_url' => $new_user_url), array('student_id' => $current_user->ID) );
 		}
 		//new_url_2
@@ -265,7 +269,7 @@ if (isset ($_POST['approve-profile-submit'])) {
 	{
 		$updated = $wpdb->delete('notifications', array('student_id' => $current_user->ID) );	
 	}
-		
+	header("Refresh:0");	
 } // end of if isset submit
 
 if (isset ($_POST['approve-profile-reset'])) {
@@ -315,7 +319,7 @@ if (isset ($_POST['approve-profile-reset'])) {
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Update Profile</h4>
-					<p>Type <strong>null</strong> to delete a field from the database</p>
+					<p>Type <span class='alert'>null</span> to delete a field from the database</p>
                     </div>
                     <div class="modal-body">
                     <!-- start of description field -->
@@ -333,8 +337,14 @@ if (isset ($_POST['approve-profile-reset'])) {
     });
 </script>
 			<?php
-			$description_value = $update_user->new_description;
-			$description_label = "Biographical Info";
+			if ($update_user->new_description == null) {
+				$description_field = $old_data->description;
+				$description_label = "Biographical Info";
+			}
+			else {
+				$description_field = $update_user->new_description;
+				$description_label = "Biographical Info - <span class='alert'>pending</span>";
+			}
 			?>
 			<div class="form-group">
 				<label for="new_description"><?php echo( $description_label ); ?></label>
@@ -346,8 +356,14 @@ if (isset ($_POST['approve-profile-reset'])) {
 
 	<!-- start of primary website field -->
 	<?php
-	$url_field = $update_user->new_url;
-	$url_label = "Primary Website";
+	if ($update_user->new_url == null) {
+		$url_field = $old_data->user_url;
+		$url_label = "Primary Website";
+	}
+	else {
+		$url_field = $update_user->new_url;
+		$url_label = "Primary Website - <span class='alert'>pending</span>";
+	}
 	?>
 	
 	<div class="form-group">
@@ -358,8 +374,14 @@ if (isset ($_POST['approve-profile-reset'])) {
 	
 	<!-- start of second website field -->
 	<?php
-	$url_2_field = $update_user->new_url_2;
-	$url_2_label = "Second Website";
+	if ($update_user->new_url_2 == null) {
+		$url_2_field = $old_data->user_url_2;
+		$url_2_label = "Second Website";
+	}
+	else {
+		$url_2_field = $update_user->new_url_2;
+		$url_2_label = "Second Website - <span class='alert'>pending</span>";
+	}
 	?>
 	
 	<div class="form-group">
@@ -370,8 +392,14 @@ if (isset ($_POST['approve-profile-reset'])) {
 	
 	<!-- start of third website field -->
 	<?php
-	$url_3_field = $update_user->new_url_3;
-	$url_3_label = "Third Website";
+	if ($update_user->new_url_3 == null) {
+		$url_3_field = $old_data->user_url_3;
+		$url_3_label = "Third Website";
+	}
+	else {
+		$url_3_field = $update_user->new_url_3;
+		$url_3_label = "Third Website - <span class='alert'>pending</span>";
+	}
 	?>
 	
 	<div class="form-group">
@@ -382,8 +410,14 @@ if (isset ($_POST['approve-profile-reset'])) {
 	
 	<!-- start of job field -->
 	<?php
-	$job_field = $update_user->new_job;
-	$job_label = "Employment";
+	if ($update_user->new_job == null) {
+		$job_field = $old_data->user_job;
+		$job_label = "Employment";
+	}
+	else {
+		$job_field = $update_user->new_job;
+		$job_label = "Employment - <span class='alert'>pending</span>";
+	}
 	?>
 	
 	<div class="form-group">
@@ -394,21 +428,27 @@ if (isset ($_POST['approve-profile-reset'])) {
 	
 	<!-- start of specialization field -->
 	<?php
-	$spec_field = $update_user->new_spec;
-	$spec_label = "Specialization";
+	if ($update_user->new_spec == null) {
+		$spec_field = $old_data->user_spec;
+		$spec_label = "Specialization";
+	}
+	else {
+		$spec_field = $update_user->new_spec;
+		$spec_label = "Specialization - <span class='alert'>pending</span>";
+	}
 	?>
 	<div class="form-group">
 		<label for="new_user_spec"><?php _e( $spec_label ); ?></label>
 			<select class="form-control" name="new_user_spec" id="new_user_spec">
 				<option value=''>-select-one-</option>
 				<option value='Undecided' 
-					<?php if ($update_user->new_spec == 'Undecided') { echo "selected='selected'"; }?> >
+					<?php if ($spec_field == 'Undecided') { echo "selected='selected'"; }?> >
 					Undecided</option>
 				<option value='Front-End' 
-					<?php if ($update_user->new_spec == 'Front-End') { echo "selected='selected'"; }?> >
+					<?php if ($spec_field == 'Front-End') { echo "selected='selected'"; }?> >
 					Front End</option>
 				<option value='Back-End' 
-					<?php if ($update_user->new_spec == 'Back-End') { echo "selected='selected'"; }?> >
+					<?php if ($spec_field == 'Back-End') { echo "selected='selected'"; }?> >
 					Back End</option>
 			</select>
 			<input type='hidden' name='old_description' value='<?php echo $old_data->description; ?>'>
