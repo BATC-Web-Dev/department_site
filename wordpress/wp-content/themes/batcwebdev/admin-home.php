@@ -11,9 +11,9 @@ Template Name: admin-home
 <?php
 if ( is_user_logged_in() ) {
 	$current_user = wp_get_current_user();
-			?>
+	if ( in_array( 'administrator', (array) $current_user->roles ) ) {
+?>
 <?php get_header(); ?>
-	
 
 <script>
  jQuery(document).ready(function( $ ) {
@@ -56,6 +56,7 @@ $notifications = $wpdb->get_results("
 	</thead>
 	<tbody>
 <?php
+	if (!$notifications) {echo "<table id='approve-deny-table-single'><tr><td>There are no notifications pending.</td></tr></table>";}
 foreach ($notifications as $row) {
 	
 	$results = $wpdb->get_results("SELECT * FROM notifications WHERE notify_id=$row->notify_id");
@@ -296,6 +297,17 @@ foreach ($notifications as $row) {
 </table> <!-- approve-deny-table-list -->
 
 <!-- Bio Data -->
+<script>
+	jQuery(document).ready(function( $ ) {
+		$( ".external-link" ).click(function() {
+			var external_href = $(this).prop('id');
+			var modal = $('#external-link-modal');
+			var href_external = $(modal.find("#external_href"));
+			$(href_external).prop('href', external_href);
+		});
+	});
+            
+</script>
 <button class='col-sm-12 toggler' toggle_id='-bio-data'>Show/Hide Bio.</button>
 <div class='row header cat-bio-data' style='display:none'>
 			<?php
@@ -323,14 +335,22 @@ foreach ($notifications as $row) {
 						echo "<a data-toggle='modal' data-target='#other-members-modal'><big>Other Members</big></a></div>
 						</div>";
 					echo "<div class='col-sm-4'>";
-					
+					// adding http:// to the url if neither http:// nor https:// is present
+					if (!preg_match('#http://#', $profile_viewing->user_url) && !preg_match('#https://#', $profile_viewing->user_url)) {$qualify_url = 'http://' . $profile_viewing->user_url;}
+					else {$qualify_url = $profile_viewing->user_url;}
+					// adding http:// to the url if neither http:// nor https:// is present
+					if (!preg_match('#http://#', $profile_viewing->user_url_2) && !preg_match('#https://#', $profile_viewing->user_url_2)) {$qualify_url_2 = 'http://' . $profile_viewing->user_url_2;}
+					else {$qualify_url_2 =  $profile_viewing->user_url_2;}
+					// adding http:// to the url if neither http:// nor https:// is present
+					if (!preg_match('#http://#', $profile_viewing->user_url_3) && !preg_match('#https://#', $profile_viewing->user_url_3)) {$qualify_url_3 = 'http://' . $profile_viewing->user_url_3;}
+					else {$qualify_url_3 =  $profile_viewing->user_url_3;}
 					
 					echo "<h3 class='welcome-head'>$welcome_message</h3>";
 					echo "<div class='list-group'>
 							<a class='list-group-item'>Email: $profile_viewing->user_email</a>
-							<a class='list-group-item' href='$profile_viewing->user_url'>Primary Website: $profile_viewing->user_url</a>
-							<a class='list-group-item' href='$profile_viewing->user_url_2'>Second Website: $profile_viewing->user_url_2</a>
-							<a class='list-group-item' href='$profile_viewing->user_url_3'>Third Website: $profile_viewing->user_url_3</a>
+							<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'>Primary Website: $profile_viewing->user_url</a>
+							<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'>Second Website: $profile_viewing->user_url_2</a>
+							<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'>Third Website: $profile_viewing->user_url_3</a>
 							<a class='list-group-item'>Employment: $profile_viewing->user_job</a>
 							<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
 						</div>
@@ -341,6 +361,26 @@ foreach ($notifications as $row) {
 				}
 			?>
 			</div>
+			<!-- external-link-modal -->
+			<div id="external-link-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">External Link</h4>
+                    </div>
+                    <div class="modal-body">
+					<p>You are about to leave BATCWebDev.  Do you wish to continue?</p>
+					</div> <!-- end of modal-body -->
+                    <div class="modal-footer">
+                        <button><a id='external_href' href='www.example.com'>Continue</a></button>
+                        <button data-dismiss="modal">Stay</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+
 
 <!-- Forum Data -->
 			<div class="row">
@@ -620,5 +660,7 @@ foreach ($notifications as $row) {
 
 <?php get_footer(); ?>
 <?php
+	} // end of if administrator
+	else {echo "You do not have access to this page.";}
 } // end of if logged in
 ?>

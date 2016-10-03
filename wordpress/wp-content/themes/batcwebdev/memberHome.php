@@ -15,6 +15,39 @@ Template Name: memberHome
  * @package BATCWebDev
  */
 get_header(); ?>
+
+<script>
+	jQuery(document).ready(function( $ ) {
+		$( ".external-link" ).click(function() {
+			var external_href = $(this).prop('id');
+			var modal = $('#external-link-modal');
+			var href_external = $(modal.find("#external_href"));
+			$(href_external).prop('href', external_href);
+		});
+	});
+            
+</script>
+
+<!-- external-link-modal -->
+			<div id="external-link-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">External Link</h4>
+                    </div>
+                    <div class="modal-body">
+					<p>You are about to leave BATCWebDev.  Do you wish to continue?</p>
+					</div> <!-- end of modal-body -->
+                    <div class="modal-footer">
+                        <button><a id='external_href' href='www.example.com'>Continue</a></button>
+                        <button data-dismiss="modal">Stay</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--Modal-->
+
 <div class="member-home container-fluid">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -58,14 +91,24 @@ get_header(); ?>
 							</div>
 							</div>";
 					echo "<div class='col-sm-6 col-md-8'>";
-
+					
+					// adding http:// to the url if neither http:// nor https:// is present
+					if (!preg_match('#http://#', $profile_viewing->user_url) && !preg_match('#https://#', $profile_viewing->user_url)) {$qualify_url = 'http://' . $profile_viewing->user_url;}
+					else {$qualify_url = $profile_viewing->user_url;}
+					// adding http:// to the url if neither http:// nor https:// is present
+					if (!preg_match('#http://#', $profile_viewing->user_url_2) && !preg_match('#https://#', $profile_viewing->user_url_2)) {$qualify_url_2 = 'http://' . $profile_viewing->user_url_2;}
+					else {$qualify_url_2 =  $profile_viewing->user_url_2;}
+					// adding http:// to the url if neither http:// nor https:// is present
+					if (!preg_match('#http://#', $profile_viewing->user_url_3) && !preg_match('#https://#', $profile_viewing->user_url_3)) {$qualify_url_3 = 'http://' . $profile_viewing->user_url_3;}
+					else {$qualify_url_3 =  $profile_viewing->user_url_3;}
+										
 					echo "<h3>$welcome_message</h3>
 							<p>$profile_viewing->description</p>
 							<div class='list-group'>
 							<a class='list-group-item'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></a>
-							<a class='list-group-item' href='$profile_viewing->user_url'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>
-							<a class='list-group-item' href='$profile_viewing->user_url_2'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_2</i></a>
-							<a class='list-group-item' href='$profile_viewing->user_url_3'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_3</i></a>
+							<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>
+							<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_2</i></a>
+							<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_3</i></a>
 						</div>
 						</div>";
 				}
