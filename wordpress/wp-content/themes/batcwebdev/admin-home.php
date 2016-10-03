@@ -26,6 +26,16 @@ if ( is_user_logged_in() ) {
 		$(this).closest("table").find("input:checkbox").prop('checked', $(this).prop("checked"));
 	});
 	
+	$(".is_checked").change(function () {
+		var table = $(this).closest("table");
+		if ($(":checkbox", table).is(":checked")) {
+			$(this).closest("table").find(".approve_selected_button").prop('value', 'approve selected');
+		}
+		else {
+			$(this).closest("table").find(".approve_selected_button").prop('value', 'deny all');
+		}
+	});
+	
  });
 </script>
 
@@ -191,7 +201,7 @@ foreach ($notifications as $row) {
 				<?php echo "$new_data->description"; ?>
 				</td>
 				<td>
-				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='description' value='description'>select
+				<input type='checkbox' class='is_checked' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='description' value='description'>select
 				</td>
 			</tr>
 	<?php } // end if ?>
@@ -207,7 +217,7 @@ foreach ($notifications as $row) {
 				<?php echo "$new_data->url"; ?>
 				</td>
 				<td>
-				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url' value='url'>select
+				<input type='checkbox' class='is_checked' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url' value='url'>select
 				</td>
 			</tr>
 	<?php } // end if ?>
@@ -223,7 +233,7 @@ foreach ($notifications as $row) {
 				<?php echo "$new_data->url_2"; ?>
 				</td>
 				<td>
-				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url_2' value='url_2'>select
+				<input type='checkbox' class='is_checked' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url_2' value='url_2'>select
 				</td>
 			</tr>
 	<?php } // end if ?>
@@ -239,7 +249,7 @@ foreach ($notifications as $row) {
 				<?php echo "$new_data->url_3"; ?>
 				</td>
 				<td>
-				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url_3' value='url_3'>select
+				<input type='checkbox' class='is_checked' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='url_3' value='url_3'>select
 				</td>
 			</tr>
 	<?php } // end if ?>
@@ -255,7 +265,7 @@ foreach ($notifications as $row) {
 				<?php echo "$new_data->job"; ?>
 				</td>
 				<td>
-				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='job' value='job'>select
+				<input type='checkbox' class='is_checked' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='job' value='job'>select
 				</td>
 			</tr>
 	<?php } // end if ?>
@@ -271,7 +281,7 @@ foreach ($notifications as $row) {
 				<?php echo "$new_data->spec"; ?>
 				</td>
 				<td>
-				<input type='checkbox' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='spec' value='spec'>select
+				<input type='checkbox' class='is_checked' toggle_id='checkbox<?php echo "$row->notify_id";?>' name='spec' value='spec'>select
 				</td>
 			</tr>
 	<?php } // end if ?>
@@ -280,8 +290,8 @@ foreach ($notifications as $row) {
 			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
 				<td></td>
 				<td></td>
-				<td><input type='submit' class='btn-sm' name='<?php echo "approve$row->notify_id";?>' value='<?php echo "approve selected";?>'></td>
-				<td><input type='checkbox' class='check-all' value='check-all'>select all</td>
+				<td><input type='submit' class='approve_selected_button' name='<?php echo "approve$row->notify_id";?>' value='<?php echo "deny all";?>'></td>
+				<td><input type='checkbox' class='check-all is_checked' value='check-all'>select all</td>
 			</tr>
 		</tfoot>
 		</form>
