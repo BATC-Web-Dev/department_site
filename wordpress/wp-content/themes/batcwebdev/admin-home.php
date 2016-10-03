@@ -357,12 +357,21 @@ foreach ($notifications as $row) {
 					
 					echo "<h3 class='welcome-head'>$welcome_message</h3>";
 					echo "<div class='list-group'>
-							<a class='list-group-item'>Email: $profile_viewing->user_email</a>
-							<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'>Primary Website: $profile_viewing->user_url</a>
-							<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'>Second Website: $profile_viewing->user_url_2</a>
-							<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'>Third Website: $profile_viewing->user_url_3</a>
-							<a class='list-group-item'>Employment: $profile_viewing->user_job</a>
-							<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
+							<a class='list-group-item'>Email: $profile_viewing->user_email</a>";
+					
+					if ($profile_viewing->user_url != null) {
+							echo "<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'>Primary Website: $profile_viewing->user_url</a>";
+					}
+					if ($profile_viewing->user_url_2 != null) {
+							echo "<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'>Second Website: $profile_viewing->user_url_2</a>";
+					}
+					if ($profile_viewing->user_url_3 != null) {
+							echo "<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'>Third Website: $profile_viewing->user_url_3</a>";
+					}
+					if ($profile_viewing->user_job != null) {
+							echo "<a class='list-group-item'>Employment: $profile_viewing->user_job</a>";
+					}
+					echo "<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
 						</div>
 						</div>";
 					echo "<div class='col-sm-4'>";

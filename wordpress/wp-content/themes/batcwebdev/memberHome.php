@@ -41,7 +41,7 @@ get_header(); ?>
 					<p>You are about to leave BATCWebDev.  Do you wish to continue?</p>
 					</div> <!-- end of modal-body -->
                     <div class="modal-footer">
-                        <button><a id='external_href' href='www.example.com'>Continue</a></button>
+                        <button><a id='external_href' href='#' rel='external nofollow'>Continue</a></button>
                         <button data-dismiss="modal">Stay</button>
                     </div>
                 </div>
@@ -95,22 +95,30 @@ get_header(); ?>
 					// adding http:// to the url if neither http:// nor https:// is present
 					if (!preg_match('#http://#', $profile_viewing->user_url) && !preg_match('#https://#', $profile_viewing->user_url)) {$qualify_url = 'http://' . $profile_viewing->user_url;}
 					else {$qualify_url = $profile_viewing->user_url;}
+					if ($qualify_url == null) {$qualify_url = "#";}
 					// adding http:// to the url if neither http:// nor https:// is present
 					if (!preg_match('#http://#', $profile_viewing->user_url_2) && !preg_match('#https://#', $profile_viewing->user_url_2)) {$qualify_url_2 = 'http://' . $profile_viewing->user_url_2;}
 					else {$qualify_url_2 =  $profile_viewing->user_url_2;}
+					if ($qualify_url_2 == null) {$qualify_url_2 = "#";}
 					// adding http:// to the url if neither http:// nor https:// is present
 					if (!preg_match('#http://#', $profile_viewing->user_url_3) && !preg_match('#https://#', $profile_viewing->user_url_3)) {$qualify_url_3 = 'http://' . $profile_viewing->user_url_3;}
 					else {$qualify_url_3 =  $profile_viewing->user_url_3;}
+					if ($qualify_url_3 == "http://") {$qualify_url_3 = "#";}
 										
 					echo "<h3>$welcome_message</h3>
 							<p>$profile_viewing->description</p>
 							<div class='list-group'>
-							<a class='list-group-item'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></a>
-							<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>
-							<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_2</i></a>
-							<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_3</i></a>
-						</div>
-						</div>";
+							<a class='list-group-item'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></a>";
+					if ($profile_viewing->user_url != null) {
+						echo "<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>";
+					}
+					if ($profile_viewing->user_url_2 != null) {
+						echo "<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_2</i></a>";
+					}
+					if ($profile_viewing->user_url_3 != null) {
+						echo "<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_3</i></a>";
+					}
+					echo "</div></div>";
 				}
 			endif;
 			?>
@@ -195,7 +203,11 @@ if (isset ($_POST['approve-profile-submit'])) {
 		$updated = $wpdb->insert('notifications', array('student_id' => $current_user->ID), array('%d') );
 	}
 		//new_description
-		if ($new_description != $_POST['old_description']) {
+		if ($new_description == "null") {
+			$updated = $wpdb->update('notifications', array('new_description' => null), array('student_id' => $current_user->ID) );
+			update_user_meta($current_user->ID, 'description', null);
+		}
+		elseif ($new_description != $_POST['old_description']) {
 			$updated = $wpdb->update('notifications', array('new_description' => $new_description), array('student_id' => $current_user->ID) );
 		}
 			
@@ -204,22 +216,42 @@ if (isset ($_POST['approve-profile-submit'])) {
 			$updated = $wpdb->update('notifications', array('new_url' => $new_user_url), array('student_id' => $current_user->ID) );
 		}
 		//new_url_2
-		if ($new_user_url_2 != $_POST['old_user_url_2']) {
+		if ($new_user_url_2 == "null") {
+			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
+			update_user_meta($current_user->ID, 'user_url_2', null);
+		}
+
+		elseif ($new_user_url_2 != $_POST['old_user_url_2']) {
 			$updated = $wpdb->update('notifications', array('new_url_2' => $new_user_url_2), array('student_id' => $current_user->ID) );
 		}
 		
 		//new_url_3
-		if ($new_user_url_3 != $_POST['old_user_url_3']) {
+		if ($new_user_url_3 == "null") {
+			$updated = $wpdb->update('notifications', array('new_url_3' => null), array('student_id' => $current_user->ID) );
+			update_user_meta($current_user->ID, 'user_url_3', null);
+		}
+
+		elseif ($new_user_url_3 != $_POST['old_user_url_3']) {
 			$updated = $wpdb->update('notifications', array('new_url_3' => $new_user_url_3), array('student_id' => $current_user->ID) );
 		}
 		
 		//new_job
-		if ($new_user_job != $_POST['old_user_job']) {
+		if ($new_user_job == "null") {
+			$updated = $wpdb->update('notifications', array('new_job' => null), array('student_id' => $current_user->ID) );
+			update_user_meta($current_user->ID, 'user_job', null);
+		}
+
+		elseif ($new_user_job != $_POST['old_user_job']) {
 			$updated = $wpdb->update('notifications', array('new_job' => $new_user_job), array('student_id' => $current_user->ID) );
 		}
 		
 		//new_spec
-		if ($new_user_spec != $_POST['old_user_spec']) {
+		if ($new_user_spec == "null") {
+			$updated = $wpdb->update('notifications', array('new_spec' => null), array('student_id' => $current_user->ID) );
+			update_user_meta($current_user->ID, 'user_spec', null);
+		}
+
+		elseif ($new_user_spec != $_POST['old_user_spec']) {
 			$updated = $wpdb->update('notifications', array('new_spec' => $new_user_spec), array('student_id' => $current_user->ID) );
 		}
 	
@@ -283,6 +315,7 @@ if (isset ($_POST['approve-profile-reset'])) {
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Update Profile</h4>
+					<p>Type <strong>null</strong> to delete a field from the database</p>
                     </div>
                     <div class="modal-body">
                     <!-- start of description field -->
@@ -301,7 +334,7 @@ if (isset ($_POST['approve-profile-reset'])) {
 </script>
 			<?php
 			$description_value = $update_user->new_description;
-			$description_label = "Biographical Info - <a>delete</a>";
+			$description_label = "Biographical Info";
 			?>
 			<div class="form-group">
 				<label for="new_description"><?php echo( $description_label ); ?></label>
