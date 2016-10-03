@@ -207,7 +207,10 @@ if (isset ($_POST['approve-profile-submit'])) {
 			$updated = $wpdb->update('notifications', array('new_description' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'description', null);
 		}
-		elseif ($new_description != $_POST['old_description']) {
+		elseif ($new_description == $_POST['old_description']) {
+			$updated = $wpdb->update('notifications', array('new_description' => null), array('student_id' => $current_user->ID) );
+		}
+		else {
 			$updated = $wpdb->update('notifications', array('new_description' => $new_description), array('student_id' => $current_user->ID) );
 		}
 			
@@ -216,7 +219,10 @@ if (isset ($_POST['approve-profile-submit'])) {
 			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
 			$updated = $wpdb->update('wp_users', array(user_url => $new_url,), array('ID' => $current_user->ID,));
 		}
-		elseif ($new_user_url != $_POST['old_user_url']) {
+		elseif ($new_user_url == $_POST['old_user_url']) {
+			$updated = $wpdb->update('notifications', array('new_url' => null), array('student_id' => $current_user->ID) );
+		}
+		else {
 			$updated = $wpdb->update('notifications', array('new_url' => $new_user_url), array('student_id' => $current_user->ID) );
 		}
 		//new_url_2
@@ -224,8 +230,10 @@ if (isset ($_POST['approve-profile-submit'])) {
 			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_url_2', null);
 		}
-
-		elseif ($new_user_url_2 != $_POST['old_user_url_2']) {
+		elseif ($new_user_url_2 == $_POST['old_user_url_2']) {
+			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
+		}
+		else {
 			$updated = $wpdb->update('notifications', array('new_url_2' => $new_user_url_2), array('student_id' => $current_user->ID) );
 		}
 		
@@ -234,8 +242,10 @@ if (isset ($_POST['approve-profile-submit'])) {
 			$updated = $wpdb->update('notifications', array('new_url_3' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_url_3', null);
 		}
-
-		elseif ($new_user_url_3 != $_POST['old_user_url_3']) {
+		elseif ($new_user_url_3 == $_POST['old_user_url_3']) {
+			$updated = $wpdb->update('notifications', array('new_url_3' => null), array('student_id' => $current_user->ID) );
+		}
+		else {
 			$updated = $wpdb->update('notifications', array('new_url_3' => $new_user_url_3), array('student_id' => $current_user->ID) );
 		}
 		
@@ -244,8 +254,10 @@ if (isset ($_POST['approve-profile-submit'])) {
 			$updated = $wpdb->update('notifications', array('new_job' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_job', null);
 		}
-
-		elseif ($new_user_job != $_POST['old_user_job']) {
+		elseif ($new_user_job == $_POST['old_user_job']) {
+			$updated = $wpdb->update('notifications', array('new_job' => null), array('student_id' => $current_user->ID) );
+		}
+		else {
 			$updated = $wpdb->update('notifications', array('new_job' => $new_user_job), array('student_id' => $current_user->ID) );
 		}
 		
@@ -254,18 +266,22 @@ if (isset ($_POST['approve-profile-submit'])) {
 			$updated = $wpdb->update('notifications', array('new_spec' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_spec', null);
 		}
-
-		elseif ($new_user_spec != $_POST['old_user_spec']) {
+		elseif ($new_user_spec == $_POST['old_user_spec']) {
+			$updated = $wpdb->update('notifications', array('new_spec' => null), array('student_id' => $current_user->ID) );
+		}
+		else {
 			$updated = $wpdb->update('notifications', array('new_spec' => $new_user_spec), array('student_id' => $current_user->ID) );
 		}
 	
 	// delete row from table if all fields are blank
-	if ($new_description == '' 
-			&& $new_user_url != ''
-			&& $new_user_url_2 != ''
-			&& $new_user_url_3 != ''
-			&& $new_user_job != ''
-			&& $new_user_spec != '')
+	$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+	$update_user = $results[0];
+	if (($update_user->new_description == null || $update_user->new_description == '')
+			&& ($update_user->new_url == null || $update_user->new_url == '')
+			&& ($update_user->new_url_2 == null || $update_user->new_url_2 == '')
+			&& ($update_user->new_url_3 == null || $update_user->new_url_3 == '')
+			&& ($update_user->new_job == null || $update_user->new_job == '')
+			&& ($update_user->new_spec == null || $update_user->new_spec == ''))
 	{
 		$updated = $wpdb->delete('notifications', array('student_id' => $current_user->ID) );	
 	}
