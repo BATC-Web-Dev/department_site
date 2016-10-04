@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
     $_POST['checkbox'] = array_values($checkArray);
     for ($i=0; $i < count($_POST['checkbox']); $i++) {
         $wpdb->update(
-            'classes',
+            'wp9c_classes',
             array(
                 'finished' => $_POST['checkbox'][$i],
             ),
@@ -114,7 +114,7 @@ if (isset($_POST['submit'])) {
                         <?php
                         global $wpdb;
                         $currentUser = get_current_user_id();
-                        $result = $wpdb->get_results("SELECT * FROM classes INNER JOIN class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser' ORDER BY position ASC");
+                        $result = $wpdb->get_results("SELECT * FROM wp9c_classes INNER JOIN wp9c_class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser' ORDER BY position ASC");
                         //TODO: add error checking for database call
                         foreach($result as $row)
                         {

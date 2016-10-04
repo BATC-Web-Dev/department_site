@@ -146,11 +146,11 @@ get_header(); ?>
 					<div class="list-group">
 					<?php
 						global $wpdb;
-						$query="SELECT post_parent FROM wp_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
+						$query="SELECT post_parent FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
 						$results=$wpdb->get_results($query);
 						//print_r($reply_parent);
 						foreach ($results as $result) {
-							$query="SELECT post_title, post_name FROM wp_posts WHERE ID=$result->post_parent LIMIT 1";
+							$query="SELECT post_title, post_name FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
 							$reply_parents = $wpdb->get_results($query);
 							//print_r($reply_parents);
 							foreach($reply_parents as $reply_parent) {
@@ -165,7 +165,7 @@ get_header(); ?>
 					<div class="list-group">
 						<?php
 						global $wpdb;
-						$query="SELECT * FROM wp_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
+						$query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
 						$results=$wpdb->get_results($query);
 						foreach ($results as $result) {
 							echo "<a class='list-group-item' href='?topic=$result->post_name'>$result->post_title</a>";
@@ -185,7 +185,7 @@ get_header(); ?>
 <!-- start of profile form handling -->
 <?php
 global $wpdb;
-$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+$results = $wpdb->get_results("SELECT * FROM wp9c_notifications WHERE student_id=$current_user->ID");
 $update_user = $results[0];
 if (isset ($_POST['approve-profile-submit'])) {
 			
@@ -200,81 +200,81 @@ if (isset ($_POST['approve-profile-submit'])) {
 // update the request
 	// create row if doesn't exist
 	if (!$update_user->student_id) {
-		$updated = $wpdb->insert('notifications', array('student_id' => $current_user->ID), array('%d') );
+		$updated = $wpdb->insert('wp9c_notifications', array('student_id' => $current_user->ID), array('%d') );
 	}
 		//new_description
 		if ($new_description == "null") {
-			$updated = $wpdb->update('notifications', array('new_description' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_description' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'description', null);
 		}
 		elseif ($new_description == $_POST['old_description']) {
-			$updated = $wpdb->update('notifications', array('new_description' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_description' => null), array('student_id' => $current_user->ID) );
 		}
 		else {
-			$updated = $wpdb->update('notifications', array('new_description' => $new_description), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_description' => $new_description), array('student_id' => $current_user->ID) );
 		}
 			
 		//new_url
 		if ($new_user_url_2 == "null") {
-			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
-			$updated = $wpdb->update('wp_users', array(user_url => $new_url,), array('ID' => $current_user->ID,));
+			$updated = $wpdb->update('wp9c_notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_users', array(user_url => $new_url,), array('ID' => $current_user->ID,));
 		}
 		elseif ($new_user_url == $_POST['old_user_url']) {
-			$updated = $wpdb->update('notifications', array('new_url' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url' => null), array('student_id' => $current_user->ID) );
 		}
 		else {
-			$updated = $wpdb->update('notifications', array('new_url' => $new_user_url), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url' => $new_user_url), array('student_id' => $current_user->ID) );
 		}
 		//new_url_2
 		if ($new_user_url_2 == "null") {
-			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_url_2', null);
 		}
 		elseif ($new_user_url_2 == $_POST['old_user_url_2']) {
-			$updated = $wpdb->update('notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url_2' => null), array('student_id' => $current_user->ID) );
 		}
 		else {
-			$updated = $wpdb->update('notifications', array('new_url_2' => $new_user_url_2), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url_2' => $new_user_url_2), array('student_id' => $current_user->ID) );
 		}
 		
 		//new_url_3
 		if ($new_user_url_3 == "null") {
-			$updated = $wpdb->update('notifications', array('new_url_3' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url_3' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_url_3', null);
 		}
 		elseif ($new_user_url_3 == $_POST['old_user_url_3']) {
-			$updated = $wpdb->update('notifications', array('new_url_3' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url_3' => null), array('student_id' => $current_user->ID) );
 		}
 		else {
-			$updated = $wpdb->update('notifications', array('new_url_3' => $new_user_url_3), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_url_3' => $new_user_url_3), array('student_id' => $current_user->ID) );
 		}
 		
 		//new_job
 		if ($new_user_job == "null") {
-			$updated = $wpdb->update('notifications', array('new_job' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_job' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_job', null);
 		}
 		elseif ($new_user_job == $_POST['old_user_job']) {
-			$updated = $wpdb->update('notifications', array('new_job' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_job' => null), array('student_id' => $current_user->ID) );
 		}
 		else {
-			$updated = $wpdb->update('notifications', array('new_job' => $new_user_job), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_job' => $new_user_job), array('student_id' => $current_user->ID) );
 		}
 		
 		//new_spec
 		if ($new_user_spec == "null") {
-			$updated = $wpdb->update('notifications', array('new_spec' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_spec' => null), array('student_id' => $current_user->ID) );
 			update_user_meta($current_user->ID, 'user_spec', null);
 		}
 		elseif ($new_user_spec == $_POST['old_user_spec']) {
-			$updated = $wpdb->update('notifications', array('new_spec' => null), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_spec' => null), array('student_id' => $current_user->ID) );
 		}
 		else {
-			$updated = $wpdb->update('notifications', array('new_spec' => $new_user_spec), array('student_id' => $current_user->ID) );
+			$updated = $wpdb->update('wp9c_notifications', array('new_spec' => $new_user_spec), array('student_id' => $current_user->ID) );
 		}
 	
 	// delete row from table if all fields are blank
-	$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+	$results = $wpdb->get_results("SELECT * FROM wp9c_notifications WHERE student_id=$current_user->ID");
 	$update_user = $results[0];
 	if (($update_user->new_description == null || $update_user->new_description == '')
 			&& ($update_user->new_url == null || $update_user->new_url == '')
@@ -283,13 +283,13 @@ if (isset ($_POST['approve-profile-submit'])) {
 			&& ($update_user->new_job == null || $update_user->new_job == '')
 			&& ($update_user->new_spec == null || $update_user->new_spec == ''))
 	{
-		$updated = $wpdb->delete('notifications', array('student_id' => $current_user->ID) );	
+		$updated = $wpdb->delete('wp9c_notifications', array('student_id' => $current_user->ID) );
 	}
 	header("Refresh:0");	
 } // end of if isset submit
 
 if (isset ($_POST['approve-profile-reset'])) {
-	$updated = $wpdb->delete('notifications', array('student_id' => $current_user->ID) );
+	$updated = $wpdb->delete('wp9c_notifications', array('student_id' => $current_user->ID) );
 	
 }
 ?>
@@ -299,11 +299,11 @@ if (isset ($_POST['approve-profile-reset'])) {
 	<!-- start of edit profile form modal -->
 	<?php
 	global $wpdb;
-	$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+	$results = $wpdb->get_results("SELECT * FROM wp9c_notifications WHERE student_id=$current_user->ID");
 	$update_user = $results[0];
 	
 	$old_meta = $wpdb->get_results("SELECT meta_key, meta_value 
-									FROM wp_usermeta 
+									FROM wp9c_usermeta 
 									WHERE user_id=$current_user->ID 
 									AND (meta_key='description'
 									OR meta_key='user_url_2'
@@ -311,7 +311,7 @@ if (isset ($_POST['approve-profile-reset'])) {
 									OR meta_key='user_job'
 									OR meta_key='user_spec')
 									");
-	$old_user_data = $wpdb->get_results("SELECT display_name, user_email, user_url, ID FROM wp_users WHERE ID=$current_user->ID");
+	$old_user_data = $wpdb->get_results("SELECT display_name, user_email, user_url, ID FROM wp9c_users WHERE ID=$current_user->ID");
 		
 	foreach ($old_meta as $meta) {
 		if ($meta->meta_key == 'description') $old_data->description = $meta->meta_value;

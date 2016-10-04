@@ -36,11 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $courseDesc = test_input($_POST['courseDesc']);
     }
 
-    $resultObj = ($wpdb->get_results('SELECT MAX(position) as max_id FROM class'));
+    $resultObj = ($wpdb->get_results('SELECT MAX(position) as max_id FROM wp9c_class'));
     $lastAddedPosition = $resultObj->max_id;
     $classType = test_input($_POST["classType"]);
     $wpdb->insert(
-        'class',
+        'wp9c_class',
         array(
             'course_id' => $courseId,
             'course_name' => $courseName,
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $users = $wpdb->get_results("SELECT ID FROM $wpdb->users");
     foreach ($users as $user) {
         $wpdb->insert(
-            'classes',
+            'wp9c_classes',
             array(
                 'user_id' => $user->ID,
                 'class_id' => $lastId,

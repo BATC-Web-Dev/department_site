@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $classType = test_input($_POST["classType"]);
     $wpdb->update(
-        'class',
+        'wp9c_class',
         array(
             'course_id' => $courseId,
             'course_name' => $courseName,
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $users = $wpdb->get_results("SELECT ID FROM $wpdb->users");
     foreach ($users as $user) {
         $wpdb->insert(
-            'classes',
+            'wp9c_classes',
             array(
                 'user_id' => $user->ID,
                 'class_id' => $lastId,

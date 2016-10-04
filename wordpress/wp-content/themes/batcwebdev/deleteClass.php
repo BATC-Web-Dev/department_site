@@ -4,8 +4,8 @@ Template Name: deleteClass
 */
 global $wpdb;
     $id = $_POST["ID"];
-    $wpdb->delete( 'class', array( 'ID' => $id ) );
-    $wpdb->delete( 'classes', array( 'class_id' => $id ) );
+    $wpdb->delete( 'wp9c_class', array( 'ID' => $id ) );
+    $wpdb->delete( 'wp9c_classes', array( 'class_id' => $id ) );
     echo "Class Removed From Table";
 
 ?>

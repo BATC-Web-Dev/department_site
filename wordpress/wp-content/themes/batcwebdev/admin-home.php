@@ -45,15 +45,15 @@ if ( is_user_logged_in() ) {
 	global $wpdb;
 $notifications = $wpdb->get_results("
 				SELECT 
-					notifications.notify_id,
-					wp_users.display_name,
-					wp_users.user_email
+					wp9c_notifications.notify_id,
+					wp9c_users.display_name,
+					wp9c_users.user_email
 				FROM 
-					notifications 
+					wp9c_notifications 
 				INNER JOIN 
-					wp_users 
+					wp9c_users 
 				ON 
-					notifications.student_id = wp_users.ID
+					wp9c_notifications.student_id = wp9c_users.ID
 				");
 ?>
 <div class='container'>
@@ -69,7 +69,7 @@ $notifications = $wpdb->get_results("
 	if (!$notifications) {echo "<table id='approve-deny-table-single'><tr><td>There are no notifications pending.</td></tr></table>";}
 foreach ($notifications as $row) {
 	
-	$results = $wpdb->get_results("SELECT * FROM notifications WHERE notify_id=$row->notify_id");
+	$results = $wpdb->get_results("SELECT * FROM wp9c_notifications WHERE notify_id=$row->notify_id");
 	
 	$new_data->email = ($results[0]->new_email == '' ? null : $results[0]->new_email);
 	$new_data->url = ($results[0]->new_url == '' ? null : $results[0]->new_url);
@@ -81,7 +81,7 @@ foreach ($notifications as $row) {
 
 	$ID = $results[0]->student_id;
 	$old_meta = $wpdb->get_results("SELECT meta_key, meta_value 
-									FROM wp_usermeta 
+									FROM wp9c_usermeta 
 									WHERE user_id=$ID 
 									AND (meta_key='description'
 									OR meta_key='user_url_2'
@@ -98,7 +98,7 @@ foreach ($notifications as $row) {
 		if ($meta->meta_key == 'user_spec') $old_data->spec = $meta->meta_value;
 	}
 		
-	$old_user_data = $wpdb->get_results("SELECT display_name, user_email, user_url, ID FROM wp_users WHERE ID=$ID");
+	$old_user_data = $wpdb->get_results("SELECT display_name, user_email, user_url, ID FROM wp9c_users WHERE ID=$ID");
 		
 	$old_data->display_name = $old_user_data[0]->display_name;
 	$old_data->email = $old_user_data[0]->user_email;
@@ -128,7 +128,7 @@ foreach ($notifications as $row) {
 
 		if (isset($_POST['url'])) {
 			$updated = $wpdb->update( 
-						wp_users, 
+						wp9c_users,
 						array( 
 							user_url => $new_data->url, 
 						),
@@ -170,7 +170,7 @@ foreach ($notifications as $row) {
 			);
 		}
 
-		$updated = $wpdb->delete('notifications', array('student_id' => $old_data->ID) );
+		$updated = $wpdb->delete('wp9c_notifications', array('student_id' => $old_data->ID) );
 		header("Refresh:0");
 	}
 	
@@ -422,11 +422,11 @@ foreach ($notifications as $row) {
 					<div class="list-group">
 					<?php
 						global $wpdb;
-						$query="SELECT post_parent FROM wp_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
+						$query="SELECT post_parent FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
 						$results=$wpdb->get_results($query);
 						//print_r($reply_parent);
 						foreach ($results as $result) {
-							$query="SELECT post_title, post_name FROM wp_posts WHERE ID=$result->post_parent LIMIT 1";
+							$query="SELECT post_title, post_name FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
 							$reply_parents = $wpdb->get_results($query);
 							//print_r($reply_parents);
 							foreach($reply_parents as $reply_parent) {
@@ -442,7 +442,7 @@ foreach ($notifications as $row) {
 					<div class="list-group">
 						<?php
 						global $wpdb;
-						$query="SELECT * FROM wp_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
+						$query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
 						$results=$wpdb->get_results($query);
 						foreach ($results as $result) {
 							echo "<a class='list-group-item' href='?topic=$result->post_name'>$result->post_title</a>";
@@ -507,7 +507,7 @@ foreach ($notifications as $row) {
 
 		if ($new_url != '') {
 			$updated = $wpdb->update( 
-						wp_users, 
+						wp9c_users,
 						array( 
 							user_url => $new_url, 
 						),
@@ -553,7 +553,7 @@ foreach ($notifications as $row) {
 		<!-- start of edit profile form modal -->
 	<?php
 	global $wpdb;
-	$results = $wpdb->get_results("SELECT * FROM notifications WHERE student_id=$current_user->ID");
+	$results = $wpdb->get_results("SELECT * FROM wp9c_notifications WHERE student_id=$current_user->ID");
 	$update_user = $results[0];
 	?>
     <form class="form-horizontal" id="contactForm" method="post" action="">

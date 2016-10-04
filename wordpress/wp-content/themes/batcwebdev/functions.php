@@ -13,7 +13,7 @@
  *
  *  needed to schedule admin notification emails
  */
-function loadTaskSchedulerAdminNotificationActionModule() {
+/*function loadTaskSchedulerAdminNotificationActionModule() {
     
     // Register a custom action module.
     include( dirname( __FILE__ ) . '/module/TaskScheduler_AdminNotificationActionModule.php' );
@@ -25,14 +25,14 @@ add_action( 'task_scheduler_action_after_loading_plugin', 'loadTaskSchedulerAdmi
  /*
  *  creates a class for task scheduler to send emails to admin for pending notifications
  */
- class TaskScheduler_AdminNotificationActionModule extends TaskScheduler_Action_Base {
+ /*class TaskScheduler_AdminNotificationActionModule extends TaskScheduler_Action_Base {
         
     /**
      * The user constructor.
      * 
      * This method is automatically called at the end of the class constructor.
      */
-    public function construct() {
+    /*public function construct() {
         
         // Debug 
         // TaskScheduler_Debug::log(  get_object_vars( $this ) );
@@ -44,22 +44,22 @@ add_action( 'task_scheduler_action_after_loading_plugin', 'loadTaskSchedulerAdmi
      * 
      * This will be called when displaying the action in an pull-down select option, task listing table, or notification email message.
      */
-    public function getLabel( $sLabel ) {         
+    /*public function getLabel( $sLabel ) {
         return __( 'admin notification email', 'task-scheduler-sample-action-module' );
     }
     
     /**
      * Returns the description of the module.
      */
-    public function getDescription( $sDescription ) {
+    /*public function getDescription( $sDescription ) {
         return __( 'This will send an email to the admin at the desired time if there are pending notifications.', 'task-scheduler-sample-action-module' );
-    }    
+    }
     
     /**
      * Defines the behaviour of the task action.
      *  
      */
-    public function doAction( $isExitCode, $oRoutine ) {
+    /*public function doAction( $isExitCode, $oRoutine ) {
 		global $wpdb;
 		$notifications = $wpdb->get_results("
 				SELECT 

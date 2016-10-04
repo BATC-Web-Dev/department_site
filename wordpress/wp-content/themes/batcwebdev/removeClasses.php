@@ -17,8 +17,8 @@ Template Name: RemoveClasses
 get_header();
 if (isset($_POST['submit'])) {
     $id = $_POST['submit'];
-    $wpdb->delete( 'class', array( 'ID' => $id ) );
-    $wpdb->delete( 'classes', array( 'class_id' => $id ) );
+    $wpdb->delete( 'wp9c_class', array( 'ID' => $id ) );
+    $wpdb->delete( 'wp9c_classes', array( 'class_id' => $id ) );
     echo "<p>Class Removed From Table</p>";
 
 }
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 					<?php
 					global $wpdb;
 					$currentUser = get_current_user_id();
-					$result = $wpdb->get_results("SELECT * FROM class");
+					$result = $wpdb->get_results("SELECT * FROM wp9c_class");
 					//TODO: add error checking for database call
 					foreach($result as $row)
 					{

@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $classType = test_input($_POST["classType"]);
     $wpdb->insert(
-        'class',
+        'wp9c_class',
         array(
             'course_id' => $courseId,
             'course_name' => $courseName,
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $users = $wpdb->get_results("SELECT ID FROM $wpdb->users");
     foreach ($users as $user) {
         $wpdb->insert(
-            'classes',
+            'wp9c_classes',
             array(
                 'user_id' => $user->ID,
                 'class_id' => $lastId,
@@ -153,7 +153,7 @@ function test_input($data) {
             <li style="color: orange">Back-End</li>
         </ul>
         <?php
-        $result = $wpdb->get_results("SELECT * FROM class ORDER BY ID DESC");
+        $result = $wpdb->get_results("SELECT * FROM wp9c_class ORDER BY ID DESC");
         foreach($result as $row){
             echo "<p class='classType$row->class_type'>$row->ID : $row->course_id : $row->course_name : $row->hours : $row->class_type</p><br>";
         }

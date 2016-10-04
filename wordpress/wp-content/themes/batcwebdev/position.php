@@ -8,7 +8,7 @@ global $wpdb;
 $i = 1;
 foreach ($_POST['position'] as $value) {
     $wpdb->update(
-        'class',
+        'wp9c_class',
         array(
             'position' => $i,
         ),

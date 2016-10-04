@@ -21,8 +21,8 @@ global $wpdb;
 //TODO: add error checking for database call
 if (isset($_POST['submit'])) {
     $id = $_POST['submit'];
-    $wpdb->delete( 'class', array( 'ID' => $id ) );
-    $wpdb->delete( 'classes', array( 'class_id' => $id ) );
+    $wpdb->delete( 'wp9c_class', array( 'ID' => $id ) );
+    $wpdb->delete( 'wp9c_classes', array( 'class_id' => $id ) );
     echo "<script>alert('Class Removed From Table')</script>";
 
 }
@@ -118,7 +118,7 @@ if (isset($_POST['submit'])) {
                 $( ".ID" ).each(function( index ) {
                     data.push($(this).val());
                 });
-                $.post("?page_id=91",{'position': data},function(data) {
+                $.post("/test/postition",{'position': data},function(data) {
                     location.reload();
                 });
             });
@@ -158,7 +158,7 @@ if (isset($_POST['submit'])) {
                     global $wpdb;
                     $count = 1;
                     $currentUser = get_current_user_id();
-                    $result = $wpdb->get_results("SELECT * FROM class ORDER BY position ASC");
+                    $result = $wpdb->get_results("SELECT * FROM wp9c_class ORDER BY position ASC");
                     //TODO: add error checking for database call
                     foreach($result as $row) {
                             echo "<tr id='position_$count' class='classType$row->class_type'>";
@@ -259,7 +259,7 @@ if (isset($_POST['submit'])) {
 <script>
     jQuery(document).ready(function($) {
         $('#add').on('click', function() {
-            $.post("?page_id=76",$('#classForm').serialize(),function(data){
+            $.post("/test/addclass",$('#classForm').serialize(),function(data){
                 $('#class-modal').modal('toggle');
 
                 location.reload();
@@ -271,7 +271,7 @@ if (isset($_POST['submit'])) {
             var data = $('#classForm').serializeArray();
             var id = $('#id').val();
             data.push({name: 'ID', value: id});
-            $.post("?page_id=86",data,function(data){
+            $.post("/test/editClass",data,function(data){
                 $('#class-modal').modal('toggle');
                 location.reload();
             });
@@ -283,7 +283,7 @@ if (isset($_POST['submit'])) {
             var data = [];
             data.push({name: 'ID', value: id});
             // $.ajax({url: '/api/record/' + id, type: 'DELETE'})
-            $.post("?page_id=88",data,function(data) {
+            $.post("/test/deleteClass",data,function(data) {
                 location.reload();
             });
         });
