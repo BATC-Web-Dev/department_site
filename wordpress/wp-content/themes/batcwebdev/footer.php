@@ -18,7 +18,7 @@
 		<nav class="navbar navbar-inverse" role="navigation" style="border-radius:0px;">
 			<div class="container-fluid">
 				<div class="col-sm-3">
-				<a class="pull-left" href="#">
+				<a class="pull-left" href="/test">
 				<img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
 				</a>
 				</div>
@@ -26,13 +26,13 @@
 					<nav>
 						<ul class="list-unstyled list-inline">
 							<li>
-								<a href="">Home</a>
+								<a href="/test">Home</a>
 							</li>
 							<li>
-								<a href="">Contact</a>
+								<a href="/test/contact">Contact</a>
 							</li>
 							<li>
-								<a href="">Resources</a>
+								<a href="/test/resource">Resources</a>
 							</li>
 						</ul>
 					</nav>

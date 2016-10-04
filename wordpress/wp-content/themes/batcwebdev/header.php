@@ -33,8 +33,8 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand href="#">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
+                        <a class="navbar-brand" href="/test">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
                         </a>
                     </div>
                     <?php
