@@ -19,12 +19,13 @@ get_header(); ?>
             return this.optional(element) || phone_number.length > 9 &&
                 phone_number.match(/\(?[\d\s]{3}\)[\d\s]{3}-[\d\s]{4}$/);
         }, "Invalid phone number");
+
         $('#contactForm').validate({
             rules: {
                 contact_phone: {
                     required: true,
                     phoneUS: true
-                }
+                },
                 contact_email: {
                     required: true,
                     validate_email: true
@@ -74,14 +75,31 @@ if (isset ($_POST['contact_submit'])) {
 
 // if required fields
 if ($contact_name && ($contact_phone || $contact_email) ) {
-    $to = "joshua.aaron.brown@gmail.com"; 
+    if(isset($_POST['g-recaptcha-response'])){
+        $captcha=$_POST['g-recaptcha-response'];
+    }
+    if(!$captcha){
+        $result='<div class="contact_form_error">Please check the the captcha form.</div>';
+        //echo '<h2>Please check the the captcha form.</h2>';
+        //exit;
+    }
+    $to = "joshua.aaron.brown@gmail.com";
     $subject = "Contact Form Submission";
     $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
     $headers = "From: $contact_email";
 
-    wp_mail($to,$subject,$txt,$headers);	  
+    wp_mail($to,$subject,$txt,$headers);
+    $secretKey = "6LdPbQgUAAAAABbGHcCMOY5Vig5Aji_fSv__flsF";
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+    $responseKeys = json_decode($response,true);
+    if(intval($responseKeys["success"]) !== 1) {
+        $result='<div class="contact_form_error">You are spammer !</div>';
+    } else {
+        $result='<div class="alert alert-success">Thank You! We will be in touch</div>';
+    }
 //  } // end of if has contact info
-    $result='<div class="alert alert-success">Thank You! We will be in touch</div>';
+    //$result='<div class="alert alert-success">Thank You! We will be in touch</div>';
 
 } // end of if required fields
 else {
@@ -107,18 +125,22 @@ else {
             </div>
         <section id=jumbo>
             <div class="jumbotron">
-
-                    <h2><span>Make Contact</span></h2>
-                    <p><span>
-                        <i class="glyphicon glyphicon-envelope"> Address:</i><span class='spacer'></span><br>
-                        <span class='spacer'></span>1410 North 1000 West<span class='spacer'></span><br>
-                        <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
+                <h2><span>Make Contact</span></h2>
+                <p><span>
+                    <i class="glyphicon glyphicon-envelope"> Address:</i><span class='spacer'></span><br>
+                    <span class='spacer'></span>1410 North 1000 West<span class='spacer'></span><br>
+                    <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
                     </span></p>
-                    <p><span>
-                        <i class="glyphicon glyphicon-phone"> Phone:</i><span class='spacer'></span><br>
-                        <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
-                        <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
-                     </span></p>
+                <p><span>
+                    <i class="glyphicon glyphicon-phone"> Phone:</i><span class='spacer'></span><br>
+                    <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
+                    <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
+                    </span></p>
+                <p><span>
+                      <a class="btn btn-social-icon btn-twitter">
+                          <span class="fa fa-twitter"></span>
+                      </a>
+                    </span></p>
 
             </div>
         </section>
@@ -145,6 +167,7 @@ else {
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <form class="form-horizontal" id="contactForm" method="post" action="">
+                        <script src='https://www.google.com/recaptcha/api.js'></script>
                         <div class="form-group">
                             <label for="sel1">I am a:</label>
                             <select class="form-control" id="sel1" name="contact_is_a">
@@ -170,6 +193,9 @@ else {
                         <div class="form-group">
                             <label for="contact_comment">Comment:</label>
                             <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6LdPbQgUAAAAADEfVZ9Wz1y7QTYPBC1eHohj_mmf"></div>
                         </div>
                         <div>
                             <button class="btn pull-right" type="submit" value="Submit" name="contact_submit">Contact Us</button>

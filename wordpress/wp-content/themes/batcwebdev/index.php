@@ -250,7 +250,6 @@ else {
                             <label for="contact_comment">Comment:</label>
                             <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment" required></textarea>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="reset" value="Reset">Reset</button>
