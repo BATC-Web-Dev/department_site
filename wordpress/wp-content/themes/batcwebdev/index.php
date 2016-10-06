@@ -43,15 +43,24 @@ if (isset ($_POST['contact_submit'])) {
 
 // if required fields
 if ($contact_name && ($contact_phone || $contact_email) ) {
-    $to = "joshua.aaron.brown@gmail.com";
-    $subject = "Contact Form Submission";
-    $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
-    $headers = "From: $contact_email";
+    if(isset($_POST['g-recaptcha-response'])){
+        $captcha=$_POST['g-recaptcha-response'];
+    }
+    $secretKey = "6LdPbQgUAAAAABbGHcCMOY5Vig5Aji_fSv__flsF";
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+    $responseKeys = json_decode($response,true);
+    if(intval($responseKeys["success"]) !== 1) {
+        $result='<div class="alert alert-danger">Please fill out all fields and the Captcha</div>';
+    } else {
+        $to = "joshua.aaron.brown@gmail.com";
+        $subject = "Contact Form Submission";
+        $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
+        $headers = "From: $contact_email";
 
-    wp_mail($to,$subject,$txt,$headers);
-//  } // end of if has contact info
-    $result='<div class="alert alert-success">Thank You! We will be in touch</div>';
-
+        wp_mail($to,$subject,$txt,$headers);
+        $result='<div class="alert alert-success">Thank You! We will be in touch</div>';
+    }
 } // end of if required fields
 else {
     if (isset ($_POST['contact_submit'])) {
@@ -161,6 +170,9 @@ else {
             </div>
     </div>
 </section>
+    <a class="btn btn-block btn-social btn-twitter">
+        <span class="fa fa-twitter"></span> Sign in with Twitter
+    </a>
 <section id="course-features">
     <div class="container">
         <div class="section-header">
@@ -215,6 +227,7 @@ else {
 </section>
     <!--Form Modal -->
     <form class="form-horizontal" id="contactForm" method="post" action="">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <div id="contact-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -249,6 +262,9 @@ else {
                         <div class="form-group">
                             <label for="contact_comment">Comment:</label>
                             <textarea class="classForm" rows="5" id="contact_comment" name="contact_comment" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6LdPbQgUAAAAADEfVZ9Wz1y7QTYPBC1eHohj_mmf"></div>
                         </div>
                     </div>
                     <div class="modal-footer">

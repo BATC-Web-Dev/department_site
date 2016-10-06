@@ -62,11 +62,17 @@ if (isset($_POST['submit'])) {
         //Change the color of the tr based on the class type
         jQuery(document).ready(function( $ ) {
             //Core
-            $(".classType1").css("color", "black");
-            //Front-End
-            $(".classType2").css("color", "blue");
+            $(".classType1").css("color", "Black");
+            //Digital Media
+            $(".classType2").css("color", "DarkBlue");
+            //Front End
+            $(".classType3").css("color", "DarkRed");
             //Backend
-            $(".classType3").css("color", "orange");
+            $(".classType4").css("color", "DarkOrange");
+            //Web Orginazation
+            $(".classType5").css("color", "DarkViolet");
+            //Electives
+            $(".classType6").css("color", "Green");
             //Stripe
             $( "tbody tr:even" ).css( "background-color", "#C9C9C9" );
 
@@ -94,12 +100,15 @@ if (isset($_POST['submit'])) {
                 <div class="row">
                     <div class="col-md-12 lead">Classes<hr></div>
                 </div>
-                    <ul class="color-key"><!-- Change the class color key here-->
-                        Class Type Color Codes:
-                        <li style="color: black">Core,</li>
-                        <li style="color: blue">Front-End,</li>
-                        <li style="color: orange">Back-End</li>
-                    </ul>
+                <ul class="color-key col-sm-10"><!-- Change the class color key here-->
+                    Class Type Color Codes:
+                    <li style="color: Black">Core,</li>
+                    <li style="color: DarkBlue">Digital Media,</li>
+                    <li style="color: DarkRed">Front End Development</li>
+                    <li style="color: DarkOrange">Backend Development</li>
+                    <li style="color: DarkViolet">Web Site Organization</li>
+                    <li style="color: Green">Front End Development</li>
+                </ul>
                 <form name="classForm" method="post" action="<?php echo get_permalink(); ?>">
                     <table id="classTable" class="table">
                         <thead>
@@ -114,7 +123,7 @@ if (isset($_POST['submit'])) {
                         <?php
                         global $wpdb;
                         $currentUser = get_current_user_id();
-                        $result = $wpdb->get_results("SELECT * FROM wp9c_classes INNER JOIN wp9c_class ON class.ID = classes.class_id WHERE classes.user_id = '$currentUser' ORDER BY position ASC");
+                        $result = $wpdb->get_results("SELECT * FROM wp9c_classes INNER JOIN wp9c_class ON wp9c_class.ID = wp9c_classes.class_id WHERE wp9c_classes.user_id = '$currentUser' ORDER BY position ASC");
                         //TODO: add error checking for database call
                         foreach($result as $row)
                         {

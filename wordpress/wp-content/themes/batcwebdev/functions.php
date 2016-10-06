@@ -347,10 +347,10 @@ register_nav_menus( array(
 function addClassesToNewUser($user_id) {
 //Write function to loop through all the available classes and set the new user id and finished
     global $wpdb;
-    $result = $wpdb->get_results("SELECT * FROM class");
+    $result = $wpdb->get_results("SELECT * FROM wp9c_class");
     foreach ($result as $row){
         $wpdb->insert(
-            'classes',
+            'wp9c_classes',
             array(
                 'user_id' => $user_id,
                 'class_id' => $row->ID,
@@ -400,9 +400,9 @@ function admin_login_redirect( $redirect_to, $request, $user )
     global $user;
     if( isset( $user->roles ) && is_array( $user->roles ) ) {
         if( in_array( "administrator", $user->roles ) ) {
-            return 'http://localhost:8888/wordpress/?page_id=62';
+            return '/test/admin-home/';
         } else {
-            return 'http://localhost:8888/wordpress/?page_id=62';
+            return '/test/';
         }
     }
     else

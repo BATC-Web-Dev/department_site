@@ -13,27 +13,6 @@ Template Name: contacts
 
 get_header(); ?>
 <script>
-    jQuery(document).ready(function( $ ) {
-        $.validator.addMethod("phoneUS", function (phone_number, element) {
-            phone_number = phone_number.replace(/\s+/g, "");
-            return this.optional(element) || phone_number.length > 9 &&
-                phone_number.match(/\(?[\d\s]{3}\)[\d\s]{3}-[\d\s]{4}$/);
-        }, "Invalid phone number");
-
-        $('#contactForm').validate({
-            rules: {
-                contact_phone: {
-                    required: true,
-                    phoneUS: true
-                },
-                contact_email: {
-                    required: true,
-                    validate_email: true
-                }
-            }
-        });
-    });
-
 //Finds y value of given object
 function findPos(obj) {
     var curtop = 0;
@@ -78,28 +57,21 @@ if ($contact_name && ($contact_phone || $contact_email) ) {
     if(isset($_POST['g-recaptcha-response'])){
         $captcha=$_POST['g-recaptcha-response'];
     }
-    if(!$captcha){
-        $result='<div class="contact_form_error">Please check the the captcha form.</div>';
-        //echo '<h2>Please check the the captcha form.</h2>';
-        //exit;
-    }
-    $to = "joshua.aaron.brown@gmail.com";
-    $subject = "Contact Form Submission";
-    $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
-    $headers = "From: $contact_email";
-
-    wp_mail($to,$subject,$txt,$headers);
     $secretKey = "6LdPbQgUAAAAABbGHcCMOY5Vig5Aji_fSv__flsF";
     $ip = $_SERVER['REMOTE_ADDR'];
     $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
     $responseKeys = json_decode($response,true);
     if(intval($responseKeys["success"]) !== 1) {
-        $result='<div class="contact_form_error">You are spammer !</div>';
+        $result='<div class="alert alert-danger">Please fill out all fields and the Captcha</div>';
     } else {
+        $to = "joshua.aaron.brown@gmail.com";
+        $subject = "Contact Form Submission";
+        $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
+        $headers = "From: $contact_email";
+
+        wp_mail($to,$subject,$txt,$headers);
         $result='<div class="alert alert-success">Thank You! We will be in touch</div>';
     }
-//  } // end of if has contact info
-    //$result='<div class="alert alert-success">Thank You! We will be in touch</div>';
 
 } // end of if required fields
 else {
@@ -197,6 +169,7 @@ else {
                         <div class="form-group">
                             <div class="g-recaptcha" data-sitekey="6LdPbQgUAAAAADEfVZ9Wz1y7QTYPBC1eHohj_mmf"></div>
                         </div>
+
                         <div>
                             <button class="btn pull-right" type="submit" value="Submit" name="contact_submit">Contact Us</button>
                             <button class="btn pull-left" type="reset" value="Reset">Reset Form</button>
@@ -208,7 +181,6 @@ else {
                 </div>
             </div>
         </section>
-
 <!-- end of form handling -->
 </main><!-- .site-main -->
 <?php get_footer(); ?>
