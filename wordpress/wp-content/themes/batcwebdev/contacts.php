@@ -95,7 +95,7 @@ else {
             <div class="col-sm-12">
                 <?php echo $result; ?>
             </div>
-        <section id=jumbo>
+
             <div class="jumbotron">
                 <h2><span>Make Contact</span></h2>
                 <p><span>
@@ -108,14 +108,8 @@ else {
                     <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
                     <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
                     </span></p>
-                <p><span>
-                      <a class="btn btn-social-icon btn-twitter">
-                          <span class="fa fa-twitter"></span>
-                      </a>
-                    </span></p>
-
             </div>
-        </section>
+
         <section id="optin">
             <div class="container">
                 <div class="row">

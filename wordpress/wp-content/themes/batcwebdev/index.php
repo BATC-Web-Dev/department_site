@@ -79,7 +79,7 @@ else {
 }
 ?>
 
-<section>
+<section id="sect-carousel">
     <div class="col-sm-12" id="index-contact-alert">
         <?php echo $result; ?>
     </div>
@@ -132,47 +132,80 @@ else {
         </div>
     </div>
 </section>
-<section id="field-info">
+
+<section id="project-features">
     <div class="container">
-        <div class="lead">
-            <h2>Is Web Development for you?</h2>
-        </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <img class="img center-block" src="<?php bloginfo('template_url'); ?>/assets/images/html_code.png" alt="">
-                </div>
-                <div class="col-sm-9">
-                    <h3>I want to be a web developer</h3>
-                    <p>A Web Developer is a programmer or coder who specializes in programming languages for the World
-                        Wide Web or the internet. They write code which the computer translates into something usable by
-                        humans. They are basically the engineers or builders of the Web. Web Developers work with some
-                        of the following languages HTML5, CSS3, JavaScript, JQuery, PHP, MySQL, Ruby, Python and others
-                        depending on their specialization. Sound like a lot? Most Developers really only focus on or
-                        specialize in a few languages but often know a spattering of several. In general, Web Developers
-                        make around $87,000 a year according to Indeed.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <img class="img center-block" src="<?php bloginfo('template_url'); ?>/assets/images/css_code.png" alt="">
-                </div>
-                <div class="col-sm-9">
-                    <h3>I want to be a web designer</h3>
-                    <p>Web Designers design the layout or visual appeal and flow of the website as well as the UI or UX
-                        (user interface or user experience) to make the website usable for the user. This is generally
-                        done through a process called wire framing in either Photoshop or Sketch. Wire framing allows
-                        you to layout the webpage graphically so you have an idea of how the website looks before being
-                        sent to the developers to be programmed. Most designers spend their days looking at color
-                        palettes, typography, and possibly doing some graphic design as well as basic coding. In
-                        general, Web Designers make about $66,000 a year, but more advanced designers can make into the
-                        90k region.</p>
-                </div>
-            </div>
-    </div>
+        <h2>Is Web Development for you?</h2>
+        <p class="lead">Not sure if a career in Web &amp; Mobile Development is for you?</p>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/html_code.png" alt="Design">
+                <h3>Make the internet yours</h3>
+                <p>Do you look at webpages on the internet and think "I could do better" or "Wow, that's a neat website"?  Web Developers have the opportunity to work on projects that could possibly be seen by millions of people.</p>
+            </div><!-- end col -->
+
+            <div class="col-sm-4">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/css_code.png" alt="Design">
+                <h3>Design webpages</h3>
+                <p>Do you like the idea of coding a beautiful website?  Websites aren't just about a pretty design, they are also about well designed UX and beautiful code that can be just as much of an art as the finished website itself.</p>
+            </div><!-- end col -->
+
+            <div class="col-sm-4">
+                <img src="<?php bloginfo('template_url'); ?>/assets/images/js_code.png" alt="Design">
+                <h3>Write code</h3>
+                <p>Do you enjoy feeling a sense of accomplishment when you see something you created?  Much like an engineer, Web Developers build what we see on the internet and can feel pride in what they have done.</p>
+            </div><!-- end col -->
+        </div><!-- row -->
+    </div><!-- container -->
+</section><!-- project features -->
+
+<!-- Who Benefits -->
+
+<section id="who-benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2>What careers can you choose from in our program?</h2>
+        </div><!-- section header -->
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+
+                <h3>Web Developer</h3>
+                <p>A Web Developer is a programmer or coder who specializes in programming languages for the World Wide Web or the internet.  They write code which the computer translates into something usable by humans.  They are basically the engineers or builders of the Web.  Web Developers work with some of the following languages HTML5, CSS3, JavaScript, JQuery, PHP, MySQL, Ruby, Python and others depending on their specialization.  Sound like a lot?  Most Developers really only focus on or specialize in a few languages but often know a spattering of several.  In general, <strong>Web Developers make around $87,000 a year</strong> according to <a href="http://www.indeed.com/salary?q1=web+designer&l1=usa&q2=web+developer&l2=usa"> Indeed</a>.</p>
+
+                <h3>Web Designer</h3>
+                <p>Web Designers design the layout or visual appeal and flow of the website as well as the UI or UX (user interface or user experience) to make the website usable for the user.  This is generally done through a process called wire framing in either Photoshop or Sketch.  Wire framing allows you to layout the webpage graphically so you have an idea of how the website looks before being sent to the developers to be programmed.  Most designers spend their days looking at color palettes, typography, and possibly doing some graphic design as well as basic coding.  In general, <strong>Web Designers make about $66,000 a year</strong>, but more advanced designers can make into the 90k region.
+                </p>
+
+            </div><!-- col-sm and offset -->
+        </div><!-- class row -->
+    </div><!-- container -->
 </section>
-    <a class="btn btn-block btn-social btn-twitter">
-        <span class="fa fa-twitter"></span> Sign in with Twitter
-    </a>
+
+<!-- Who Benefits -->
+
+<section id="who-benefits">
+    <div class="container">
+        <div class="section-header">
+            <h2>Which one is right for you?</h2>
+        </div><!-- section header -->
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+
+                <h3>Web Developer</h3>
+                <p>Web Developers tend to see the world in more of a logical fashion.  They see the world as something that can be quantified and put into a collection of data.  They enjoy solving problems and have a high attention to detail.</p>
+
+                <h3>Web Designer</h3>
+                <p>Web Designers see the world in a visual way.  Instead of seeing a path as a series of waypoints, they like landmarks and rely more on intuition and feel then logic.  They tend to be more creative in general and enjoy making things.</p>
+
+
+            </div><!-- col-sm and offset -->
+        </div><!-- class row -->
+    </div><!-- container -->
+
+</section>
+
+<!-- Course Features -->
+
 <section id="course-features">
     <div class="container">
         <div class="section-header">
@@ -218,7 +251,7 @@ else {
             <div class="col-sm-4">
                 <strong>
                     <p>
-                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-success btn-lg btn-block" data-toggle="modal" id="contact-btn" data-target="#contact-modal">Contact Us</a>
+                        <a href="http://batc.edu/programs/web-mobile-development" class="btn btn-info btn-lg btn-block" data-toggle="modal" id="contact-btn" data-target="#contact-modal">Contact Us</a>
                     </p>
                 </strong>
             </div>

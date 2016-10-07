@@ -58,6 +58,7 @@ get_header(); ?>
 			<div class="row">
 
 				<div class="col-md-6 col-sm-12 well" id="member_profile">
+                    <div class='list-group'>
 
 			<?php
 			if ( is_user_logged_in() ):
@@ -68,26 +69,25 @@ get_header(); ?>
 					$welcome_message = "$profile_viewing->display_name's profile";
 					$avatar_header = "$profile_viewing->display_name's Avatar";
 					$bio_header = "$profile_viewing->display_name's Bio";
-					$profile_button = "<a href='?page_id=66'><big>Your Profile</big></a><br>";
+					$profile_button = "<a class='list-group-item' href='?page_id=66'><big>Your Profile</big></a><br>";
 				}
 				else {
 					$profile_viewing = $current_user;
 					$welcome_message = $current_user->display_name;
 					$avatar_header = "Your Avatar";
 					$bio_header = "Your Bio";
-					$profile_button = "<a data-toggle='modal' data-target='#approve-profile-modal'>Edit Profile</a><br>";
+					$profile_button = "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#approve-profile-modal'>Edit Profile</a><br>";
 				}
-					
+
 				if ( ($profile_viewing instanceof WP_User) ) {
 					echo "<div class='avatar col-sm-6 col-md-4' id='bio_avatar'><div class='center'>"
 						. get_avatar( $profile_viewing->user_email, 200 );
-					
+
 						echo $profile_button;
-						echo "<a data-toggle='modal' data-target='#other-members-modal'>Other Members</a>
-							<p>
-							$profile_viewing->user_spec<br>
-							$profile_viewing->user_job
-							</p>
+						echo "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#other-members-modal'>Other Members</a>
+							<li class='list-group-item'>$profile_viewing->user_spec</li>
+							<li class='list-group-item'>$profile_viewing->user_job</li>
+							</div>
 							</div>
 							</div>";
 					echo "<div class='col-sm-6 col-md-8'>";
@@ -108,7 +108,7 @@ get_header(); ?>
 					echo "<h3>$welcome_message</h3>
 							<p>$profile_viewing->description</p>
 							<div class='list-group'>
-							<a class='list-group-item'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></a>";
+							<li class='list-group-item active'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></li>";
 					if ($profile_viewing->user_url != null) {
 						echo "<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>";
 					}

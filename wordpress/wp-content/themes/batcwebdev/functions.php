@@ -299,7 +299,7 @@ function batcwebdev_scripts() {
     wp_enqueue_style( 'batcwebdev-style', get_stylesheet_uri() );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() .'/assets/css/bootstrap.min.css',array(),'3.3.7' );
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css',array(),'4.6.3' );
-    wp_enqueue_style( 'bootstrap-social', get_template_directory_uri() .'/assets/css/bootstrap-social.css', array(),'5.0.0' );
+    //wp_enqueue_style( 'bootstrap-social', get_template_directory_uri() .'/assets/css/bootstrap-social.css', array(),'5.0.0' );
 
     wp_enqueue_script('jquery-ui-sortable');
     wp_enqueue_script( 'bootstrap-min-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '3.3.7', true );

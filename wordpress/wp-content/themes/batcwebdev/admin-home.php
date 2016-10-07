@@ -21,7 +21,7 @@ if ( is_user_logged_in() ) {
         e.preventDefault();
         $('.cat'+$(this).attr('toggle_id')).toggle();
     });
-	
+
 	$(".check-all").change(function () {
 		$(this).closest("table").find("input:checkbox").prop('checked', $(this).prop("checked"));
 	});
@@ -56,7 +56,10 @@ $notifications = $wpdb->get_results("
 					wp9c_notifications.student_id = wp9c_users.ID
 				");
 ?>
-<div class='container'>
+		<div class="member-home container-fluid">
+            <div class="row">
+                <div class="col-md-12 lead">Admin Home<hr></div>
+            </div>
 	<table id="approve-deny-table-list" class="table">
 	<thead>
 		<tr class="header">
@@ -318,147 +321,139 @@ foreach ($notifications as $row) {
 	});
             
 </script>
-<button class='col-sm-12 toggler' toggle_id='-bio-data'>Show/Hide Bio.</button>
-<div class='row header cat-bio-data' style='display:none'>
-			<?php
-				if (isset ($_POST['view-profile']) && $current_user->ID != $_POST['view-profile']) {
-					$member_id = $_POST['view-profile'];
-					$profile_viewing = get_user_by('ID', $member_id);
-					$welcome_message = "$profile_viewing->display_name's profile";
-					$avatar_header = "$profile_viewing->display_name's Avatar";
-					$bio_header = "$profile_viewing->display_name's Bio";
-					$profile_button = "<a href='?page_id=66'><big>Your Profile</big></a><br>";
-				}
-				else {
-					$profile_viewing = $current_user;
-					$welcome_message = "Welcome $current_user->display_name";
-					$avatar_header = "Your Avatar";
-					$bio_header = "Your Bio";
-					$profile_button = "<a data-toggle='modal' data-target='#approve-profile-modal'><big>Edit Profile</big></a><br>";
-				}
-					
-				if ( ($profile_viewing instanceof WP_User) ) {
-					echo "<div class='avatar col-sm-4'><div class='center'><h3>$avatar_header</h3>"
-						. get_avatar( $profile_viewing->user_email, 200 );
-					
-						echo $profile_button;
-						echo "<a data-toggle='modal' data-target='#other-members-modal'><big>Other Members</big></a></div>
-						</div>";
-					echo "<div class='col-sm-4'>";
-					// adding http:// to the url if neither http:// nor https:// is present
-					if (!preg_match('#http://#', $profile_viewing->user_url) && !preg_match('#https://#', $profile_viewing->user_url)) {$qualify_url = 'http://' . $profile_viewing->user_url;}
-					else {$qualify_url = $profile_viewing->user_url;}
-					// adding http:// to the url if neither http:// nor https:// is present
-					if (!preg_match('#http://#', $profile_viewing->user_url_2) && !preg_match('#https://#', $profile_viewing->user_url_2)) {$qualify_url_2 = 'http://' . $profile_viewing->user_url_2;}
-					else {$qualify_url_2 =  $profile_viewing->user_url_2;}
-					// adding http:// to the url if neither http:// nor https:// is present
-					if (!preg_match('#http://#', $profile_viewing->user_url_3) && !preg_match('#https://#', $profile_viewing->user_url_3)) {$qualify_url_3 = 'http://' . $profile_viewing->user_url_3;}
-					else {$qualify_url_3 =  $profile_viewing->user_url_3;}
-					
-					echo "<h3 class='welcome-head'>$welcome_message</h3>";
-					echo "<div class='list-group'>
-							<a class='list-group-item'>Email: $profile_viewing->user_email</a>";
-					
-					if ($profile_viewing->user_url != null) {
-							echo "<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'>Primary Website: $profile_viewing->user_url</a>";
-					}
-					if ($profile_viewing->user_url_2 != null) {
-							echo "<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'>Second Website: $profile_viewing->user_url_2</a>";
-					}
-					if ($profile_viewing->user_url_3 != null) {
-							echo "<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'>Third Website: $profile_viewing->user_url_3</a>";
-					}
-					if ($profile_viewing->user_job != null) {
-							echo "<a class='list-group-item'>Employment: $profile_viewing->user_job</a>";
-					}
-					echo "<a class='list-group-item'>Specialization: $profile_viewing->user_spec</a>
-						</div>
-						</div>";
-					echo "<div class='col-sm-4'>";
-					echo "<h3>$bio_header:</h3>";
-					echo "<p>$profile_viewing->description</p></div>";
-				}
-			?>
-			</div>
-			<!-- external-link-modal -->
-			<div id="external-link-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">External Link</h4>
-                    </div>
-                    <div class="modal-body">
-					<p>You are about to leave BATCWebDev.  Do you wish to continue?</p>
-					</div> <!-- end of modal-body -->
-                    <div class="modal-footer">
-                        <button><a id='external_href' href='www.example.com'>Continue</a></button>
-                        <button data-dismiss="modal">Stay</button>
-                    </div>
-                </div>
-            </div>
-        </div><!--Modal-->
 
+<div class='header cat-bio-data'>
+    <div class="row">
+
+        <div class="col-md-6 col-sm-12 well" id="member_profile">
+            <div class='list-group'>
+
+                <?php
+                if ( is_user_logged_in() ):
+                    $current_user = wp_get_current_user();
+                    if (isset ($_POST['view-profile']) && $current_user->ID != $_POST['view-profile']) {
+                        $member_id = $_POST['view-profile'];
+                        $profile_viewing = get_user_by('ID', $member_id);
+                        $welcome_message = "$profile_viewing->display_name's profile";
+                        $avatar_header = "$profile_viewing->display_name's Avatar";
+                        $bio_header = "$profile_viewing->display_name's Bio";
+                        $profile_button = "<a class='list-group-item' href='?page_id=66'><big>Your Profile</big></a><br>";
+                    }
+                    else {
+                        $profile_viewing = $current_user;
+                        $welcome_message = $current_user->display_name;
+                        $avatar_header = "Your Avatar";
+                        $bio_header = "Your Bio";
+                        $profile_button = "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#approve-profile-modal'>Edit Profile</a><br>";
+                    }
+
+                    if ( ($profile_viewing instanceof WP_User) ) {
+                        echo "<div class='avatar col-sm-6 col-md-4' id='bio_avatar'><div class='center'>"
+                            . get_avatar( $profile_viewing->user_email, 200 );
+
+                        echo $profile_button;
+                        echo "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#other-members-modal'>Other Members</a>
+							<li class='list-group-item'>$profile_viewing->user_spec</li>
+							<li class='list-group-item'>$profile_viewing->user_job</li>
+							</div>
+							</div>
+							</div>";
+                        echo "<div class='col-sm-6 col-md-8'>";
+
+                        // adding http:// to the url if neither http:// nor https:// is present
+                        if (!preg_match('#http://#', $profile_viewing->user_url) && !preg_match('#https://#', $profile_viewing->user_url)) {$qualify_url = 'http://' . $profile_viewing->user_url;}
+                        else {$qualify_url = $profile_viewing->user_url;}
+                        if ($qualify_url == null) {$qualify_url = "#";}
+                        // adding http:// to the url if neither http:// nor https:// is present
+                        if (!preg_match('#http://#', $profile_viewing->user_url_2) && !preg_match('#https://#', $profile_viewing->user_url_2)) {$qualify_url_2 = 'http://' . $profile_viewing->user_url_2;}
+                        else {$qualify_url_2 =  $profile_viewing->user_url_2;}
+                        if ($qualify_url_2 == null) {$qualify_url_2 = "#";}
+                        // adding http:// to the url if neither http:// nor https:// is present
+                        if (!preg_match('#http://#', $profile_viewing->user_url_3) && !preg_match('#https://#', $profile_viewing->user_url_3)) {$qualify_url_3 = 'http://' . $profile_viewing->user_url_3;}
+                        else {$qualify_url_3 =  $profile_viewing->user_url_3;}
+                        if ($qualify_url_3 == "http://") {$qualify_url_3 = "#";}
+
+                        echo "<h3>$welcome_message</h3>
+							<p>$profile_viewing->description</p>
+							<div class='list-group'>
+							<li class='list-group-item active'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></li>";
+                        if ($profile_viewing->user_url != null) {
+                            echo "<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>";
+                        }
+                        if ($profile_viewing->user_url_2 != null) {
+                            echo "<a class='list-group-item external-link' id='$qualify_url_2' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_2</i></a>";
+                        }
+                        if ($profile_viewing->user_url_3 != null) {
+                            echo "<a class='list-group-item external-link' id='$qualify_url_3' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url_3</i></a>";
+                        }
+                        echo "</div></div>";
+                    }
+                endif;
+                ?>
+            </div>
+
+		<div class="col-md-6 col-sm-12"><!--First Column-->
+			<h3>Recent Posts</h3>
+			<div class="list-group">
+				<?php
+				$args = array( 'numberposts' => '5' );
+				$recent_posts = wp_get_recent_posts( $args );
+				foreach( $recent_posts as $recent ){
+					echo '<li class="list-group-item"><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+				}
+				wp_reset_query();
+				?>
+			</div>
+		</div>
+
+	</div>
+</div>
 
 <!-- Forum Data -->
-			<div class="row">
-				<div class="col-sm-4"><!--First Column-->
-					<h3>Recent Posts</h3>
-					<div class="list-group">
-						<?php
-						$args = array( 'numberposts' => '5' );
-						$recent_posts = wp_get_recent_posts( $args );
-						foreach( $recent_posts as $recent ){
-							echo '<li class="list-group-item"><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
-						}
-						wp_reset_query();
-						?>
-					</div>
-				</div>
 
-				<div class="col-sm-4"><!--Second Column-->
-					<h3>Recent Forum Replies</h3>
-					<div class="list-group">
-					<?php
-						global $wpdb;
-						$query="SELECT post_parent FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
-						$results=$wpdb->get_results($query);
-						//print_r($reply_parent);
-						foreach ($results as $result) {
-							$query="SELECT post_title, post_name FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
-							$reply_parents = $wpdb->get_results($query);
-							//print_r($reply_parents);
-							foreach($reply_parents as $reply_parent) {
-								echo "<a class='list-group-item' href='?topic=$reply_parent->post_name'>$reply_parent->post_title</a>";
-							}
-						}
-						?>
-					</div>
-				</div>
-
-				<div class="col-sm-4"><!--Third Column-->
-					<h3>Recent Forum Topics</h3>
-					<div class="list-group">
-						<?php
-						global $wpdb;
-						$query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
-						$results=$wpdb->get_results($query);
-						foreach ($results as $result) {
-							echo "<a class='list-group-item' href='?topic=$result->post_name'>$result->post_title</a>";
-						}
-						?>
-					</div>
-				</div>
-			</div>
-			<?php
-			while ( have_posts() ) : the_post();
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			endwhile; // End of the loop.
-			?>
+<div class="row">
+    <div class="col-md-6"><!--Second Column-->
+        <h3>Recent Forum Replies</h3>
+        <div class="list-group">
+        <?php
+            global $wpdb;
+            $query="SELECT post_parent FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
+            $results=$wpdb->get_results($query);
+            //print_r($reply_parent);
+            foreach ($results as $result) {
+                $query="SELECT post_title, post_name FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
+                $reply_parents = $wpdb->get_results($query);
+                //print_r($reply_parents);
+                foreach($reply_parents as $reply_parent) {
+                    echo "<a class='list-group-item' href='?topic=$reply_parent->post_name'>$reply_parent->post_title</a>";
+                }
+            }
+            ?>
+        </div>
+    </div>
+    <div class="col-md-6"><!--Third Column-->
+        <h3>Recent Forum Topics</h3>
+        <div class="list-group">
+            <?php
+            global $wpdb;
+            $query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
+            $results=$wpdb->get_results($query);
+            foreach ($results as $result) {
+                echo "<a class='list-group-item' href='?topic=$result->post_name'>$result->post_title</a>";
+            }
+            ?>
+        </div>
+    </div>
+</div>
+</div>
+<?php
+while ( have_posts() ) : the_post();
+    // If comments are open or we have at least one comment, load up the comment template.
+    if ( comments_open() || get_comments_number() ) :
+        comments_template();
+    endif;
+endwhile; // End of the loop.
+?>
 <!--Form Modal -->
 	<form class="form-horizontal" id="viewProfileForm" method="post" action="?page_id=66">
         <div id="other-members-modal" class="modal fade" role="dialog">
@@ -671,8 +666,27 @@ foreach ($notifications as $row) {
         </div><!--Modal-->
     </form>
 <!-- end of edit profile form modal -->
-	
-	
+
+			<!-- external-link-modal -->
+			<div id="external-link-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">External Link</h4>
+						</div>
+						<div class="modal-body">
+							<p>You are about to leave BATCWebDev.  Do you wish to continue?</p>
+						</div> <!-- end of modal-body -->
+						<div class="modal-footer">
+							<button><a id='external_href' href='www.example.com'>Continue</a></button>
+							<button data-dismiss="modal">Stay</button>
+						</div>
+					</div>
+				</div>
+			</div><!--Modal-->
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div>
