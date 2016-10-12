@@ -69,7 +69,7 @@ $notifications = $wpdb->get_results("
 	</thead>
 	<tbody>
 <?php
-	if (!$notifications) {echo "<table id='approve-deny-table-single'><tr><td>There are no notifications pending.</td></tr></table>";}
+	if (!$notifications) {echo "<table class='approve-deny-table-single'><tr><td>There are no notifications pending.</td></tr></table>";}
 foreach ($notifications as $row) {
 	
 	$results = $wpdb->get_results("SELECT * FROM wp9c_notifications WHERE notify_id=$row->notify_id");
@@ -174,14 +174,14 @@ foreach ($notifications as $row) {
 		}
 
 		$updated = $wpdb->delete('wp9c_notifications', array('student_id' => $old_data->ID) );
-		header("Refresh:0");
+		
 	}
 	
 	//display row if not empty
 	if ($num_pending != 0) {
 	?>	<tr class='body'>
-	<?php echo "<td><a class='toggler' toggle_id='$row->notify_id' class='table'><span class='alignleft'>".get_avatar($row->user_email, 20)."</span>$row->display_name has $num_pending update$plural pending approval.</a>"; ?>
-	<table id="approve-deny-table-single">
+	<?php echo "<td class='notify_summary'><a class='toggler' toggle_id='$row->notify_id' class='table'><span class='alignleft'>".get_avatar($row->user_email, 20)."</span>$row->display_name has $num_pending update$plural pending approval.</a>"; ?>
+	<table class="approve-deny-table-single">
 	<form method='post' action=''>
     <thead>
 		<tr class='header cat<?php echo "$row->notify_id";?>' style='display:none'>
@@ -455,7 +455,7 @@ while ( have_posts() ) : the_post();
 endwhile; // End of the loop.
 ?>
 <!--Form Modal -->
-	<form class="form-horizontal" id="viewProfileForm" method="post" action="?page_id=66">
+	<form class="form-horizontal" id="viewProfileForm" method="post" action="../member-home">
         <div id="other-members-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
