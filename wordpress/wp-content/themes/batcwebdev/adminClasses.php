@@ -33,11 +33,17 @@ if (isset($_POST['submit'])) {
     //Change the color of the tr based on the class type
     jQuery(document).ready(function( $ ) {
         //Core
-        $(".classType1").css("color", "black");
-        //Front-End
-        $(".classType2").css("color", "blue");
+        $(".classType1").css("color", "Black");
+        //Digital Media
+        $(".classType2").css("color", "DarkBlue");
+        //Front End
+        $(".classType3").css("color", "DarkRed");
         //Backend
-        $(".classType3").css("color", "orange");
+        $(".classType4").css("color", "DarkOrange");
+        //Web Orginazation
+        $(".classType5").css("color", "DarkViolet");
+        //Electives
+        $(".classType6").css("color", "Green");
         //Stripe
         $( "tr:odd" ).css( "background-color", "#C9C9C9" );
         //Hide save table sort button
@@ -137,9 +143,12 @@ if (isset($_POST['submit'])) {
                 <button type="button" class="btn btn-info col-sm-2" id="save-sort-class-btn">Save Table Order</button>
                 <ul class="color-key col-sm-10"><!-- Change the class color key here-->
                     Class Type Color Codes:
-                    <li style="color: black">Core,</li>
-                    <li style="color: blue">Front-End,</li>
-                    <li style="color: orange">Back-End</li>
+                    <li style="color: Black">Core,</li>
+                    <li style="color: DarkBlue">Digital Media,</li>
+                    <li style="color: DarkRed">Front End Development</li>
+                    <li style="color: DarkOrange">Backend Development</li>
+                    <li style="color: DarkViolet">Web Site Organization</li>
+                    <li style="color: Green">Front End Development</li>
                 </ul>
             </div>
                 <table id="classTable" class="table responsive">
@@ -219,8 +228,11 @@ if (isset($_POST['submit'])) {
                                     <label for="sel1">Class Type:</label>
                                     <select class="form-control" id="sel1" name="classType">
                                         <option value="1">Core</option>
-                                        <option value="2">Front-End</option>
-                                        <option value="3">Back-end</option>
+                                        <option value="2">Digital Media</option>
+                                        <option value="3">Front End Development</option>
+                                        <option value="4">Backend Development</option>
+                                        <option value="5">Website Organization</option>
+                                        <option value="6">General Electives</option>
                                     </select>
                                 </div>
                             </form>

@@ -91,6 +91,7 @@ template {
 
 a {
 	background-color: transparent;
+    cursor: pointer;
 }
 
 a:active,
@@ -976,19 +977,64 @@ tfoot {
 	background-color: #99D3DE;
 }
 
-#optin {
-	background: #595959;
-	padding: 20px 0;
-	color: white;
-	font-size: 1.2em;
-}
-
 a.btn {
 	color: white;
 }
 
 #field-info .img {
 	padding-top: 25px;
+}
+
+.navbar {
+	margin-bottom:0px !important;
+}
+
+/*--------------------------------------------------------------
+## Index
+--------------------------------------------------------------*/
+
+.carousel-caption {
+	margin-top:0px !important ;
+}
+.row + .row {
+	margin-top: 20px;
+}
+
+section {
+	padding: 40px 0;
+}
+
+#sect-carousel {
+	padding: 0px;
+}
+
+.section-header {
+	text-align: center;
+}
+
+section h2 {
+	margin: 20px 0 40px;
+}
+
+section h3 {
+	margin: 30px 0 10px;
+}
+
+#optin {
+	background: #595959;
+	padding: 20px 0;
+	color: white;
+	-webkit-font-smothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-size: 1.2em;
+}
+
+#optin p {
+	margin: 7px 0 0;
+}
+
+#project-features {
+	text-align: center !important;
 }
 
 #course-features{
@@ -998,29 +1044,40 @@ a.btn {
 	text-align: center;
 }
 
-.navbar {
-	margin-bottom:0px !important;
-}
-.carousel-caption {
-	margin-top:0px !important ;
+#contact {
+	background: white;
+	padding: 20px 0;
+	color: #595959;
+	-webkit-font-smothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-size: 1.2em;
 }
 
-section.top-image {
-	margin-top:0px !important;
+
+#contact p {
+	margin: 7px 0 0;
 }
+
+#index-contact-alert {
+    min-height: 0px;
+}
+
+/*--------------------------------------------------------------
+## Member Home
+--------------------------------------------------------------*/
 
 .member-home {
 	background-color: #595959;
 	color: white;
 }
 
-#contact {
-	padding-top: 15px;
-}
-
 .member-home a:visited {
 	color: #99D3DE;
 }
+
+/*--------------------------------------------------------------
+## Resources
+--------------------------------------------------------------*/
 
 #resources img {
 	height: 200px;
@@ -1049,18 +1106,37 @@ section.top-image {
 
 }
 
-.site-footer {
-	background-color: #595959;
-}
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
 
 footer {
+	background: #1b1b1b;
 	color: white;
-	text-align: center;
+	padding: 20px 0 10px;
+	font-size: 12px;
 }
 
-footer a:visited {
+footer p {
+	margin: 0;
+}
+
+footer a:link, footer a:visited {
 	color: #99D3DE;
 }
+
+footer a:hover {
+	color: #dd5638;
+}
+
+footer li.signup-link a:hover {
+	font-weight: bold;
+}
+
+
+/*--------------------------------------------------------------
+## Contact
+--------------------------------------------------------------*/
 
 #contact_form {
 	padding-top: 20px;
@@ -1082,9 +1158,10 @@ footer a:visited {
 	float: right;
 }
 
-#approve-deny-table-single {
-	margin-bottom: 0px;
+#contact-jumbo {
+    padding: 0px !important;
 }
+
 
 div .jumbotron {
 	margin-bottom: 0px;
@@ -1122,9 +1199,12 @@ div .jumbotron {
 	color: #595959;
 }
 
-#index-contact-alert {
-	min-height: 0px;
-}
+/*--------------------------------------------------------------
+## Admin Home
+--------------------------------------------------------------*/
 
+#approve-deny-table-single {
+    margin-bottom: 0px;
+}
 
 

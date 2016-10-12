@@ -14,35 +14,27 @@
 </div><!-- #content -->
 </div><!-- #page -->
 </div><!-- .container -->
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<nav class="navbar navbar-inverse" role="navigation" style="border-radius:0px;">
-			<div class="container-fluid">
-				<div class="col-sm-3">
-				<a class="pull-left" href="/test">
-				<img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
-				</a>
-				</div>
-				<div class="col-sm-6">
-					<nav>
-						<ul class="list-unstyled list-inline">
-							<li>
-								<a href="/test">Home</a>
-							</li>
-							<li>
-								<a href="/test/contact">Contact</a>
-							</li>
-							<li>
-								<a href="/test/resource">Resources</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-sm-3" id="footer-tail">
-					<p class="pull-right">© BATC | Web & Mobile Development</p>
-				</div>
-			</div><!-- .site-info -->
-		</nav>
-	</footer><!-- #colophon -->
+
+<!-- Footer -->
+<footer>
+	<div class="container">
+		<div class="col-sm-3">
+			<p><a href="/"><img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="BATC | Web &amp; Mobile Development"></a></p>
+		</div><!-- col-sm 3 -->
+		<div class="col-sm-6">
+			<nav>
+				<ul class="list-unstyled list-inline">
+					<li><a href="/">Home</a></li>
+					<li><a href="/test/contact">Contact</a></li>
+					<li><a href="/test/resource">Resources</a></li>
+				</ul>
+			</nav>
+		</div><!-- col sm 6 -->
+		<div class="col-sm-3">
+			<p class="pull-right">&copy; BATC | Web &amp; Mobile Development</p>
+		</div><!-- col sm 3 -->
+	</div><!-- container -->
+</footer>
 <?php wp_footer(); ?>
 
 </body>
