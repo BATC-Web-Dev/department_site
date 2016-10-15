@@ -127,17 +127,6 @@ function remove_author_links($author_link, $args) {
  
 
  /* add custom user meta data */
-function modify_contact_methods($profile_fields) {
-
-	// Add new fields
-	$profile_fields['user_url_2'] = 'Second Website';
-	$profile_fields['user_url_3'] = 'Third Website';
-	$profile_fields['user_job'] = 'Employment';
-	$profile_fields['user_spec'] = 'Specialization';
-	
-	 return $profile_fields;
-}
-add_filter('user_contactmethods', 'modify_contact_methods');
 
 
  function custom_user_profile_fields($user){
@@ -198,6 +187,8 @@ function save_custom_user_profile_fields($user_id){
     update_usermeta($user_id, 'user_job', $_POST['user_job']);
     update_usermeta($user_id, 'user_spec', $_POST['user_spec']);
 }
+add_action( 'personal_options_update', 'save_custom_user_profile_fields');
+add_action( 'edit_user_profile_update', 'save_custom_user_profile_fields');
 add_action('user_register', 'save_custom_user_profile_fields');
  
 if ( ! function_exists( 'batcwebdev_setup' ) ) :
