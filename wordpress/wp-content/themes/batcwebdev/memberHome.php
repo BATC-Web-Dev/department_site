@@ -90,7 +90,7 @@ get_header(); ?>
 							</div>
 							</div>
 							</div>";
-					echo "<div class='col-sm-6 col-md-8'>";
+					echo "<div class='col-sm-6 col-md-8' id='profile'>";
 					
 					// adding http:// to the url if neither http:// nor https:// is present
 					if (!preg_match('#http://#', $profile_viewing->user_url) && !preg_match('#https://#', $profile_viewing->user_url)) {$qualify_url = 'http://' . $profile_viewing->user_url;}
