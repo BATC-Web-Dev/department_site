@@ -1068,6 +1068,9 @@ section h3 {
 
 .member-home {
 	background-color: #595959;
+}
+
+.member-home h3 {
 	color: white;
 }
 
@@ -1078,6 +1081,12 @@ section h3 {
 /*--------------------------------------------------------------
 ## Resources
 --------------------------------------------------------------*/
+
+#resource-jumbotron {
+	background: url(assets/images/slide4.png);
+	background-size: cover;
+	color: white;
+}
 
 #resources img {
 	height: 200px;
@@ -1100,11 +1109,6 @@ section h3 {
 	color: white;
 }
 
-.res_small_img img{
-	height: 50px;
-	width: 50px;
-
-}
 
 /*--------------------------------------------------------------
 ## Footer
@@ -1167,7 +1171,7 @@ div .jumbotron {
 	margin-bottom: 0px;
 }
 
-.jumbotron {
+#contact-jumbotron {
 	background: url(assets/images/contact.jpg);
 	background-size: cover;
 	color: white;
@@ -1199,12 +1203,21 @@ div .jumbotron {
 	color: #595959;
 }
 
+
 /*--------------------------------------------------------------
 ## Admin Home
 --------------------------------------------------------------*/
 
 #approve-deny-table-single {
     margin-bottom: 0px;
+}
+
+#approve-deny-table-single tbody {
+	background: white;
+}
+
+#approve-deny-table-single tbody td {
+	color: #595959 !important;
 }
 
 

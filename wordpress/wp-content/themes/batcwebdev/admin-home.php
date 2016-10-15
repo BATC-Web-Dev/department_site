@@ -293,7 +293,7 @@ foreach ($notifications as $row) {
 			<tr class='cat<?php echo "$row->notify_id";?>' style='display:none'>
 				<td></td>
 				<td></td>
-				<td><input type='submit' class='approve_selected_button' name='<?php echo "approve$row->notify_id";?>' value='<?php echo "deny all";?>'></td>
+				<td><input type='submit' class='btn btn-default btn-lg approve_selected_button' name='<?php echo "approve$row->notify_id";?>' value='<?php echo "deny all";?>'></td>
 				<td><input type='checkbox' class='check-all is_checked' value='check-all'>select all</td>
 			</tr>
 		</tfoot>
@@ -658,8 +658,8 @@ endwhile; // End of the loop.
     
                     </div> <!-- end of modal-body -->
                     <div class="modal-footer">
+						<button type="reset">Reset</button>
                         <button type="submit" name="profile-submit">Update Profile</button>
-                        <button type="reset">reset</button>
                     </div>
                 </div>
             </div>

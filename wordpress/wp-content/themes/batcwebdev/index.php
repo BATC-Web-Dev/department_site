@@ -53,7 +53,7 @@ if ($contact_name && ($contact_phone || $contact_email) ) {
     if(intval($responseKeys["success"]) !== 1) {
         $result='<div class="alert alert-danger">Please fill out all fields and the Captcha</div>';
     } else {
-        $to = "joshua.aaron.brown@gmail.com";
+        $to = "webdev@batc.edu";
         $subject = "Contact Form Submission";
         $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
         $headers = "From: $contact_email";
@@ -89,19 +89,25 @@ else {
                 <li data-target="#featured" data-slide-to="0" class="active"></li>
                 <li data-target="#featured" data-slide-to="1"></li>
                 <li data-target="#featured" data-slide-to="2"></li>
-                <li data-target="#featured" data-slide-to="3"></li>
             </ol>
             <div class="item active">
                 <img src="<?php bloginfo('template_url'); ?>/assets/images/slide1.jpg" alt="">
             </div>
             <div class="item">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/slide2.jpg" alt="">
+                <a href="/test/contact">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/slide2.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h1>Contact Us</h1>
+                    </div>
+                </a>
             </div>
             <div class="item">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/slide3.png" alt="">
-            </div>
-            <div class="item">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/slide4.png" alt="">
+                <a href="/test/resource">
+                    <img src="<?php bloginfo('template_url'); ?>/assets/images/slide4.png" alt="">
+                    <div class="carousel-caption">
+                        <h1>Resources</h1>
+                    </div>
+                </a>
             </div>
         </div><!--carousel inner-->
 

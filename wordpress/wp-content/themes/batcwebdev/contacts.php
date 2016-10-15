@@ -64,7 +64,7 @@ if ($contact_name && ($contact_phone || $contact_email) ) {
     if(intval($responseKeys["success"]) !== 1) {
         $result='<div class="alert alert-danger">Please fill out all fields and the Captcha</div>';
     } else {
-        $to = "joshua.aaron.brown@gmail.com";
+        $to = "webdev@batc.edu";
         $subject = "Contact Form Submission";
         $txt = "Name: $contact_name\nRelation: $contact_is_a\nPhone: $contact_phone\nEmail: $contact_email\n\n$contact_comment";
         $headers = "From: $contact_email";
@@ -92,23 +92,23 @@ else {
 ?>
 <!-- start of BATC contact info -->
     <main id="main" class="site-main" role="main">
-            <div class="col-sm-12">
-                <?php echo $result; ?>
-            </div>
+        <div class="col-sm-12">
+        <?php echo $result; ?>
+        </div>
 
-            <div class="jumbotron">
-                <h2><span>Make Contact</span></h2>
-                <p><span>
-                    <i class="glyphicon glyphicon-envelope"> Address:</i><span class='spacer'></span><br>
-                    <span class='spacer'></span>1410 North 1000 West<span class='spacer'></span><br>
-                    <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
-                    </span></p>
-                <p><span>
-                    <i class="glyphicon glyphicon-phone"> Phone:</i><span class='spacer'></span><br>
-                    <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
-                    <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
-                    </span></p>
-            </div>
+        <div class="jumbotron" id="contact-jumbotron">
+            <h2><span>Make Contact</span></h2>
+            <p><span>
+                <i class="glyphicon glyphicon-envelope"></i> Address:<span class='spacer'></span><br>
+                <span class='spacer'></span>1410 North 1000 West<span class='spacer'></span><br>
+                <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
+                </span></p>
+            <p><span>
+                <i class="glyphicon glyphicon-phone"></i> Phone:<span class='spacer'></span><br>
+                <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
+                <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
+                </span></p>
+        </div>
 
         <section id="optin">
             <div class="container">
