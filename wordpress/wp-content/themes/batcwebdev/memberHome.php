@@ -76,7 +76,7 @@ get_header(); ?>
 					$welcome_message = $current_user->display_name;
 					$avatar_header = "Your Avatar";
 					$bio_header = "Your Bio";
-					$profile_button = "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#approve-profile-modal'>Edit Profile</a><br>";
+					$profile_button = "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#approve-profile-modal'><i class='glyphicon glyphicon-pencil'></i> Edit Profile</a><br>";
 				}
 
 				if ( ($profile_viewing instanceof WP_User) ) {
@@ -84,9 +84,9 @@ get_header(); ?>
 						. get_avatar( $profile_viewing->user_email, 200 );
 
 						echo $profile_button;
-						echo "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#other-members-modal'>Other Members</a>
-							<li class='list-group-item'>$profile_viewing->user_spec</li>
-							<li class='list-group-item'>$profile_viewing->user_job</li>
+						echo "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#other-members-modal'><i class='glyphicon glyphicon-user'></i> Other Members</a>
+							<li class='list-group-item'><i class='glyphicon glyphicon-heart'></i> $profile_viewing->user_spec</li>
+							<li class='list-group-item'><i class='glyphicon glyphicon-briefcase'></i> $profile_viewing->user_job</li>
 							</div>
 							</div>
 							</div>";
@@ -128,7 +128,9 @@ get_header(); ?>
 					<h3>Recent Posts</h3>
 					<div class="list-group">
 						<?php
-						$args = array( 'numberposts' => '5' );
+						$args = array(
+							'numberposts' => '5',
+							'post_status' =>'publish');
 						$recent_posts = wp_get_recent_posts( $args );
 						foreach( $recent_posts as $recent ){
 							echo '<li class="list-group-item"><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';

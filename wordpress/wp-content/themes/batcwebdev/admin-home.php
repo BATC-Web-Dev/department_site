@@ -396,7 +396,9 @@ foreach ($notifications as $row) {
 			<h3>Recent Posts</h3>
 			<div class="list-group">
 				<?php
-				$args = array( 'numberposts' => '5' );
+                $args = array(
+                    'numberposts' => '5',
+                    'post_status' =>'publish');
 				$recent_posts = wp_get_recent_posts( $args );
 				foreach( $recent_posts as $recent ){
 					echo '<li class="list-group-item"><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';

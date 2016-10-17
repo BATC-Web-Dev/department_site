@@ -124,7 +124,7 @@ if (isset($_POST['submit'])) {
                 $( ".ID" ).each(function( index ) {
                     data.push($(this).val());
                 });
-                $.post("/test/postition",{'position': data},function(data) {
+                $.post("/test/position",{'position': data},function(data) {
                     location.reload();
                 });
             });

@@ -164,6 +164,7 @@ function remove_author_links($author_link, $args) {
 					<option value='Undecided'>Undecided</option>
 					<option value='Front-End'>Front End</option>
 					<option value='Back-End'>Back End</option>
+					<option value='Design'>Design</option>
 				</select><br />
             </td>
         </tr>

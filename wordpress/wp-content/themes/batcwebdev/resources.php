@@ -9,10 +9,8 @@ get_header(); ?>
     <div class="jumbotron" id="resource-jumbotron">
         <h2><span>Resources</span></h2>
         <p><span>
-                <i class="glyphicon glyphicon-briefcase"></i> Learn with <br>
-                 Professional Tools </span><br>
-                </span></p>
-
+            <i class="glyphicon glyphicon-briefcase"></i> Learn with Professional Tools </span><br>
+        </span></p>
     </div>
     <section id="res_head">
         <div class="container">
