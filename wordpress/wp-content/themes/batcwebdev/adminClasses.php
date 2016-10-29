@@ -29,102 +29,103 @@ if (isset($_POST['submit'])) {
 ?>
 <body>
 <script type="text/javascript">
+    var $jq = jQuery.noConflict();
 
     //Change the color of the tr based on the class type
-    jQuery(document).ready(function( $ ) {
+    $jq(document).ready(function() {
         //Core
-        $(".classType1").css("color", "Black");
+        $jq(".classType1").css("color", "Black");
         //Digital Media
-        $(".classType2").css("color", "DarkBlue");
+        $jq(".classType2").css("color", "DarkBlue");
         //Front End
-        $(".classType3").css("color", "DarkRed");
+        $jq(".classType3").css("color", "DarkRed");
         //Backend
-        $(".classType4").css("color", "DarkOrange");
-        //Web Orginazation
-        $(".classType5").css("color", "DarkViolet");
+        $jq(".classType4").css("color", "DarkOrange");
+        //Web Organization
+        $jq(".classType5").css("color", "DarkViolet");
         //Electives
-        $(".classType6").css("color", "Green");
+        $jq(".classType6").css("color", "Green");
         //Stripe
-        $( "tr:odd" ).css( "background-color", "#C9C9C9" );
+        $jq( "tr:odd" ).css( "background-color", "#C9C9C9" );
         //Hide save table sort button
-        $("#save-sort-class-btn").hide();
-        $("#classTable .index").hide();
-        $("#classTable .position-header").hide();
-        $("#classTable .edit-header").show();
-        $("#classTable .remove-header").show();
+        $jq("#save-sort-class-btn").hide();
+        $jq("#classTable .index").hide();
+        $jq("#classTable .position-header").hide();
+        $jq("#classTable .edit-header").show();
+        $jq("#classTable .remove-header").show();
 
-        $( "#add-class-btn" ).click(function() {
-            var modal = $('#class-modal');
-            $(".modal-title").text("Add Class");
-            $(".modal-footer #add").show();
-            $(".modal-footer #edit").hide();
-            $(modal.find('#courseId').val(''));
-            $(modal.find('#courseName').val(''));
-            $(modal.find('#hours').val(''));
-            $(modal.find("#comment").val(''));
-            $(modal.find("#sel1").val(1));
-            $(modal).modal('show');
+        $jq( "#add-class-btn" ).click(function() {
+            var classModal = $jq('#class-modal');
+            $jq(".modal-title").text("Add Class");
+            $jq(".modal-footer #add").show();
+            $jq(".modal-footer #edit").hide();
+            $jq(classModal.find('#courseId').val(''));
+            $jq(classModal.find('#courseName').val(''));
+            $jq(classModal.find('#hours').val(''));
+            $jq(classModal.find("#comment").val(''));
+            $jq(classModal.find("#sel1").val(1));
+            $jq(classModal).appendTo('body');
         });
 
-        $( ".edit" ).click(function() {
-            var modal = $('#class-modal');
-            $(".modal-title").text("Edit Class");
-            $(".modal-footer #edit").show();
-            $(".modal-footer #add").hide();
-            var tr = $(this).closest('tr');
+        $jq( ".edit" ).click(function() {
+            var classModal = $jq('#class-modal');
+            $jq(".modal-title").text("Edit Class");
+            $jq(".modal-footer #edit").show();
+            $jq(".modal-footer #add").hide();
+            var tr = $jq(this).closest('tr');
             var courseID = tr.find('td:eq(1)').text();
-            $(modal.find('#courseId').val(courseID));
+            $jq(classModal.find('#courseId').val(courseID));
             var courseName = tr.find('td:eq(2)').text();
-            $(modal.find('#courseName').val(courseName));
+            $jq(classModal.find('#courseName').val(courseName));
             var hours = tr.find('td:eq(3)').text();
-            $(modal.find('#hours').val(hours));
+            $jq(classModal.find('#hours').val(hours));
             var description = tr.next('tr').text();
-            $(modal.find("#comment").val(description));
+            $jq(classModal.find("#comment").val(description));
             var classType = tr.find(".class_type").val();
-            $(modal.find("#sel1").val(classType));
+            $jq(classModal.find("#sel1").val(classType));
             var id = tr.find(".ID").val();
-            $(modal.find("#id").val(id));
-            $(modal).modal('show');
+            $jq(classModal.find("#id").val(id));
+            $jq(classModal).modal('show');
         });
 
-        $( "#sort-class-btn" ).click(function() {
-            $("#save-sort-class-btn").show();
-            $("#sort-class-btn").hide();
-            $("#add-class-btn").hide();
-            $("#classTable .descRow").hide();
-            $("#classTable .index").show();
-            $("#classTable .position-header").show();
-            $("#classTable .edit-header").hide();
-            $("#classTable .remove-header").hide();
-            $("#classTable .edit-td").hide();
-            $("#classTable .delete-td").hide();
+        $jq( "#sort-class-btn" ).click(function() {
+            $jq("#save-sort-class-btn").show();
+            $jq("#sort-class-btn").hide();
+            $jq("#add-class-btn").hide();
+            $jq("#classTable .descRow").hide();
+            $jq("#classTable .index").show();
+            $jq("#classTable .position-header").show();
+            $jq("#classTable .edit-header").hide();
+            $jq("#classTable .remove-header").hide();
+            $jq("#classTable .edit-td").hide();
+            $jq("#classTable .delete-td").hide();
 
             var fixHelperModified = function(e, tr) {
                     var $originals = tr.children();
                     var $helper = tr.clone();
                     $helper.children().each(function(index) {
-                        $(this).width($originals.eq(index).width())
+                        $jq(this).width($originals.eq(index).width())
                     });
                     return $helper;
                 },
                 updateIndex = function(e, ui) {
-                    $('td.index', ui.item.parent()).each(function (i) {
-                        $(this).html(i + 1);
+                    $jq('td.index', ui.item.parent()).each(function (i) {
+                        $jq(this).html(i + 1);
                     });
                 };
 
-            $("#tableBody").sortable({
+            $jq("#tableBody").sortable({
                 items: "tr",
                 helper: fixHelperModified,
                 stop: updateIndex
             }).disableSelection();
 
-            $("#save-sort-class-btn").click(function() {
+            $jq("#save-sort-class-btn").click(function() {
                 var data = [];
-                $( ".ID" ).each(function( index ) {
-                    data.push($(this).val());
+                $jq( ".ID" ).each(function( index ) {
+                    data.push($jq(this).val());
                 });
-                $.post("/test/position",{'position': data},function(data) {
+                $jq.post("/test/position",{'position': data},function(data) {
                     location.reload();
                 });
             });
@@ -138,7 +139,7 @@ if (isset($_POST['submit'])) {
                 <div class="col-md-12 lead">Classes<hr></div>
             </div>
             <div class="row">
-                <button type="button" class="btn btn-info col-sm-2 pull-right" data-toggle="modal" id="add-class-btn">Add Class</button>
+                <button type="button" class="btn btn-info col-sm-2 pull-right" data-toggle="modal" id="add-class-btn" data-target="#class-modal">Add Class</button>
                 <button type="button" class="btn btn-default col-sm-2" id="sort-class-btn">Sort Table</button>
                 <button type="button" class="btn btn-info col-sm-2" id="save-sort-class-btn">Save Table Order</button>
                 <ul class="color-key col-sm-10"><!-- Change the class color key here-->
@@ -180,7 +181,7 @@ if (isset($_POST['submit'])) {
                             echo "<td><p>".$row->course_name."</p></td>";
                             echo "<td id='hours'><p>".$row->hours."</p></td>";
                             echo "<input type='hidden' value='0' name='checkbox[]'>";
-                            echo "<td class='edit-td'><button type='button' class='btn btn-default edit' id='edit-class-btn'>Edit</button></td>";
+                            echo "<td class='edit-td'><button type='button' class='btn btn-default edit' id='edit-class-btn' data-target=#class-modal'>Edit</button></td>";
                             echo "<td class='delete-td'><button type='submit' class='btn btn-danger' name='submit' id='delete' data-record-title='$row->course_name' data-record-id='$row->ID' data-toggle='modal' data-target='#confirm-delete'>Delete</button></td>";
                             echo "</tr>";
                             echo "<tr class='descRow'><td colspan='5''><div><p>".$row->course_desc."</p></div></td></tr>";
@@ -270,41 +271,41 @@ if (isset($_POST['submit'])) {
 </body>
 <script>
     jQuery(document).ready(function($) {
-        $('#add').on('click', function() {
-            $.post("/test/addclass",$('#classForm').serialize(),function(data){
-                $('#class-modal').modal('toggle');
+        jQuery('#add').on('click', function() {
+            jQuery.post("/test/addclass",$('#classForm').serialize(),function(data){
+                jQuery('#class-modal').modal('toggle');
 
                 location.reload();
             });
             return false;
         });
 
-        $('#edit').on('click', function() {
+        jQuery('#edit').on('click', function() {
             var data = $('#classForm').serializeArray();
             var id = $('#id').val();
             data.push({name: 'ID', value: id});
-            $.post("/test/editClass",data,function(data){
-                $('#class-modal').modal('toggle');
+            jQuery.post("/test/editClass",data,function(data){
+                jQuery('#class-modal').modal('toggle');
                 location.reload();
             });
             return false;
         });
 
-        $('#confirm-delete').on('click', '.btn-ok', function(e) {
+        jQuery('#confirm-delete').on('click', '.btn-ok', function(e) {
             var id = $(this).data('recordId');
             var data = [];
             data.push({name: 'ID', value: id});
             // $.ajax({url: '/api/record/' + id, type: 'DELETE'})
-            $.post("/test/deleteClass",data,function(data) {
+            jQuery.post("/test/deleteClass",data,function(data) {
                 location.reload();
             });
         });
 
-        $('#confirm-delete').on('show.bs.modal', function(e) {
-            $(".modal-title").text("Delete Class");
+        jQuery('#confirm-delete').on('show.bs.modal', function(e) {
+            jQuery(".modal-title").text("Delete Class");
             var data = $(e.relatedTarget).data();
-            $('.title', this).text(data.recordTitle);
-            $('.btn-ok', this).data('recordId', data.recordId);
+            jQuery('.title', this).text(data.recordTitle);
+            jQuery('.btn-ok', this).data('recordId', data.recordId);
             console.log($('.btn-ok', this).data('recordId', data.recordId));
         });
     });

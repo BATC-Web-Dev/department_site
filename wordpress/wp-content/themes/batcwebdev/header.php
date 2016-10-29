@@ -35,6 +35,7 @@
                         </button>
                         <a class="navbar-brand" href="/test">
                             <img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
+                            <a href="https://www.facebook.com/batcwebdev/"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
                         </a>
                     </div>
                     <?php

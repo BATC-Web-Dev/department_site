@@ -91,11 +91,14 @@ else {
                 <li data-target="#featured" data-slide-to="2"></li>
             </ol>
             <div class="item active">
-                <img src="<?php bloginfo('template_url'); ?>/assets/images/slide1.jpg" alt="">
+                <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/assets/images/slide1.jpg" alt="">
+                <div class="carousel-caption">
+                    <h1>Welcome to BATC Web and Mobile Development</h1>
+                </div>
             </div>
             <div class="item">
                 <a href="/test/contact">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/slide2.jpg" alt="">
+                    <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/assets/images/slide2.jpg" alt="">
                     <div class="carousel-caption">
                         <h1>Contact Us</h1>
                     </div>
@@ -103,7 +106,7 @@ else {
             </div>
             <div class="item">
                 <a href="/test/resource">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/images/slide4.png" alt="">
+                    <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/assets/images/slide3.jpg" alt="">
                     <div class="carousel-caption">
                         <h1>Resources</h1>
                     </div>

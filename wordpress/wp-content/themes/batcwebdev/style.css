@@ -989,12 +989,24 @@ a.btn {
 	margin-bottom:0px !important;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Index
 --------------------------------------------------------------*/
 
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+	width: 100% !important;
+}
+
 .carousel-caption {
 	margin-top:0px !important ;
+	top: 0 !important;
+	bottom: auto !important;
+}
+
+.carousel-caption h1 {
+	font-size: 60px;
 }
 .row + .row {
 	margin-top: 20px;
@@ -1060,6 +1072,12 @@ section h3 {
 
 #index-contact-alert {
     min-height: 0px;
+	padding: 0px;
+}
+
+#index-contact-alert .alert-danger {
+	margin-bottom: 0px;
+	border: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -1087,12 +1105,36 @@ section h3 {
 --------------------------------------------------------------*/
 
 #resource-jumbotron {
-	background: url(assets/images/slide4.png);
-	background-size: cover;
+	background: url(assets/images/slide3.jpg) no-repeat center center;
 	color: white;
+	height: 500px;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
 }
 
-#resources img {
+#res_IDE img {
+	height: 200px;
+	width: 200px;
+	display: block;
+	margin: auto;
+}
+
+#res_slack img {
+	height: 200px;
+	width: 200px;
+	display: block;
+	margin: auto;
+}
+
+#res_git img {
+	height: 200px;
+	width: 200px;
+	display: block;
+	margin: auto;
+}
+
+#res_hosting img {
 	height: 200px;
 	width: 200px;
 	display: block;
@@ -1176,9 +1218,12 @@ div .jumbotron {
 }
 
 #contact-jumbotron {
-	background: url(assets/images/contact.jpg);
-	background-size: cover;
+	background: url(assets/images/slide2.jpg) no-repeat bottom;
 	color: white;
+	height: 500px;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
 }
 
 .jumbotron a:visited {
@@ -1203,6 +1248,16 @@ div .jumbotron {
 	padding:0 5px;
 }
 
+#result {
+	min-height: 0px;
+	padding: 0px;
+}
+
+#result .alert-danger{
+	margin-bottom: 0px;
+	border: hidden;
+}
+
 #member_profile {
 	color: #595959;
 }
@@ -1224,4 +1279,15 @@ div .jumbotron {
 	color: #595959 !important;
 }
 
+/*--------------------------------------------------------------
+## Nav Bar
+--------------------------------------------------------------*/
 
+.navbar-header a {color:#3b5998;}      /* unvisited link */
+.navbar-header a:visited {color: #3b5998;}  /* visited link */
+.navbar-header a:hover {color: #3b5998;}  /* mouse over link */
+.navbar-header a:active {color: #3b5998;}
+
+.fa-facebook-square {
+	margin-top: 5px;
+}

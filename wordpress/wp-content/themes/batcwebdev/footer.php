@@ -27,6 +27,7 @@
 					<li><a href="/">Home</a></li>
 					<li><a href="/test/contact">Contact</a></li>
 					<li><a href="/test/resource">Resources</a></li>
+					<li><a href="https://www.facebook.com/batcwebdev/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
 				</ul>
 			</nav>
 		</div><!-- col sm 6 -->

@@ -682,8 +682,8 @@ endwhile; // End of the loop.
 							<p>You are about to leave BATCWebDev.  Do you wish to continue?</p>
 						</div> <!-- end of modal-body -->
 						<div class="modal-footer">
-							<button><a id='external_href' href='www.example.com'>Continue</a></button>
 							<button data-dismiss="modal">Stay</button>
+							<button><a id='external_href' href='www.example.com'>Continue</a></button>
 						</div>
 					</div>
 				</div>

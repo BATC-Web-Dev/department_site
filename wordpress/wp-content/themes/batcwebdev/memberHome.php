@@ -42,7 +42,6 @@ get_header(); ?>
 					</div> <!-- end of modal-body -->
                     <div class="modal-footer">
                         <button><a id='external_href' href='#' rel='external nofollow'>Continue</a></button>
-                        <button data-dismiss="modal">Stay</button>
                     </div>
                 </div>
             </div>

@@ -92,22 +92,24 @@ else {
 ?>
 <!-- start of BATC contact info -->
     <main id="main" class="site-main" role="main">
-        <div class="col-sm-12">
+        <div class="col-sm-12" id="result">
         <?php echo $result; ?>
         </div>
 
         <div class="jumbotron" id="contact-jumbotron">
-            <h2><span>Make Contact</span></h2>
-            <p><span>
-                <i class="glyphicon glyphicon-envelope"></i> Address:<span class='spacer'></span><br>
-                <span class='spacer'></span>1410 North 1000 West<span class='spacer'></span><br>
-                <span class='spacer'></span>Logan, UT 84321<span class='spacer'></span><br>
-                </span></p>
-            <p><span>
-                <i class="glyphicon glyphicon-phone"></i> Phone:<span class='spacer'></span><br>
-                <span class='spacer'></span>Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><span class='spacer'></span><br>
-                <span class='spacer'></span>Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><span class='spacer'></span><br>
-                </span></p>
+            <h1>
+                Make Contact
+            </h1>
+            <h2>
+                <i class="glyphicon glyphicon-envelope"></i> Address:<br>
+                1410 North 1000 West<br>
+                Logan, UT 84321<br>
+            </h2>
+            <h2>
+                <i class="glyphicon glyphicon-phone"></i> Phone:<br>
+                Main: <a href="tel:(435)-753-4708">(435)-753-4708</a><br>
+                Fax: <a href="tel:(435)-753-5709">(435)-753-5709</a><br>
+            </h2>
         </div>
 
         <section id="optin">
