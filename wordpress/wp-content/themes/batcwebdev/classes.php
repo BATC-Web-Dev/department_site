@@ -107,7 +107,8 @@ if (isset($_POST['submit'])) {
                     <li style="color: DarkRed">Front End Development</li>
                     <li style="color: DarkOrange">Backend Development</li>
                     <li style="color: DarkViolet">Web Site Organization</li>
-                    <li style="color: Green">Front End Development</li>
+                    <li style="color: Green">General Electives</li>
+                    <li style="color: Gold">Design</li>
                 </ul>
                 <form name="classForm" method="post" action="<?php echo get_permalink(); ?>">
                     <table id="classTable" class="table">
@@ -152,7 +153,7 @@ if (isset($_POST['submit'])) {
                             <tr>
                                 <td></td>
                                 <td>Completed Hours</td>
-                                <td><input type="text" name="total" value="0" readonly></td>
+                                <td><input id="compHours" type="text" name="total" value="0" readonly></td>
                                 <td><button type="submit" class="btn btn-default" name="submit" value="submit">Save Finished</button></td>
                             </tr>
                         </tfoot>

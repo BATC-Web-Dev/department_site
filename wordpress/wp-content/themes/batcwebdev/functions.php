@@ -393,9 +393,9 @@ function admin_login_redirect( $redirect_to, $request, $user )
     global $user;
     if( isset( $user->roles ) && is_array( $user->roles ) ) {
         if( in_array( "administrator", $user->roles ) ) {
-            return '/test/admin-home/';
+            return '/admin-home/';
         } else {
-            return '/test/';
+            return '/';
         }
     }
     else
@@ -414,5 +414,15 @@ function rememberme_checked() {
     echo "<script>document.getElementById('rememberme').checked = true;</script>";
 }
 
+
+function addcssAndScripts()
+{
+    if ( is_page( array("HighSchool", "CareerDays")))
+    {
+        wp_dequeue_style( 'batcwebdev-style');
+        wp_enqueue_style( 'custom', get_template_directory_uri() . '/assetsCD/css/custom.css' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'addcssAndScripts');
 
 

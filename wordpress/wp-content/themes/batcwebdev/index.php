@@ -83,7 +83,7 @@ else {
     <div class="col-sm-12" id="index-contact-alert">
         <?php echo $result; ?>
     </div>
-    <div class="carousel slide hidden-xs" data-ride="carousel" id="featured">
+    <div class="carousel slide" data-ride="carousel" id="featured">
         <div class="carousel-inner">
             <ol class="carousel-indicators">
                 <li data-target="#featured" data-slide-to="0" class="active"></li>
@@ -97,7 +97,7 @@ else {
                 </div>
             </div>
             <div class="item">
-                <a href="/test/contact">
+                <a href="/contact">
                     <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/assets/images/slide2.jpg" alt="">
                     <div class="carousel-caption">
                         <h1>Contact Us</h1>
@@ -105,7 +105,7 @@ else {
                 </a>
             </div>
             <div class="item">
-                <a href="/test/resource">
+                <a href="/resource">
                     <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/assets/images/slide3.jpg" alt="">
                     <div class="carousel-caption">
                         <h1>Resources</h1>

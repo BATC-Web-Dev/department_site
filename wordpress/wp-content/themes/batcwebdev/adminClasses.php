@@ -125,7 +125,7 @@ if (isset($_POST['submit'])) {
                 $jq( ".ID" ).each(function( index ) {
                     data.push($jq(this).val());
                 });
-                $jq.post("/test/position",{'position': data},function(data) {
+                $jq.post("/position",{'position': data},function(data) {
                     location.reload();
                 });
             });
@@ -149,7 +149,8 @@ if (isset($_POST['submit'])) {
                     <li style="color: DarkRed">Front End Development</li>
                     <li style="color: DarkOrange">Backend Development</li>
                     <li style="color: DarkViolet">Web Site Organization</li>
-                    <li style="color: Green">Front End Development</li>
+                    <li style="color: Green">General Electives</li>
+                    <li style="color: gold">Design</li>
                 </ul>
             </div>
                 <table id="classTable" class="table responsive">
@@ -234,6 +235,7 @@ if (isset($_POST['submit'])) {
                                         <option value="4">Backend Development</option>
                                         <option value="5">Website Organization</option>
                                         <option value="6">General Electives</option>
+                                        <option value="7">Design</option>
                                     </select>
                                 </div>
                             </form>
@@ -272,7 +274,7 @@ if (isset($_POST['submit'])) {
 <script>
     jQuery(document).ready(function($) {
         jQuery('#add').on('click', function() {
-            jQuery.post("/test/addclass",$('#classForm').serialize(),function(data){
+            jQuery.post("/addclass",$('#classForm').serialize(),function(data){
                 jQuery('#class-modal').modal('toggle');
 
                 location.reload();
@@ -284,7 +286,7 @@ if (isset($_POST['submit'])) {
             var data = $('#classForm').serializeArray();
             var id = $('#id').val();
             data.push({name: 'ID', value: id});
-            jQuery.post("/test/editClass",data,function(data){
+            jQuery.post("/editClass",data,function(data){
                 jQuery('#class-modal').modal('toggle');
                 location.reload();
             });
@@ -296,7 +298,7 @@ if (isset($_POST['submit'])) {
             var data = [];
             data.push({name: 'ID', value: id});
             // $.ajax({url: '/api/record/' + id, type: 'DELETE'})
-            jQuery.post("/test/deleteClass",data,function(data) {
+            jQuery.post("/deleteClass",data,function(data) {
                 location.reload();
             });
         });

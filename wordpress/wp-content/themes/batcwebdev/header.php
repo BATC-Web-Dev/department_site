@@ -33,7 +33,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/test">
+                        <a class="navbar-brand" href="/">
                             <img src="<?php bloginfo('template_url'); ?>/assets/images/batc_logo.png" alt="">
                             <a href="https://www.facebook.com/batcwebdev/"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
                         </a>
