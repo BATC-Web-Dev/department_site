@@ -147,15 +147,23 @@ get_header(); ?>
 					<div class="list-group">
 					<?php
 						global $wpdb;
-						$query="SELECT post_parent FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
+						$query="SELECT post_parent, post_content, post_author FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
 						$results=$wpdb->get_results($query);
 						//print_r($reply_parent);
 						foreach ($results as $result) {
-							$query="SELECT post_title, post_name FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
+							$query="SELECT post_title, post_name, post_content FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
 							$reply_parents = $wpdb->get_results($query);
-							//print_r($reply_parents);
+							$author = get_user_by("ID", $result->post_author);
 							foreach($reply_parents as $reply_parent) {
-								echo "<a class='list-group-item' href='?topic=$reply_parent->post_name'>$reply_parent->post_title</a>";
+								echo "<a class='list-group-item' href='forums/topic/$reply_parent->post_name'>"; 
+								echo "<div>";
+								echo get_avatar($result->post_author, 40);
+								echo $author->display_name;
+								echo " replied to \"";
+								echo $reply_parent->post_title;
+								echo "\"</div>";
+								echo $result->post_content; 
+								echo "</a>";
 							}
 						}
 						?>
@@ -169,7 +177,16 @@ get_header(); ?>
 						$query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
 						$results=$wpdb->get_results($query);
 						foreach ($results as $result) {
-							echo "<a class='list-group-item' href='?topic=$result->post_name'>$result->post_title</a>";
+							$author = get_user_by("ID", $result->post_author);
+							echo "<a class='list-group-item' href='forums/topic/$result->post_name'>";
+							echo "<div>";
+							echo get_avatar($result->post_author, 40);
+							echo $author->display_name;
+							echo " posted \"";
+							echo $result->post_title;
+							echo "\"</div>";
+							echo $result->post_content; 
+							echo "</a>";
 						}
 						?>
 					</div>
