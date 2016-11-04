@@ -9,7 +9,6 @@ get_header(); ?>
     <div class="jumbotron" id="resource-jumbotron">
         <h1>Resources</h1>
         <h2>
-            <i class="glyphicon glyphicon-briefcase"></i>
             We feel it's important to learn to code and work with the same tools you will be using in the industry
         </h2>
     </div>
@@ -24,11 +23,13 @@ get_header(); ?>
                         WordPress installer that doesn't add "extra features" you don't need to the install, but still
                         has all of the features that a developer or blogger wants. They also provide you with a free
                         SSL certificate, great customer service and all the features you would expect from a high
-                        quality Hosting service. <a href="http://www.siteground.com">Get started with SightGround</a>
+                        quality Hosting service. <a href="https://www.siteground.com/index.htm?afcode=fc685a15937013ea609d664aeec8445f">Get started with SightGround</a>
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/siteGround2.jpg" alt="">
+                    <a href="https://www.siteground.com/index.htm?afcode=fc685a15937013ea609d664aeec8445f">
+                        <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/siteGround2.jpg" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -38,7 +39,9 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/IDE.png" alt="">
+                    <a href="https://notepad-plus-plus.org/" target="_blank">
+                        <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/IDE.png" alt="">
+                    </a>
                 </div>
                 <div class="col-md-8">
                     <h3>Development</h3>
@@ -48,7 +51,7 @@ get_header(); ?>
                         <a href="https://www.sublimetext.com/3" target="_blank">Sublime</a>,
                         <a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a>,
                         <a href="http://www.barebones.com/products/TextWrangler/" target="_blank">TextWrangler</a> to
-                        name a few. You may also want to try Coda 2 if you are using a mac or (add whatever one that
+                        name a few. You may also want to try <a href="https://panic.com/coda/">Coda 2</a> if you are using a mac or (add whatever one that
                         you use that you like storm something).
                     </p>
                 </div>
@@ -71,7 +74,9 @@ get_header(); ?>
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/slack.jpeg" alt="">
+                    <a href="https://www.slack.com">
+                        <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/slack.jpeg" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -81,7 +86,9 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/adobe.png" alt="">
+                    <a href="https://www.adobe.com">
+                        <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/adobe.png" alt="">
+                    </a>
                 </div>
                 <div class="col-md-8">
                     <h3>Photo and Image editing</h3>
@@ -109,7 +116,9 @@ get_header(); ?>
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/mamp.png" alt="">
+                    <a href="https://www.mamp.info/en/">
+                        <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/mamp.png" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -119,14 +128,34 @@ get_header(); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/dynadot.jpg" alt="">
+                    <a href="http://www.anrdoezrs.net/click-8154329-12589594-1463602213000">
+                        <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/dynadot.jpg" alt="">
+                    </a>
                 </div>
                 <div class="col-md-8">
                     <h3>Domain</h3>
                     <p>We recommend buying your domains though Dynadot. Dynadot has a great UI that makes managing
-                        multiple domains simple and Easy as well as they are upfront about their pricing and
-                        reasonable. <a href="http://www.anrdoezrs.net/click-8154329-12589594-1463602213000" target="_blank">Get started with Dynadot</a>
+                        multiple domains simple and Easy as well as they are upfront about their pricing and reasonable.
+                        <a href="http://www.anrdoezrs.net/click-8154329-12589594-1463602213000">Get started with Dynadot</a>
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="res_slack">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>FTP</h3>
+                    <p>We have <a href="https://filezilla-project.org/">Filezilla</a> installed on the computers in the lab. If you are interested in a more feature
+                        rich but Mac only FTP try <a href="https://panic.com/transmit/">Transmit 4</a>.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://filezilla-project.org/">
+                        <img class="img center-block img-circle" src="<?php bloginfo('template_url'); ?>/assets/images/ftp.png" alt="">
+                    </a>
                 </div>
             </div>
         </div>

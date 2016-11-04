@@ -484,17 +484,17 @@ endwhile; // End of the loop.
                         <h4 class="modal-title">Other Members</h4>
                     </div>
                     <div class="modal-body">
-                            <ul class="list-group">
-                                <?php
-								$members = get_users( 'orderby=display_name' );
-								foreach ( $members as $member ) {
-									if ($member->ID != $current_user->ID) {
-										echo "<li class='list-group-item'><button type='submit' class='text_button' name='view-profile' value='" 
-											. $member->ID . "'><div class='alignleft'>".get_avatar($member->user_email, 25)."</div>".$member->display_name . "</button></li>";
-										}								
-								}
-								?>
-							</ul>
+						<ul class="list-group">
+							<?php
+							$members = get_users( 'orderby=display_name' );
+							foreach ( $members as $member ) {
+								if ($member->ID != $current_user->ID) {
+									echo "<li class='list-group-item'><button type='submit' class='text_button' name='view-profile' value='"
+										. $member->ID . "'><div class='alignleft'>".get_avatar($member->user_email, 25)."</div>".$member->display_name . "</button></li>";
+									}
+							}
+							?>
+						</ul>
                     </div>
                 </div>
             </div>

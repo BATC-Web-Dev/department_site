@@ -156,13 +156,13 @@ get_header(); ?>
 							$author = get_user_by("ID", $result->post_author);
 							foreach($reply_parents as $reply_parent) {
 								echo "<a class='list-group-item' href='forums/topic/$reply_parent->post_name'>"; 
-								echo "<div>";
-								echo get_avatar($result->post_author, 40);
-								echo $author->display_name;
+								echo "<div class='row' id='forum-reply-top-row'>";
+								echo "<div class='row'><div class='col-sm-3'>".get_avatar($result->post_author, 40)."</div>";
+								echo "<div class='col-sm-9'>.$author->display_name";
 								echo " replied to \"";
 								echo $reply_parent->post_title;
-								echo "\"</div>";
-								echo $result->post_content; 
+								echo "\"</div></div>";
+								echo "<div class='row'><div class='col-sm-12'>".$result->post_content."</div></div></div>";
 								echo "</a>";
 							}
 						}
@@ -192,14 +192,6 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-			<?php
-			while ( have_posts() ) : the_post();
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			endwhile; // End of the loop.
-			?>
 <!-- start of profile form handling -->
 <?php
 global $wpdb;
@@ -353,7 +345,8 @@ if (isset ($_POST['approve-profile-reset'])) {
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Update Profile</h4>
-					<p>Type <span class='alert'>null</span> to delete a field from the database</p>
+					<p>This site uses Gravatar for your profile image. Change profile image from the Gravatar site.</p>
+						<a class="btn btn-default" href="http://www.gravatar.com" target="_blank">Edit Avatar</a>
                     </div>
                     <div class="modal-body">
                     <!-- start of description field -->
