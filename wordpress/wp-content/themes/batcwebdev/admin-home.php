@@ -353,8 +353,8 @@ foreach ($notifications as $row) {
 
                         echo $profile_button;
                         echo "<a class='list-group-item list-group-item-info' data-toggle='modal' data-target='#other-members-modal'>Other Members</a>
-							<li class='list-group-item'>$profile_viewing->user_spec</li>
-							<li class='list-group-item'>$profile_viewing->user_job</li>
+							<li class='list-group-item'><i class='glyphicon glyphicon-heart'></i> $profile_viewing->user_spec</li>
+							<li class='list-group-item'><i class='glyphicon glyphicon-briefcase'></i> $profile_viewing->user_job</li>
 							</div>
 							</div>
 							</div>";
@@ -376,7 +376,7 @@ foreach ($notifications as $row) {
                         echo "<h3>$welcome_message</h3>
 							<p>$profile_viewing->description</p>
 							<div class='list-group'>
-							<li class='list-group-item active'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></li>";
+							<a class='list-group-item active' href='mailto:$profile_viewing->user_email'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></a>";
                         if ($profile_viewing->user_url != null) {
                             echo "<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>";
                         }
@@ -414,65 +414,58 @@ foreach ($notifications as $row) {
 
 <!-- Forum Data -->
 
-<div class="row">
-    <div class="col-md-6"><!--Second Column-->
-        <h3>Recent Forum Replies</h3>
-        <div class="list-group">
-        <?php
-            global $wpdb;
-            $query="SELECT post_parent, post_content, post_author FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
-            $results=$wpdb->get_results($query);
-			foreach ($results as $result) {
-                $query="SELECT post_title, post_name, post_content FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
-                $reply_parents = $wpdb->get_results($query);
-                $author = get_user_by("ID", $result->post_author);
-                foreach($reply_parents as $reply_parent) {
-                    echo "<a class='list-group-item' href='forums/topic/$reply_parent->post_name'>"; 
-					echo "<div>";
-					echo get_avatar($result->post_author, 40);
-					echo $author->display_name;
-					echo " replied to \"";
-					echo $reply_parent->post_title;
-					echo "\"</div>";
-					echo $result->post_content; 
+	<div class="row">
+		<div class="col-md-6"><!--Second Column-->
+			<h3>Recent Forum Replies</h3>
+			<div class="list-group">
+				<?php
+				global $wpdb;
+				$query="SELECT post_parent, post_content, post_author FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
+				$results=$wpdb->get_results($query);
+				//print_r($reply_parent);
+				foreach ($results as $result) {
+					$query="SELECT post_title, post_name, post_content FROM wp9c_posts WHERE ID=$result->post_parent LIMIT 1";
+					$reply_parents = $wpdb->get_results($query);
+					$author = get_user_by("ID", $result->post_author);
+					foreach($reply_parents as $reply_parent) {
+						echo "<a class='list-group-item' href='forums/topic/$reply_parent->post_name'>";
+						echo "<div class='row' id='forum-reply-top-row'>";
+						echo "<div class='row'><div class='col-sm-12'>".get_avatar($result->post_author, 40)."<h4>$author->display_name";
+						echo " replied to \"";
+						echo $reply_parent->post_title;
+						echo "\"<hr></h4></div>";
+						echo "<div class='row' id='forum-reply-content'><div class='col-sm-12'>".$result->post_content."</div></div></div></div>";
+						echo "</a>";
+					}
+				}
+				?>
+			</div>
+		</div>
+		<div class="col-md-6"><!--Third Column-->
+			<h3>Recent Forum Topics</h3>
+			<div class="list-group">
+				<?php
+				global $wpdb;
+				$query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
+				$results=$wpdb->get_results($query);
+				foreach ($results as $result) {
+					$author = get_user_by("ID", $result->post_author);
+					echo "<a class='list-group-item' href='forums/topic/$result->post_name'>";
+					echo "<div class='row' id='forum-topic-top-row'>";
+					echo "<div class='row'><div class='col-sm-12'>".get_avatar($result->post_author, 40);
+					echo "<h4>".$author->display_name;
+					echo " posted \"";
+					echo $result->post_title;
+					echo "\"<hr></h4></div>";
+					echo "<div class='row' id='forum-topic-content'><div class='col-sm-12'></div>".$result->post_content."</div></div></div>";
 					echo "</a>";
-                }
-            }
-            ?>
-        </div>
-    </div>
-    <div class="col-md-6"><!--Third Column-->
-        <h3>Recent Forum Topics</h3>
-        <div class="list-group">
-            <?php
-            global $wpdb;
-            $query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
-            $results=$wpdb->get_results($query);
-            foreach ($results as $result) {
-                $author = get_user_by("ID", $result->post_author);
-                echo "<a class='list-group-item' href='forums/topic/$result->post_name'>";
-				echo "<div>";
-				echo get_avatar($result->post_author, 40);
-				echo $author->display_name;
-				echo " posted \"";
-				echo $result->post_title;
-				echo "\"</div>";
-				echo $result->post_content; 
-				echo "</a>";
-            }
-            ?>
-        </div>
-    </div>
+				}
+				?>
+			</div>
+		</div>
+	</div>
 </div>
-</div>
-<?php
-while ( have_posts() ) : the_post();
-    // If comments are open or we have at least one comment, load up the comment template.
-    if ( comments_open() || get_comments_number() ) :
-        comments_template();
-    endif;
-endwhile; // End of the loop.
-?>
+
 <!--Form Modal -->
 	<form class="form-horizontal" id="viewProfileForm" method="post" action="../member-home">
         <div id="other-members-modal" class="modal fade" role="dialog">

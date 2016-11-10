@@ -1116,7 +1116,41 @@ section h3 {
 }
 
 #forum-reply-top-row {
-	text-align: left;
+	padding: 20px;
+	overflow: hidden;
+}
+
+#forum-reply-top-row h4 {
+	clear: none;
+}
+
+#forum-reply-top-row img {
+	margin-right: 15px;
+	float: left !important;
+}
+
+#forum-reply-content {
+	text-align: center;
+	margin-top: 10px;
+}
+
+#forum-topic-top-row {
+	padding: 20px;
+	overflow: hidden;
+}
+
+#forum-topic-top-row h4 {
+	clear: none;
+}
+
+#forum-topic-top-row img {
+	margin-right: 15px;
+	float: left !important;
+}
+
+#forum-topic-content {
+	text-align: center;
+	margin-top: 10px;
 }
 
 /*--------------------------------------------------------------

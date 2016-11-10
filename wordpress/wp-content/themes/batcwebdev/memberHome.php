@@ -107,7 +107,7 @@ get_header(); ?>
 					echo "<h3>$welcome_message</h3>
 							<p>$profile_viewing->description</p>
 							<div class='list-group'>
-							<li class='list-group-item active'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></li>";
+							<a class='list-group-item active' href='mailto:$profile_viewing->user_email'><i class='glyphicon glyphicon-envelope'>  $profile_viewing->user_email</i></a>";
 					if ($profile_viewing->user_url != null) {
 						echo "<a class='list-group-item external-link' id='$qualify_url' data-toggle='modal' data-target='#external-link-modal'><i class='glyphicon glyphicon-globe'> $profile_viewing->user_url</i></a>";
 					}
@@ -157,12 +157,11 @@ get_header(); ?>
 							foreach($reply_parents as $reply_parent) {
 								echo "<a class='list-group-item' href='forums/topic/$reply_parent->post_name'>"; 
 								echo "<div class='row' id='forum-reply-top-row'>";
-								echo "<div class='row'><div class='col-sm-3'>".get_avatar($result->post_author, 40)."</div>";
-								echo "<div class='col-sm-9'>.$author->display_name";
+								echo "<div class='row'><div class='col-sm-12'>".get_avatar($result->post_author, 40)."<h4>$author->display_name";
 								echo " replied to \"";
 								echo $reply_parent->post_title;
-								echo "\"</div></div>";
-								echo "<div class='row'><div class='col-sm-12'>".$result->post_content."</div></div></div>";
+								echo "\"<hr></h4></div>";
+								echo "<div class='row' id='forum-reply-content'><div class='col-sm-12'>".$result->post_content."</div></div></div></div>";
 								echo "</a>";
 							}
 						}
@@ -179,13 +178,13 @@ get_header(); ?>
 						foreach ($results as $result) {
 							$author = get_user_by("ID", $result->post_author);
 							echo "<a class='list-group-item' href='forums/topic/$result->post_name'>";
-							echo "<div>";
-							echo get_avatar($result->post_author, 40);
-							echo $author->display_name;
+							echo "<div class='row' id='forum-topic-top-row'>";
+							echo "<div class='row'><div class='col-sm-12'>".get_avatar($result->post_author, 40);
+							echo "<h4>".$author->display_name;
 							echo " posted \"";
 							echo $result->post_title;
-							echo "\"</div>";
-							echo $result->post_content; 
+							echo "\"<hr></h4></div>";
+							echo "<div class='row' id='forum-topic-content'><div class='col-sm-12'></div>".$result->post_content."</div></div></div>";
 							echo "</a>";
 						}
 						?>
