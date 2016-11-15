@@ -571,7 +571,11 @@ foreach ($notifications as $row) {
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Update Profile</h4>
+<<<<<<< Updated upstream
 					<p>This site uses Gravatar for your profile image. Change profile image from the Gravatar site.</p>
+=======
+						<p>This site uses Gravatar for your profile image. Change profile image from the Gravatar site.</p>
+>>>>>>> Stashed changes
 						<a class="btn btn-default" href="http://www.gravatar.com" target="_blank" style="color: #404040;">Edit Avatar</a>
                     </div>
                     <div class="modal-body">
