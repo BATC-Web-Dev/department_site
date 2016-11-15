@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="738b2d9a-09fd-46da-95db-7d241d4cc1ee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/admin-home.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/admin-home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/.htaccess" afterPath="$PROJECT_DIR$/wordpress/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/404.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/404.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" afterPath="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
     </list>
     <ignored path="department_site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,38 +34,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="memberHome.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php">
+      <file leaf-file-name="404.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/404.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="109" column="87" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
+            <state relative-caret-position="135">
+              <caret line="15" column="152" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="152" />
               <folding>
-                <marker date="1478751615000" expanded="true" signature="4848:5010" ph="..." />
-                <marker date="1478751615000" expanded="true" signature="4848:5011" ph="..." />
-                <marker date="1478751615000" expanded="true" signature="6550:6568" ph="SELECT post_... wp9c_posts" />
-                <marker date="1478751615000" expanded="true" signature="6550:6667" ph="SELECT post_... wp9c_posts" />
-                <marker date="1478751615000" expanded="true" signature="6798:6894" ph="SELECT post_... wp9c_posts" />
-                <marker date="1478751615000" expanded="true" signature="7259:7327" ph="..." />
-                <marker date="1478751615000" expanded="true" signature="7790:7870" ph="SELECT * FRO... wp9c_posts" />
-                <marker date="1478751615000" expanded="true" signature="8181:8298" ph="..." />
-                <marker date="1478751615000" expanded="true" signature="8670:8720" ph="SELECT * FRO... wp9c_notifications" />
-                <marker date="1478751615000" expanded="true" signature="12864:12914" ph="SELECT * FRO... wp9c_notifications" />
-                <marker date="1478751615000" expanded="true" signature="13841:13891" ph="SELECT * FRO... wp9c_notifications" />
-                <marker date="1478751615000" expanded="true" signature="13976:14246" ph="SELECT meta_... wp9c_usermeta" />
-                <marker date="1478751615000" expanded="true" signature="14298:14369" ph="SELECT displ... wp9c_users" />
+                <element signature="e#372#398#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="359" column="14" selection-start-line="359" selection-start-column="14" selection-end-line="359" selection-end-column="14" />
-              <folding>
-                <marker date="1478752392000" expanded="true" signature="11739:11763" ph="SELECT * FRO... wp9c_class" />
-              </folding>
+            <state relative-caret-position="409">
+              <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,7 +69,6 @@
         <option value="$PROJECT_DIR$/wordpress/wp-admin/user-edit.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/addClasses.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/twentysixteen/classes.php" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/404.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/archive.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/search.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/js/navigation.js" />
@@ -111,7 +95,6 @@
         <option value="$PROJECT_DIR$/wordpress/.htaccess" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/verify.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/plugins/simplemodal-login/js/default.js" />
-        <option value="$PROJECT_DIR$/wordpress/wp-content/plugins/simplemodal-login/js/osx.js" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/contacts.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/careerdays.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/careerdays2.php" />
@@ -129,7 +112,9 @@
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/memberHome.php" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/admin-home.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/plugins/simplemodal-login/js/osx.js" />
         <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php" />
+        <option value="$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/404.php" />
       </list>
     </option>
   </component>
@@ -257,6 +242,92 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="batcwebdev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="department_site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="department_site" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordpress" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="batcwebdev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="department_site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="department_site" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordpress" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="batcwebdev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="department_site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="department_site" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wordpress" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-content" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,34 +527,35 @@
       <workItem from="1478040827734" duration="3785000" />
       <workItem from="1478216298601" duration="6598000" />
       <workItem from="1478474809137" duration="1710000" />
-      <workItem from="1478745580693" duration="2222000" />
+      <workItem from="1478745580693" duration="2595000" />
+      <workItem from="1478827196149" duration="1728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391219000" />
+    <option name="totallyTimeSpent" value="393320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16237482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16452074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18905473" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19527364" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.49713877" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -584,13 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/assets/css/font-awesome.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10710">
@@ -635,13 +700,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/plugins/simplemodal-login/js/default.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/plugins/simplemodal-login/js/osx.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
@@ -754,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="95" column="71" selection-start-line="95" selection-start-column="71" selection-end-line="95" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/highschool.html" />
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/classes.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -821,39 +872,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="1128" column="27" selection-start-line="1128" selection-start-column="27" selection-end-line="1128" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/admin-home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="328" column="0" selection-start-line="328" selection-start-column="0" selection-end-line="328" selection-end-column="36" />
           <folding>
-            <marker date="1478751615000" expanded="true" signature="1024:1250" ph="SELECT wp9c_... wp9c_notifications" />
-            <marker date="1478751615000" expanded="true" signature="1775:1824" ph="SELECT * FRO... wp9c_notifications" />
-            <marker date="1478751615000" expanded="true" signature="2502:2758" ph="SELECT meta_... wp9c_usermeta" />
-            <marker date="1478751615000" expanded="true" signature="3244:3315" ph="SELECT displ... wp9c_users" />
-            <marker date="1478751615000" expanded="true" signature="12561:12723" ph="..." />
-            <marker date="1478751615000" expanded="true" signature="12561:12724" ph="..." />
-            <marker date="1478751615000" expanded="true" signature="14534:14651" ph="SELECT post_... wp9c_posts" />
-            <marker date="1478751615000" expanded="true" signature="14774:14870" ph="SELECT post_... wp9c_posts" />
-            <marker date="1478751615000" expanded="true" signature="15721:15801" ph="SELECT * FRO... wp9c_posts" />
-            <marker date="1478751615000" expanded="true" signature="18938:18988" ph="SELECT * FRO... wp9c_notifications" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="359" column="14" selection-start-line="359" selection-start-column="14" selection-end-line="359" selection-end-column="14" />
-          <folding>
-            <marker date="1478752392000" expanded="true" signature="11739:11763" ph="SELECT * FRO... wp9c_class" />
+            <marker date="1478829038000" expanded="true" signature="1024:1250" ph="SELECT wp9c_... wp9c_notifications" />
+            <marker date="1478829038000" expanded="true" signature="1775:1824" ph="SELECT * FRO... wp9c_notifications" />
+            <marker date="1478829038000" expanded="true" signature="2502:2758" ph="SELECT meta_... wp9c_usermeta" />
+            <marker date="1478829038000" expanded="true" signature="3244:3315" ph="SELECT displ... wp9c_users" />
+            <marker date="1478829038000" expanded="true" signature="12561:12723" ph="..." />
+            <marker date="1478829038000" expanded="true" signature="12561:12724" ph="..." />
+            <marker date="1478829038000" expanded="true" signature="14534:14651" ph="SELECT post_... wp9c_posts" />
+            <marker date="1478829038000" expanded="true" signature="14774:14870" ph="SELECT post_... wp9c_posts" />
+            <marker date="1478829038000" expanded="true" signature="15721:15801" ph="SELECT * FRO... wp9c_posts" />
+            <marker date="1478829038000" expanded="true" signature="18938:18988" ph="SELECT * FRO... wp9c_notifications" />
           </folding>
         </state>
       </provider>
@@ -863,19 +896,63 @@
         <state relative-caret-position="990">
           <caret line="109" column="87" selection-start-line="109" selection-start-column="87" selection-end-line="109" selection-end-column="87" />
           <folding>
-            <marker date="1478751615000" expanded="true" signature="4848:5010" ph="..." />
-            <marker date="1478751615000" expanded="true" signature="4848:5011" ph="..." />
-            <marker date="1478751615000" expanded="true" signature="6550:6568" ph="SELECT post_... wp9c_posts" />
-            <marker date="1478751615000" expanded="true" signature="6550:6667" ph="SELECT post_... wp9c_posts" />
-            <marker date="1478751615000" expanded="true" signature="6798:6894" ph="SELECT post_... wp9c_posts" />
-            <marker date="1478751615000" expanded="true" signature="7259:7327" ph="..." />
-            <marker date="1478751615000" expanded="true" signature="7790:7870" ph="SELECT * FRO... wp9c_posts" />
-            <marker date="1478751615000" expanded="true" signature="8181:8298" ph="..." />
-            <marker date="1478751615000" expanded="true" signature="8670:8720" ph="SELECT * FRO... wp9c_notifications" />
-            <marker date="1478751615000" expanded="true" signature="12864:12914" ph="SELECT * FRO... wp9c_notifications" />
-            <marker date="1478751615000" expanded="true" signature="13841:13891" ph="SELECT * FRO... wp9c_notifications" />
-            <marker date="1478751615000" expanded="true" signature="13976:14246" ph="SELECT meta_... wp9c_usermeta" />
-            <marker date="1478751615000" expanded="true" signature="14298:14369" ph="SELECT displ... wp9c_users" />
+            <marker date="1478829038000" expanded="true" signature="4848:5010" ph="..." />
+            <marker date="1478829038000" expanded="true" signature="4848:5011" ph="..." />
+            <marker date="1478829038000" expanded="true" signature="6550:6568" ph="SELECT post_... wp9c_posts" />
+            <marker date="1478829038000" expanded="true" signature="6550:6667" ph="SELECT post_... wp9c_posts" />
+            <marker date="1478829038000" expanded="true" signature="6798:6894" ph="SELECT post_... wp9c_posts" />
+            <marker date="1478829038000" expanded="true" signature="7259:7327" ph="..." />
+            <marker date="1478829038000" expanded="true" signature="7790:7870" ph="SELECT * FRO... wp9c_posts" />
+            <marker date="1478829038000" expanded="true" signature="8181:8298" ph="..." />
+            <marker date="1478829038000" expanded="true" signature="8670:8720" ph="SELECT * FRO... wp9c_notifications" />
+            <marker date="1478829038000" expanded="true" signature="12864:12914" ph="SELECT * FRO... wp9c_notifications" />
+            <marker date="1478829038000" expanded="true" signature="13841:13891" ph="SELECT * FRO... wp9c_notifications" />
+            <marker date="1478829038000" expanded="true" signature="13976:14246" ph="SELECT meta_... wp9c_usermeta" />
+            <marker date="1478829038000" expanded="true" signature="14298:14369" ph="SELECT displ... wp9c_users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="1275" column="18" selection-start-line="1275" selection-start-column="18" selection-end-line="1275" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/plugins/simplemodal-login/js/osx.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2355">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="401" column="5" selection-start-line="401" selection-start-column="5" selection-end-line="401" selection-end-column="5" />
+          <folding>
+            <marker date="1478829211000" expanded="true" signature="11739:11763" ph="SELECT * FRO... wp9c_class" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wordpress/wp-content/themes/batcwebdev/404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="152" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="152" />
+          <folding>
+            <element signature="e#372#398#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
