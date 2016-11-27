@@ -395,7 +395,7 @@ function admin_login_redirect( $redirect_to, $request, $user )
         if( in_array( "administrator", $user->roles ) ) {
             return '/admin-home/';
         } else {
-            return '/';
+            return '/member-home/';
         }
     }
     else

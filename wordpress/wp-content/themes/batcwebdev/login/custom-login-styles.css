@@ -1,5 +1,5 @@
 body.login {
-    background: #99D3DE;
+    background-image: url('../assets/images/dawn-clouds-panorma-mombarone-65220.jpeg');
 }
 
 .login h1 {
@@ -68,10 +68,18 @@ body.login {
     border: 1px solid #0d9ed9;
 }
 
-p#nav {
-    display: none;
+.login #backtoblog a {
+    font-size: 20px;
+    color: black;
 }
 
-p#backtoblog {
-    display: none;
+.login #backtoblog p {
+    font-size: 20px;
+    color: black;
+}
+
+.login form {
+    background: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
