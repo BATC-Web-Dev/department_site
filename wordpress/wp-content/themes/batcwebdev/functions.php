@@ -113,18 +113,30 @@ add_filter( 'bbp_get_author_link', 'remove_author_links', 10, 2);
 add_filter( 'bbp_get_reply_author_link', 'remove_author_links', 10, 2);
 add_filter( 'bbp_get_topic_author_link', 'remove_author_links', 10, 2);
 function remove_author_links($author_link, $args) {
-	$ini = strpos($author_link, 'user=') + 5;
-	$linked_id = substr($author_link, $ini, 1);
-	$linked_user = get_user_by('ID', $linked_id);
-	$avatar = get_avatar( $linked_user->user_email, 20 );
-	$name = $linked_user->display_name;
+	global $wpdb;
+	$ini = strpos($author_link, '/>&nbsp;') + 8;
+	$linked_name = substr($author_link, $ini);
+	
+	$linked_id = (get_user_id_by_display_name($linked_name));
+	$avatar = get_avatar( $linked_id, 20 );
+	$name = get_userdata($linked_id)->display_name;
 	if ($args[post_id] != 0){
-		$replacement = "<form method='POST' action='?page_id=66'><button type='submit' class='text_button' name='view-profile' value='$linked_id'>$avatar$name</button></form>";
-		$author_link = $replacement;
+		$author_link = "<form method='POST' action='/member-home'><button type='submit' class='text_button' name='view-profile' value='$linked_id'>$avatar$name</button></form>";
 	}
 	return $author_link;
  }
  
+  /*  gets user id by display_name  */
+ function get_user_id_by_display_name( $name ) {
+    global $wpdb;
+
+    if ( ! $user = $wpdb->get_row( $wpdb->prepare(
+        "SELECT `ID` FROM $wpdb->users WHERE `display_name` = %s", $name
+    ) ) )
+        return false;
+
+    return $user->ID;
+}
 
  /* add custom user meta data */
 
@@ -190,8 +202,25 @@ function save_custom_user_profile_fields($user_id){
 }
 add_action( 'personal_options_update', 'save_custom_user_profile_fields');
 add_action( 'edit_user_profile_update', 'save_custom_user_profile_fields');
-add_action('user_register', 'save_custom_user_profile_fields');
- 
+
+function default_user_profile_fields($user_id){
+
+    # save my custom field
+    $def_url_2 = $_POST['user_url_2'] != null ? $_POST['user_url_2'] : "www.batc.edu/programs/web-mobile-development";
+    $def_url_3 = $_POST['user_url_3'] != null ? $_POST['user_url_3'] : "https://en.gravatar.com/";
+	$def_job = $_POST['user_job'] != null ? $_POST['user_job'] : "Ornithologist";
+    $def_spec = $_POST['user_spec'] != null ? $_POST['user_spec'] : "Undecided";
+	$def_bio = $_POST['description'] != null ? $_POST['description'] : "I am an avid Ornithologist.  I must say, my passion consumes me.";
+	$def_url = $_POST['user_url'] != null ? $_POST['user_url'] : "www.batc.edu";
+	
+	update_usermeta($user_id, 'user_url_2', $def_url_2);
+    update_usermeta($user_id, 'user_url_3', $def_url_3);
+    update_usermeta($user_id, 'user_job', $def_job);
+    update_usermeta($user_id, 'user_spec', $def_spec);
+    update_usermeta($user_id, 'description', $def_bio);
+	$temp = wp_update_user( array( 'ID' => $user_id, 'user_url' => $def_url ) );
+}
+add_action('user_register', 'default_user_profile_fields'); 
 if ( ! function_exists( 'batcwebdev_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.

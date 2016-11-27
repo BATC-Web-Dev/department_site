@@ -964,6 +964,7 @@ form {
 	background-color: #99D3DE;
 }
 
+
 .modal-body {
 	margin: 15px;
 }
@@ -1343,4 +1344,9 @@ div .jumbotron {
 
 .fa-facebook-square {
 	margin-top: 5px;
+}
+
+.err-404 {
+	background-image: url("\assets\images\slide3.jpg");
+	background-color: red;
 }

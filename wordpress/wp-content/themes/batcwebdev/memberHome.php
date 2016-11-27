@@ -49,7 +49,7 @@ get_header(); ?>
 
 <div class="member-home container-fluid">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main error-404" role="main">
 			<div class="row">
 				<div class="col-md-12 lead">Member Home<hr></div>
 			</div>
