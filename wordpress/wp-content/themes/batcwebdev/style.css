@@ -1333,6 +1333,8 @@ div .jumbotron {
 	color: #595959 !important;
 }
 
+
+
 /*--------------------------------------------------------------
 ## Nav Bar
 --------------------------------------------------------------*/
@@ -1349,4 +1351,11 @@ div .jumbotron {
 .err-404 {
 	background-image: url("\assets\images\slide3.jpg");
 	background-color: red;
+}
+
+#recent-posts div:hover {
+	color: #555;
+	text-decoration: none;
+	background-color: #f5f5f5;
+	cursor: pointer;
 }

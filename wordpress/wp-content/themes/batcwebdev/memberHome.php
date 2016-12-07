@@ -144,7 +144,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-md-6"><!--Second Column-->
 					<h3>Recent Forum Replies</h3>
-					<div class="list-group">
+					<div class="list-group" id="recent-replies">
 					<?php
 						global $wpdb;
 						$query="SELECT post_parent, post_content, post_author FROM wp9c_posts WHERE post_type='reply' ORDER BY post_date DESC LIMIT 5";
@@ -170,22 +170,19 @@ get_header(); ?>
 				</div>
 				<div class="col-md-6"><!--Third Column-->
 					<h3>Recent Forum Topics</h3>
-					<div class="list-group">
+					<div class="list-group" id="recent-posts">
 						<?php
 						global $wpdb;
 						$query="SELECT * FROM wp9c_posts WHERE post_type='topic' ORDER BY post_date DESC LIMIT 5";
 						$results=$wpdb->get_results($query);
 						foreach ($results as $result) {
 							$author = get_user_by("ID", $result->post_author);
-							echo "<a class='list-group-item' href='forums/topic/$result->post_name'>";
+							$post = $result->post_content;
+							echo "<div class='list-group-item' onclick=\"location.href='forums/topic/$result->post_name'\">";
 							echo "<div class='row' id='forum-topic-top-row'>";
-							echo "<div class='row'><div class='col-sm-12'>".get_avatar($result->post_author, 40);
-							echo "<h4>".$author->display_name;
-							echo " posted \"";
-							echo $result->post_title;
-							echo "\"<hr></h4></div>";
-							echo "<div class='row' id='forum-topic-content'><div class='col-sm-12'></div>".$result->post_content."</div></div></div>";
-							echo "</a>";
+							echo "<div class='row'><div class='col-sm-12'>".get_avatar($result->post_author, 40)."<h4>$author->display_name posted \"$result->post_title\"<hr></h4></div>";
+							echo "<div class='row' id='forum-topic-content'><div class='col-sm-12'>".$post."</div></div></div></div>";
+							echo "</div>";
 						}
 						?>
 					</div>
