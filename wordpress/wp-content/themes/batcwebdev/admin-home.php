@@ -181,7 +181,7 @@ $notifications = $wpdb->get_results("
 		if ($num_pending != 0) {
 		?>	<tr class='body'>
 		<?php echo "<td class='notify_summary'><a class='toggler' toggle_id='$row->notify_id' class='table'><span class='alignleft'>".get_avatar($row->user_email, 20)."</span>$row->display_name has $num_pending update$plural pending approval.</a>"; ?>
-		<table class="approve-deny-table-single">
+		<table class="approve-deny-table-single table">
 		<form method='post' action=''>
 		<thead>
 			<tr class='header cat<?php echo "$row->notify_id";?>' style='display:none'>

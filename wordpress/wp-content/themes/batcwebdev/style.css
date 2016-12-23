@@ -1165,6 +1165,8 @@ section h3 {
 	width: 100%;
 	overflow: hidden;
 	text-align: center;
+	background-size: cover;
+
 }
 
 #res_IDE img {
@@ -1278,6 +1280,7 @@ div .jumbotron {
 	width: 100%;
 	overflow: hidden;
 	text-align: center;
+	background-size: cover;
 }
 
 .jumbotron a:visited {
@@ -1349,7 +1352,7 @@ div .jumbotron {
 }
 
 .err-404 {
-	background-image: url("\assets\images\slide3.jpg");
+	background-image: url(assets/images/slide3.jpg);
 	background-color: red;
 }
 
@@ -1358,4 +1361,16 @@ div .jumbotron {
 	text-decoration: none;
 	background-color: #f5f5f5;
 	cursor: pointer;
+}
+
+#classTable tr:hover {
+	cursor: pointer;
+}
+
+#classTable th{
+	text-align: center !important;
+}
+
+#classTable {
+	text-align: center !important;
 }

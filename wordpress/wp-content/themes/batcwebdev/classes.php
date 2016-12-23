@@ -18,23 +18,46 @@ Template Name: Class
 get_header(); ?>
 <?php
 global $wpdb;
-$checkArray = $_POST['checkbox'];
+$checkFinishedArray = $_POST['checkboxFinished'];
+$checkInterestedArray = $_POST['checkboxInterested'];
 
 if (isset($_POST['submit'])) {
-    for ($i = count($checkArray); $i >= 0; $i--) {
-        if ($checkArray[$i] > 0) {
-            $checkArray[$i] = 1;
+    for ($i = count($checkFinishedArray); $i >= 0; $i--) {
+        if ($checkFinishedArray[$i] > 0) {
+            $checkFinishedArray[$i] = 1;
         }
-        if (($checkArray[$i] == 1) && ($checkArray[$i - 1] == 0)) {
-            unset($checkArray[$i - 1]);
+        if (($checkFinishedArray[$i] == 1) && ($checkFinishedArray[$i - 1] == 0)) {
+            unset($checkFinishedArray[$i - 1]);
         }
     }
-    $_POST['checkbox'] = array_values($checkArray);
-    for ($i=0; $i < count($_POST['checkbox']); $i++) {
+    for ($i = count($checkInterestedArray); $i >= 0; $i--) {
+        if ($checkInterestedArray[$i] > 0) {
+            $checkInterestedArray[$i] = 1;
+        }
+        if (($checkInterestedArray[$i] == 1) && ($checkInterestedArray[$i - 1] == 0)) {
+            unset($checkInterestedArray[$i - 1]);
+        }
+    }
+    $_POST['checkboxFinished'] = array_values($checkFinishedArray);
+    for ($i=0; $i < count($_POST['checkboxFinished']); $i++) {
         $wpdb->update(
             'wp9c_classes',
             array(
-                'finished' => $_POST['checkbox'][$i],
+                'finished' => $_POST['checkboxFinished'][$i],
+            ),
+            array( 'class_id' => $_POST['class_id'][$i] ),
+            array(
+                '%d'
+            ),
+            array( '%d' )
+        );
+    }
+    $_POST['checkboxInterested'] = array_values($checkInterestedArray);
+    for ($i=0; $i < count($_POST['checkboxInterested']); $i++) {
+        $wpdb->update(
+            'wp9c_classes',
+            array(
+                'interested' => $_POST['checkboxInterested'][$i],
             ),
             array( 'class_id' => $_POST['class_id'][$i] ),
             array(
@@ -50,11 +73,14 @@ if (isset($_POST['submit'])) {
     <script type="text/javascript">
         function checkTotal() {
             var object = document.getElementsByTagName('input');
+            var finished = document.getElementById('finished');
             document.classForm.total.value = '';
             var sum = 0;
             for(i=0; i<object.length; i++) {
-                if (object[i].type == 'checkbox' && object[i].checked) {
-                    sum = sum + parseInt(object[i].value);
+                if (object.name != 'checkbox') {
+                    if (object[i].type == 'checkbox' && object[i].checked) {
+                        sum = sum + parseInt(object[i].value);
+                    }
                 }
             }
             document.classForm.total.value = sum;
@@ -76,9 +102,13 @@ if (isset($_POST['submit'])) {
             //Stripe
             $( "tbody tr:even" ).css( "background-color", "#C9C9C9" );
 
+            $('input.check').on('change', function() {
+                $(this).closest('tr').find('input').not(this).prop('checked', false);
+            });
+
             $(function() {
-                $("td[colspan=4]").css('pointer-events', 'none');
-                $("td[colspan=4]").find("p").hide();
+                $("td[colspan=5]").css('pointer-events', 'none');
+                $("td[colspan=5]").find("p").hide();
                 $("tr").click(function(event) {
                     event.stopPropagation();
                     var $target = $(event.target);
@@ -114,10 +144,11 @@ if (isset($_POST['submit'])) {
                     <table id="classTable" class="table">
                         <thead>
                             <tr class="header">
-                                <th>Course ID</th>
-                                <th>Course Name</th>
-                                <th>Hours</th>
-                                <th>Finished</th>
+                                <th class="col-md-3 col-sm-3">Course ID</th>
+                                <th class="col-md-5 col-sm-5">Course Name</th>
+                                <th class="col-md-2 col-sm-2">Hours</th>
+                                <th class="col-md-2 col-sm-2">Planning on Taking</th>
+                                <th class="col-md-2 col-sm-2">Finished</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -129,32 +160,41 @@ if (isset($_POST['submit'])) {
                         foreach($result as $row)
                         {
                             $checkboxVal = intval($row->hours);
-                            $checkboxQuery = intval($row->finished);
+                            $checkboxFinishedQuery = intval($row->finished);
+                            $checkboxInterestedQuery = intval($row->interested);
                             $checkboxState = '';
-                            if ($checkboxQuery == 0){
-                                $checkboxState = '';
+                            if ($checkboxFinishedQuery == 0){
+                                $checkboxStateFinished = '';
                             } else {
-                                $checkboxState = 'checked';
+                                $checkboxStateFinished = 'checked';
                             }
-                            echo "<tr class='classType$row->class_type'>";
-                            echo "<input type='hidden' name='class_type[]' value='$row->class_type'>";
-                            echo "<td><p>".$row->course_id."</p></td>";
-                            echo "<input type='hidden' name='class_id[]' value='$row->class_id'>";
-                            echo "<td><p>".$row->course_name."</p></td>";
-                            echo "<td id='hours'><p>".$row->hours."</p></td>";
-                            echo "<input type='hidden' value='0' name='checkbox[]'>";
-                            echo "<td><input type='checkbox' value='$checkboxVal' name='checkbox[]' onchange='checkTotal()' $checkboxState></td>";
-                            echo "</tr>";
-                            echo "<tr class='descRow'><td colspan='4' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
+                            if ($checkboxInterestedQuery == 0){
+                                $checkboxStateInterested = '';
+                            } else {
+                                $checkboxStateInterested = 'checked';
+                            }
+                            echo "<tr class='classType$row->class_type'>
+                             <input type='hidden' name='class_type[]' value='$row->class_type'>
+                            <td class='col-md-3 col-sm-3'><p>".$row->course_id."</p></td>
+                            <input type='hidden' name='class_id[]' value='$row->class_id'>
+                            <td class='col-md-5 col-sm-5'><p>".$row->course_name."</p></td>
+                            <td class='col-md-2 col-sm-2' id='hours'><p>".$row->hours."</p></td>
+                            <input type='hidden' value='0' name='checkboxInterested[]'>
+                            <td class='col-md-2 col-sm-2'><input type='checkbox' value='$checkboxVal' name='checkboxInterested[]' onchange='checkTotal()' $checkboxStateInterested class='check'></td>
+                            <input type='hidden' value='0' name='checkboxFinished[]'>
+                            <td class='col-md-2 col-sm-2' id='finished'><input type='checkbox' value='$checkboxVal' name='checkboxFinished[]' onchange='checkTotal()' $checkboxStateFinished class='check'></td>
+                            </tr>
+                            <tr class='descRow'><td colspan='5' style='padding: 0px'><p>".$row->course_desc."</p></td></tr>";
                         }
                         ?>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td></td>
-                                <td>Completed Hours</td>
-                                <td><input id="compHours" type="text" name="total" value="0" readonly></td>
-                                <td><button type="submit" class="btn btn-default" name="submit" value="submit">Save Finished</button></td>
+                                <td class='col-md-3 col-sm-3'></td>
+                                <td class='col-md-5 col-sm-5' style="text-align:right">Calculated Hours</td>
+                                <td class='col-md-2 col-sm-2'><input id="compHours" type="text" name="total" value="0" readonly></td>
+                                <td class='col-md-2 col-sm-2'></td>
+                                <td class='col-md-2 col-sm-2'><button type="submit" class="btn btn-default btn-sm" name="submit" value="submit">Save</button></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -163,5 +203,5 @@ if (isset($_POST['submit'])) {
         </div><!-- .content-area -->
     </div>
 </body>
-<?php get_footer(); ?>
+
 
